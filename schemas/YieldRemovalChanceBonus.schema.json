@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Yieldremovalchancebonus specification",
+  "description": "Add or modify a yieldremovalchancebonus",
+  "type": "object",
+  "properties": {
+    "YieldRemovalChanceBonusSpec": {
+      "type": "object",
+      "description": "Yieldremovalchancebonus specification",
+      "properties": {
+        "BonusId": {
+          "type": "string",
+          "description": "ID of the yieldremovalchancebonus to be modified",
+          "examples": [
+            "CuttingSuccessChance"
+          ],
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_-]+$"
+        },
+        "GoodId": {
+          "type": "string",
+          "description": "Good ID",
+          "examples": [
+            "Log"
+          ],
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_-]+$"
+        }
+      },
+      "required": [
+        "BonusId",
+        "GoodId"
+      ]
+    }
+  },
+  "required": [
+    "YieldRemovalChanceBonusSpec"
+  ]
+}
