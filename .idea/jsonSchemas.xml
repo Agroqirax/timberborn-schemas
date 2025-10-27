@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JsonSchemaMappingsProjectConfiguration">
+    <state>
+      <map>
+        <entry key="Bonus type specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Bonus type specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/BonusType.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/BonusTypes/BonusType.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/BonusTypes/BonusType.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Custom cursor specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Custom cursor specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/CustomCursors.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/CustomCursors/CustomCursor.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/CustomCursors/CustomCursor.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Faction specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Faction specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Faction.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/Factions/Faction.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/Factions/Faction.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Good group specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Good group specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/GoodGroup.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/GoodGroups/GoodGroup.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/GoodGroups/GoodGroup.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Good specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Good specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Good.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/Goods/Good.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/Goods/Good.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="GoodVisualization specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="GoodVisualization specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/GoodVisualization.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/GoodVisualizations/GoodVisualization.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/GoodVisualizations/GoodVisualization.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="KeyBinding specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="KeyBinding specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/KeyBinding.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/KeyBindings/KeyBinding.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/KeyBindings/KeyBinding.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="KeyBindingGroup specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="KeyBindingGroup specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/KeyBindingGroup.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/KeyBindingGroups/KeyBindingGroup.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/KeyBindingGroups/KeyBindingGroup.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="MaterialGroup specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="MaterialGroup specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/MaterialGroup.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/MaterialGroups/MaterialGroup.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/MaterialGroups/MaterialGroup.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Mod manifest">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Mod manifest" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/manifest.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="manifest.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Need specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Need specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Need.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/Needs/Need.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/Needs/Need.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Needgroup specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Needgroup specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/NeedGroup.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/NeedGroups/NeedGroup.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/NeedGroups/NeedGroup.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Prefabgroup specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Prefabgroup specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/PrefabGroup.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/PrefabGroups/PrefabGroup.*.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/PrefabGroups/PrefabGroup.*.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Recipe specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Recipe specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Recipe.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/Recipes/Recipe.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/Recipes/Recipe.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Removeyieldstrategy specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Removeyieldstrategy specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/RemoveYieldStrategy.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/RemoveYieldStrategies/RemoveYieldStrategy.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/RemoveYieldStrategies/RemoveYieldStrategy.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Taildecal specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Taildecal specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/TailDecal.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/TailDecals/TailDecal.*.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/TailDecals/TailDecal.*.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Toolgroup specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Toolgroup specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/ToolGroup.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/ToolGroups/ToolGroup.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/ToolGroups/ToolGroup.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Wellbeingtier specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Wellbeingtier specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/WellbeingTier.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/WellbeingTiers/WellbeingTier.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/WellbeingTiers/WellbeingTier.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Workeroutfit specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Workeroutfit specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/WorkerOutfit.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/WorkerOutfits/WorkerOutfit.*.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/WorkerOutfits/WorkerOutfit.*.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Workertype specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Workertype specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/WorkerType.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/WorkerTypes/WorkerType.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/WorkerTypes/WorkerType.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Workshop data">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Workshop data" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/workshop_data.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/workshop_data.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/workshop_data.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Yieldremovalchancebonus specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Yieldremovalchancebonus specification" />
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/YieldRemovalChanceBonus.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/Blueprints/YieldRemovalChanceBonuses/YieldRemovalChanceBonus.*.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/Blueprints/YieldRemovalChanceBonuses/YieldRemovalChanceBonus.*.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+      </map>
+    </state>
+  </component>
+</project>

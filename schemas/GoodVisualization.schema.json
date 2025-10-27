@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/GoodVisualization.schema.json",
   "title": "GoodVisualization specification",
   "description": "Add or modify a goodvisualization",
   "type": "object",
@@ -36,11 +37,7 @@
               "description": "Z Offset"
             }
           },
-          "required": [
-            "X",
-            "Y",
-            "Z"
-          ]
+          "required": ["X", "Y", "Z"]
         },
         "LimitingAmount": {
           "type": "number",
@@ -59,13 +56,9 @@
           "pattern": "^[a-zA-Z0-9_-]+(\\/[a-zA-Z0-9_-]+)*$"
         }
       },
-      "required": [
-        "Id"
-      ],
+      "required": ["Id"],
       "minItems": 2
     }
   },
-  "required": [
-    "GoodVisualizationSpec"
-  ]
+  "required": ["GoodVisualizationSpec"]
 }

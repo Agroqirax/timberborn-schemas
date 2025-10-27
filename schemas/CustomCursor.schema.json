@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/CustomCursor.schema.json",
   "title": "Custom cursor specification",
   "description": "Add ormodify acustom cursor",
   "type": "object",
@@ -17,18 +18,14 @@
         "SmallCursor": {
           "type": "string",
           "description": "Path for small cursor",
-          "examples": [
-            "UI/Cursors/BeaverAvatarCursorSmall"
-          ],
+          "examples": ["UI/Cursors/BeaverAvatarCursorSmall"],
           "minLength": 1,
           "pattern": "^[a-zA-Z0-9_-]+(\\/[a-zA-Z0-9_-]+)*$"
         },
         "LargeCursor": {
           "type": "string",
           "description": "Path for large cursor",
-          "examples": [
-            "UI/Cursors/BeaverAvatarCursorSmall"
-          ],
+          "examples": ["UI/Cursors/BeaverAvatarCursorSmall"],
           "minLength": 1,
           "pattern": "^[a-zA-Z0-9_-]+(\\/[a-zA-Z0-9_-]+)*$"
         },
@@ -47,10 +44,7 @@
               "default": 0
             }
           },
-          "required": [
-            "X",
-            "Y"
-          ]
+          "required": ["X", "Y"]
         },
         "SmallCursorOffset": {
           "type": "object",
@@ -67,10 +61,7 @@
               "default": 30
             }
           },
-          "required": [
-            "X",
-            "Y"
-          ]
+          "required": ["X", "Y"]
         },
         "LargeCursorOffset": {
           "type": "object",
@@ -87,10 +78,7 @@
               "default": 30
             }
           },
-          "required": [
-            "X",
-            "Y"
-          ]
+          "required": ["X", "Y"]
         }
       },
       "required": [
@@ -103,7 +91,5 @@
       ]
     }
   },
-  "required": [
-    "CustomCursorSpec"
-  ]
+  "required": ["CustomCursorSpec"]
 }

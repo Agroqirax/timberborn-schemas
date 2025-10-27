@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/KeyBinding.schema.json",
   "title": "KeyBinding specification",
   "description": "Add or modify a keybinding",
   "type": "object",
@@ -28,13 +29,9 @@
           "description": "Order in the group"
         }
       },
-      "required": [
-        "Id"
-      ],
+      "required": ["Id"],
       "minItems": 2
     }
   },
-  "required": [
-    "KeyBindingSpec"
-  ]
+  "required": ["KeyBindingSpec"]
 }

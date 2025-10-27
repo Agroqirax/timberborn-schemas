@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json.schemastore.org/schema-catalog.json",
+  "version": 1,
+  "schemas": [
+    {
+      "name": "Bonus type specification",
+      "description": "Add or modify a bonus type",
+      "fileMatch": [
+        "/Blueprints/BonusTypes/BonusType.*.json",
+        "/Data/Blueprints/BonusTypes/BonusType.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/BonusType.schema.json"
+    },
+    {
+      "name": "Custom cursor specification",
+      "description": "Add ormodify acustom cursor",
+      "fileMatch": [
+        "/Blueprints/CustomCursors/CustomCursor.*.json",
+        "/Data/Blueprints/CustomCursors/CustomCursor.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/CustomCursors.schema.json"
+    },
+    {
+      "name": "Faction specification",
+      "description": "Add or modify a faction",
+      "fileMatch": [
+        "/Blueprints/Factions/Faction.*.json",
+        "/Data/Blueprints/Factions/Faction.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Faction.schema.json"
+    },
+    {
+      "name": "Good specification",
+      "description": "Add or modify a good",
+      "fileMatch": [
+        "/Blueprints/Goods/Good.*.json",
+        "/Data/Blueprints/Goods/Good.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Good.schema.json"
+    },
+    {
+      "name": "Good group specification",
+      "description": "Add or modify agood group",
+      "fileMatch": [
+        "/Blueprints/GoodGroups/GoodGroup.*.json",
+        "/Data/Blueprints/GoodGroups/GoodGroup.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/GoodGroup.schema.json"
+    },
+    {
+      "name": "GoodVisualization specification",
+      "description": "Add or modify a goodvisualization",
+      "fileMatch": [
+        "/Blueprints/GoodVisualizations/GoodVisualization.*.json",
+        "/Data/Blueprints/GoodVisualizations/GoodVisualization.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/GoodVisualization.schema.json"
+    },
+    {
+      "name": "KeyBinding specification",
+      "description": "Add or modify a keybinding",
+      "fileMatch": [
+        "/Blueprints/KeyBindings/KeyBinding.*.json",
+        "/Data/Blueprints/KeyBindings/KeyBinding.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/KeyBinding.schema.json"
+    },
+    {
+      "name": "KeyBindingGroup specification",
+      "description": "Add or modify a keybindinggroup",
+      "fileMatch": [
+        "/Blueprints/KeyBindingGroups/KeyBindingGroup.*.json",
+        "/Data/Blueprints/KeyBindingGroups/KeyBindingGroup.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/KeyBindingGroup.schema.json"
+    },
+    {
+      "name": "Mod manifest",
+      "description": "Define a timberborn mod",
+      "fileMatch": ["/manifest.json"],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/manifest.schema.json"
+    },
+    {
+      "name": "MaterialGroup specification",
+      "description": "Add or modify a materialgroup",
+      "fileMatch": [
+        "/Blueprints/MaterialGroups/MaterialGroup.*.json",
+        "/Data/Blueprints/MaterialGroups/MaterialGroup.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/MaterialGroup.schema.json"
+    },
+    {
+      "name": "Need specification",
+      "description": "Add or modify a need",
+      "fileMatch": [
+        "/Blueprints/Needs/Need.*.json",
+        "/Data/Blueprints/Needs/Need.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Need.schema.json"
+    },
+    {
+      "name": "Needgroup specification",
+      "description": "Add or modify a needgroup",
+      "fileMatch": [
+        "/Blueprints/NeedGroups/NeedGroup.*.json",
+        "/Data/Blueprints/NeedGroups/NeedGroup.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/NeedGroup.schema.json"
+    },
+    {
+      "name": "Prefabgroup specification",
+      "description": "Add or modify a prefabgroup",
+      "fileMatch": [
+        "/Blueprints/PrefabGroups/PrefabGroup.*.*.json",
+        "/Data/Blueprints/PrefabGroups/PrefabGroup.*.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/PrefabGroup.schema.json"
+    },
+    {
+      "name": "Recipe specification",
+      "description": "Add or modify a recipe",
+      "fileMatch": [
+        "/Blueprints/Recipes/Recipe.*.json",
+        "/Data/Blueprints/Recipes/Recipe.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Recipe.schema.json"
+    },
+    {
+      "name": "Removeyieldstrategy specification",
+      "description": "Add or modify a removeyieldstrategy",
+      "fileMatch": [
+        "/Blueprints/RemoveYieldStrategies/RemoveYieldStrategy.*.json",
+        "/Data/Blueprints/RemoveYieldStrategies/RemoveYieldStrategy.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/RemoveYieldStrategy.schema.json"
+    },
+    {
+      "name": "Taildecal specification",
+      "description": "Add or modify a taildecal",
+      "fileMatch": [
+        "/Blueprints/TailDecals/TailDecal.*.*.json",
+        "/Data/Blueprints/TailDecals/TailDecal.*.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/TailDecal.schema.json"
+    },
+    {
+      "name": "Toolgroup specification",
+      "description": "Add or modify a toolgroup",
+      "fileMatch": [
+        "/Blueprints/ToolGroups/ToolGroup.*.json",
+        "/Data/Blueprints/ToolGroups/ToolGroup.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/ToolGroup.schema.json"
+    },
+    {
+      "name": "Wellbeingtier specification",
+      "description": "Add or modify a wellbeing tier",
+      "fileMatch": [
+        "/Blueprints/WellbeingTiers/WellbeingTier.*.json",
+        "/Data/Blueprints/WellbeingTiers/WellbeingTier.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/WellbeingTier.schema.json"
+    },
+    {
+      "name": "Workeroutfit specification",
+      "description": "Add or modify a worker outfit",
+      "fileMatch": [
+        "/Blueprints/WorkerOutfits/WorkerOutfit.*.*.json",
+        "/Data/Blueprints/WorkerOutfits/WorkerOutfit.*.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/WorkerOutfit.schema.json"
+    },
+    {
+      "name": "Workertype specification",
+      "description": "Add or modify a workertype",
+      "fileMatch": [
+        "/Blueprints/WorkerTypes/WorkerType.*.json",
+        "/Data/Blueprints/WorkerTypes/WorkerType.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/WorkerType.schema.json"
+    },
+    {
+      "name": "Workshop data",
+      "description": "Workshop data for steam workshop",
+      "fileMatch": ["/workshop_data.json", "/Data/workshop_data.json"],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/workshop_data.schema.json"
+    },
+    {
+      "name": "Yieldremovalchancebonus specification",
+      "description": "Add or modify a yieldremovalchancebonus",
+      "fileMatch": [
+        "/Blueprints/YieldRemovalChanceBonuses/YieldRemovalChanceBonus.*.json",
+        "/Data/Blueprints/YieldRemovalChanceBonuses/YieldRemovalChanceBonus.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/YieldRemovalChanceBonus.schema.json"
+    }
+  ]
+}

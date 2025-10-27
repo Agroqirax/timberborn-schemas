@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/PrefabGroup.schema.json",
   "title": "Prefabgroup specification",
   "description": "Add or modify a prefabgroup",
   "type": "object",
@@ -39,13 +40,9 @@
           }
         }
       },
-      "required": [
-        "Id"
-      ],
+      "required": ["Id"],
       "minItems": 2
     }
   },
-  "required": [
-    "PrefabGroupSpec"
-  ]
+  "required": ["PrefabGroupSpec"]
 }

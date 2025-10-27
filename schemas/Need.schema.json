@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Need.schema.json",
   "title": "Need specification",
   "description": "Add or modify a need",
   "type": "object",
@@ -57,10 +58,7 @@
         "CharacterType": {
           "type": "string",
           "description": "Character type",
-          "examples": [
-            "Beaver",
-            "Bot"
-          ],
+          "examples": ["Beaver", "Bot"],
           "minLength": 1,
           "pattern": "^[a-zA-Z0-9_-]+$"
         },
@@ -98,16 +96,11 @@
               "type": "string",
               "description": "Value",
               "default": "None",
-              "examples": [
-                "None",
-                "State"
-              ],
+              "examples": ["None", "State"],
               "minLength": 1
             }
           },
-          "required": [
-            "Value"
-          ]
+          "required": ["Value"]
         },
         "CriticalSpriteName": {
           "type": "string",
@@ -127,10 +120,7 @@
           "uniqueItems": true,
           "minItems": 1,
           "items": {
-            "required": [
-              "Id",
-              "MultiplierDelta"
-            ],
+            "required": ["Id", "MultiplierDelta"],
             "properties": {
               "Id": {
                 "type": "string",
@@ -151,10 +141,7 @@
           "uniqueItems": true,
           "minItems": 1,
           "items": {
-            "required": [
-              "Id",
-              "MultiplierDelta"
-            ],
+            "required": ["Id", "MultiplierDelta"],
             "properties": {
               "Id": {
                 "type": "string",
@@ -175,10 +162,7 @@
           "uniqueItems": true,
           "minItems": 1,
           "items": {
-            "required": [
-              "Id",
-              "MultiplierDelta"
-            ],
+            "required": ["Id", "MultiplierDelta"],
             "properties": {
               "Id": {
                 "type": "string",
@@ -210,9 +194,7 @@
           "description": "Unfavorable wellbeing"
         }
       },
-      "required": [
-        "Id"
-      ],
+      "required": ["Id"],
       "minItems": 2
     },
     "LethalNeedSpec": {
@@ -232,10 +214,9 @@
           "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
         }
       },
-      "required": [],
       "minItems": 1
     }
   },
-  "required": [],
+  "required": ["NeedSpec"],
   "minItems": 1
 }

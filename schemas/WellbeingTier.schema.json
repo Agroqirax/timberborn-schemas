@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/WellbeingTier.schema.json",
   "title": "Wellbeingtier specification",
   "description": "Add or modify a wellbeing tier",
   "type": "object",
@@ -11,11 +12,7 @@
         "CharacterType": {
           "type": "string",
           "description": "Charactert type",
-          "examples": [
-            "BeaverAdult",
-            "bot",
-            "BeaverChild"
-          ],
+          "examples": ["BeaverAdult", "bot", "BeaverChild"],
           "minLength": 1,
           "pattern": "^[a-zA-Z0-9_-]+$"
         },
@@ -41,10 +38,7 @@
                 "default": "Multiplier"
               }
             },
-            "required": [
-              "Wellbeing",
-              "Multiplier"
-            ]
+            "required": ["Wellbeing", "Multiplier"]
           }
         },
         "Bonuses#append": {
@@ -63,10 +57,7 @@
                 "default": "Multiplier"
               }
             },
-            "required": [
-              "Wellbeing",
-              "Multiplier"
-            ]
+            "required": ["Wellbeing", "Multiplier"]
           }
         },
         "Bonuses#remove": {
@@ -85,10 +76,7 @@
                 "default": "Multiplier"
               }
             },
-            "required": [
-              "Wellbeing",
-              "Multiplier"
-            ]
+            "required": ["Wellbeing", "Multiplier"]
           }
         },
         "WellbeingThreshold": {
@@ -103,7 +91,5 @@
       "minItems": 1
     }
   },
-  "required": [
-    "WellbeingTierSpec"
-  ]
+  "required": ["WellbeingTierSpec"]
 }

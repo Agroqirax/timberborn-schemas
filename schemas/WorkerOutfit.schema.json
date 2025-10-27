@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/WorkerOutfit.schema.json",
   "title": "Workeroutfit specification",
   "description": "Add or modify a worker outfit",
   "type": "object",
@@ -17,20 +18,14 @@
         "FactionId": {
           "type": "string",
           "description": "Faction ID",
-          "examples": [
-            "Folktails",
-            "IronTeeth"
-          ],
+          "examples": ["Folktails", "IronTeeth"],
           "minLength": 1,
           "pattern": "^[a-zA-Z0-9_-]+$"
         },
         "WorkerType": {
           "type": "string",
           "description": "Worker type",
-          "examples": [
-            "Beaver",
-            "Bot"
-          ],
+          "examples": ["Beaver", "Bot"],
           "minLength": 1,
           "pattern": "^[a-zA-Z0-9_-]+$"
         },
@@ -71,13 +66,9 @@
           }
         }
       },
-      "required": [
-        "Id"
-      ],
+      "required": ["Id"],
       "minItems": 2
     }
   },
-  "required": [
-    "WorkerOutfitSpec"
-  ]
+  "required": ["WorkerOutfitSpec"]
 }

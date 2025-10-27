@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/manifest.schema.json",
   "title": "Mod manifest",
   "description": "Define a timberborn mod",
   "type": "object",
@@ -46,7 +47,7 @@
       "type": "array",
       "description": "Required mods",
       "uniqueItems": true,
-      "minItems": 0,
+      "minItems": 1,
       "items": {
         "description": "Mod",
         "properties": {
@@ -65,16 +66,14 @@
             "pattern": "^[0-9]+(\\.[0-9]+)*$"
           }
         },
-        "required": [
-          "Id"
-        ]
+        "required": ["Id"]
       }
     },
     "OptionalMods": {
       "type": "array",
       "description": "Optional mods, get loaded first if installed",
       "uniqueItems": true,
-      "minItems": 0,
+      "minItems": 1,
       "items": {
         "description": "Mod",
         "properties": {
@@ -93,17 +92,9 @@
             "pattern": "^[0-9]+(\\.[0-9]+)*$"
           }
         },
-        "required": [
-          "Id"
-        ]
+        "required": ["Id"]
       }
     }
   },
-  "required": [
-    "Name",
-    "Version",
-    "Id",
-    "MinimumGameVersion",
-    "Description"
-  ]
+  "required": ["Name", "Version", "Id", "MinimumGameVersion", "Description"]
 }

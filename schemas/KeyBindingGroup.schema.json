@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/KeyBindingGroup.schema.json",
   "title": "KeyBindingGroup specification",
   "description": "Add or modify a keybindinggroup",
   "type": "object",
@@ -25,13 +26,9 @@
           "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
         }
       },
-      "required": [
-        "Id"
-      ],
+      "required": ["Id"],
       "minItems": 2
     }
   },
-  "required": [
-    "KeyBindingGroupSpec"
-  ]
+  "required": ["KeyBindingGroupSpec"]
 }

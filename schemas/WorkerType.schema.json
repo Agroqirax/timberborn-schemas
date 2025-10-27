@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/WorkerType.schema.json",
   "title": "Workertype specification",
   "description": "Add or modify a workertype",
   "type": "object",
@@ -40,13 +41,9 @@
           "default": false
         }
       },
-      "required": [
-        "Id"
-      ],
+      "required": ["Id"],
       "minItems": 2
     }
   },
-  "required": [
-    "WorkerTypeSpec"
-  ]
+  "required": ["WorkerTypeSpec"]
 }

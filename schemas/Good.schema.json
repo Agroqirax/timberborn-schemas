@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Good.schema.json",
   "title": "Good specification",
   "description": "Add or modify a good",
   "type": "object",
@@ -380,10 +381,7 @@
                 "default": 0.3
               }
             },
-            "required": [
-              "NeedId",
-              "Points"
-            ]
+            "required": ["NeedId", "Points"]
           },
           "uniqueItems": true
         },
@@ -472,10 +470,7 @@
                 "default": 0.3
               }
             },
-            "required": [
-              "NeedId",
-              "Points"
-            ]
+            "required": ["NeedId", "Points"]
           },
           "uniqueItems": true
         },
@@ -564,31 +559,20 @@
                 "default": 0.3
               }
             },
-            "required": [
-              "NeedId",
-              "Points"
-            ]
+            "required": ["NeedId", "Points"]
           },
           "uniqueItems": true
         },
         "GoodType": {
           "type": "string",
           "description": "Good type",
-          "enum": [
-            "Box",
-            "Liquid",
-            "Pileable"
-          ],
+          "enum": ["Box", "Liquid", "Pileable"],
           "minLength": 1
         },
         "StockpileVisualization": {
           "type": "string",
           "description": "Good visualisation",
-          "enum": [
-            "Box",
-            "Liquid",
-            "Pileable"
-          ],
+          "enum": ["Box", "Liquid", "Pileable"],
           "minLength": 1
         },
         "VisibleContainer": {
@@ -598,16 +582,11 @@
             "Value": {
               "type": "string",
               "description": "Carry visualisation",
-              "examples": [
-                "Box",
-                "Barrel"
-              ],
+              "examples": ["Box", "Barrel"],
               "minLength": 1
             }
           },
-          "required": [
-            "Value"
-          ]
+          "required": ["Value"]
         },
         "ContainerColor": {
           "type": "string",
@@ -619,10 +598,7 @@
         "CarryingAnimation": {
           "type": "string",
           "description": "Carrying animation",
-          "examples": [
-            "CarryInHands",
-            "CarryOnArm"
-          ],
+          "examples": ["CarryInHands", "CarryOnArm"],
           "default": "CarryInHands",
           "minLength": 1
         },
@@ -634,13 +610,7 @@
         "GoodGroupId": {
           "type": "string",
           "description": "Good group ID\nDefined in GoodGroups/GoodGroup.GROUP.json",
-          "examples": [
-            "Food",
-            "Ingredients",
-            "Log",
-            "Materials",
-            "Water"
-          ],
+          "examples": ["Food", "Ingredients", "Log", "Materials", "Water"],
           "minLength": 1
         },
         "Icon": {
@@ -655,13 +625,9 @@
           "default": ""
         }
       },
-      "required": [
-        "Id"
-      ],
+      "required": ["Id"],
       "minItems": 2
     }
   },
-  "required": [
-    "GoodSpec"
-  ]
+  "required": ["GoodSpec"]
 }

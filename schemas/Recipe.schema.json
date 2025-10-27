@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Recipe.schema.json",
   "title": "Recipe specification",
   "description": "Add or modify a recipe",
   "type": "object",
@@ -37,10 +38,7 @@
           "minItems": 1,
           "items": {
             "description": "Ingredient",
-            "required": [
-              "Id",
-              "Amount"
-            ],
+            "required": ["Id", "Amount"],
             "properties": {
               "Id": {
                 "type": "string",
@@ -122,10 +120,7 @@
           "minItems": 1,
           "items": {
             "description": "Ingredient",
-            "required": [
-              "Id",
-              "Amount"
-            ],
+            "required": ["Id", "Amount"],
             "properties": {
               "Id": {
                 "type": "string",
@@ -207,10 +202,7 @@
           "minItems": 1,
           "items": {
             "description": "Ingredient",
-            "required": [
-              "Id",
-              "Amount"
-            ],
+            "required": ["Id", "Amount"],
             "properties": {
               "Id": {
                 "type": "string",
@@ -292,10 +284,7 @@
           "minItems": 1,
           "items": {
             "description": "Product",
-            "required": [
-              "Id",
-              "Amount"
-            ],
+            "required": ["Id", "Amount"],
             "properties": {
               "Id": {
                 "type": "string",
@@ -377,10 +366,7 @@
           "minItems": 1,
           "items": {
             "description": "Product",
-            "required": [
-              "Id",
-              "Amount"
-            ],
+            "required": ["Id", "Amount"],
             "properties": {
               "Id": {
                 "type": "string",
@@ -462,10 +448,7 @@
           "minItems": 1,
           "items": {
             "description": "Product",
-            "required": [
-              "Id",
-              "Amount"
-            ],
+            "required": ["Id", "Amount"],
             "properties": {
               "Id": {
                 "type": "string",
@@ -626,13 +609,9 @@
           "pattern": "^[a-zA-Z0-9_-]+(\\/[a-zA-Z0-9_-]+)*$"
         }
       },
-      "required": [
-        "Id"
-      ],
+      "required": ["Id"],
       "minItems": 2
     }
   },
-  "required": [
-    "RecipeSpec"
-  ]
+  "required": ["RecipeSpec"]
 }

@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Factiont.schema.json",
   "title": "Faction specification",
   "description": "Add or modify a faction",
   "type": "object",
@@ -11,10 +12,7 @@
         "Id": {
           "type": "string",
           "description": "ID of the faction to be modified",
-          "examples": [
-            "Folktails",
-            "IronTeeth"
-          ],
+          "examples": ["Folktails", "IronTeeth"],
           "minLength": 1,
           "pattern": "^[a-zA-Z0-9_-]+$"
         },
@@ -211,10 +209,7 @@
             "description": "Material group ID",
             "pattern": "^[a-zA-Z0-9_-]+$"
           },
-          "examples": [
-            "Folktails",
-            "IronTeeth"
-          ],
+          "examples": ["Folktails", "IronTeeth"],
           "uniqueItems": true,
           "minItems": 1
         },
@@ -226,10 +221,7 @@
             "description": "Material group ID",
             "pattern": "^[a-zA-Z0-9_-]+$"
           },
-          "examples": [
-            "Folktails",
-            "IronTeeth"
-          ],
+          "examples": ["Folktails", "IronTeeth"],
           "uniqueItems": true,
           "minItems": 1
         },
@@ -241,10 +233,7 @@
             "description": "Material group ID",
             "pattern": "^[a-zA-Z0-9_-]+$"
           },
-          "examples": [
-            "Folktails",
-            "IronTeeth"
-          ],
+          "examples": ["Folktails", "IronTeeth"],
           "uniqueItems": true,
           "minItems": 1
         },
@@ -816,19 +805,14 @@
         "StartingBuildingId": {
           "type": "string",
           "description": "District center building ID",
-          "examples": [
-            "DistrictCenter.Folktails",
-            "DistrictCenter.IronTeeth"
-          ],
+          "examples": ["DistrictCenter.Folktails", "DistrictCenter.IronTeeth"],
           "minLength": 1,
           "pattern": "^[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_-]+$"
         },
         "SoundId": {
           "type": "string",
           "description": "Faction sounds",
-          "examples": [
-            "Common"
-          ],
+          "examples": ["Common"],
           "default": "Common",
           "minLength": 1,
           "pattern": "^[a-zA-Z0-9_-]+$"
@@ -836,10 +820,7 @@
         "BotId": {
           "type": "string",
           "description": "Bot ID",
-          "examples": [
-            "Bot.Folktails",
-            "Bot.IronTeeth"
-          ],
+          "examples": ["Bot.Folktails", "Bot.IronTeeth"],
           "minLength": 1,
           "pattern": "^[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_-]+$"
         },
@@ -864,9 +845,7 @@
           "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
         }
       },
-      "required": [
-        "Id"
-      ],
+      "required": ["Id"],
       "minItems": 2
     },
     "UnlockableFactionSpec": {
@@ -876,10 +855,7 @@
         "PrerequisiteFaction": {
           "type": "string",
           "description": "Reference faction for wellbeing unlock\nLeave empty to unlock by default",
-          "examples": [
-            "Folktails",
-            "IronTeeth"
-          ],
+          "examples": ["Folktails", "IronTeeth"],
           "pattern": "^[a-zA-Z0-9_-]*$",
           "minLength": 1
         },
@@ -888,10 +864,7 @@
           "description": "Average wellbeing to unlock"
         }
       },
-      "required": [
-        "PrerequisiteFaction",
-        "AverageWellbeingToUnlock"
-      ]
+      "required": ["PrerequisiteFaction", "AverageWellbeingToUnlock"]
     },
     "FactionWonderSpec": {
       "type": "object",
@@ -946,7 +919,5 @@
       ]
     }
   },
-  "required": [
-    "FactionSpec"
-  ]
+  "required": ["FactionSpec"]
 }

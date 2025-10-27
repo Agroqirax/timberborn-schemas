@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/GoodGroup.schema.json",
   "title": "Good group specification",
   "description": "Add or modify agood group",
   "type": "object",
@@ -11,13 +12,7 @@
         "Id": {
           "type": "string",
           "description": "ID of the good group to be modified",
-          "examples": [
-            "Food",
-            "Ingredients",
-            "Log",
-            "Materials",
-            "Water"
-          ],
+          "examples": ["Food", "Ingredients", "Log", "Materials", "Water"],
           "minLength": 1,
           "pattern": "^[a-zA-Z0-9_-]+$"
         },
@@ -56,13 +51,9 @@
           "description": "Group with single resource"
         }
       },
-      "required": [
-        "Id"
-      ],
+      "required": ["Id"],
       "minItems": 2
     }
   },
-  "required": [
-    "GoodGroupSpec"
-  ]
+  "required": ["GoodGroupSpec"]
 }

@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/ToolGroup.schema.json",
   "title": "Toolgroup specification",
   "description": "Add or modify a toolgroup",
   "type": "object",
@@ -37,13 +38,9 @@
           "default": false
         }
       },
-      "required": [
-        "Id"
-      ],
+      "required": ["Id"],
       "minItems": 2
     }
   },
-  "required": [
-    "ToolGroupSpec"
-  ]
+  "required": ["ToolGroupSpec"]
 }
