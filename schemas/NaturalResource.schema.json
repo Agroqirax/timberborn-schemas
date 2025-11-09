@@ -46,7 +46,7 @@
             }
           },
           "required": ["BlockSpecs", "Size"],
-          "title": "Blocks spec"
+          "title": "Blocks specification"
         },
         "Entrance": {
           "type": "object",
@@ -104,7 +104,7 @@
         "Flippable",
         "Overridable"
       ],
-      "title": "Block object spec"
+      "title": "Block object specification"
     },
     "TemplateSpec": {
       "type": "object",
@@ -169,7 +169,7 @@
         "RequiredFeatureToggle",
         "TemplateName"
       ],
-      "title": "Template spec"
+      "title": "Template specification"
     },
     "NaturalResourceSpec": {
       "type": "object",
@@ -180,11 +180,11 @@
         }
       },
       "required": ["Order"],
-      "title": "Natural resource spec"
+      "title": "Natural resource specification"
     },
     "BushSpec": {
       "type": "object",
-      "title": "Bush spec"
+      "title": "Bush specification"
     },
     "GrowableSpec": {
       "type": "object",
@@ -199,7 +199,7 @@
         }
       },
       "required": ["GrowthTimeInDays"],
-      "title": "Growable spec"
+      "title": "Growable specification"
     },
     "BasicSelectionSoundSpec": {
       "type": "object",
@@ -218,7 +218,7 @@
         }
       },
       "required": ["AlternativeSoundName", "SoundName"],
-      "title": "Basic selection sound spec"
+      "title": "Basic selection sound specification"
     },
     "DemolishableSpec": {
       "type": "object",
@@ -237,7 +237,7 @@
         }
       },
       "required": ["DemolishTimeInHours", "ShowDemolishButtonInEntityPanel"],
-      "title": "Demolishable spec"
+      "title": "Demolishable specification"
     },
     "GatherableSpec": {
       "type": "object",
@@ -298,11 +298,11 @@
             "Yield",
             "YielderComponentName"
           ],
-          "title": "Yielder spec"
+          "title": "Yielder specification"
         }
       },
       "required": ["YieldGrowthTimeInDays", "YielderSpec"],
-      "title": "Gatherable spec"
+      "title": "Gatherable specification"
     },
     "PlantableSpec": {
       "type": "object",
@@ -321,7 +321,7 @@
         }
       },
       "required": ["PlantTimeInHours", "ResourceGroup"],
-      "title": "Plantable spec"
+      "title": "Plantable specification"
     },
     "PlantablePreviewModelSpec": {
       "type": "object",
@@ -355,7 +355,7 @@
         }
       },
       "required": ["Model"],
-      "title": "Plantable preview model spec"
+      "title": "Plantable preview model specification"
     },
     "ReproducibleSpec": {
       "type": "object",
@@ -368,7 +368,7 @@
         }
       },
       "required": ["ReproductionChance"],
-      "title": "Reproducible spec"
+      "title": "Reproducible specification"
     },
     "WateredNaturalResourceSpec": {
       "type": "object",
@@ -383,7 +383,7 @@
         }
       },
       "required": ["DaysToDieDry"],
-      "title": "Watered natural resource spec"
+      "title": "Watered natural resource specification"
     },
     "LabeledEntitySpec": {
       "type": "object",
@@ -482,7 +482,7 @@
         "FlavorDescriptionLocKey",
         "Icon"
       ],
-      "title": "Labeled entity spec"
+      "title": "Labeled entity specification"
     },
     "FloodableNaturalResourceSpec": {
       "type": "object",
@@ -505,7 +505,7 @@
         }
       },
       "required": ["DaysToDie", "MaxWaterHeight", "MinWaterHeight"],
-      "title": "Floodable natural resource spec"
+      "title": "Floodable natural resource specification"
     },
     "NaturalResourceModelRandomizerSpec": {
       "type": "object",
@@ -569,11 +569,11 @@
         "MinWidthScaleFactor",
         "RandomizedRotation"
       ],
-      "title": "Natural resource model randomizer spec"
+      "title": "Natural resource model randomizer specification"
     },
     "ContaminatedNaturalResourceSpec": {
       "type": "object",
-      "title": "Contaminated natural resource spec"
+      "title": "Contaminated natural resource specification"
     },
     "BlockObjectModelSpec": {
       "type": "object",
@@ -607,7 +607,7 @@
         "UndergroundModelDepth",
         "UndergroundModelName"
       ],
-      "title": "Block object model spec"
+      "title": "Block object model specification"
     },
     "Children": {
       "type": "object",
@@ -659,7 +659,7 @@
                                 }
                               },
                               "required": ["Model"],
-                              "title": "Timbermesh spec"
+                              "title": "Timbermesh specification"
                             },
                             "CollidersSpec": {
                               "type": "object",
@@ -712,7 +712,7 @@
                                 "CapsuleColliders",
                                 "SphereColliders"
                               ],
-                              "title": "Colliders spec"
+                              "title": "Colliders specification"
                             }
                           },
                           "required": ["CollidersSpec", "TimbermeshSpec"],
@@ -753,7 +753,7 @@
                                 }
                               },
                               "required": ["Model"],
-                              "title": "Timbermesh spec"
+                              "title": "Timbermesh specification"
                             },
                             "CollidersSpec": {
                               "type": "object",
@@ -806,7 +806,7 @@
                                 "CapsuleColliders",
                                 "SphereColliders"
                               ],
-                              "title": "Colliders spec"
+                              "title": "Colliders specification"
                             }
                           },
                           "required": ["CollidersSpec", "TimbermeshSpec"],
@@ -847,7 +847,7 @@
                                 }
                               },
                               "required": ["Model"],
-                              "title": "Timbermesh spec"
+                              "title": "Timbermesh specification"
                             },
                             "CollidersSpec": {
                               "type": "object",
@@ -900,7 +900,7 @@
                                 "CapsuleColliders",
                                 "SphereColliders"
                               ],
-                              "title": "Colliders spec"
+                              "title": "Colliders specification"
                             }
                           },
                           "required": ["CollidersSpec", "TimbermeshSpec"],
@@ -955,7 +955,7 @@
                                 }
                               },
                               "required": ["Model"],
-                              "title": "Timbermesh spec"
+                              "title": "Timbermesh specification"
                             },
                             "CollidersSpec": {
                               "type": "object",
@@ -1008,7 +1008,7 @@
                                 "CapsuleColliders",
                                 "SphereColliders"
                               ],
-                              "title": "Colliders spec"
+                              "title": "Colliders specification"
                             }
                           },
                           "required": ["CollidersSpec", "TimbermeshSpec"],
@@ -1049,7 +1049,7 @@
                                 }
                               },
                               "required": ["Model"],
-                              "title": "Timbermesh spec"
+                              "title": "Timbermesh specification"
                             },
                             "CollidersSpec": {
                               "type": "object",
@@ -1102,7 +1102,7 @@
                                 "CapsuleColliders",
                                 "SphereColliders"
                               ],
-                              "title": "Colliders spec"
+                              "title": "Colliders specification"
                             }
                           },
                           "required": ["CollidersSpec", "TimbermeshSpec"],
@@ -1143,7 +1143,7 @@
                                 }
                               },
                               "required": ["Model"],
-                              "title": "Timbermesh spec"
+                              "title": "Timbermesh specification"
                             },
                             "CollidersSpec": {
                               "type": "object",
@@ -1196,7 +1196,7 @@
                                 "CapsuleColliders",
                                 "SphereColliders"
                               ],
-                              "title": "Colliders spec"
+                              "title": "Colliders specification"
                             }
                           },
                           "required": ["TimbermeshSpec"],
@@ -1230,7 +1230,7 @@
                         }
                       },
                       "required": ["Model"],
-                      "title": "Timbermesh spec"
+                      "title": "Timbermesh specification"
                     },
                     "CollidersSpec": {
                       "type": "object",
@@ -1283,7 +1283,7 @@
                         "CapsuleColliders",
                         "SphereColliders"
                       ],
-                      "title": "Colliders spec"
+                      "title": "Colliders specification"
                     }
                   },
                   "required": ["CollidersSpec", "TimbermeshSpec"],
@@ -1303,7 +1303,7 @@
     },
     "CropSpec": {
       "type": "object",
-      "title": "Crop spec"
+      "title": "Crop specification"
     },
     "CuttableSpec": {
       "type": "object",
@@ -1379,19 +1379,19 @@
             "Yield",
             "YielderComponentName"
           ],
-          "title": "Yielder spec"
+          "title": "Yielder specification"
         }
       },
       "required": ["LeftoverModelName", "RemoveOnCut", "YielderSpec"],
-      "title": "Cuttable spec"
+      "title": "Cuttable specification"
     },
     "CuttableYieldGoodIdProviderSpec": {
       "type": "object",
-      "title": "Cuttable yield good id provider spec"
+      "title": "Cuttable yield good id provider specification"
     },
     "TreeComponentSpec": {
       "type": "object",
-      "title": "Tree component spec"
+      "title": "Tree component specification"
     },
     "TreeCuttingRadiusSpec": {
       "type": "object",
@@ -1403,7 +1403,7 @@
         }
       },
       "required": ["Radius"],
-      "title": "Tree cutting radius spec"
+      "title": "Tree cutting radius specification"
     }
   },
   "$defs": {
