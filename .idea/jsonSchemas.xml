@@ -3,6 +3,22 @@
   <component name="JsonSchemaMappingsProjectConfiguration">
     <state>
       <map>
+        <entry key="Asset meta specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema"/>
+              <option name="name" value="Asset meta specification"/>
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/asset.schema.json"/>
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/**/*.meta.json"/>
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
         <entry key="Bonus type specification">
           <value>
             <SchemaInfo>

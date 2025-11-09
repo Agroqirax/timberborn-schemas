@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/asset.schema.json",
+  "title": "Asset meta specification",
+  "description": "Specify how an asset should be loaded by the game\n<https://github.com/mechanistry/timberborn-modding/wiki/Assets>",
+  "type": "object",
+  "properties": {
+    "isSprite": {
+      "type": "boolean",
+      "title": "Is sprite",
+      "default": false
+    },
+    "isNormalMap": {
+      "type": "boolean",
+      "title": "Is normal map",
+      "default": false
+    },
+    "linear": {
+      "type": "boolean",
+      "title": "Linear",
+      "default": false
+    },
+    "generateMipmap": {
+      "type": "boolean",
+      "title": "Generate mipmap",
+      "default": true
+    },
+    "mipmapCount": {
+      "type": "number",
+      "title": "Mipmap count",
+      "default": -1
+    },
+    "ignoreMipmapLimits": {
+      "type": "boolean",
+      "title": "Ignore mipmap limits",
+      "default": true
+    },
+    "filterMode": {
+      "type": "string",
+      "title": "Filter mode",
+      "default": "Trilinear",
+      "minLength": 1
+    },
+    "wrapMode": {
+      "type": "string",
+      "title": "Wrap mode",
+      "default": "Repeat",
+      "minLength": 1
+    },
+    "textureFormat": {
+      "type": "string",
+      "title": "Texture format",
+      "default": "RGB32",
+      "minLength": 1
+    },
+    "anisoLevel": {
+      "type": "number",
+      "title": "Aniso level",
+      "default": 16
+    },
+    "width": {
+      "type": "number",
+      "title": "Width",
+      "default": 1
+    },
+    "height": {
+      "type": "number",
+      "title": "Height",
+      "default": 1
+    }
+  }
+}

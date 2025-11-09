@@ -1,6 +1,10 @@
 {
   "json.schemas": [
     {
+      "fileMatch": ["/**/*.meta.json"],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/asset.schema.json"
+    },
+    {
       "fileMatch": [
         "/Blueprints/BonusTypes/BonusType.*.json",
         "/Data/Blueprints/BonusTypes/BonusType.*.json"
@@ -71,9 +75,7 @@
       "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/KeyBindingGroup.schema.json"
     },
     {
-      "fileMatch": [
-        "/manifest.json"
-      ],
+      "fileMatch": ["/manifest.json"],
       "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/manifest.schema.json"
     },
     {
@@ -154,10 +156,7 @@
       "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/WorkerType.schema.json"
     },
     {
-      "fileMatch": [
-        "/workshop_data.json",
-        "/Data/workshop_data.json"
-      ],
+      "fileMatch": ["/workshop_data.json", "/Data/workshop_data.json"],
       "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/workshop_data.schema.json"
     },
     {

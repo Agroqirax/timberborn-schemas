@@ -2,7 +2,7 @@
 
 # Extract blueprints from assetripper export .asset files & save them as json files while preserving the directory structure
 # 
-# Usage: python scripts/fetch-exports.py /path/to/export
+# Usage: python scripts/fetch-exports.py /path/to/export /path/to/output
 # 
 # Use an environment:
 # python -m venv .venv
@@ -27,55 +27,37 @@ def unknown_constructor(loader, tag_suffix, node):
 
 UnityYAMLLoader.add_multi_constructor('tag:unity3d.com,2011:', unknown_constructor)
 
-if len(sys.argv) != 2:
-    print("[\033[31m✗\033[0m] Usage: python scripts/fetch-exports.py /path/to/export")
+if len(sys.argv) != 3:
+    print("[\033[31m✗\033[0m] Usage: python scripts/fetch-exports.py /path/to/export /path/to/output")
     sys.exit(1)
 
-base_path = os.path.abspath(sys.argv[1])
-export_base = os.path.abspath("./exports/Data")
+input_base, output_base = sys.argv[1], sys.argv[2]
 
-search_dirs = [
-    os.path.join(base_path, "ExportedProject/Assets/Resources/blueprints"),
-    os.path.join(base_path, "ExportedProject/Assets/Resources/buildings"),
-]
+for root, _, files in os.walk(input_base):
+    for file in files:
+        if not file.endswith(".blueprint.asset"):
+            continue
 
-for search_dir in search_dirs:
-    if not os.path.isdir(search_dir):
-        continue
+        src_path = os.path.join(root, file)
 
-    for root, _, files in os.walk(search_dir):
-        for file in files:
-            if not file.endswith(".blueprint.asset"):
-                continue
+        with open(src_path, "r", encoding="utf-8") as f:
+            yaml_data = yaml.load(f, Loader=UnityYAMLLoader)
 
-            src_path = os.path.join(root, file)
-            try:
-                with open(src_path, "r", encoding="utf-8") as f:
-                    yaml_data = yaml.load(f, Loader=UnityYAMLLoader)
+        mono = yaml_data.get("MonoBehaviour", {})
+        content = mono.get("_content", "")
 
-                mono = yaml_data.get("MonoBehaviour", {})
-                content = mono.get("_content", "")
+        json_data = json.loads(content)
 
-                if not content:
-                    print(f"[\033[33m⚠\033[0m] Skipped (no _content): {file}")
-                    continue
+        if "Resources" in src_path:
+            rel_from_resources = src_path.split("Resources" + os.sep, 1)[1]
+        else:
+            rel_from_resources = os.path.basename(src_path)
 
-                json_data = json.loads(content)
+        json_rel_path = os.path.splitext(rel_from_resources)[0] + ".json"
+        export_path = os.path.join(output_base, json_rel_path)
 
-                if "Resources" in src_path:
-                    rel_from_resources = src_path.split("Resources" + os.sep, 1)[1]
-                else:
-                    rel_from_resources = os.path.basename(src_path)
+        os.makedirs(os.path.dirname(export_path), exist_ok=True)
+        with open(export_path, "w", encoding="utf-8") as out:
+            json.dump(json_data, out, indent=2, ensure_ascii=False)
 
-                json_rel_path = os.path.splitext(rel_from_resources)[0] + ".json"
-                export_path = os.path.join(export_base, json_rel_path)
-
-                os.makedirs(os.path.dirname(export_path), exist_ok=True)
-                with open(export_path, "w", encoding="utf-8") as out:
-                    json.dump(json_data, out, indent=2, ensure_ascii=False)
-
-                print(f"[\033[32m✓\033[0m] Wrote: {file}")
-
-            except Exception as e:
-                print(f"[\033[31m✗\033[0m] {file}: {e}")
-
+        print(f"[\033[32m✓\033[0m] Wrote: {file}")
