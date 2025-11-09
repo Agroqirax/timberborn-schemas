@@ -12,8 +12,26 @@
       "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/BonusType.schema.json"
     },
     {
+      "name": "Buildings specification",
+      "description": "Add or modify a building",
+      "fileMatch": [
+        "/Buildings/*/*/*.*.blueprint.json",
+        "/Data/Buildings/*/*/*.*.blueprint.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Building.schema.json"
+    },
+    {
+      "name": "Configuration specification",
+      "description": "Add or modify a configuration",
+      "fileMatch": [
+        "/Blueprints/Configurations/*.blueprint.json",
+        "/Data/Blueprints/Configurations/*.blueprint.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Configuration.schema.json"
+    },
+    {
       "name": "Custom cursor specification",
-      "description": "Add ormodify acustom cursor",
+      "description": "Add or modify a custom cursor",
       "fileMatch": [
         "/Blueprints/CustomCursors/CustomCursor.*.json",
         "/Data/Blueprints/CustomCursors/CustomCursor.*.json"
@@ -77,7 +95,9 @@
     {
       "name": "Mod manifest",
       "description": "Define a timberborn mod",
-      "fileMatch": ["/manifest.json"],
+      "fileMatch": [
+        "/manifest.json"
+      ],
       "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/manifest.schema.json"
     },
     {
@@ -182,7 +202,10 @@
     {
       "name": "Workshop data",
       "description": "Workshop data for steam workshop",
-      "fileMatch": ["/workshop_data.json", "/Data/workshop_data.json"],
+      "fileMatch": [
+        "/workshop_data.json",
+        "/Data/workshop_data.json"
+      ],
       "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/workshop_data.schema.json"
     },
     {

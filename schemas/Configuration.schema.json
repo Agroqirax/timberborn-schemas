@@ -1,0 +1,5819 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Configuration.schema.json",
+  "title": "Configuration specification",
+  "description": "Add or modify a configuration",
+  "type": "object",
+  "properties": {
+    "MigrationCoordinatorSpec": {
+      "type": "object",
+      "properties": {
+        "MaxAutomaticMigration": {
+          "type": "integer",
+          "title": "Max automatic migration"
+        }
+      },
+      "required": ["MaxAutomaticMigration"],
+      "title": "Migration coordinator specification"
+    },
+    "EdgePanningCameraTargetPickerSpec": {
+      "type": "object",
+      "properties": {
+        "MinBaseSpeed": {
+          "type": "number",
+          "title": "Min base speed",
+          "examples": [17.0],
+          "default": 17.0
+        },
+        "MaxBaseSpeed": {
+          "type": "number",
+          "title": "Max base speed",
+          "examples": [70.0],
+          "default": 70.0
+        },
+        "FastMovementSpeedBonus": {
+          "type": "number",
+          "title": "Fast movement speed bonus",
+          "examples": [45.0],
+          "default": 45.0
+        }
+      },
+      "required": ["FastMovementSpeedBonus", "MaxBaseSpeed", "MinBaseSpeed"],
+      "title": "Edge panning camera target picker specification"
+    },
+    "TickTimeSpec": {
+      "type": "object",
+      "properties": {
+        "TickIntervalInSeconds": {
+          "type": "number",
+          "title": "Tick interval in seconds",
+          "examples": [0.6],
+          "default": 0.6
+        }
+      },
+      "required": ["TickIntervalInSeconds"],
+      "title": "Tick time specification"
+    },
+    "LifeServiceSpec": {
+      "type": "object",
+      "properties": {
+        "AverageLifespan": {
+          "type": "integer",
+          "title": "Average lifespan"
+        },
+        "DaysOfChildhood": {
+          "type": "integer",
+          "title": "Days of childhood"
+        }
+      },
+      "required": ["AverageLifespan", "DaysOfChildhood"],
+      "title": "Life service specification"
+    },
+    "NaturalResourceBrushSpec": {
+      "type": "object",
+      "properties": {
+        "RemovalTileColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.7],
+              "default": 0.7
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [0.7],
+              "default": 0.7
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Removal tile color"
+        },
+        "SpawnTileColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.9],
+              "default": 0.9
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.9],
+              "default": 0.9
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.1],
+              "default": 0.1
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [0.8],
+              "default": 0.8
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Spawn tile color"
+        },
+        "DefaultNaturalResourceId": {
+          "type": "string",
+          "title": "Default natural resource id",
+          "examples": ["Birch"],
+          "default": "Birch"
+        }
+      },
+      "required": [
+        "DefaultNaturalResourceId",
+        "RemovalTileColor",
+        "SpawnTileColor"
+      ],
+      "title": "Natural resource brush specification"
+    },
+    "AutosaverSpec": {
+      "type": "object",
+      "properties": {
+        "AutosavesPerSettlement": {
+          "type": "integer",
+          "title": "Autosaves per settlement"
+        },
+        "FrequencyInMinutes": {
+          "type": "number",
+          "title": "Frequency in minutes",
+          "examples": [10.0],
+          "default": 10.0
+        }
+      },
+      "required": ["AutosavesPerSettlement", "FrequencyInMinutes"],
+      "title": "Autosaver specification"
+    },
+    "DrivewayModelInstantiatorSpec": {
+      "type": "object",
+      "properties": {
+        "NarrowLeftDrivewayPrefab": {
+          "type": "string",
+          "title": "Narrow left driveway prefab",
+          "examples": ["Buildings/Paths/Path/DirtDrivewayNarrowLeft"],
+          "default": "Buildings/Paths/Path/DirtDrivewayNarrowLeft"
+        },
+        "NarrowCenterDrivewayPrefab": {
+          "type": "string",
+          "title": "Narrow center driveway prefab",
+          "examples": ["Buildings/Paths/Path/DirtDrivewayNarrowCenter"],
+          "default": "Buildings/Paths/Path/DirtDrivewayNarrowCenter"
+        },
+        "NarrowRightDrivewayPrefab": {
+          "type": "string",
+          "title": "Narrow right driveway prefab",
+          "examples": ["Buildings/Paths/Path/DirtDrivewayNarrowRight"],
+          "default": "Buildings/Paths/Path/DirtDrivewayNarrowRight"
+        },
+        "WideCenterDrivewayPrefab": {
+          "type": "string",
+          "title": "Wide center driveway prefab",
+          "examples": ["Buildings/Paths/Path/DirtDrivewayWideCenter"],
+          "default": "Buildings/Paths/Path/DirtDrivewayWideCenter"
+        },
+        "LongCenterDrivewayPrefab": {
+          "type": "string",
+          "title": "Long center driveway prefab",
+          "examples": ["Buildings/Paths/Path/DirtDrivewayLongCenter"],
+          "default": "Buildings/Paths/Path/DirtDrivewayLongCenter"
+        },
+        "StraightPathDrivewayPrefab": {
+          "type": "string",
+          "title": "Straight path driveway prefab",
+          "examples": ["Buildings/Paths/Path/DirtDrivewayStraightPath"],
+          "default": "Buildings/Paths/Path/DirtDrivewayStraightPath"
+        }
+      },
+      "required": [
+        "LongCenterDrivewayPrefab",
+        "NarrowCenterDrivewayPrefab",
+        "NarrowLeftDrivewayPrefab",
+        "NarrowRightDrivewayPrefab",
+        "StraightPathDrivewayPrefab",
+        "WideCenterDrivewayPrefab"
+      ],
+      "title": "Driveway model instantiator specification"
+    },
+    "GameUISoundSpec": {
+      "type": "object",
+      "properties": {
+        "WellbeingHighscore": {
+          "type": "string",
+          "title": "Wellbeing highscore",
+          "examples": ["UI.NewAverageWellBeingRecord"],
+          "default": "UI.NewAverageWellBeingRecord"
+        },
+        "FieldPlaced": {
+          "type": "string",
+          "title": "Field placed",
+          "examples": ["UI.FieldPlaced"],
+          "default": "UI.FieldPlaced"
+        },
+        "BlinkingSoundKey": {
+          "type": "string",
+          "title": "Blinking sound key",
+          "examples": ["UI.Weather.Alarm"],
+          "default": "UI.Weather.Alarm"
+        },
+        "BadtideStartedSoundKey": {
+          "type": "string",
+          "title": "Badtide started sound key",
+          "examples": ["UI.Weather.BadtideStarted"],
+          "default": "UI.Weather.BadtideStarted"
+        },
+        "DroughtStartedSoundKey": {
+          "type": "string",
+          "title": "Drought started sound key",
+          "examples": ["UI.Weather.DroughtStarted"],
+          "default": "UI.Weather.DroughtStarted"
+        },
+        "TemperateWeatherStartedSoundKey": {
+          "type": "string",
+          "title": "Temperate weather started sound key",
+          "examples": ["UI.Weather.TemperateWeatherStarted"],
+          "default": "UI.Weather.TemperateWeatherStarted"
+        },
+        "WonderCongratulationSoundKey": {
+          "type": "string",
+          "title": "Wonder congratulation sound key",
+          "examples": ["UI.Buildings.Wonder.Congratulations"],
+          "default": "UI.Buildings.Wonder.Congratulations"
+        }
+      },
+      "required": [
+        "BadtideStartedSoundKey",
+        "BlinkingSoundKey",
+        "DroughtStartedSoundKey",
+        "FieldPlaced",
+        "TemperateWeatherStartedSoundKey",
+        "WellbeingHighscore",
+        "WonderCongratulationSoundKey"
+      ],
+      "title": "Game u i sound specification"
+    },
+    "MarkerDrawerFactorySpec": {
+      "type": "object",
+      "properties": {
+        "TileMesh": {
+          "type": "string",
+          "title": "Tile mesh",
+          "examples": ["Markers/TileMarker"],
+          "default": "Markers/TileMarker"
+        },
+        "SmallBlockMesh": {
+          "type": "string",
+          "title": "Small block mesh",
+          "examples": ["Markers/SmallBlockMarker"],
+          "default": "Markers/SmallBlockMarker"
+        },
+        "LargeBlockMesh": {
+          "type": "string",
+          "title": "Large block mesh",
+          "examples": ["Markers/LargeBlockMarker"],
+          "default": "Markers/LargeBlockMarker"
+        },
+        "TileMaterial": {
+          "type": "string",
+          "title": "Tile material",
+          "examples": ["Markers/TileMarkerSmall"],
+          "default": "Markers/TileMarkerSmall"
+        },
+        "PrioritizedTileMaterial": {
+          "type": "string",
+          "title": "Prioritized tile material",
+          "examples": ["Markers/PrioritizedTileMarker"],
+          "default": "Markers/PrioritizedTileMarker"
+        },
+        "EntranceMesh": {
+          "type": "string",
+          "title": "Entrance mesh",
+          "examples": ["Markers/EntranceMarker"],
+          "default": "Markers/EntranceMarker"
+        },
+        "EntranceMarkerMaterial": {
+          "type": "string",
+          "title": "Entrance marker material",
+          "examples": ["Markers/ArrowMarker"],
+          "default": "Markers/ArrowMarker"
+        },
+        "MechanicalInputMesh": {
+          "type": "string",
+          "title": "Mechanical input mesh",
+          "examples": ["Markers/MechanicalMarkerInput"],
+          "default": "Markers/MechanicalMarkerInput"
+        },
+        "MechanicalOutputMesh": {
+          "type": "string",
+          "title": "Mechanical output mesh",
+          "examples": ["Markers/MechanicalMarkerOutput"],
+          "default": "Markers/MechanicalMarkerOutput"
+        },
+        "MechanicalMarkerMaterial": {
+          "type": "string",
+          "title": "Mechanical marker material",
+          "examples": ["Markers/MechanicalMarker"],
+          "default": "Markers/MechanicalMarker"
+        },
+        "ArrowMesh": {
+          "type": "string",
+          "title": "Arrow mesh",
+          "examples": ["Markers/ArrowMarker"],
+          "default": "Markers/ArrowMarker"
+        },
+        "ArrowMaterial": {
+          "type": "string",
+          "title": "Arrow material",
+          "examples": ["Markers/BlueArrowMarker"],
+          "default": "Markers/BlueArrowMarker"
+        }
+      },
+      "required": [
+        "ArrowMaterial",
+        "ArrowMesh",
+        "EntranceMarkerMaterial",
+        "EntranceMesh",
+        "LargeBlockMesh",
+        "MechanicalInputMesh",
+        "MechanicalMarkerMaterial",
+        "MechanicalOutputMesh",
+        "PrioritizedTileMaterial",
+        "SmallBlockMesh",
+        "TileMaterial",
+        "TileMesh"
+      ],
+      "title": "Marker drawer factory specification"
+    },
+    "MouseCameraControllerSpec": {
+      "type": "object",
+      "properties": {
+        "RmbRotationSpeed": {
+          "type": "number",
+          "title": "Rmb rotation speed",
+          "examples": [0.11],
+          "default": 0.11
+        },
+        "RmbRotationMinDistance": {
+          "type": "number",
+          "title": "Rmb rotation min distance",
+          "examples": [12.0],
+          "default": 12.0
+        }
+      },
+      "required": ["RmbRotationMinDistance", "RmbRotationSpeed"],
+      "title": "Mouse camera controller specification"
+    },
+    "MechanicalNodeHighlighterSpec": {
+      "type": "object",
+      "properties": {
+        "HighlightColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.055],
+              "default": 0.055
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.26],
+              "default": 0.26
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.275],
+              "default": 0.275
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Highlight color"
+        }
+      },
+      "required": ["HighlightColor"],
+      "title": "Mechanical node highlighter specification"
+    },
+    "ZiplineCableNavMeshSpec": {
+      "type": "object",
+      "properties": {
+        "CableUnitCost": {
+          "type": "number",
+          "title": "Cable unit cost",
+          "examples": [0.4],
+          "default": 0.4
+        }
+      },
+      "required": ["CableUnitCost"],
+      "title": "Zipline cable nav mesh specification"
+    },
+    "BuilderPriorityToolSpec": {
+      "type": "object",
+      "properties": {
+        "PriorityHighlightColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.2],
+              "default": 0.2
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.2],
+              "default": 0.2
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.2],
+              "default": 0.2
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Priority highlight color"
+        },
+        "PriorityActionColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.5019608],
+              "default": 0.5019608
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.5019608],
+              "default": 0.5019608
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.5019608],
+              "default": 0.5019608
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Priority action color"
+        },
+        "PriorityTileColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.8],
+              "default": 0.8
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.8],
+              "default": 0.8
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.8],
+              "default": 0.8
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Priority tile color"
+        },
+        "PrioritySideColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Priority side color"
+        }
+      },
+      "required": [
+        "PriorityActionColor",
+        "PriorityHighlightColor",
+        "PrioritySideColor",
+        "PriorityTileColor"
+      ],
+      "title": "Builder priority tool specification"
+    },
+    "SkyboxPositionerSpec": {
+      "type": "object",
+      "properties": {
+        "Skybox": {
+          "type": "string",
+          "title": "Skybox",
+          "examples": ["Environment/Sky/Skybox"],
+          "default": "Environment/Sky/Skybox"
+        },
+        "DayProgressSunrise": {
+          "type": "number",
+          "title": "Day progress sunrise",
+          "examples": [0.0],
+          "default": 0.0
+        },
+        "DayProgressDay": {
+          "type": "number",
+          "title": "Day progress day",
+          "examples": [0.2],
+          "default": 0.2
+        },
+        "DayProgressSunset": {
+          "type": "number",
+          "title": "Day progress sunset",
+          "examples": [0.5],
+          "default": 0.5
+        },
+        "DayProgressNight": {
+          "type": "number",
+          "title": "Day progress night",
+          "examples": [0.8],
+          "default": 0.8
+        }
+      },
+      "required": [
+        "DayProgressDay",
+        "DayProgressNight",
+        "DayProgressSunrise",
+        "DayProgressSunset",
+        "Skybox"
+      ],
+      "title": "Skybox positioner specification"
+    },
+    "ExplosionVisualizerSpec": {
+      "type": "object",
+      "properties": {
+        "ObjectHighlightColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.57],
+              "default": 0.57
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Object highlight color"
+        },
+        "TerrainHighlightColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.4],
+              "default": 0.4
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Terrain highlight color"
+        }
+      },
+      "required": ["ObjectHighlightColor", "TerrainHighlightColor"],
+      "title": "Explosion visualizer specification"
+    },
+    "GameSpeedThrottlerSpec": {
+      "type": "object",
+      "properties": {
+        "MinPopulation": {
+          "type": "integer",
+          "title": "Min population"
+        },
+        "MaxPopulation": {
+          "type": "integer",
+          "title": "Max population"
+        },
+        "MinGameSpeedScale": {
+          "type": "number",
+          "title": "Min game speed scale",
+          "examples": [0.4],
+          "default": 0.4
+        },
+        "MaxGameSpeedScale": {
+          "type": "number",
+          "title": "Max game speed scale",
+          "examples": [1.0],
+          "default": 1.0
+        }
+      },
+      "required": [
+        "MaxGameSpeedScale",
+        "MaxPopulation",
+        "MinGameSpeedScale",
+        "MinPopulation"
+      ],
+      "title": "Game speed throttler specification"
+    },
+    "SoilMoistureMapSpec": {
+      "type": "object",
+      "properties": {
+        "MaxDesertIntensity": {
+          "type": "number",
+          "title": "Max desert intensity",
+          "examples": [0.7],
+          "default": 0.7
+        },
+        "DesertMoistureThreshold": {
+          "type": "integer",
+          "title": "Desert moisture threshold"
+        }
+      },
+      "required": ["DesertMoistureThreshold", "MaxDesertIntensity"],
+      "title": "Soil moisture map specification"
+    },
+    "WaterMeshSpec": {
+      "type": "object",
+      "properties": {
+        "WaterTile": {
+          "type": "string",
+          "title": "Water tile",
+          "examples": ["Environment/Water/WaterTile"],
+          "default": "Environment/Water/WaterTile"
+        },
+        "OpaqueMaterial": {
+          "type": "string",
+          "title": "Opaque material",
+          "examples": ["Environment/Water/Materials/PhysicalWater_Opaque"],
+          "default": "Environment/Water/Materials/PhysicalWater_Opaque"
+        },
+        "TransparentMaterial": {
+          "type": "string",
+          "title": "Transparent material",
+          "examples": ["Environment/Water/Materials/PhysicalWater_Transparent"],
+          "default": "Environment/Water/Materials/PhysicalWater_Transparent"
+        }
+      },
+      "required": ["OpaqueMaterial", "TransparentMaterial", "WaterTile"],
+      "title": "Water mesh specification"
+    },
+    "TileDrawerFactorySpec": {
+      "type": "object",
+      "properties": {
+        "MeshResourcePath": {
+          "type": "string",
+          "title": "Mesh resource path",
+          "examples": ["UI/Markers/GridMarker"],
+          "default": "UI/Markers/GridMarker"
+        },
+        "TilesOnSameLevelMaterialResourcePath": {
+          "type": "string",
+          "title": "Tiles on same level material resource path",
+          "examples": [
+            "UI/Markers/ConstructionGuidelines/SameLevelGridTileMarker"
+          ],
+          "default": "UI/Markers/ConstructionGuidelines/SameLevelGridTileMarker"
+        },
+        "TilesBelowMaterialResourcePath": {
+          "type": "string",
+          "title": "Tiles below material resource path",
+          "examples": ["UI/Markers/ConstructionGuidelines/BelowGridTileMarker"],
+          "default": "UI/Markers/ConstructionGuidelines/BelowGridTileMarker"
+        },
+        "TilesAboveMaterialResourcePath": {
+          "type": "string",
+          "title": "Tiles above material resource path",
+          "examples": ["UI/Markers/ConstructionGuidelines/AboveGridTileMarker"],
+          "default": "UI/Markers/ConstructionGuidelines/AboveGridTileMarker"
+        },
+        "FootprintTilesMaterialResourcePath": {
+          "type": "string",
+          "title": "Footprint tiles material resource path",
+          "examples": [
+            "UI/Markers/ConstructionGuidelines/FootprintGridTileMarker"
+          ],
+          "default": "UI/Markers/ConstructionGuidelines/FootprintGridTileMarker"
+        }
+      },
+      "required": [
+        "FootprintTilesMaterialResourcePath",
+        "MeshResourcePath",
+        "TilesAboveMaterialResourcePath",
+        "TilesBelowMaterialResourcePath",
+        "TilesOnSameLevelMaterialResourcePath"
+      ],
+      "title": "Tile drawer factory specification"
+    },
+    "RecoveredGoodStackCoordinatesFinderSpec": {
+      "type": "object",
+      "properties": {
+        "NeighboursRange": {
+          "type": "integer",
+          "title": "Neighbours range"
+        },
+        "MaxUpperSearch": {
+          "type": "integer",
+          "title": "Max upper search"
+        }
+      },
+      "required": ["MaxUpperSearch", "NeighboursRange"],
+      "title": "Recovered good stack coordinates finder specification"
+    },
+    "HazardousWeatherUISpec": {
+      "type": "object",
+      "properties": {
+        "ApproachingNotificationDays": {
+          "type": "integer",
+          "title": "Approaching notification days"
+        },
+        "MaxDayProgressLeftToNotify": {
+          "type": "number",
+          "title": "Max day progress left to notify",
+          "examples": [0.15],
+          "default": 0.15
+        },
+        "NotificationDuration": {
+          "type": "number",
+          "title": "Notification duration",
+          "examples": [6.0],
+          "default": 6.0
+        }
+      },
+      "required": [
+        "ApproachingNotificationDays",
+        "MaxDayProgressLeftToNotify",
+        "NotificationDuration"
+      ],
+      "title": "Hazardous weather u i specification"
+    },
+    "DemolishableMarkerServiceSpec": {
+      "type": "object",
+      "properties": {
+        "Mesh": {
+          "type": "string",
+          "title": "Mesh",
+          "examples": ["Markers/StatusMarkers/StatusIconMesh"],
+          "default": "Markers/StatusMarkers/StatusIconMesh"
+        },
+        "Material": {
+          "type": "string",
+          "title": "Material",
+          "examples": ["Markers/StatusMarkers/DemolishingStatusIcon"],
+          "default": "Markers/StatusMarkers/DemolishingStatusIcon"
+        }
+      },
+      "required": ["Material", "Mesh"],
+      "title": "Demolishable marker service specification"
+    },
+    "DayNightCycleSpec": {
+      "type": "object",
+      "properties": {
+        "HoursPassedOnNewGame": {
+          "type": "integer",
+          "title": "Hours passed on new game"
+        },
+        "ConfiguredDayLengthInSeconds": {
+          "type": "integer",
+          "title": "Configured day length in seconds"
+        },
+        "ConfiguredDaytimeLengthInUnits": {
+          "type": "integer",
+          "title": "Configured daytime length in units"
+        },
+        "ConfiguredNighttimeLengthInUnits": {
+          "type": "integer",
+          "title": "Configured nighttime length in units"
+        }
+      },
+      "required": [
+        "ConfiguredDayLengthInSeconds",
+        "ConfiguredDaytimeLengthInUnits",
+        "ConfiguredNighttimeLengthInUnits",
+        "HoursPassedOnNewGame"
+      ],
+      "title": "Day night cycle specification"
+    },
+    "AmbientSpec": {
+      "type": "object",
+      "properties": {
+        "DayAmbient": {
+          "type": "string",
+          "title": "Day ambient",
+          "examples": ["Environment.Ambient.Day"],
+          "default": "Environment.Ambient.Day"
+        },
+        "NightAmbient": {
+          "type": "string",
+          "title": "Night ambient",
+          "examples": ["Environment.Ambient.Night"],
+          "default": "Environment.Ambient.Night"
+        },
+        "WaterAmbient": {
+          "type": "string",
+          "title": "Water ambient",
+          "examples": ["Environment.Ambient.Water"],
+          "default": "Environment.Ambient.Water"
+        }
+      },
+      "required": ["DayAmbient", "NightAmbient", "WaterAmbient"],
+      "title": "Ambient specification"
+    },
+    "NeedSpecFormatterSpec": {
+      "type": "object",
+      "properties": {
+        "PositiveHighlightColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.7921569],
+              "default": 0.7921569
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Positive highlight color"
+        },
+        "NegativeHighlightColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.9],
+              "default": 0.9
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.07],
+              "default": 0.07
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.07],
+              "default": 0.07
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Negative highlight color"
+        }
+      },
+      "required": ["NegativeHighlightColor", "PositiveHighlightColor"],
+      "title": "Need spec formatter specification"
+    },
+    "MechanicalConnectorFactorySpec": {
+      "type": "object",
+      "properties": {
+        "MechanicalConnectorPrefabPath": {
+          "type": "string",
+          "title": "Mechanical connector prefab path",
+          "examples": ["Models/MechanicalConnector/MechanicalConnector"],
+          "default": "Models/MechanicalConnector/MechanicalConnector"
+        }
+      },
+      "required": ["MechanicalConnectorPrefabPath"],
+      "title": "Mechanical connector factory specification"
+    },
+    "ZiplineConnectionServiceSpec": {
+      "type": "object",
+      "properties": {
+        "MaxCableInclination": {
+          "type": "integer",
+          "title": "Max cable inclination"
+        }
+      },
+      "required": ["MaxCableInclination"],
+      "title": "Zipline connection service specification"
+    },
+    "ProbabilityGroupsSpec": {
+      "type": "object",
+      "properties": {
+        "Groups": {
+          "$ref": "#/$defs/Groups"
+        },
+        "Groups#append": {
+          "$ref": "#/$defs/Groups"
+        },
+        "Groups#remove": {
+          "$ref": "#/$defs/Groups"
+        },
+        "Groups#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "required": ["Groups"],
+      "title": "Probability groups specification"
+    },
+    "TreeCuttingColorsSpec": {
+      "type": "object",
+      "properties": {
+        "ToolActionTile": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.95],
+              "default": 0.95
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.03],
+              "default": 0.03
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.05],
+              "default": 0.05
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Tool action tile"
+        },
+        "ToolNoActionTile": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.7],
+              "default": 0.7
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.7],
+              "default": 0.7
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Tool no action tile"
+        },
+        "CuttingAreaTile": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.6],
+              "default": 0.6
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Cutting area tile"
+        },
+        "CuttingAreaHighlight": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.3],
+              "default": 0.3
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Cutting area highlight"
+        }
+      },
+      "required": [
+        "CuttingAreaHighlight",
+        "CuttingAreaTile",
+        "ToolActionTile",
+        "ToolNoActionTile"
+      ],
+      "title": "Tree cutting colors specification"
+    },
+    "ZiplineSystemColorsSpec": {
+      "type": "object",
+      "properties": {
+        "OriginColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.06127626],
+              "default": 0.06127626
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.4811321],
+              "default": 0.4811321
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.3761681],
+              "default": 0.3761681
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Origin color"
+        },
+        "ConnectableColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.5],
+              "default": 0.5
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.06862748],
+              "default": 0.06862748
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Connectable color"
+        },
+        "NotConnectableColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.6],
+              "default": 0.6
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Not connectable color"
+        }
+      },
+      "required": ["ConnectableColor", "NotConnectableColor", "OriginColor"],
+      "title": "Zipline system colors specification"
+    },
+    "WaterStrengthSpec": {
+      "type": "object",
+      "properties": {
+        "MaxWaterSourceStrength": {
+          "type": "number",
+          "title": "Max water source strength",
+          "examples": [8.0],
+          "default": 8.0
+        },
+        "MaxWaterSourceChangePerSecond": {
+          "type": "number",
+          "title": "Max water source change per second",
+          "examples": [0.0058],
+          "default": 0.0058
+        },
+        "MinWaterSourceChangeScaler": {
+          "type": "number",
+          "title": "Min water source change scaler",
+          "examples": [0.15],
+          "default": 0.15
+        }
+      },
+      "required": [
+        "MaxWaterSourceChangePerSecond",
+        "MaxWaterSourceStrength",
+        "MinWaterSourceChangeScaler"
+      ],
+      "title": "Water strength specification"
+    },
+    "KeyboardCameraControllerSpec": {
+      "type": "object",
+      "properties": {
+        "JumpRotationAngle": {
+          "type": "integer",
+          "title": "Jump rotation angle"
+        },
+        "JumpRotationSpeedInAnglePerUpdate": {
+          "type": "integer",
+          "title": "Jump rotation speed in angle per update"
+        },
+        "BaseZoomSpeed": {
+          "type": "number",
+          "title": "Base zoom speed",
+          "examples": [3.0],
+          "default": 3.0
+        }
+      },
+      "required": [
+        "BaseZoomSpeed",
+        "JumpRotationAngle",
+        "JumpRotationSpeedInAnglePerUpdate"
+      ],
+      "title": "Keyboard camera controller specification"
+    },
+    "RangedEffectBuildingColorsSpec": {
+      "type": "object",
+      "properties": {
+        "BuildingRangeTile": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.6],
+              "default": 0.6
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Building range tile"
+        },
+        "BuildingRangeObject": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.4],
+              "default": 0.4
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.2],
+              "default": 0.2
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Building range object"
+        }
+      },
+      "required": ["BuildingRangeObject", "BuildingRangeTile"],
+      "title": "Ranged effect building colors specification"
+    },
+    "BotColorsSpec": {
+      "type": "object",
+      "properties": {
+        "BotLightHueOffset": {
+          "type": "number",
+          "title": "Bot light hue offset",
+          "examples": [0.45],
+          "default": 0.45
+        },
+        "BotWorkplaceLightingStrength": {
+          "type": "number",
+          "title": "Bot workplace lighting strength",
+          "examples": [2.0],
+          "default": 2.0
+        }
+      },
+      "required": ["BotLightHueOffset", "BotWorkplaceLightingStrength"],
+      "title": "Bot colors specification"
+    },
+    "PreviewShowerSpec": {
+      "type": "object",
+      "properties": {
+        "BuildablePreview": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.5],
+              "default": 0.5
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.06862748],
+              "default": 0.06862748
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Buildable preview"
+        },
+        "UnbuildablePreview": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.6],
+              "default": 0.6
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Unbuildable preview"
+        },
+        "WarningPreview": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.5],
+              "default": 0.5
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.3970588],
+              "default": 0.3970588
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Warning preview"
+        }
+      },
+      "required": ["BuildablePreview", "UnbuildablePreview", "WarningPreview"],
+      "title": "Preview shower specification"
+    },
+    "WaterOutputParticleColorsSpec": {
+      "type": "object",
+      "properties": {
+        "WaterContaminationParticleGradient": {
+          "$ref": "#/$defs/WaterContaminationParticleGradient"
+        },
+        "WaterContaminationParticleGradient#append": {
+          "$ref": "#/$defs/WaterContaminationParticleGradient"
+        },
+        "WaterContaminationParticleGradient#remove": {
+          "$ref": "#/$defs/WaterContaminationParticleGradient"
+        },
+        "WaterContaminationParticleGradient#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "required": ["WaterContaminationParticleGradient"],
+      "title": "Water output particle colors specification"
+    },
+    "AreaPickersSpec": {
+      "type": "object",
+      "properties": {
+        "AreaMaxBlocks": {
+          "type": "integer",
+          "title": "Area max blocks"
+        },
+        "SculptingMaxBlocks": {
+          "type": "integer",
+          "title": "Sculpting max blocks"
+        }
+      },
+      "required": ["AreaMaxBlocks", "SculptingMaxBlocks"],
+      "title": "Area pickers specification"
+    },
+    "DeconstructionParticleFactorySpec": {
+      "type": "object",
+      "properties": {
+        "MinParticleSpawnThreshold": {
+          "type": "number",
+          "title": "Min particle spawn threshold",
+          "examples": [0.2],
+          "default": 0.2
+        },
+        "MaxParticleSpawnThreshold": {
+          "type": "number",
+          "title": "Max particle spawn threshold",
+          "examples": [0.95],
+          "default": 0.95
+        },
+        "MinParticlesForThreshold": {
+          "type": "integer",
+          "title": "Min particles for threshold"
+        },
+        "MaxParticlesForThreshold": {
+          "type": "integer",
+          "title": "Max particles for threshold"
+        },
+        "ParticlePrefabPath": {
+          "type": "string",
+          "title": "Particle prefab path",
+          "examples": ["Models/DeconstructionSmoke"],
+          "default": "Models/DeconstructionSmoke"
+        },
+        "MaxNeighboursCount": {
+          "type": "number",
+          "title": "Max neighbours count",
+          "examples": [26.0],
+          "default": 26.0
+        }
+      },
+      "required": [
+        "MaxNeighboursCount",
+        "MaxParticleSpawnThreshold",
+        "MaxParticlesForThreshold",
+        "MinParticleSpawnThreshold",
+        "MinParticlesForThreshold",
+        "ParticlePrefabPath"
+      ],
+      "title": "Deconstruction particle factory specification"
+    },
+    "BlockObjectDeletionToolSpec": {
+      "type": "object",
+      "properties": {
+        "DeletedObjectHighlightColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.57],
+              "default": 0.57
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Deleted object highlight color"
+        },
+        "DeletedAreaTileColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Deleted area tile color"
+        },
+        "DeletedAreaSideColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Deleted area side color"
+        },
+        "DeletedTerrainHighlightColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.57],
+              "default": 0.57
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Deleted terrain highlight color"
+        }
+      },
+      "required": [
+        "DeletedAreaSideColor",
+        "DeletedAreaTileColor",
+        "DeletedObjectHighlightColor",
+        "DeletedTerrainHighlightColor"
+      ],
+      "title": "Block object deletion tool specification"
+    },
+    "QuickNotificationSpec": {
+      "type": "object",
+      "properties": {
+        "Duration": {
+          "type": "number",
+          "title": "Duration",
+          "examples": [2.0],
+          "default": 2.0
+        },
+        "ExtendedDuration": {
+          "type": "number",
+          "title": "Extended duration",
+          "examples": [10.0],
+          "default": 10.0
+        }
+      },
+      "required": ["Duration", "ExtendedDuration"],
+      "title": "Quick notification specification"
+    },
+    "TerrainMeshManagerSpec": {
+      "type": "object",
+      "properties": {
+        "TerrainTilePrefab": {
+          "type": "string",
+          "title": "Terrain tile prefab",
+          "examples": ["Environment/Land/TerrainTilePrefab"],
+          "default": "Environment/Land/TerrainTilePrefab"
+        },
+        "LayerToolTopMeshPrefab": {
+          "type": "string",
+          "title": "Layer tool top mesh prefab",
+          "examples": ["Environment/Land/LayerToolTerrainTopPrefab"],
+          "default": "Environment/Land/LayerToolTerrainTopPrefab"
+        }
+      },
+      "required": ["LayerToolTopMeshPrefab", "TerrainTilePrefab"],
+      "title": "Terrain mesh manager specification"
+    },
+    "DayStageCycleSpec": {
+      "type": "object",
+      "properties": {
+        "SunriseSunsetLengthInHours": {
+          "type": "number",
+          "title": "Sunrise sunset length in hours",
+          "examples": [2.0],
+          "default": 2.0
+        },
+        "TransitionLengthInHours": {
+          "type": "number",
+          "title": "Transition length in hours",
+          "examples": [1.0],
+          "default": 1.0
+        }
+      },
+      "required": ["SunriseSunsetLengthInHours", "TransitionLengthInHours"],
+      "title": "Day stage cycle specification"
+    },
+    "DuplicationSystemColorsSpec": {
+      "type": "object",
+      "properties": {
+        "SourceColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.06127626],
+              "default": 0.06127626
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.4811321],
+              "default": 0.4811321
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.3761681],
+              "default": 0.3761681
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Source color"
+        },
+        "TargetColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.5],
+              "default": 0.5
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.06862748],
+              "default": 0.06862748
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Target color"
+        }
+      },
+      "required": ["SourceColor", "TargetColor"],
+      "title": "Duplication system colors specification"
+    },
+    "DraggingCameraTargetPickerSpec": {
+      "type": "object",
+      "properties": {
+        "MovementSpeed": {
+          "type": "number",
+          "title": "Movement speed",
+          "examples": [75.0],
+          "default": 75.0
+        }
+      },
+      "required": ["MovementSpeed"],
+      "title": "Dragging camera target picker specification"
+    },
+    "PathMeshDrawerFactorySpec": {
+      "type": "object",
+      "properties": {
+        "RegularModelVariants": {
+          "$ref": "#/$defs/RegularModelVariants"
+        },
+        "StairsModelVariants": {
+          "$ref": "#/$defs/StairsModelVariants"
+        },
+        "Material": {
+          "type": "string",
+          "title": "Material",
+          "examples": ["Markers/PathMarkers/PathMarker"],
+          "default": "Markers/PathMarkers/PathMarker"
+        },
+        "RegularModelVariants#append": {
+          "$ref": "#/$defs/RegularModelVariants"
+        },
+        "RegularModelVariants#remove": {
+          "$ref": "#/$defs/RegularModelVariants"
+        },
+        "RegularModelVariants#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        },
+        "StairsModelVariants#append": {
+          "$ref": "#/$defs/StairsModelVariants"
+        },
+        "StairsModelVariants#remove": {
+          "$ref": "#/$defs/StairsModelVariants"
+        },
+        "StairsModelVariants#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "required": ["Material", "RegularModelVariants", "StairsModelVariants"],
+      "title": "Path mesh drawer factory specification"
+    },
+    "ConstructionGuidelinesSpec": {
+      "type": "object",
+      "properties": {
+        "Radius": {
+          "type": "integer",
+          "title": "Radius"
+        }
+      },
+      "required": ["Radius"],
+      "title": "Construction guidelines specification"
+    },
+    "DemolishingColorsSpec": {
+      "type": "object",
+      "properties": {
+        "DeletedObjectHighlightColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.57],
+              "default": 0.57
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Deleted object highlight color"
+        },
+        "DeletedAreaTileColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Deleted area tile color"
+        },
+        "DeletedAreaSideColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Deleted area side color"
+        }
+      },
+      "required": [
+        "DeletedAreaSideColor",
+        "DeletedAreaTileColor",
+        "DeletedObjectHighlightColor"
+      ],
+      "title": "Demolishing colors specification"
+    },
+    "BrushesSpec": {
+      "type": "object",
+      "properties": {
+        "MaxBrushSize": {
+          "type": "integer",
+          "title": "Max brush size"
+        }
+      },
+      "required": ["MaxBrushSize"],
+      "title": "Brushes specification"
+    },
+    "BoundsNavRangeDrawerSpec": {
+      "type": "object",
+      "properties": {
+        "TileMeshes": {
+          "$ref": "#/$defs/TileMeshes"
+        },
+        "Material": {
+          "type": "string",
+          "title": "Material",
+          "examples": ["Markers/TileSides/TileSide"],
+          "default": "Markers/TileSides/TileSide"
+        },
+        "TileMeshes#append": {
+          "$ref": "#/$defs/TileMeshes"
+        },
+        "TileMeshes#remove": {
+          "$ref": "#/$defs/TileMeshes"
+        },
+        "TileMeshes#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "required": ["Material", "TileMeshes"],
+      "title": "Bounds nav range drawer specification"
+    },
+    "WindServiceSpec": {
+      "type": "object",
+      "properties": {
+        "MinWindTimeInHours": {
+          "type": "number",
+          "title": "Min wind time in hours",
+          "examples": [5.0],
+          "default": 5.0
+        },
+        "MaxWindTimeInHours": {
+          "type": "number",
+          "title": "Max wind time in hours",
+          "examples": [12.0],
+          "default": 12.0
+        },
+        "MinWindStrength": {
+          "type": "number",
+          "title": "Min wind strength",
+          "examples": [0.0],
+          "default": 0.0
+        },
+        "MaxWindStrength": {
+          "type": "number",
+          "title": "Max wind strength",
+          "examples": [1.0],
+          "default": 1.0
+        }
+      },
+      "required": [
+        "MaxWindStrength",
+        "MaxWindTimeInHours",
+        "MinWindStrength",
+        "MinWindTimeInHours"
+      ],
+      "title": "Wind service specification"
+    },
+    "PriorityColorsSpec": {
+      "type": "object",
+      "properties": {
+        "HighlightVeryLow": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.4],
+              "default": 0.4
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Highlight very low"
+        },
+        "HighlightLow": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.2],
+              "default": 0.2
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.09803922],
+              "default": 0.09803922
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Highlight low"
+        },
+        "HighlightNormal": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Highlight normal"
+        },
+        "HighlightHigh": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.09803922],
+              "default": 0.09803922
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.2],
+              "default": 0.2
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Highlight high"
+        },
+        "HighlightVeryHigh": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.4],
+              "default": 0.4
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Highlight very high"
+        },
+        "ButtonVeryLow": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.6792453],
+              "default": 0.6792453
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.1826273],
+              "default": 0.1826273
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.1826273],
+              "default": 0.1826273
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Button very low"
+        },
+        "ButtonLow": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.5471698],
+              "default": 0.5471698
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.3458526],
+              "default": 0.3458526
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.1522784],
+              "default": 0.1522784
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Button low"
+        },
+        "ButtonNormal": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.3490566],
+              "default": 0.3490566
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.3490566],
+              "default": 0.3490566
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.3490566],
+              "default": 0.3490566
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Button normal"
+        },
+        "ButtonHigh": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.2294446],
+              "default": 0.2294446
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.3773585],
+              "default": 0.3773585
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.08721966],
+              "default": 0.08721966
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Button high"
+        },
+        "ButtonVeryHigh": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.1066661],
+              "default": 0.1066661
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.4811321],
+              "default": 0.4811321
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.1066661],
+              "default": 0.1066661
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Button very high"
+        }
+      },
+      "required": [
+        "ButtonHigh",
+        "ButtonLow",
+        "ButtonNormal",
+        "ButtonVeryHigh",
+        "ButtonVeryLow",
+        "HighlightHigh",
+        "HighlightLow",
+        "HighlightNormal",
+        "HighlightVeryHigh",
+        "HighlightVeryLow"
+      ],
+      "title": "Priority colors specification"
+    },
+    "DistrictConnectionLineRendererSpec": {
+      "type": "object",
+      "properties": {
+        "LineRendererPrefab": {
+          "type": "string",
+          "title": "Line renderer prefab",
+          "examples": ["UI/Markers/DistrictConnectionDrawer"],
+          "default": "UI/Markers/DistrictConnectionDrawer"
+        },
+        "ArcAngle": {
+          "type": "number",
+          "title": "Arc angle",
+          "examples": [30.0],
+          "default": 30.0
+        },
+        "CurvePoints": {
+          "type": "integer",
+          "title": "Curve points"
+        },
+        "LineCutoff": {
+          "type": "number",
+          "title": "Line cutoff",
+          "examples": [0.4],
+          "default": 0.4
+        }
+      },
+      "required": [
+        "ArcAngle",
+        "CurvePoints",
+        "LineCutoff",
+        "LineRendererPrefab"
+      ],
+      "title": "District connection line renderer specification"
+    },
+    "TutorialColorsSpec": {
+      "type": "object",
+      "properties": {
+        "TutorialBuildingHighlight": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.5660378],
+              "default": 0.5660378
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.4836018],
+              "default": 0.4836018
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.3123888],
+              "default": 0.3123888
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Tutorial building highlight"
+        }
+      },
+      "required": ["TutorialBuildingHighlight"],
+      "title": "Tutorial colors specification"
+    },
+    "MusicSpec": {
+      "type": "object",
+      "properties": {
+        "DroughtTrack": {
+          "type": "string",
+          "title": "Drought track",
+          "examples": ["Music_Game.DroughtTrack"],
+          "default": "Music_Game.DroughtTrack"
+        },
+        "StandardTrack": {
+          "type": "string",
+          "title": "Standard track",
+          "examples": ["Music_Game.StandardTrack"],
+          "default": "Music_Game.StandardTrack"
+        },
+        "StandardPhrase": {
+          "type": "string",
+          "title": "Standard phrase",
+          "examples": ["Music_Game.StandardPhrase"],
+          "default": "Music_Game.StandardPhrase"
+        },
+        "MinDelay": {
+          "type": "number",
+          "title": "Min delay",
+          "examples": [5.0],
+          "default": 5.0
+        },
+        "MaxDelay": {
+          "type": "number",
+          "title": "Max delay",
+          "examples": [15.0],
+          "default": 15.0
+        }
+      },
+      "required": [
+        "DroughtTrack",
+        "MaxDelay",
+        "MinDelay",
+        "StandardPhrase",
+        "StandardTrack"
+      ],
+      "title": "Music specification"
+    },
+    "BonusDescriberColorsSpec": {
+      "type": "object",
+      "properties": {
+        "PositiveBonusHighlight": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.7921569],
+              "default": 0.7921569
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Positive bonus highlight"
+        },
+        "NegativeBonusHighlight": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.8784314],
+              "default": 0.8784314
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Negative bonus highlight"
+        }
+      },
+      "required": ["NegativeBonusHighlight", "PositiveBonusHighlight"],
+      "title": "Bonus describer colors specification"
+    },
+    "CoreSoundSpec": {
+      "type": "object",
+      "properties": {
+        "MaxVerticalListenerPositionAboveGround": {
+          "type": "integer",
+          "title": "Max vertical listener position above ground"
+        },
+        "MinBuildingFadeDistance": {
+          "type": "number",
+          "title": "Min building fade distance",
+          "examples": [1.0],
+          "default": 1.0
+        },
+        "MaxBuildingFadeDistance": {
+          "type": "number",
+          "title": "Max building fade distance",
+          "examples": [60.0],
+          "default": 60.0
+        },
+        "WindAmbientKey": {
+          "type": "string",
+          "title": "Wind ambient key",
+          "examples": ["Environment.Ambient.Wind"],
+          "default": "Environment.Ambient.Wind"
+        },
+        "MinAmbientFade": {
+          "type": "number",
+          "title": "Min ambient fade",
+          "examples": [0.5],
+          "default": 0.5
+        },
+        "MaxAmbientFade": {
+          "type": "number",
+          "title": "Max ambient fade",
+          "examples": [1.0],
+          "default": 1.0
+        },
+        "MinWindFade": {
+          "type": "number",
+          "title": "Min wind fade",
+          "examples": [0.5],
+          "default": 0.5
+        },
+        "MaxWindFade": {
+          "type": "number",
+          "title": "Max wind fade",
+          "examples": [-0.2],
+          "default": -0.2
+        }
+      },
+      "required": [
+        "MaxAmbientFade",
+        "MaxBuildingFadeDistance",
+        "MaxVerticalListenerPositionAboveGround",
+        "MaxWindFade",
+        "MinAmbientFade",
+        "MinBuildingFadeDistance",
+        "MinWindFade",
+        "WindAmbientKey"
+      ],
+      "title": "Core sound specification"
+    },
+    "CameraServiceSpec": {
+      "type": "object",
+      "properties": {
+        "HorizontalAngle": {
+          "type": "number",
+          "title": "Horizontal angle",
+          "examples": [30.0],
+          "default": 30.0
+        },
+        "VerticalAngle": {
+          "type": "number",
+          "title": "Vertical angle",
+          "examples": [70.0],
+          "default": 70.0
+        },
+        "VerticalAngleLimits": {
+          "type": "object",
+          "properties": {
+            "Min": {
+              "type": "number",
+              "title": "Min",
+              "examples": [10.0],
+              "default": 10.0
+            },
+            "Max": {
+              "type": "number",
+              "title": "Max",
+              "examples": [89.99],
+              "default": 89.99
+            }
+          },
+          "required": ["Max", "Min"],
+          "title": "Vertical angle limits"
+        },
+        "ZoomLevel": {
+          "type": "number",
+          "title": "Zoom level",
+          "examples": [0.0],
+          "default": 0.0
+        },
+        "ZoomSpeed": {
+          "type": "number",
+          "title": "Zoom speed",
+          "examples": [1.7],
+          "default": 1.7
+        },
+        "ZoomBase": {
+          "type": "number",
+          "title": "Zoom base",
+          "examples": [1.3],
+          "default": 1.3
+        },
+        "BaseDistance": {
+          "type": "number",
+          "title": "Base distance",
+          "examples": [32.0],
+          "default": 32.0
+        },
+        "DefaultZoomLimits": {
+          "type": "object",
+          "properties": {
+            "Min": {
+              "type": "number",
+              "title": "Min",
+              "examples": [-8.0],
+              "default": -8.0
+            },
+            "Max": {
+              "type": "number",
+              "title": "Max",
+              "examples": [4.0],
+              "default": 4.0
+            }
+          },
+          "required": ["Max", "Min"],
+          "title": "Default zoom limits"
+        },
+        "MapEditorZoomLimits": {
+          "type": "object",
+          "properties": {
+            "Min": {
+              "type": "number",
+              "title": "Min",
+              "examples": [-2.5],
+              "default": -2.5
+            },
+            "Max": {
+              "type": "number",
+              "title": "Max",
+              "examples": [8.0],
+              "default": 8.0
+            }
+          },
+          "required": ["Max", "Min"],
+          "title": "Map editor zoom limits"
+        },
+        "FreeModeZoomLimits": {
+          "type": "object",
+          "properties": {
+            "Min": {
+              "type": "number",
+              "title": "Min",
+              "examples": [-100.0],
+              "default": -100.0
+            },
+            "Max": {
+              "type": "number",
+              "title": "Max",
+              "examples": [100.0],
+              "default": 100.0
+            }
+          },
+          "required": ["Max", "Min"],
+          "title": "Free mode zoom limits"
+        },
+        "MapMargin": {
+          "type": "number",
+          "title": "Map margin",
+          "examples": [50.0],
+          "default": 50.0
+        },
+        "FreeModeMapMargin": {
+          "type": "number",
+          "title": "Free mode map margin",
+          "examples": [100.0],
+          "default": 100.0
+        }
+      },
+      "required": [
+        "BaseDistance",
+        "DefaultZoomLimits",
+        "FreeModeMapMargin",
+        "FreeModeZoomLimits",
+        "HorizontalAngle",
+        "MapEditorZoomLimits",
+        "MapMargin",
+        "VerticalAngle",
+        "VerticalAngleLimits",
+        "ZoomBase",
+        "ZoomLevel",
+        "ZoomSpeed"
+      ],
+      "title": "Camera service specification"
+    },
+    "WaterSimulatorSpec": {
+      "type": "object",
+      "properties": {
+        "WaterFlowFactor": {
+          "type": "number",
+          "title": "Water flow factor",
+          "examples": [2.25],
+          "default": 2.25
+        },
+        "WaterSpillThreshold": {
+          "type": "number",
+          "title": "Water spill threshold",
+          "examples": [0.1],
+          "default": 0.1
+        },
+        "NormalEvaporationSpeed": {
+          "type": "number",
+          "title": "Normal evaporation speed",
+          "examples": [0.0001],
+          "default": 0.0001
+        },
+        "FastEvaporationDepthThreshold": {
+          "type": "number",
+          "title": "Fast evaporation depth threshold",
+          "examples": [0.02],
+          "default": 0.02
+        },
+        "FastEvaporationSpeed": {
+          "type": "number",
+          "title": "Fast evaporation speed",
+          "examples": [0.001],
+          "default": 0.001
+        },
+        "OutflowBalancingScaler": {
+          "type": "number",
+          "title": "Outflow balancing scaler",
+          "examples": [0.8],
+          "default": 0.8
+        },
+        "SoftDamOffset": {
+          "type": "number",
+          "title": "Soft dam offset",
+          "examples": [0.1],
+          "default": 0.1
+        },
+        "HardDamOffset": {
+          "type": "number",
+          "title": "Hard dam offset",
+          "examples": [0.05],
+          "default": 0.05
+        },
+        "MaxHardDamDecrease": {
+          "type": "number",
+          "title": "Max hard dam decrease",
+          "examples": [0.02],
+          "default": 0.02
+        },
+        "FlowChangeLimit": {
+          "type": "number",
+          "title": "Flow change limit",
+          "examples": [0.005],
+          "default": 0.005
+        },
+        "OverflowPressureFactor": {
+          "type": "number",
+          "title": "Overflow pressure factor",
+          "examples": [8.0],
+          "default": 8.0
+        },
+        "DiffusionOutflowLimit": {
+          "type": "number",
+          "title": "Diffusion outflow limit",
+          "examples": [0.125],
+          "default": 0.125
+        },
+        "DiffusionDepthLimit": {
+          "type": "number",
+          "title": "Diffusion depth limit",
+          "examples": [0.1],
+          "default": 0.1
+        },
+        "DiffusionRate": {
+          "type": "number",
+          "title": "Diffusion rate",
+          "examples": [0.45],
+          "default": 0.45
+        },
+        "MaxWaterContamination": {
+          "type": "number",
+          "title": "Max water contamination",
+          "examples": [1.0],
+          "default": 1.0
+        }
+      },
+      "required": [
+        "DiffusionDepthLimit",
+        "DiffusionOutflowLimit",
+        "DiffusionRate",
+        "FastEvaporationDepthThreshold",
+        "FastEvaporationSpeed",
+        "FlowChangeLimit",
+        "HardDamOffset",
+        "MaxHardDamDecrease",
+        "MaxWaterContamination",
+        "NormalEvaporationSpeed",
+        "OutflowBalancingScaler",
+        "OverflowPressureFactor",
+        "SoftDamOffset",
+        "WaterFlowFactor",
+        "WaterSpillThreshold"
+      ],
+      "title": "Water simulator specification"
+    },
+    "SoilContaminationSimulatorSpec": {
+      "type": "object",
+      "properties": {
+        "MaxRangeFromSource": {
+          "type": "integer",
+          "title": "Max range from source"
+        },
+        "VerticalSpreadCostMultiplier": {
+          "type": "number",
+          "title": "Vertical spread cost multiplier",
+          "examples": [5.0],
+          "default": 5.0
+        },
+        "ContaminationSpreadingRate": {
+          "type": "number",
+          "title": "Contamination spreading rate",
+          "examples": [0.066],
+          "default": 0.066
+        },
+        "ContaminationDecayRate": {
+          "type": "number",
+          "title": "Contamination decay rate",
+          "examples": [0.033],
+          "default": 0.033
+        },
+        "ContaminationPositiveEqualizationRate": {
+          "type": "number",
+          "title": "Contamination positive equalization rate",
+          "examples": [0.035],
+          "default": 0.035
+        },
+        "ContaminationNegativeEqualizationRate": {
+          "type": "number",
+          "title": "Contamination negative equalization rate",
+          "examples": [0.01],
+          "default": 0.01
+        },
+        "MinimumWaterContamination": {
+          "type": "number",
+          "title": "Minimum water contamination",
+          "examples": [0.5],
+          "default": 0.5
+        },
+        "ContaminationThreshold": {
+          "type": "number",
+          "title": "Contamination threshold",
+          "examples": [0.001],
+          "default": 0.001
+        }
+      },
+      "required": [
+        "ContaminationDecayRate",
+        "ContaminationNegativeEqualizationRate",
+        "ContaminationPositiveEqualizationRate",
+        "ContaminationSpreadingRate",
+        "ContaminationThreshold",
+        "MaxRangeFromSource",
+        "MinimumWaterContamination",
+        "VerticalSpreadCostMultiplier"
+      ],
+      "title": "Soil contamination simulator specification"
+    },
+    "SoilMoistureSimulatorSpec": {
+      "type": "object",
+      "properties": {
+        "MinimumWaterContamination": {
+          "type": "number",
+          "title": "Minimum water contamination",
+          "examples": [0.01],
+          "default": 0.01
+        },
+        "MaximumWaterContamination": {
+          "type": "number",
+          "title": "Maximum water contamination",
+          "examples": [0.53],
+          "default": 0.53
+        },
+        "MoistureDecayRate": {
+          "type": "number",
+          "title": "Moisture decay rate",
+          "examples": [1.25],
+          "default": 1.25
+        },
+        "MoistureSpreadingRate": {
+          "type": "number",
+          "title": "Moisture spreading rate",
+          "examples": [6.66],
+          "default": 6.66
+        },
+        "VerticalSpreadCostMultiplier": {
+          "type": "integer",
+          "title": "Vertical spread cost multiplier"
+        },
+        "MaxClusterSaturation": {
+          "type": "integer",
+          "title": "Max cluster saturation"
+        },
+        "QuadraticEvaporationCoefficient": {
+          "type": "number",
+          "title": "Quadratic evaporation coefficient",
+          "examples": [0.0595],
+          "default": 0.0595
+        },
+        "LinearQuadraticCoefficient": {
+          "type": "number",
+          "title": "Linear quadratic coefficient",
+          "examples": [0.101],
+          "default": 0.101
+        },
+        "ConstantQuadraticCoefficient": {
+          "type": "number",
+          "title": "Constant quadratic coefficient",
+          "examples": [0.72],
+          "default": 0.72
+        },
+        "MaxEvaporationSaturation": {
+          "type": "integer",
+          "title": "Max evaporation saturation"
+        }
+      },
+      "required": [
+        "ConstantQuadraticCoefficient",
+        "LinearQuadraticCoefficient",
+        "MaxClusterSaturation",
+        "MaxEvaporationSaturation",
+        "MaximumWaterContamination",
+        "MinimumWaterContamination",
+        "MoistureDecayRate",
+        "MoistureSpreadingRate",
+        "QuadraticEvaporationCoefficient",
+        "VerticalSpreadCostMultiplier"
+      ],
+      "title": "Soil moisture simulator specification"
+    },
+    "DistrictConnectionDrawingServiceSpec": {
+      "type": "object",
+      "properties": {
+        "ConnectionHighlight": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.3333333],
+              "default": 0.3333333
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.5019608],
+              "default": 0.5019608
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Connection highlight"
+        }
+      },
+      "required": ["ConnectionHighlight"],
+      "title": "District connection drawing service specification"
+    },
+    "BlockObjectBoundsDrawerFactorySpec": {
+      "type": "object",
+      "properties": {
+        "BlockSideMesh0010": {
+          "type": "string",
+          "title": "Block side mesh0010",
+          "examples": ["Markers/HalfBlockSide/HalfBlockSide0010"],
+          "default": "Markers/HalfBlockSide/HalfBlockSide0010"
+        },
+        "BlockSideMesh0011": {
+          "type": "string",
+          "title": "Block side mesh0011",
+          "examples": ["Markers/HalfBlockSide/HalfBlockSide0011"],
+          "default": "Markers/HalfBlockSide/HalfBlockSide0011"
+        },
+        "BlockSideMesh0111": {
+          "type": "string",
+          "title": "Block side mesh0111",
+          "examples": ["Markers/HalfBlockSide/HalfBlockSide0111"],
+          "default": "Markers/HalfBlockSide/HalfBlockSide0111"
+        },
+        "BlockSideMesh1010": {
+          "type": "string",
+          "title": "Block side mesh1010",
+          "examples": ["Markers/HalfBlockSide/HalfBlockSide1010"],
+          "default": "Markers/HalfBlockSide/HalfBlockSide1010"
+        },
+        "BlockSideMesh1111": {
+          "type": "string",
+          "title": "Block side mesh1111",
+          "examples": ["Markers/HalfBlockSide/HalfBlockSide1111"],
+          "default": "Markers/HalfBlockSide/HalfBlockSide1111"
+        },
+        "Material": {
+          "type": "string",
+          "title": "Material",
+          "examples": ["Markers/HalfBlockSide/HalfBlockSide"],
+          "default": "Markers/HalfBlockSide/HalfBlockSide"
+        }
+      },
+      "required": [
+        "BlockSideMesh0010",
+        "BlockSideMesh0011",
+        "BlockSideMesh0111",
+        "BlockSideMesh1010",
+        "BlockSideMesh1111",
+        "Material"
+      ],
+      "title": "Block object bounds drawer factory specification"
+    },
+    "AutoAtlaserSpec": {
+      "type": "object",
+      "properties": {
+        "AutoAtlasSpecs": {
+          "$ref": "#/$defs/AutoAtlasSpecs"
+        },
+        "AutoAtlasSpecs#append": {
+          "$ref": "#/$defs/AutoAtlasSpecs"
+        },
+        "AutoAtlasSpecs#remove": {
+          "$ref": "#/$defs/AutoAtlasSpecs"
+        },
+        "AutoAtlasSpecs#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "required": ["AutoAtlasSpecs"],
+      "title": "Auto atlaser specification"
+    },
+    "AreaTileDrawerFactorySpec": {
+      "type": "object",
+      "properties": {
+        "TileMesh": {
+          "type": "string",
+          "title": "Tile mesh",
+          "examples": ["Markers/TileMarker"],
+          "default": "Markers/TileMarker"
+        },
+        "TileMaterial": {
+          "type": "string",
+          "title": "Tile material",
+          "examples": ["Markers/TileMarkerSmall"],
+          "default": "Markers/TileMarkerSmall"
+        }
+      },
+      "required": ["TileMaterial", "TileMesh"],
+      "title": "Area tile drawer factory specification"
+    },
+    "MapSizeSpec": {
+      "type": "object",
+      "properties": {
+        "DefaultMapSize": {
+          "type": "object",
+          "properties": {
+            "X": {
+              "type": "integer",
+              "title": "X"
+            },
+            "Y": {
+              "type": "integer",
+              "title": "Y"
+            }
+          },
+          "required": ["X", "Y"],
+          "title": "Default map size"
+        },
+        "MinMapSize": {
+          "type": "integer",
+          "title": "Min map size"
+        },
+        "MaxMapSize": {
+          "type": "integer",
+          "title": "Max map size"
+        },
+        "MaxMapEditorTerrainHeight": {
+          "type": "integer",
+          "title": "Max map editor terrain height"
+        },
+        "MaxGameTerrainHeight": {
+          "type": "integer",
+          "title": "Max game terrain height"
+        },
+        "MaxHeightAboveTerrain": {
+          "type": "integer",
+          "title": "Max height above terrain"
+        }
+      },
+      "required": [
+        "DefaultMapSize",
+        "MaxGameTerrainHeight",
+        "MaxHeightAboveTerrain",
+        "MaxMapEditorTerrainHeight",
+        "MaxMapSize",
+        "MinMapSize"
+      ],
+      "title": "Map size specification"
+    },
+    "SoilContaminationMapSpec": {
+      "type": "object",
+      "properties": {
+        "MaxMapContamination": {
+          "type": "number",
+          "title": "Max map contamination",
+          "examples": [0.9],
+          "default": 0.9
+        },
+        "ContaminationThreshold": {
+          "type": "number",
+          "title": "Contamination threshold",
+          "examples": [0.2],
+          "default": 0.2
+        }
+      },
+      "required": ["ContaminationThreshold", "MaxMapContamination"],
+      "title": "Soil contamination map specification"
+    },
+    "BrushColorSpec": {
+      "type": "object",
+      "properties": {
+        "Neutral": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.8],
+              "default": 0.8
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.8],
+              "default": 0.8
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.8],
+              "default": 0.8
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [0.5],
+              "default": 0.5
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Neutral"
+        },
+        "Positive": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [0.7],
+              "default": 0.7
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Positive"
+        },
+        "Negative": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [0.7],
+              "default": 0.7
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Negative"
+        },
+        "Objects": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.55],
+              "default": 0.55
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [0.9],
+              "default": 0.9
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Objects"
+        }
+      },
+      "required": ["Negative", "Neutral", "Objects", "Positive"],
+      "title": "Brush color specification"
+    },
+    "PlantingSelectionServiceSpec": {
+      "type": "object",
+      "properties": {
+        "PlantingToolTile": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.8],
+              "default": 0.8
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Planting tool tile"
+        },
+        "ToolActionTile": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.95],
+              "default": 0.95
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.03],
+              "default": 0.03
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.05],
+              "default": 0.05
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Tool action tile"
+        },
+        "ToolNoActionTile": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.7],
+              "default": 0.7
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.7],
+              "default": 0.7
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Tool no action tile"
+        }
+      },
+      "required": ["PlantingToolTile", "ToolActionTile", "ToolNoActionTile"],
+      "title": "Planting selection service specification"
+    },
+    "WeatherPanelSpec": {
+      "type": "object",
+      "properties": {
+        "NumberOfBlinks": {
+          "type": "integer",
+          "title": "Number of blinks"
+        },
+        "SecondsBetweenBlinks": {
+          "type": "number",
+          "title": "Seconds between blinks",
+          "examples": [0.44],
+          "default": 0.44
+        }
+      },
+      "required": ["NumberOfBlinks", "SecondsBetweenBlinks"],
+      "title": "Weather panel specification"
+    },
+    "RangeEnterableHighlighterSpec": {
+      "type": "object",
+      "properties": {
+        "BuildingInRange": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.7],
+              "default": 0.7
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.5],
+              "default": 0.5
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.1],
+              "default": 0.1
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Building in range"
+        }
+      },
+      "required": ["BuildingInRange"],
+      "title": "Range enterable highlighter specification"
+    },
+    "WalkerDebuggerSpec": {
+      "type": "object",
+      "properties": {
+        "WalkerGameObjectMarkerPath": {
+          "type": "string",
+          "title": "Walker game object marker path",
+          "examples": ["Markers/WalkerDebugger/WalkerGameObjectMarker"],
+          "default": "Markers/WalkerDebugger/WalkerGameObjectMarker"
+        },
+        "WalkerModelMarkerPath": {
+          "type": "string",
+          "title": "Walker model marker path",
+          "examples": ["Markers/WalkerDebugger/WalkerModelMarker"],
+          "default": "Markers/WalkerDebugger/WalkerModelMarker"
+        },
+        "DestinationMarkerPath": {
+          "type": "string",
+          "title": "Destination marker path",
+          "examples": ["Markers/WalkerDebugger/WalkerDestinationMarker"],
+          "default": "Markers/WalkerDebugger/WalkerDestinationMarker"
+        },
+        "CornerMarkerPath": {
+          "type": "string",
+          "title": "Corner marker path",
+          "examples": ["Markers/WalkerDebugger/PathCornerMarker"],
+          "default": "Markers/WalkerDebugger/PathCornerMarker"
+        }
+      },
+      "required": [
+        "CornerMarkerPath",
+        "DestinationMarkerPath",
+        "WalkerGameObjectMarkerPath",
+        "WalkerModelMarkerPath"
+      ],
+      "title": "Walker debugger specification"
+    },
+    "RectangleBoundsDrawerFactorySpec": {
+      "type": "object",
+      "properties": {
+        "BlockSideMesh0010": {
+          "type": "string",
+          "title": "Block side mesh0010",
+          "examples": ["Markers/BlockSides/BlockSide0010"],
+          "default": "Markers/BlockSides/BlockSide0010"
+        },
+        "BlockSideMesh0011": {
+          "type": "string",
+          "title": "Block side mesh0011",
+          "examples": ["Markers/BlockSides/BlockSide0011"],
+          "default": "Markers/BlockSides/BlockSide0011"
+        },
+        "BlockSideMesh0111": {
+          "type": "string",
+          "title": "Block side mesh0111",
+          "examples": ["Markers/BlockSides/BlockSide0111"],
+          "default": "Markers/BlockSides/BlockSide0111"
+        },
+        "BlockSideMesh1010": {
+          "type": "string",
+          "title": "Block side mesh1010",
+          "examples": ["Markers/BlockSides/BlockSide1010"],
+          "default": "Markers/BlockSides/BlockSide1010"
+        },
+        "BlockSideMesh1111": {
+          "type": "string",
+          "title": "Block side mesh1111",
+          "examples": ["Markers/BlockSides/BlockSide1111"],
+          "default": "Markers/BlockSides/BlockSide1111"
+        },
+        "BlockSideMaterial": {
+          "type": "string",
+          "title": "Block side material",
+          "examples": ["Markers/BlockSides/BlockSide"],
+          "default": "Markers/BlockSides/BlockSide"
+        },
+        "BlockBottomMesh": {
+          "type": "string",
+          "title": "Block bottom mesh",
+          "examples": ["Markers/TileMarker"],
+          "default": "Markers/TileMarker"
+        },
+        "BlockBottomMaterial": {
+          "type": "string",
+          "title": "Block bottom material",
+          "examples": ["Markers/TileMarker"],
+          "default": "Markers/TileMarker"
+        }
+      },
+      "required": [
+        "BlockBottomMaterial",
+        "BlockBottomMesh",
+        "BlockSideMaterial",
+        "BlockSideMesh0010",
+        "BlockSideMesh0011",
+        "BlockSideMesh0111",
+        "BlockSideMesh1010",
+        "BlockSideMesh1111"
+      ],
+      "title": "Rectangle bounds drawer factory specification"
+    },
+    "WaterHeightBrushSpec": {
+      "type": "object",
+      "properties": {
+        "AddingTileColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [0.7],
+              "default": 0.7
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Adding tile color"
+        },
+        "RemovingTileColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [0.7],
+              "default": 0.7
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Removing tile color"
+        },
+        "ContaminatedTileColor": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.6],
+              "default": 0.6
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.3],
+              "default": 0.3
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [0.9],
+              "default": 0.9
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Contaminated tile color"
+        }
+      },
+      "required": [
+        "AddingTileColor",
+        "ContaminatedTileColor",
+        "RemovingTileColor"
+      ],
+      "title": "Water height brush specification"
+    },
+    "SunSpec": {
+      "type": "object",
+      "properties": {
+        "SunPrefab": {
+          "type": "string",
+          "title": "Sun prefab",
+          "examples": ["Environment/Sky/Sun"],
+          "default": "Environment/Sky/Sun"
+        },
+        "SunriseColors": {
+          "type": "object",
+          "properties": {
+            "SunColor": {
+              "type": "object",
+              "properties": {
+                "r": {
+                  "type": "number",
+                  "title": "R",
+                  "examples": [1.0],
+                  "default": 1.0
+                },
+                "g": {
+                  "type": "number",
+                  "title": "G",
+                  "examples": [0.9294118],
+                  "default": 0.9294118
+                },
+                "b": {
+                  "type": "number",
+                  "title": "B",
+                  "examples": [0.8],
+                  "default": 0.8
+                },
+                "a": {
+                  "type": "number",
+                  "title": "A",
+                  "examples": [0.0],
+                  "default": 0.0
+                }
+              },
+              "required": ["a", "b", "g", "r"],
+              "title": "Sun color"
+            },
+            "SunIntensity": {
+              "type": "number",
+              "title": "Sun intensity",
+              "examples": [1.4],
+              "default": 1.4
+            },
+            "SunXAngle": {
+              "type": "number",
+              "title": "Sun x angle",
+              "examples": [32.0],
+              "default": 32.0
+            },
+            "ShadowStrength": {
+              "type": "number",
+              "title": "Shadow strength",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "AmbientSkyColor": {
+              "type": "object",
+              "properties": {
+                "r": {
+                  "type": "number",
+                  "title": "R",
+                  "examples": [0.09758736],
+                  "default": 0.09758736
+                },
+                "g": {
+                  "type": "number",
+                  "title": "G",
+                  "examples": [0.3005438],
+                  "default": 0.3005438
+                },
+                "b": {
+                  "type": "number",
+                  "title": "B",
+                  "examples": [0.4793202],
+                  "default": 0.4793202
+                },
+                "a": {
+                  "type": "number",
+                  "title": "A",
+                  "examples": [0.0],
+                  "default": 0.0
+                }
+              },
+              "required": ["a", "b", "g", "r"],
+              "title": "Ambient sky color"
+            },
+            "AmbientEquatorColor": {
+              "type": "object",
+              "properties": {
+                "r": {
+                  "type": "number",
+                  "title": "R",
+                  "examples": [1.0],
+                  "default": 1.0
+                },
+                "g": {
+                  "type": "number",
+                  "title": "G",
+                  "examples": [0.783538],
+                  "default": 0.783538
+                },
+                "b": {
+                  "type": "number",
+                  "title": "B",
+                  "examples": [0.5088814],
+                  "default": 0.5088814
+                },
+                "a": {
+                  "type": "number",
+                  "title": "A",
+                  "examples": [0.0],
+                  "default": 0.0
+                }
+              },
+              "required": ["a", "b", "g", "r"],
+              "title": "Ambient equator color"
+            },
+            "AmbientGroundColor": {
+              "type": "object",
+              "properties": {
+                "r": {
+                  "type": "number",
+                  "title": "R",
+                  "examples": [1.0],
+                  "default": 1.0
+                },
+                "g": {
+                  "type": "number",
+                  "title": "G",
+                  "examples": [0.48515],
+                  "default": 0.48515
+                },
+                "b": {
+                  "type": "number",
+                  "title": "B",
+                  "examples": [0.0],
+                  "default": 0.0
+                },
+                "a": {
+                  "type": "number",
+                  "title": "A",
+                  "examples": [0.0],
+                  "default": 0.0
+                }
+              },
+              "required": ["a", "b", "g", "r"],
+              "title": "Ambient ground color"
+            },
+            "ReflectionsIntensity": {
+              "type": "number",
+              "title": "Reflections intensity",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "TemperateWeatherFog": {
+              "type": "object",
+              "properties": {
+                "FogColor": {
+                  "type": "object",
+                  "properties": {
+                    "r": {
+                      "type": "number",
+                      "title": "R",
+                      "examples": [0.682353],
+                      "default": 0.682353
+                    },
+                    "g": {
+                      "type": "number",
+                      "title": "G",
+                      "examples": [0.6705883],
+                      "default": 0.6705883
+                    },
+                    "b": {
+                      "type": "number",
+                      "title": "B",
+                      "examples": [0.6705883],
+                      "default": 0.6705883
+                    },
+                    "a": {
+                      "type": "number",
+                      "title": "A",
+                      "examples": [1.0],
+                      "default": 1.0
+                    }
+                  },
+                  "required": ["a", "b", "g", "r"],
+                  "title": "Fog color"
+                },
+                "FogDensity": {
+                  "type": "number",
+                  "title": "Fog density",
+                  "examples": [0.003],
+                  "default": 0.003
+                }
+              },
+              "required": ["FogColor", "FogDensity"],
+              "title": "Temperate weather fog"
+            },
+            "HazardousWeatherFogs": {
+              "$ref": "#/$defs/HazardousWeatherFogs"
+            },
+            "HazardousWeatherFogs#append": {
+              "$ref": "#/$defs/HazardousWeatherFogs"
+            },
+            "HazardousWeatherFogs#remove": {
+              "$ref": "#/$defs/HazardousWeatherFogs"
+            },
+            "HazardousWeatherFogs#delete": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "AmbientEquatorColor",
+            "AmbientGroundColor",
+            "AmbientSkyColor",
+            "HazardousWeatherFogs",
+            "ReflectionsIntensity",
+            "ShadowStrength",
+            "SunColor",
+            "SunIntensity",
+            "SunXAngle",
+            "TemperateWeatherFog"
+          ],
+          "title": "Sunrise colors"
+        },
+        "DayColors": {
+          "type": "object",
+          "properties": {
+            "SunColor": {
+              "type": "object",
+              "properties": {
+                "r": {
+                  "type": "number",
+                  "title": "R",
+                  "examples": [1.0],
+                  "default": 1.0
+                },
+                "g": {
+                  "type": "number",
+                  "title": "G",
+                  "examples": [0.9625],
+                  "default": 0.9625
+                },
+                "b": {
+                  "type": "number",
+                  "title": "B",
+                  "examples": [0.85],
+                  "default": 0.85
+                },
+                "a": {
+                  "type": "number",
+                  "title": "A",
+                  "examples": [0.0],
+                  "default": 0.0
+                }
+              },
+              "required": ["a", "b", "g", "r"],
+              "title": "Sun color"
+            },
+            "SunIntensity": {
+              "type": "number",
+              "title": "Sun intensity",
+              "examples": [1.35],
+              "default": 1.35
+            },
+            "SunXAngle": {
+              "type": "number",
+              "title": "Sun x angle",
+              "examples": [45.0],
+              "default": 45.0
+            },
+            "ShadowStrength": {
+              "type": "number",
+              "title": "Shadow strength",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "AmbientSkyColor": {
+              "type": "object",
+              "properties": {
+                "r": {
+                  "type": "number",
+                  "title": "R",
+                  "examples": [0.6239606],
+                  "default": 0.6239606
+                },
+                "g": {
+                  "type": "number",
+                  "title": "G",
+                  "examples": [0.6307573],
+                  "default": 0.6307573
+                },
+                "b": {
+                  "type": "number",
+                  "title": "B",
+                  "examples": [0.9734455],
+                  "default": 0.9734455
+                },
+                "a": {
+                  "type": "number",
+                  "title": "A",
+                  "examples": [0.0],
+                  "default": 0.0
+                }
+              },
+              "required": ["a", "b", "g", "r"],
+              "title": "Ambient sky color"
+            },
+            "AmbientEquatorColor": {
+              "type": "object",
+              "properties": {
+                "r": {
+                  "type": "number",
+                  "title": "R",
+                  "examples": [1.0],
+                  "default": 1.0
+                },
+                "g": {
+                  "type": "number",
+                  "title": "G",
+                  "examples": [1.0],
+                  "default": 1.0
+                },
+                "b": {
+                  "type": "number",
+                  "title": "B",
+                  "examples": [1.0],
+                  "default": 1.0
+                },
+                "a": {
+                  "type": "number",
+                  "title": "A",
+                  "examples": [0.0],
+                  "default": 0.0
+                }
+              },
+              "required": ["a", "b", "g", "r"],
+              "title": "Ambient equator color"
+            },
+            "AmbientGroundColor": {
+              "type": "object",
+              "properties": {
+                "r": {
+                  "type": "number",
+                  "title": "R",
+                  "examples": [0.2831488],
+                  "default": 0.2831488
+                },
+                "g": {
+                  "type": "number",
+                  "title": "G",
+                  "examples": [0.2269659],
+                  "default": 0.2269659
+                },
+                "b": {
+                  "type": "number",
+                  "title": "B",
+                  "examples": [0.3712378],
+                  "default": 0.3712378
+                },
+                "a": {
+                  "type": "number",
+                  "title": "A",
+                  "examples": [0.0],
+                  "default": 0.0
+                }
+              },
+              "required": ["a", "b", "g", "r"],
+              "title": "Ambient ground color"
+            },
+            "ReflectionsIntensity": {
+              "type": "number",
+              "title": "Reflections intensity",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "TemperateWeatherFog": {
+              "type": "object",
+              "properties": {
+                "FogColor": {
+                  "type": "object",
+                  "properties": {
+                    "r": {
+                      "type": "number",
+                      "title": "R",
+                      "examples": [0.4470589],
+                      "default": 0.4470589
+                    },
+                    "g": {
+                      "type": "number",
+                      "title": "G",
+                      "examples": [0.7607844],
+                      "default": 0.7607844
+                    },
+                    "b": {
+                      "type": "number",
+                      "title": "B",
+                      "examples": [0.8235295],
+                      "default": 0.8235295
+                    },
+                    "a": {
+                      "type": "number",
+                      "title": "A",
+                      "examples": [1.0],
+                      "default": 1.0
+                    }
+                  },
+                  "required": ["a", "b", "g", "r"],
+                  "title": "Fog color"
+                },
+                "FogDensity": {
+                  "type": "number",
+                  "title": "Fog density",
+                  "examples": [0.003],
+                  "default": 0.003
+                }
+              },
+              "required": ["FogColor", "FogDensity"],
+              "title": "Temperate weather fog"
+            },
+            "HazardousWeatherFogs": {
+              "$ref": "#/$defs/HazardousWeatherFogs"
+            },
+            "HazardousWeatherFogs#append": {
+              "$ref": "#/$defs/HazardousWeatherFogs"
+            },
+            "HazardousWeatherFogs#remove": {
+              "$ref": "#/$defs/HazardousWeatherFogs"
+            },
+            "HazardousWeatherFogs#delete": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "AmbientEquatorColor",
+            "AmbientGroundColor",
+            "AmbientSkyColor",
+            "HazardousWeatherFogs",
+            "ReflectionsIntensity",
+            "ShadowStrength",
+            "SunColor",
+            "SunIntensity",
+            "SunXAngle",
+            "TemperateWeatherFog"
+          ],
+          "title": "Day colors"
+        },
+        "SunsetColors": {
+          "type": "object",
+          "properties": {
+            "SunColor": {
+              "type": "object",
+              "properties": {
+                "r": {
+                  "type": "number",
+                  "title": "R",
+                  "examples": [1.0],
+                  "default": 1.0
+                },
+                "g": {
+                  "type": "number",
+                  "title": "G",
+                  "examples": [0.8313726],
+                  "default": 0.8313726
+                },
+                "b": {
+                  "type": "number",
+                  "title": "B",
+                  "examples": [0.5137255],
+                  "default": 0.5137255
+                },
+                "a": {
+                  "type": "number",
+                  "title": "A",
+                  "examples": [0.0],
+                  "default": 0.0
+                }
+              },
+              "required": ["a", "b", "g", "r"],
+              "title": "Sun color"
+            },
+            "SunIntensity": {
+              "type": "number",
+              "title": "Sun intensity",
+              "examples": [1.5],
+              "default": 1.5
+            },
+            "SunXAngle": {
+              "type": "number",
+              "title": "Sun x angle",
+              "examples": [30.0],
+              "default": 30.0
+            },
+            "ShadowStrength": {
+              "type": "number",
+              "title": "Shadow strength",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "AmbientSkyColor": {
+              "type": "object",
+              "properties": {
+                "r": {
+                  "type": "number",
+                  "title": "R",
+                  "examples": [0.6509434],
+                  "default": 0.6509434
+                },
+                "g": {
+                  "type": "number",
+                  "title": "G",
+                  "examples": [0.12589],
+                  "default": 0.12589
+                },
+                "b": {
+                  "type": "number",
+                  "title": "B",
+                  "examples": [0.3709472],
+                  "default": 0.3709472
+                },
+                "a": {
+                  "type": "number",
+                  "title": "A",
+                  "examples": [0.0],
+                  "default": 0.0
+                }
+              },
+              "required": ["a", "b", "g", "r"],
+              "title": "Ambient sky color"
+            },
+            "AmbientEquatorColor": {
+              "type": "object",
+              "properties": {
+                "r": {
+                  "type": "number",
+                  "title": "R",
+                  "examples": [1.0],
+                  "default": 1.0
+                },
+                "g": {
+                  "type": "number",
+                  "title": "G",
+                  "examples": [0.4677838],
+                  "default": 0.4677838
+                },
+                "b": {
+                  "type": "number",
+                  "title": "B",
+                  "examples": [0.3813261],
+                  "default": 0.3813261
+                },
+                "a": {
+                  "type": "number",
+                  "title": "A",
+                  "examples": [0.0],
+                  "default": 0.0
+                }
+              },
+              "required": ["a", "b", "g", "r"],
+              "title": "Ambient equator color"
+            },
+            "AmbientGroundColor": {
+              "type": "object",
+              "properties": {
+                "r": {
+                  "type": "number",
+                  "title": "R",
+                  "examples": [1.0],
+                  "default": 1.0
+                },
+                "g": {
+                  "type": "number",
+                  "title": "G",
+                  "examples": [0.6724433],
+                  "default": 0.6724433
+                },
+                "b": {
+                  "type": "number",
+                  "title": "B",
+                  "examples": [0.2788943],
+                  "default": 0.2788943
+                },
+                "a": {
+                  "type": "number",
+                  "title": "A",
+                  "examples": [0.0],
+                  "default": 0.0
+                }
+              },
+              "required": ["a", "b", "g", "r"],
+              "title": "Ambient ground color"
+            },
+            "ReflectionsIntensity": {
+              "type": "number",
+              "title": "Reflections intensity",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "TemperateWeatherFog": {
+              "type": "object",
+              "properties": {
+                "FogColor": {
+                  "type": "object",
+                  "properties": {
+                    "r": {
+                      "type": "number",
+                      "title": "R",
+                      "examples": [0.8392158],
+                      "default": 0.8392158
+                    },
+                    "g": {
+                      "type": "number",
+                      "title": "G",
+                      "examples": [0.6156863],
+                      "default": 0.6156863
+                    },
+                    "b": {
+                      "type": "number",
+                      "title": "B",
+                      "examples": [0.6470588],
+                      "default": 0.6470588
+                    },
+                    "a": {
+                      "type": "number",
+                      "title": "A",
+                      "examples": [1.0],
+                      "default": 1.0
+                    }
+                  },
+                  "required": ["a", "b", "g", "r"],
+                  "title": "Fog color"
+                },
+                "FogDensity": {
+                  "type": "number",
+                  "title": "Fog density",
+                  "examples": [0.003],
+                  "default": 0.003
+                }
+              },
+              "required": ["FogColor", "FogDensity"],
+              "title": "Temperate weather fog"
+            },
+            "HazardousWeatherFogs": {
+              "$ref": "#/$defs/HazardousWeatherFogs"
+            },
+            "HazardousWeatherFogs#append": {
+              "$ref": "#/$defs/HazardousWeatherFogs"
+            },
+            "HazardousWeatherFogs#remove": {
+              "$ref": "#/$defs/HazardousWeatherFogs"
+            },
+            "HazardousWeatherFogs#delete": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "AmbientEquatorColor",
+            "AmbientGroundColor",
+            "AmbientSkyColor",
+            "HazardousWeatherFogs",
+            "ReflectionsIntensity",
+            "ShadowStrength",
+            "SunColor",
+            "SunIntensity",
+            "SunXAngle",
+            "TemperateWeatherFog"
+          ],
+          "title": "Sunset colors"
+        },
+        "NightColors": {
+          "type": "object",
+          "properties": {
+            "SunColor": {
+              "type": "object",
+              "properties": {
+                "r": {
+                  "type": "number",
+                  "title": "R",
+                  "examples": [0.0],
+                  "default": 0.0
+                },
+                "g": {
+                  "type": "number",
+                  "title": "G",
+                  "examples": [0.3254902],
+                  "default": 0.3254902
+                },
+                "b": {
+                  "type": "number",
+                  "title": "B",
+                  "examples": [1.0],
+                  "default": 1.0
+                },
+                "a": {
+                  "type": "number",
+                  "title": "A",
+                  "examples": [0.0],
+                  "default": 0.0
+                }
+              },
+              "required": ["a", "b", "g", "r"],
+              "title": "Sun color"
+            },
+            "SunIntensity": {
+              "type": "number",
+              "title": "Sun intensity",
+              "examples": [1.5],
+              "default": 1.5
+            },
+            "SunXAngle": {
+              "type": "number",
+              "title": "Sun x angle",
+              "examples": [45.0],
+              "default": 45.0
+            },
+            "ShadowStrength": {
+              "type": "number",
+              "title": "Shadow strength",
+              "examples": [0.5],
+              "default": 0.5
+            },
+            "AmbientSkyColor": {
+              "type": "object",
+              "properties": {
+                "r": {
+                  "type": "number",
+                  "title": "R",
+                  "examples": [0.2581829],
+                  "default": 0.2581829
+                },
+                "g": {
+                  "type": "number",
+                  "title": "G",
+                  "examples": [0.4072403],
+                  "default": 0.4072403
+                },
+                "b": {
+                  "type": "number",
+                  "title": "B",
+                  "examples": [1.0],
+                  "default": 1.0
+                },
+                "a": {
+                  "type": "number",
+                  "title": "A",
+                  "examples": [0.0],
+                  "default": 0.0
+                }
+              },
+              "required": ["a", "b", "g", "r"],
+              "title": "Ambient sky color"
+            },
+            "AmbientEquatorColor": {
+              "type": "object",
+              "properties": {
+                "r": {
+                  "type": "number",
+                  "title": "R",
+                  "examples": [0.5394797],
+                  "default": 0.5394797
+                },
+                "g": {
+                  "type": "number",
+                  "title": "G",
+                  "examples": [0.5583406],
+                  "default": 0.5583406
+                },
+                "b": {
+                  "type": "number",
+                  "title": "B",
+                  "examples": [0.9046614],
+                  "default": 0.9046614
+                },
+                "a": {
+                  "type": "number",
+                  "title": "A",
+                  "examples": [0.0],
+                  "default": 0.0
+                }
+              },
+              "required": ["a", "b", "g", "r"],
+              "title": "Ambient equator color"
+            },
+            "AmbientGroundColor": {
+              "type": "object",
+              "properties": {
+                "r": {
+                  "type": "number",
+                  "title": "R",
+                  "examples": [0.09254902],
+                  "default": 0.09254902
+                },
+                "g": {
+                  "type": "number",
+                  "title": "G",
+                  "examples": [0.105882354],
+                  "default": 0.105882354
+                },
+                "b": {
+                  "type": "number",
+                  "title": "B",
+                  "examples": [0.05882353],
+                  "default": 0.05882353
+                },
+                "a": {
+                  "type": "number",
+                  "title": "A",
+                  "examples": [0.0],
+                  "default": 0.0
+                }
+              },
+              "required": ["a", "b", "g", "r"],
+              "title": "Ambient ground color"
+            },
+            "ReflectionsIntensity": {
+              "type": "number",
+              "title": "Reflections intensity",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "TemperateWeatherFog": {
+              "type": "object",
+              "properties": {
+                "FogColor": {
+                  "type": "object",
+                  "properties": {
+                    "r": {
+                      "type": "number",
+                      "title": "R",
+                      "examples": [0.0],
+                      "default": 0.0
+                    },
+                    "g": {
+                      "type": "number",
+                      "title": "G",
+                      "examples": [0.3960785],
+                      "default": 0.3960785
+                    },
+                    "b": {
+                      "type": "number",
+                      "title": "B",
+                      "examples": [0.7450981],
+                      "default": 0.7450981
+                    },
+                    "a": {
+                      "type": "number",
+                      "title": "A",
+                      "examples": [1.0],
+                      "default": 1.0
+                    }
+                  },
+                  "required": ["a", "b", "g", "r"],
+                  "title": "Fog color"
+                },
+                "FogDensity": {
+                  "type": "number",
+                  "title": "Fog density",
+                  "examples": [0.003],
+                  "default": 0.003
+                }
+              },
+              "required": ["FogColor", "FogDensity"],
+              "title": "Temperate weather fog"
+            },
+            "HazardousWeatherFogs": {
+              "$ref": "#/$defs/HazardousWeatherFogs"
+            },
+            "HazardousWeatherFogs#append": {
+              "$ref": "#/$defs/HazardousWeatherFogs"
+            },
+            "HazardousWeatherFogs#remove": {
+              "$ref": "#/$defs/HazardousWeatherFogs"
+            },
+            "HazardousWeatherFogs#delete": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "AmbientEquatorColor",
+            "AmbientGroundColor",
+            "AmbientSkyColor",
+            "HazardousWeatherFogs",
+            "ReflectionsIntensity",
+            "ShadowStrength",
+            "SunColor",
+            "SunIntensity",
+            "SunXAngle",
+            "TemperateWeatherFog"
+          ],
+          "title": "Night colors"
+        },
+        "RotateWithCameraOffset": {
+          "type": "number",
+          "title": "Rotate with camera offset",
+          "examples": [40.0],
+          "default": 40.0
+        }
+      },
+      "required": [
+        "DayColors",
+        "NightColors",
+        "RotateWithCameraOffset",
+        "SunPrefab",
+        "SunriseColors",
+        "SunsetColors"
+      ],
+      "title": "Sun specification"
+    },
+    "NewGameModesSpec": {
+      "type": "object",
+      "properties": {
+        "Easy": {
+          "type": "object",
+          "properties": {
+            "StartingAdults": {
+              "type": "integer",
+              "title": "Starting adults"
+            },
+            "AdultAgeProgress": {
+              "type": "object",
+              "properties": {
+                "Min": {
+                  "type": "number",
+                  "title": "Min",
+                  "examples": [0.1],
+                  "default": 0.1
+                },
+                "Max": {
+                  "type": "number",
+                  "title": "Max",
+                  "examples": [0.7],
+                  "default": 0.7
+                }
+              },
+              "required": ["Max", "Min"],
+              "title": "Adult age progress"
+            },
+            "StartingChildren": {
+              "type": "integer",
+              "title": "Starting children"
+            },
+            "ChildAgeProgress": {
+              "type": "object",
+              "properties": {
+                "Min": {
+                  "type": "number",
+                  "title": "Min",
+                  "examples": [0.1],
+                  "default": 0.1
+                },
+                "Max": {
+                  "type": "number",
+                  "title": "Max",
+                  "examples": [0.8],
+                  "default": 0.8
+                }
+              },
+              "required": ["Max", "Min"],
+              "title": "Child age progress"
+            },
+            "FoodConsumption": {
+              "type": "number",
+              "title": "Food consumption",
+              "examples": [0.4],
+              "default": 0.4
+            },
+            "WaterConsumption": {
+              "type": "number",
+              "title": "Water consumption",
+              "examples": [0.4],
+              "default": 0.4
+            },
+            "StartingFood": {
+              "type": "integer",
+              "title": "Starting food"
+            },
+            "StartingWater": {
+              "type": "integer",
+              "title": "Starting water"
+            },
+            "TemperateWeatherDuration": {
+              "type": "object",
+              "properties": {
+                "Min": {
+                  "type": "integer",
+                  "title": "Min"
+                },
+                "Max": {
+                  "type": "integer",
+                  "title": "Max"
+                }
+              },
+              "required": ["Max", "Min"],
+              "title": "Temperate weather duration"
+            },
+            "DroughtDuration": {
+              "type": "object",
+              "properties": {
+                "Min": {
+                  "type": "integer",
+                  "title": "Min"
+                },
+                "Max": {
+                  "type": "integer",
+                  "title": "Max"
+                }
+              },
+              "required": ["Max", "Min"],
+              "title": "Drought duration"
+            },
+            "DroughtDurationHandicapMultiplier": {
+              "type": "number",
+              "title": "Drought duration handicap multiplier",
+              "examples": [0.25],
+              "default": 0.25
+            },
+            "DroughtDurationHandicapCycles": {
+              "type": "integer",
+              "title": "Drought duration handicap cycles"
+            },
+            "CyclesBeforeRandomizingBadtide": {
+              "type": "integer",
+              "title": "Cycles before randomizing badtide"
+            },
+            "ChanceForBadtide": {
+              "type": "number",
+              "title": "Chance for badtide",
+              "examples": [0.4],
+              "default": 0.4
+            },
+            "BadtideDuration": {
+              "type": "object",
+              "properties": {
+                "Min": {
+                  "type": "integer",
+                  "title": "Min"
+                },
+                "Max": {
+                  "type": "integer",
+                  "title": "Max"
+                }
+              },
+              "required": ["Max", "Min"],
+              "title": "Badtide duration"
+            },
+            "BadtideDurationHandicapMultiplier": {
+              "type": "number",
+              "title": "Badtide duration handicap multiplier",
+              "examples": [0.3],
+              "default": 0.3
+            },
+            "BadtideDurationHandicapCycles": {
+              "type": "integer",
+              "title": "Badtide duration handicap cycles"
+            },
+            "InjuryChance": {
+              "type": "number",
+              "title": "Injury chance",
+              "examples": [0.3],
+              "default": 0.3
+            },
+            "DemolishableRecoveryRate": {
+              "type": "number",
+              "title": "Demolishable recovery rate",
+              "examples": [0.9],
+              "default": 0.9
+            }
+          },
+          "required": [
+            "AdultAgeProgress",
+            "BadtideDuration",
+            "BadtideDurationHandicapCycles",
+            "BadtideDurationHandicapMultiplier",
+            "ChanceForBadtide",
+            "ChildAgeProgress",
+            "CyclesBeforeRandomizingBadtide",
+            "DemolishableRecoveryRate",
+            "DroughtDuration",
+            "DroughtDurationHandicapCycles",
+            "DroughtDurationHandicapMultiplier",
+            "FoodConsumption",
+            "InjuryChance",
+            "StartingAdults",
+            "StartingChildren",
+            "StartingFood",
+            "StartingWater",
+            "TemperateWeatherDuration",
+            "WaterConsumption"
+          ],
+          "title": "Easy"
+        },
+        "Normal": {
+          "type": "object",
+          "properties": {
+            "StartingAdults": {
+              "type": "integer",
+              "title": "Starting adults"
+            },
+            "AdultAgeProgress": {
+              "type": "object",
+              "properties": {
+                "Min": {
+                  "type": "number",
+                  "title": "Min",
+                  "examples": [0.1],
+                  "default": 0.1
+                },
+                "Max": {
+                  "type": "number",
+                  "title": "Max",
+                  "examples": [0.7],
+                  "default": 0.7
+                }
+              },
+              "required": ["Max", "Min"],
+              "title": "Adult age progress"
+            },
+            "StartingChildren": {
+              "type": "integer",
+              "title": "Starting children"
+            },
+            "ChildAgeProgress": {
+              "type": "object",
+              "properties": {
+                "Min": {
+                  "type": "number",
+                  "title": "Min",
+                  "examples": [0.1],
+                  "default": 0.1
+                },
+                "Max": {
+                  "type": "number",
+                  "title": "Max",
+                  "examples": [0.8],
+                  "default": 0.8
+                }
+              },
+              "required": ["Max", "Min"],
+              "title": "Child age progress"
+            },
+            "FoodConsumption": {
+              "type": "number",
+              "title": "Food consumption",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "WaterConsumption": {
+              "type": "number",
+              "title": "Water consumption",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "StartingFood": {
+              "type": "integer",
+              "title": "Starting food"
+            },
+            "StartingWater": {
+              "type": "integer",
+              "title": "Starting water"
+            },
+            "TemperateWeatherDuration": {
+              "type": "object",
+              "properties": {
+                "Min": {
+                  "type": "integer",
+                  "title": "Min"
+                },
+                "Max": {
+                  "type": "integer",
+                  "title": "Max"
+                }
+              },
+              "required": ["Max", "Min"],
+              "title": "Temperate weather duration"
+            },
+            "DroughtDuration": {
+              "type": "object",
+              "properties": {
+                "Min": {
+                  "type": "integer",
+                  "title": "Min"
+                },
+                "Max": {
+                  "type": "integer",
+                  "title": "Max"
+                }
+              },
+              "required": ["Max", "Min"],
+              "title": "Drought duration"
+            },
+            "DroughtDurationHandicapMultiplier": {
+              "type": "number",
+              "title": "Drought duration handicap multiplier",
+              "examples": [0.38],
+              "default": 0.38
+            },
+            "DroughtDurationHandicapCycles": {
+              "type": "integer",
+              "title": "Drought duration handicap cycles"
+            },
+            "CyclesBeforeRandomizingBadtide": {
+              "type": "integer",
+              "title": "Cycles before randomizing badtide"
+            },
+            "ChanceForBadtide": {
+              "type": "number",
+              "title": "Chance for badtide",
+              "examples": [0.4],
+              "default": 0.4
+            },
+            "BadtideDuration": {
+              "type": "object",
+              "properties": {
+                "Min": {
+                  "type": "integer",
+                  "title": "Min"
+                },
+                "Max": {
+                  "type": "integer",
+                  "title": "Max"
+                }
+              },
+              "required": ["Max", "Min"],
+              "title": "Badtide duration"
+            },
+            "BadtideDurationHandicapMultiplier": {
+              "type": "number",
+              "title": "Badtide duration handicap multiplier",
+              "examples": [0.15],
+              "default": 0.15
+            },
+            "BadtideDurationHandicapCycles": {
+              "type": "integer",
+              "title": "Badtide duration handicap cycles"
+            },
+            "InjuryChance": {
+              "type": "number",
+              "title": "Injury chance",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "DemolishableRecoveryRate": {
+              "type": "number",
+              "title": "Demolishable recovery rate",
+              "examples": [0.75],
+              "default": 0.75
+            }
+          },
+          "required": [
+            "AdultAgeProgress",
+            "BadtideDuration",
+            "BadtideDurationHandicapCycles",
+            "BadtideDurationHandicapMultiplier",
+            "ChanceForBadtide",
+            "ChildAgeProgress",
+            "CyclesBeforeRandomizingBadtide",
+            "DemolishableRecoveryRate",
+            "DroughtDuration",
+            "DroughtDurationHandicapCycles",
+            "DroughtDurationHandicapMultiplier",
+            "FoodConsumption",
+            "InjuryChance",
+            "StartingAdults",
+            "StartingChildren",
+            "StartingFood",
+            "StartingWater",
+            "TemperateWeatherDuration",
+            "WaterConsumption"
+          ],
+          "title": "Normal"
+        },
+        "Hard": {
+          "type": "object",
+          "properties": {
+            "StartingAdults": {
+              "type": "integer",
+              "title": "Starting adults"
+            },
+            "AdultAgeProgress": {
+              "type": "object",
+              "properties": {
+                "Min": {
+                  "type": "number",
+                  "title": "Min",
+                  "examples": [0.1],
+                  "default": 0.1
+                },
+                "Max": {
+                  "type": "number",
+                  "title": "Max",
+                  "examples": [0.7],
+                  "default": 0.7
+                }
+              },
+              "required": ["Max", "Min"],
+              "title": "Adult age progress"
+            },
+            "StartingChildren": {
+              "type": "integer",
+              "title": "Starting children"
+            },
+            "ChildAgeProgress": {
+              "type": "object",
+              "properties": {
+                "Min": {
+                  "type": "number",
+                  "title": "Min",
+                  "examples": [0.1],
+                  "default": 0.1
+                },
+                "Max": {
+                  "type": "number",
+                  "title": "Max",
+                  "examples": [0.8],
+                  "default": 0.8
+                }
+              },
+              "required": ["Max", "Min"],
+              "title": "Child age progress"
+            },
+            "FoodConsumption": {
+              "type": "number",
+              "title": "Food consumption",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "WaterConsumption": {
+              "type": "number",
+              "title": "Water consumption",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "StartingFood": {
+              "type": "integer",
+              "title": "Starting food"
+            },
+            "StartingWater": {
+              "type": "integer",
+              "title": "Starting water"
+            },
+            "TemperateWeatherDuration": {
+              "type": "object",
+              "properties": {
+                "Min": {
+                  "type": "integer",
+                  "title": "Min"
+                },
+                "Max": {
+                  "type": "integer",
+                  "title": "Max"
+                }
+              },
+              "required": ["Max", "Min"],
+              "title": "Temperate weather duration"
+            },
+            "DroughtDuration": {
+              "type": "object",
+              "properties": {
+                "Min": {
+                  "type": "integer",
+                  "title": "Min"
+                },
+                "Max": {
+                  "type": "integer",
+                  "title": "Max"
+                }
+              },
+              "required": ["Max", "Min"],
+              "title": "Drought duration"
+            },
+            "DroughtDurationHandicapMultiplier": {
+              "type": "number",
+              "title": "Drought duration handicap multiplier",
+              "examples": [0.2],
+              "default": 0.2
+            },
+            "DroughtDurationHandicapCycles": {
+              "type": "integer",
+              "title": "Drought duration handicap cycles"
+            },
+            "CyclesBeforeRandomizingBadtide": {
+              "type": "integer",
+              "title": "Cycles before randomizing badtide"
+            },
+            "ChanceForBadtide": {
+              "type": "number",
+              "title": "Chance for badtide",
+              "examples": [0.4],
+              "default": 0.4
+            },
+            "BadtideDuration": {
+              "type": "object",
+              "properties": {
+                "Min": {
+                  "type": "integer",
+                  "title": "Min"
+                },
+                "Max": {
+                  "type": "integer",
+                  "title": "Max"
+                }
+              },
+              "required": ["Max", "Min"],
+              "title": "Badtide duration"
+            },
+            "BadtideDurationHandicapMultiplier": {
+              "type": "number",
+              "title": "Badtide duration handicap multiplier",
+              "examples": [0.4],
+              "default": 0.4
+            },
+            "BadtideDurationHandicapCycles": {
+              "type": "integer",
+              "title": "Badtide duration handicap cycles"
+            },
+            "InjuryChance": {
+              "type": "number",
+              "title": "Injury chance",
+              "examples": [1.0],
+              "default": 1.0
+            },
+            "DemolishableRecoveryRate": {
+              "type": "number",
+              "title": "Demolishable recovery rate",
+              "examples": [0.75],
+              "default": 0.75
+            }
+          },
+          "required": [
+            "AdultAgeProgress",
+            "BadtideDuration",
+            "BadtideDurationHandicapCycles",
+            "BadtideDurationHandicapMultiplier",
+            "ChanceForBadtide",
+            "ChildAgeProgress",
+            "CyclesBeforeRandomizingBadtide",
+            "DemolishableRecoveryRate",
+            "DroughtDuration",
+            "DroughtDurationHandicapCycles",
+            "DroughtDurationHandicapMultiplier",
+            "FoodConsumption",
+            "InjuryChance",
+            "StartingAdults",
+            "StartingChildren",
+            "StartingFood",
+            "StartingWater",
+            "TemperateWeatherDuration",
+            "WaterConsumption"
+          ],
+          "title": "Hard"
+        }
+      },
+      "required": ["Easy", "Hard", "Normal"],
+      "title": "New game modes specification"
+    },
+    "AudioMixerGroupRetrieverSpec": {
+      "type": "object",
+      "properties": {
+        "AudioMixer": {
+          "type": "string",
+          "title": "Audio mixer",
+          "examples": ["Sounds/AudioMixer"],
+          "default": "Sounds/AudioMixer"
+        }
+      },
+      "required": ["AudioMixer"],
+      "title": "Audio mixer group retriever specification"
+    },
+    "RuinModelFactorySpec": {
+      "type": "object",
+      "properties": {
+        "IvyDryModel": {
+          "type": "string",
+          "title": "Ivy dry model",
+          "examples": ["MapEditor/Ruins/Models/Ivy_Dry"],
+          "default": "MapEditor/Ruins/Models/Ivy_Dry"
+        },
+        "IvyWetModel": {
+          "type": "string",
+          "title": "Ivy wet model",
+          "examples": ["MapEditor/Ruins/Models/Ivy_Wet"],
+          "default": "MapEditor/Ruins/Models/Ivy_Wet"
+        },
+        "RuinModelVariants": {
+          "$ref": "#/$defs/RuinModelVariants"
+        },
+        "RuinModelVariants#append": {
+          "$ref": "#/$defs/RuinModelVariants"
+        },
+        "RuinModelVariants#remove": {
+          "$ref": "#/$defs/RuinModelVariants"
+        },
+        "RuinModelVariants#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "required": ["IvyDryModel", "IvyWetModel", "RuinModelVariants"],
+      "title": "Ruin model factory specification"
+    },
+    "DistanceToColorConverterSpec": {
+      "type": "object",
+      "properties": {
+        "DistanceGradient": {
+          "$ref": "#/$defs/DistanceGradient"
+        },
+        "DistanceGradient#append": {
+          "$ref": "#/$defs/DistanceGradient"
+        },
+        "DistanceGradient#remove": {
+          "$ref": "#/$defs/DistanceGradient"
+        },
+        "DistanceGradient#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "required": ["DistanceGradient"],
+      "title": "Distance to color converter specification"
+    },
+    "TerrainMaterialMapSpec": {
+      "type": "object",
+      "properties": {
+        "DesertTexture": {
+          "type": "string",
+          "title": "Desert texture",
+          "examples": ["Environment/Land/Materials/Desert"],
+          "default": "Environment/Land/Materials/Desert"
+        },
+        "DryFieldTexture": {
+          "type": "string",
+          "title": "Dry field texture",
+          "examples": ["Environment/Land/Materials/Field/DryField"],
+          "default": "Environment/Land/Materials/Field/DryField"
+        },
+        "WetFieldTexture": {
+          "type": "string",
+          "title": "Wet field texture",
+          "examples": ["Environment/Land/Materials/Field/WetField"],
+          "default": "Environment/Land/Materials/Field/WetField"
+        },
+        "BlendingNoise": {
+          "type": "string",
+          "title": "Blending noise",
+          "examples": ["Environment/Land/Materials/BlendingNoise"],
+          "default": "Environment/Land/Materials/BlendingNoise"
+        },
+        "BlendingNoiseScale": {
+          "type": "number",
+          "title": "Blending noise scale",
+          "examples": [0.2],
+          "default": 0.2
+        },
+        "BlendingNoiseMultiplier": {
+          "type": "number",
+          "title": "Blending noise multiplier",
+          "examples": [0.96],
+          "default": 0.96
+        },
+        "BlendingSoftness": {
+          "type": "number",
+          "title": "Blending softness",
+          "examples": [5.8],
+          "default": 5.8
+        },
+        "BlendingMargin": {
+          "type": "number",
+          "title": "Blending margin",
+          "examples": [0.2],
+          "default": 0.2
+        },
+        "AltitudeCeiling": {
+          "type": "number",
+          "title": "Altitude ceiling",
+          "examples": [22.0],
+          "default": 22.0
+        },
+        "AltitudeMultiplier": {
+          "type": "string",
+          "title": "Altitude multiplier",
+          "examples": [
+            "Environment/Land/Materials/AltitudeMultiplierGrass_Manual"
+          ],
+          "default": "Environment/Land/Materials/AltitudeMultiplierGrass_Manual"
+        },
+        "DesertAltitudeMultiplier": {
+          "type": "string",
+          "title": "Desert altitude multiplier",
+          "examples": [
+            "Environment/Land/Materials/AltitudeMultiplierDesert_Manual"
+          ],
+          "default": "Environment/Land/Materials/AltitudeMultiplierDesert_Manual"
+        },
+        "CutoutMargin": {
+          "type": "number",
+          "title": "Cutout margin",
+          "examples": [0.1],
+          "default": 0.1
+        }
+      },
+      "required": [
+        "AltitudeCeiling",
+        "AltitudeMultiplier",
+        "BlendingMargin",
+        "BlendingNoise",
+        "BlendingNoiseMultiplier",
+        "BlendingNoiseScale",
+        "BlendingSoftness",
+        "CutoutMargin",
+        "DesertAltitudeMultiplier",
+        "DesertTexture",
+        "DryFieldTexture",
+        "WetFieldTexture"
+      ],
+      "title": "Terrain material map specification"
+    },
+    "SelectionColorsSpec": {
+      "type": "object",
+      "properties": {
+        "EntitySelection": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.06127626],
+              "default": 0.06127626
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.4811321],
+              "default": 0.4811321
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.3761681],
+              "default": 0.3761681
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Entity selection"
+        },
+        "SelectionToolHighlight": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.55],
+              "default": 0.55
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.03],
+              "default": 0.03
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.05],
+              "default": 0.05
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Selection tool highlight"
+        }
+      },
+      "required": ["EntitySelection", "SelectionToolHighlight"],
+      "title": "Selection colors specification"
+    },
+    "RelationHighlighterSpec": {
+      "type": "object",
+      "properties": {
+        "RelationSelection": {
+          "type": "object",
+          "properties": {
+            "r": {
+              "type": "number",
+              "title": "R",
+              "examples": [0.0],
+              "default": 0.0
+            },
+            "g": {
+              "type": "number",
+              "title": "G",
+              "examples": [0.3333333],
+              "default": 0.3333333
+            },
+            "b": {
+              "type": "number",
+              "title": "B",
+              "examples": [0.5019608],
+              "default": 0.5019608
+            },
+            "a": {
+              "type": "number",
+              "title": "A",
+              "examples": [1.0],
+              "default": 1.0
+            }
+          },
+          "required": ["a", "b", "g", "r"],
+          "title": "Relation selection"
+        }
+      },
+      "required": ["RelationSelection"],
+      "title": "Relation highlighter specification"
+    }
+  },
+  "$defs": {
+    "DistanceGradient": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Color": {
+            "type": "object",
+            "properties": {
+              "r": {
+                "type": "number",
+                "title": "R"
+              },
+              "g": {
+                "type": "number",
+                "title": "G"
+              },
+              "b": {
+                "type": "number",
+                "title": "B"
+              },
+              "a": {
+                "type": "number",
+                "title": "A"
+              }
+            },
+            "required": ["a", "b", "g", "r"],
+            "title": "Color"
+          },
+          "Time": {
+            "type": "number",
+            "title": "Time"
+          }
+        },
+        "required": ["Color", "Time"]
+      },
+      "title": "Distance gradient"
+    },
+    "RuinModelVariants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "Model": {
+            "type": "string",
+            "title": "Model"
+          }
+        },
+        "required": ["Id", "Model"]
+      },
+      "title": "Ruin model variants"
+    },
+    "HazardousWeatherFogs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "HazardousWeatherId": {
+            "type": "string",
+            "title": "Hazardous weather id"
+          },
+          "FogSettings": {
+            "type": "object",
+            "properties": {
+              "FogColor": {
+                "type": "object",
+                "properties": {
+                  "r": {
+                    "type": "number",
+                    "title": "R"
+                  },
+                  "g": {
+                    "type": "number",
+                    "title": "G"
+                  },
+                  "b": {
+                    "type": "number",
+                    "title": "B"
+                  },
+                  "a": {
+                    "type": "number",
+                    "title": "A"
+                  }
+                },
+                "required": ["a", "b", "g", "r"],
+                "title": "Fog color"
+              },
+              "FogDensity": {
+                "type": "number",
+                "title": "Fog density"
+              }
+            },
+            "required": ["FogColor", "FogDensity"],
+            "title": "Fog settings"
+          }
+        },
+        "required": ["FogSettings", "HazardousWeatherId"]
+      },
+      "title": "Hazardous weather fogs"
+    },
+    "AutoAtlasSpecs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "IsUnique": {
+            "type": "boolean",
+            "title": "Is unique"
+          },
+          "Fragments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Fragments"
+          }
+        },
+        "required": ["Fragments", "IsUnique", "Name"]
+      },
+      "title": "Auto atlas specs"
+    },
+    "TileMeshes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": [
+          "Markers/TileSides/NavRangeTile00000001",
+          "Markers/TileSides/NavRangeTile00000010",
+          "Markers/TileSides/NavRangeTile00000011",
+          "Markers/TileSides/NavRangeTile00000101",
+          "Markers/TileSides/NavRangeTile00000110",
+          "Markers/TileSides/NavRangeTile00000111",
+          "Markers/TileSides/NavRangeTile00001001",
+          "Markers/TileSides/NavRangeTile00001010",
+          "Markers/TileSides/NavRangeTile00001011",
+          "Markers/TileSides/NavRangeTile00001101",
+          "Markers/TileSides/NavRangeTile00001110",
+          "Markers/TileSides/NavRangeTile00001111",
+          "Markers/TileSides/NavRangeTile00010001",
+          "Markers/TileSides/NavRangeTile00010010",
+          "Markers/TileSides/NavRangeTile00010011",
+          "Markers/TileSides/NavRangeTile00010101",
+          "Markers/TileSides/NavRangeTile00010110",
+          "Markers/TileSides/NavRangeTile00010111",
+          "Markers/TileSides/NavRangeTile00011001",
+          "Markers/TileSides/NavRangeTile00011010",
+          "Markers/TileSides/NavRangeTile00011011",
+          "Markers/TileSides/NavRangeTile00011101",
+          "Markers/TileSides/NavRangeTile00011110",
+          "Markers/TileSides/NavRangeTile00011111",
+          "Markers/TileSides/NavRangeTile00100010",
+          "Markers/TileSides/NavRangeTile00100011",
+          "Markers/TileSides/NavRangeTile00100101",
+          "Markers/TileSides/NavRangeTile00100110",
+          "Markers/TileSides/NavRangeTile00100111",
+          "Markers/TileSides/NavRangeTile00101001",
+          "Markers/TileSides/NavRangeTile00101010",
+          "Markers/TileSides/NavRangeTile00101011",
+          "Markers/TileSides/NavRangeTile00101101",
+          "Markers/TileSides/NavRangeTile00101110",
+          "Markers/TileSides/NavRangeTile00101111",
+          "Markers/TileSides/NavRangeTile00110011",
+          "Markers/TileSides/NavRangeTile00110101",
+          "Markers/TileSides/NavRangeTile00110110",
+          "Markers/TileSides/NavRangeTile00110111",
+          "Markers/TileSides/NavRangeTile00111001",
+          "Markers/TileSides/NavRangeTile00111010",
+          "Markers/TileSides/NavRangeTile00111011",
+          "Markers/TileSides/NavRangeTile00111101",
+          "Markers/TileSides/NavRangeTile00111110",
+          "Markers/TileSides/NavRangeTile00111111",
+          "Markers/TileSides/NavRangeTile01010101",
+          "Markers/TileSides/NavRangeTile01010110",
+          "Markers/TileSides/NavRangeTile01010111",
+          "Markers/TileSides/NavRangeTile01011010",
+          "Markers/TileSides/NavRangeTile01011011",
+          "Markers/TileSides/NavRangeTile01011110",
+          "Markers/TileSides/NavRangeTile01011111",
+          "Markers/TileSides/NavRangeTile01100110",
+          "Markers/TileSides/NavRangeTile01100111",
+          "Markers/TileSides/NavRangeTile01101010",
+          "Markers/TileSides/NavRangeTile01101011",
+          "Markers/TileSides/NavRangeTile01101110",
+          "Markers/TileSides/NavRangeTile01101111",
+          "Markers/TileSides/NavRangeTile01110111",
+          "Markers/TileSides/NavRangeTile01111010",
+          "Markers/TileSides/NavRangeTile01111011",
+          "Markers/TileSides/NavRangeTile01111110",
+          "Markers/TileSides/NavRangeTile01111111",
+          "Markers/TileSides/NavRangeTile10101010",
+          "Markers/TileSides/NavRangeTile10101011",
+          "Markers/TileSides/NavRangeTile10101111",
+          "Markers/TileSides/NavRangeTile10111011",
+          "Markers/TileSides/NavRangeTile10111111",
+          "Markers/TileSides/NavRangeTile11111111"
+        ]
+      },
+      "title": "Tile meshes"
+    },
+    "RegularModelVariants": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": [
+          "Markers/PathMarkers/PathMarker0000",
+          "Markers/PathMarkers/PathMarker000B",
+          "Markers/PathMarkers/PathMarker0B0B",
+          "Markers/PathMarkers/PathMarker00BB",
+          "Markers/PathMarkers/PathMarker0BBB",
+          "Markers/PathMarkers/PathMarker0BBP",
+          "Markers/PathMarkers/PathMarker00BP",
+          "Markers/PathMarkers/PathMarker0BPB",
+          "Markers/PathMarkers/PathMarker0BPP",
+          "Markers/PathMarkers/PathMarker000P",
+          "Markers/PathMarkers/PathMarker0P0B",
+          "Markers/PathMarkers/PathMarker0P0P",
+          "Markers/PathMarkers/PathMarker00PB",
+          "Markers/PathMarkers/PathMarker0PBB",
+          "Markers/PathMarkers/PathMarker0PBP",
+          "Markers/PathMarkers/PathMarker00PP",
+          "Markers/PathMarkers/PathMarker0PPB",
+          "Markers/PathMarkers/PathMarker0PPP",
+          "Markers/PathMarkers/PathMarkerBBBB",
+          "Markers/PathMarkers/PathMarkerPBBB",
+          "Markers/PathMarkers/PathMarkerPBPB",
+          "Markers/PathMarkers/PathMarkerPPBB",
+          "Markers/PathMarkers/PathMarkerPPPB",
+          "Markers/PathMarkers/PathMarkerPPPP"
+        ]
+      },
+      "title": "Regular model variants"
+    },
+    "StairsModelVariants": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": [
+          "Markers/PathMarkers/PathMarkerStairs00b0",
+          "Markers/PathMarkers/PathMarkerStairs00p0",
+          "Markers/PathMarkers/PathMarkerStairsB000",
+          "Markers/PathMarkers/PathMarkerStairsB0b0",
+          "Markers/PathMarkers/PathMarkerStairsB0p0",
+          "Markers/PathMarkers/PathMarkerStairsP000",
+          "Markers/PathMarkers/PathMarkerStairsP0b0",
+          "Markers/PathMarkers/PathMarkerStairsP0p0",
+          "Markers/PathMarkers/PathMarkerStairs0Pp0",
+          "Markers/PathMarkers/PathMarkerStairs0Pb0",
+          "Markers/PathMarkers/PathMarkerStairs00pP",
+          "Markers/PathMarkers/PathMarkerStairs00bP",
+          "Markers/PathMarkers/PathMarkerStairs0Bp0",
+          "Markers/PathMarkers/PathMarkerStairs0Bb0",
+          "Markers/PathMarkers/PathMarkerStairs00pB",
+          "Markers/PathMarkers/PathMarkerStairs00bB"
+        ]
+      },
+      "title": "Stairs model variants"
+    },
+    "WaterContaminationParticleGradient": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Color": {
+            "type": "object",
+            "properties": {
+              "r": {
+                "type": "number",
+                "title": "R"
+              },
+              "g": {
+                "type": "number",
+                "title": "G"
+              },
+              "b": {
+                "type": "number",
+                "title": "B"
+              },
+              "a": {
+                "type": "number",
+                "title": "A"
+              }
+            },
+            "required": ["a", "b", "g", "r"],
+            "title": "Color"
+          },
+          "Time": {
+            "type": "number",
+            "title": "Time"
+          }
+        },
+        "required": ["Color", "Time"]
+      },
+      "title": "Water contamination particle gradient"
+    },
+    "Groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "Low": {
+            "type": "number",
+            "title": "Low"
+          },
+          "Medium": {
+            "type": "number",
+            "title": "Medium"
+          },
+          "High": {
+            "type": "number",
+            "title": "High"
+          }
+        },
+        "required": ["High", "Id", "Low", "Medium"]
+      },
+      "title": "Groups"
+    }
+  }
+}
