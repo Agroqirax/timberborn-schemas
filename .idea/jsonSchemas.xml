@@ -38,11 +38,11 @@
             </SchemaInfo>
           </value>
         </entry>
-        <entry key="Buildings specification">
+        <entry key="Building specification">
           <value>
             <SchemaInfo>
               <option name="generatedName" value="New Schema"/>
-              <option name="name" value="Buildings specification"/>
+              <option name="name" value="Building specification"/>
               <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Building.schema.json"/>
               <option name="patterns">
                 <list>
@@ -238,6 +238,25 @@
                   </Item>
                   <Item>
                     <option name="path" value="/Data/Blueprints/MaterialGroups/MaterialGroup.*.json"/>
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="Natural resource specification">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema"/>
+              <option name="name" value="Natural resource specification"/>
+              <option name="relativePathToSchema" value="https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/NaturalResource.schema.json"/>
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="/NaturalResources/*/*/*.blueprint.json"/>
+                  </Item>
+                  <Item>
+                    <option name="path" value="/Data/NaturalResources/*/*/*.blueprint.json"/>
                   </Item>
                 </list>
               </option>

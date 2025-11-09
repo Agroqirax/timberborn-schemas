@@ -18,7 +18,7 @@
       "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/BonusType.schema.json"
     },
     {
-      "name": "Buildings specification",
+      "name": "Building specification",
       "description": "Add or modify a building",
       "fileMatch": [
         "/Buildings/*/*/*.*.blueprint.json",
@@ -112,6 +112,15 @@
         "/Data/Blueprints/MaterialGroups/MaterialGroup.*.json"
       ],
       "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/MaterialGroup.schema.json"
+    },
+    {
+      "name": "Natural resource specification",
+      "description": "Add or modify a natural resource",
+      "fileMatch": [
+        "/NaturalResources/*/*/*.blueprint.json",
+        "/Data/NaturalResources/*/*/*.blueprint.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/NaturalResource.schema.json"
     },
     {
       "name": "Need specification",

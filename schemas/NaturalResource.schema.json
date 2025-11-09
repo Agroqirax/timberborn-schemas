@@ -1,0 +1,1504 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/NaturalResources.schema.json",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "BlockObjectSpec": {
+      "type": "object",
+      "properties": {
+        "BlocksSpec": {
+          "type": "object",
+          "properties": {
+            "Size": {
+              "type": "object",
+              "properties": {
+                "X": {
+                  "type": "integer",
+                  "title": "X"
+                },
+                "Y": {
+                  "type": "integer",
+                  "title": "Y"
+                },
+                "Z": {
+                  "type": "integer",
+                  "title": "Z"
+                }
+              },
+              "required": ["X", "Y", "Z"],
+              "title": "Size"
+            },
+            "BlockSpecs": {
+              "$ref": "#/$defs/BlockSpecs"
+            },
+            "BlockSpecs#append": {
+              "$ref": "#/$defs/BlockSpecs"
+            },
+            "BlockSpecs#remove": {
+              "$ref": "#/$defs/BlockSpecs"
+            },
+            "BlockSpecs#delete": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          "required": ["BlockSpecs", "Size"],
+          "title": "Blocks spec"
+        },
+        "Entrance": {
+          "type": "object",
+          "properties": {
+            "HasEntrance": {
+              "type": "boolean",
+              "title": "Has entrance",
+              "examples": [false],
+              "default": false
+            },
+            "Coordinates": {
+              "type": "object",
+              "properties": {
+                "X": {
+                  "type": "integer",
+                  "title": "X"
+                },
+                "Y": {
+                  "type": "integer",
+                  "title": "Y"
+                },
+                "Z": {
+                  "type": "integer",
+                  "title": "Z"
+                }
+              },
+              "required": ["X", "Y", "Z"],
+              "title": "Coordinates"
+            }
+          },
+          "required": ["Coordinates", "HasEntrance"],
+          "title": "Entrance"
+        },
+        "BaseZ": {
+          "type": "integer",
+          "title": "Base z"
+        },
+        "Overridable": {
+          "type": "boolean",
+          "title": "Overridable",
+          "examples": [false],
+          "default": false
+        },
+        "Flippable": {
+          "type": "boolean",
+          "title": "Flippable",
+          "examples": [false],
+          "default": false
+        }
+      },
+      "required": [
+        "BaseZ",
+        "BlocksSpec",
+        "Entrance",
+        "Flippable",
+        "Overridable"
+      ],
+      "title": "Block object spec"
+    },
+    "TemplateSpec": {
+      "type": "object",
+      "properties": {
+        "TemplateName": {
+          "type": "string",
+          "title": "Template name",
+          "examples": [
+            "BlueberryBush",
+            "CoffeeBush",
+            "Dandelion",
+            "Canola",
+            "Carrot",
+            "Cassava",
+            "Cattail",
+            "Corn",
+            "Eggplant",
+            "Kohlrabi",
+            "Potato",
+            "Soybean",
+            "Spadderdock",
+            "Sunflower",
+            "Wheat",
+            "Birch",
+            "ChestnutTree",
+            "Mangrove",
+            "Maple",
+            "Oak",
+            "Pine"
+          ]
+        },
+        "BackwardCompatibleTemplateNames": {
+          "$ref": "#/$defs/BackwardCompatibleTemplateNames"
+        },
+        "RequiredFeatureToggle": {
+          "type": "string",
+          "title": "Required feature toggle",
+          "examples": [""],
+          "default": ""
+        },
+        "DisablingFeatureToggle": {
+          "type": "string",
+          "title": "Disabling feature toggle",
+          "examples": [""],
+          "default": ""
+        },
+        "BackwardCompatibleTemplateNames#append": {
+          "$ref": "#/$defs/BackwardCompatibleTemplateNames"
+        },
+        "BackwardCompatibleTemplateNames#remove": {
+          "$ref": "#/$defs/BackwardCompatibleTemplateNames"
+        },
+        "BackwardCompatibleTemplateNames#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "BackwardCompatibleTemplateNames",
+        "DisablingFeatureToggle",
+        "RequiredFeatureToggle",
+        "TemplateName"
+      ],
+      "title": "Template spec"
+    },
+    "NaturalResourceSpec": {
+      "type": "object",
+      "properties": {
+        "Order": {
+          "type": "integer",
+          "title": "Order"
+        }
+      },
+      "required": ["Order"],
+      "title": "Natural resource spec"
+    },
+    "BushSpec": {
+      "type": "object",
+      "title": "Bush spec"
+    },
+    "GrowableSpec": {
+      "type": "object",
+      "properties": {
+        "GrowthTimeInDays": {
+          "type": "number",
+          "title": "Growth time in days",
+          "examples": [
+            12.0, 10.0, 9.0, 3.0, 5.0, 8.0, 4.0, 6.0, 7.0, 23.0, 28.0, 30.0
+          ],
+          "default": 12.0
+        }
+      },
+      "required": ["GrowthTimeInDays"],
+      "title": "Growable spec"
+    },
+    "BasicSelectionSoundSpec": {
+      "type": "object",
+      "properties": {
+        "SoundName": {
+          "type": "string",
+          "title": "Sound name",
+          "examples": ["Bush", "Tree"],
+          "default": "Bush"
+        },
+        "AlternativeSoundName": {
+          "type": "string",
+          "title": "Alternative sound name",
+          "examples": ["", "WaterCrop"],
+          "default": ""
+        }
+      },
+      "required": ["AlternativeSoundName", "SoundName"],
+      "title": "Basic selection sound spec"
+    },
+    "DemolishableSpec": {
+      "type": "object",
+      "properties": {
+        "DemolishTimeInHours": {
+          "type": "number",
+          "title": "Demolish time in hours",
+          "examples": [0.5, 1.2, 0.8, 2.0, 2.5],
+          "default": 0.5
+        },
+        "ShowDemolishButtonInEntityPanel": {
+          "type": "boolean",
+          "title": "Show demolish button in entity panel",
+          "examples": [false],
+          "default": false
+        }
+      },
+      "required": ["DemolishTimeInHours", "ShowDemolishButtonInEntityPanel"],
+      "title": "Demolishable spec"
+    },
+    "GatherableSpec": {
+      "type": "object",
+      "properties": {
+        "YieldGrowthTimeInDays": {
+          "type": "number",
+          "title": "Yield growth time in days",
+          "examples": [12.0, 3.0, 8.0, 10.0, 7.0]
+        },
+        "YielderSpec": {
+          "type": "object",
+          "properties": {
+            "YielderComponentName": {
+              "type": "string",
+              "title": "Yielder component name",
+              "examples": ["Gatherable"],
+              "default": "Gatherable"
+            },
+            "Yield": {
+              "type": "object",
+              "properties": {
+                "Id": {
+                  "type": "string",
+                  "title": "Id",
+                  "examples": [
+                    "Berries",
+                    "CoffeeBean",
+                    "Dandelion",
+                    "Chestnut",
+                    "MangroveFruit",
+                    "MapleSyrup",
+                    "PineResin"
+                  ]
+                },
+                "Amount": {
+                  "type": "integer",
+                  "title": "Amount"
+                }
+              },
+              "required": ["Amount", "Id"],
+              "title": "Yield"
+            },
+            "RemovalTimeInHours": {
+              "type": "number",
+              "title": "Removal time in hours",
+              "examples": [0.8, 1.0, 0.5, 2.0, 1.2]
+            },
+            "ResourceGroup": {
+              "type": "string",
+              "title": "Resource group",
+              "examples": ["Gatherable", "Tappable"],
+              "default": "Gatherable"
+            }
+          },
+          "required": [
+            "RemovalTimeInHours",
+            "ResourceGroup",
+            "Yield",
+            "YielderComponentName"
+          ],
+          "title": "Yielder spec"
+        }
+      },
+      "required": ["YieldGrowthTimeInDays", "YielderSpec"],
+      "title": "Gatherable spec"
+    },
+    "PlantableSpec": {
+      "type": "object",
+      "properties": {
+        "ResourceGroup": {
+          "type": "string",
+          "title": "Resource group",
+          "examples": ["Farmhouse", "Forester", "AquaticFarmhouse"],
+          "default": "Farmhouse"
+        },
+        "PlantTimeInHours": {
+          "type": "number",
+          "title": "Plant time in hours",
+          "examples": [0.2, 0.37, 0.25, 0.4, 0.5, 0.74, 0.6, 1.1, 1.0, 0.75],
+          "default": 0.2
+        }
+      },
+      "required": ["PlantTimeInHours", "ResourceGroup"],
+      "title": "Plantable spec"
+    },
+    "PlantablePreviewModelSpec": {
+      "type": "object",
+      "properties": {
+        "Model": {
+          "type": "string",
+          "title": "Model",
+          "examples": [
+            "NaturalResources/Bushes/Blueberry/BlueberryBushMature",
+            "NaturalResources\\Bushes\\Coffee\\CoffeeBushMature",
+            "NaturalResources/Bushes/Dandelion/DandelionMature",
+            "NaturalResources/Crops/Canola/CanolaMature",
+            "NaturalResources/Crops/Carrot/CarrotMature",
+            "NaturalResources/Crops/Cassava/CassavaMature",
+            "NaturalResources/Crops/Cattail/CattailMature",
+            "NaturalResources/Crops/Corn/CornMature",
+            "NaturalResources\\Crops\\Eggplant\\EggplantMature",
+            "NaturalResources\\Crops\\Kohlrabi\\KohlrabiMature",
+            "NaturalResources/Crops/Potato/PotatoMature",
+            "NaturalResources/Crops/Soybean/SoybeanMature",
+            "NaturalResources/Crops/Spadderdock/SpadderdockMature",
+            "NaturalResources/Crops/Sunflower/SunflowerMature",
+            "NaturalResources/Crops/Wheat/WheatMature",
+            "NaturalResources/Trees/Birch/Mesh/BirchMature",
+            "NaturalResources/Trees/ChestnutTree/Mesh/ChestnutTreeMature",
+            "NaturalResources/Trees/Mangrove/Mesh/MangroveMature",
+            "NaturalResources/Trees/Maple/Mesh/MapleMature",
+            "NaturalResources\\Trees\\Oak\\Mesh\\OakMature",
+            "NaturalResources/Trees/Pine/Mesh/PineMature"
+          ]
+        }
+      },
+      "required": ["Model"],
+      "title": "Plantable preview model spec"
+    },
+    "ReproducibleSpec": {
+      "type": "object",
+      "properties": {
+        "ReproductionChance": {
+          "type": "number",
+          "title": "Reproduction chance",
+          "examples": [0.03, 0.01, 0.02],
+          "default": 0.03
+        }
+      },
+      "required": ["ReproductionChance"],
+      "title": "Reproducible spec"
+    },
+    "WateredNaturalResourceSpec": {
+      "type": "object",
+      "properties": {
+        "DaysToDieDry": {
+          "type": "number",
+          "title": "Days to die dry",
+          "examples": [
+            8.0, 2.0, 1.0, 0.5, 9.0, 3.0, 0.25, 0.3, 3.5, 11.0, 6.0, 12.0, 15.0,
+            13.0
+          ]
+        }
+      },
+      "required": ["DaysToDieDry"],
+      "title": "Watered natural resource spec"
+    },
+    "LabeledEntitySpec": {
+      "type": "object",
+      "properties": {
+        "DisplayNameLocKey": {
+          "type": "string",
+          "title": "Display name loc key",
+          "examples": [
+            "NaturalResource.Blueberry.DisplayName",
+            "NaturalResource.Coffee.DisplayName",
+            "NaturalResource.Dandelion.DisplayName",
+            "NaturalResource.Canola.DisplayName",
+            "NaturalResource.Carrot.DisplayName",
+            "NaturalResource.Cassava.DisplayName",
+            "NaturalResource.Cattail.DisplayName",
+            "NaturalResource.Corn.DisplayName",
+            "NaturalResource.Eggplant.DisplayName",
+            "NaturalResource.Kohlrabi.DisplayName",
+            "NaturalResource.Potato.DisplayName",
+            "NaturalResource.Soybean.DisplayName",
+            "NaturalResource.Spadderdock.DisplayName",
+            "NaturalResource.Sunflower.DisplayName",
+            "NaturalResource.Wheat.DisplayName",
+            "NaturalResource.Birch.DisplayName",
+            "NaturalResource.ChestnutTree.DisplayName",
+            "NaturalResource.Mangrove.DisplayName",
+            "NaturalResource.Maple.DisplayName",
+            "NaturalResource.Oak.DisplayName",
+            "NaturalResource.Pine.DisplayName"
+          ]
+        },
+        "DescriptionLocKey": {
+          "type": "string",
+          "title": "Description loc key",
+          "examples": [""],
+          "default": ""
+        },
+        "FlavorDescriptionLocKey": {
+          "type": "string",
+          "title": "Flavor description loc key",
+          "examples": [
+            "NaturalResource.Blueberry.FlavorDescription",
+            "NaturalResource.Coffee.FlavorDescription",
+            "NaturalResource.Dandelion.FlavorDescription",
+            "NaturalResource.Canola.FlavorDescription",
+            "NaturalResource.Carrot.FlavorDescription",
+            "NaturalResource.Cassava.FlavorDescription",
+            "NaturalResource.Cattail.FlavorDescription",
+            "NaturalResource.Corn.FlavorDescription",
+            "NaturalResource.Eggplant.FlavorDescription",
+            "NaturalResource.Kohlrabi.FlavorDescription",
+            "NaturalResource.Potato.FlavorDescription",
+            "NaturalResource.Soybean.FlavorDescription",
+            "NaturalResource.Spadderdock.FlavorDescription",
+            "NaturalResource.Sunflower.FlavorDescription",
+            "NaturalResource.Wheat.FlavorDescription",
+            "NaturalResource.Birch.FlavorDescription",
+            "NaturalResource.ChestnutTree.FlavorDescription",
+            "NaturalResource.Mangrove.FlavorDescription",
+            "NaturalResource.Maple.FlavorDescription",
+            "NaturalResource.Oak.FlavorDescription",
+            "NaturalResource.Pine.FlavorDescription"
+          ]
+        },
+        "Icon": {
+          "type": "string",
+          "title": "Icon",
+          "examples": [
+            "NaturalResources/Bushes/Blueberry/BlueberryBushIcon",
+            "NaturalResources/Bushes/Coffee/CoffeeBushIcon",
+            "NaturalResources/Bushes/Dandelion/DandelionIcon",
+            "NaturalResources/Crops/Canola/CanolaIcon",
+            "NaturalResources/Crops/Carrot/CarrotIcon",
+            "NaturalResources/Crops/Cassava/CassavaIcon",
+            "NaturalResources/Crops/Cattail/CattailIcon",
+            "NaturalResources/Crops/Corn/CornIcon",
+            "NaturalResources/Crops/Eggplant/EggplantIcon",
+            "NaturalResources/Crops/Kohlrabi/KohlrabiIcon",
+            "NaturalResources/Crops/Potato/PotatoIcon",
+            "NaturalResources/Crops/Soybean/SoybeanIcon",
+            "NaturalResources/Crops/Spadderdock/SpadderdockIcon",
+            "NaturalResources/Crops/Sunflower/SunflowerIcon",
+            "NaturalResources/Crops/Wheat/WheatIcon",
+            "NaturalResources/Trees/Birch/BirchIcon",
+            "NaturalResources/Trees/ChestnutTree/ChestnutTreeIcon",
+            "NaturalResources/Trees/Mangrove/MangroveIcon",
+            "NaturalResources/Trees/Maple/MapleIcon",
+            "NaturalResources/Trees/Oak/OakIcon",
+            "NaturalResources/Trees/Pine/PineIcon"
+          ]
+        }
+      },
+      "required": [
+        "DescriptionLocKey",
+        "DisplayNameLocKey",
+        "FlavorDescriptionLocKey",
+        "Icon"
+      ],
+      "title": "Labeled entity spec"
+    },
+    "FloodableNaturalResourceSpec": {
+      "type": "object",
+      "properties": {
+        "MinWaterHeight": {
+          "type": "integer",
+          "title": "Min water height"
+        },
+        "MaxWaterHeight": {
+          "type": "integer",
+          "title": "Max water height"
+        },
+        "DaysToDie": {
+          "type": "number",
+          "title": "Days to die",
+          "examples": [
+            1.0, 2.0, 10.0, 4.0, 0.5, 7.0, 0.25, 0.66, 14.0, 16.0, 12.0
+          ],
+          "default": 1.0
+        }
+      },
+      "required": ["DaysToDie", "MaxWaterHeight", "MinWaterHeight"],
+      "title": "Floodable natural resource spec"
+    },
+    "NaturalResourceModelRandomizerSpec": {
+      "type": "object",
+      "properties": {
+        "ConstrainProportion": {
+          "type": "boolean",
+          "title": "Constrain proportion",
+          "examples": [false, true],
+          "default": false
+        },
+        "MinHeightScaleFactor": {
+          "type": "number",
+          "title": "Min height scale factor",
+          "examples": [0.8, 0.9, 1.0, 0.95],
+          "default": 0.8
+        },
+        "MaxHeightScaleFactor": {
+          "type": "number",
+          "title": "Max height scale factor",
+          "examples": [1.2, 1.0, 1.1, 1.05],
+          "default": 1.2
+        },
+        "MinWidthScaleFactor": {
+          "type": "number",
+          "title": "Min width scale factor",
+          "examples": [0.9, 0.8, 1.0, 0.95],
+          "default": 0.9
+        },
+        "MaxWidthScaleFactor": {
+          "type": "number",
+          "title": "Max width scale factor",
+          "examples": [1.1, 1.2, 1.0, 1.05],
+          "default": 1.1
+        },
+        "RandomizedRotation": {
+          "type": "string",
+          "title": "Randomized rotation",
+          "examples": ["BetweenMinAndMax", "By90Degree"],
+          "default": "BetweenMinAndMax"
+        },
+        "MinRotation": {
+          "type": "number",
+          "title": "Min rotation",
+          "examples": [0.0, -40.0],
+          "default": 0.0
+        },
+        "MaxRotation": {
+          "type": "number",
+          "title": "Max rotation",
+          "examples": [360.0, 40.0],
+          "default": 360.0
+        }
+      },
+      "required": [
+        "ConstrainProportion",
+        "MaxHeightScaleFactor",
+        "MaxRotation",
+        "MaxWidthScaleFactor",
+        "MinHeightScaleFactor",
+        "MinRotation",
+        "MinWidthScaleFactor",
+        "RandomizedRotation"
+      ],
+      "title": "Natural resource model randomizer spec"
+    },
+    "ContaminatedNaturalResourceSpec": {
+      "type": "object",
+      "title": "Contaminated natural resource spec"
+    },
+    "BlockObjectModelSpec": {
+      "type": "object",
+      "properties": {
+        "FullModelName": {
+          "type": "string",
+          "title": "Full model name",
+          "examples": ["#Models"],
+          "default": "#Models"
+        },
+        "UncoveredModelName": {
+          "type": "string",
+          "title": "Uncovered model name",
+          "examples": [""],
+          "default": ""
+        },
+        "UndergroundModelName": {
+          "type": "string",
+          "title": "Underground model name",
+          "examples": [""],
+          "default": ""
+        },
+        "UndergroundModelDepth": {
+          "type": "integer",
+          "title": "Underground model depth"
+        }
+      },
+      "required": [
+        "FullModelName",
+        "UncoveredModelName",
+        "UndergroundModelDepth",
+        "UndergroundModelName"
+      ],
+      "title": "Block object model spec"
+    },
+    "Children": {
+      "type": "object",
+      "properties": {
+        "#Models": {
+          "type": "object",
+          "properties": {
+            "Children": {
+              "type": "object",
+              "properties": {
+                "Seedling": {
+                  "type": "object",
+                  "properties": {
+                    "Children": {
+                      "type": "object",
+                      "properties": {
+                        "#Alive": {
+                          "type": "object",
+                          "properties": {
+                            "TimbermeshSpec": {
+                              "type": "object",
+                              "properties": {
+                                "Model": {
+                                  "type": "string",
+                                  "title": "Model",
+                                  "examples": [
+                                    "NaturalResources/Bushes/Blueberry/BlueberryBushSeedling",
+                                    "NaturalResources/Bushes/Coffee/CoffeeBushSeedling",
+                                    "NaturalResources/Bushes/Dandelion/DandelionSeedling",
+                                    "NaturalResources/Crops/Canola/CanolaSeedling",
+                                    "NaturalResources/Crops/Carrot/CarrotSeedling",
+                                    "NaturalResources/Crops/Cassava/CassavaSeedling",
+                                    "NaturalResources/Crops/Cattail/CattailSeedling",
+                                    "NaturalResources/Crops/Corn/CornSeedling",
+                                    "NaturalResources/Crops/Eggplant/EggplantSeedling",
+                                    "NaturalResources/Crops/Kohlrabi/KohlrabiSeedling",
+                                    "NaturalResources/Crops/Potato/PotatoSeedling",
+                                    "NaturalResources/Crops/Soybean/SoybeanSeedling",
+                                    "NaturalResources/Crops/Spadderdock/SpadderdockSeedling",
+                                    "NaturalResources/Crops/Sunflower/SunflowerSeedling",
+                                    "NaturalResources/Crops/Wheat/WheatSeedling",
+                                    "NaturalResources/Trees/Birch/Mesh/BirchSeedling",
+                                    "NaturalResources/Trees/ChestnutTree/Mesh/ChestnutTreeSeedling",
+                                    "NaturalResources/Trees/Mangrove/Mesh/MangroveSeedling",
+                                    "NaturalResources/Trees/Maple/Mesh/MapleSeedling",
+                                    "NaturalResources/Trees/Oak/Mesh/OakSeedling",
+                                    "NaturalResources/Trees/Pine/Mesh/PineSeedling"
+                                  ]
+                                }
+                              },
+                              "required": ["Model"],
+                              "title": "Timbermesh spec"
+                            },
+                            "CollidersSpec": {
+                              "type": "object",
+                              "properties": {
+                                "BoxColliders": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "SphereColliders": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "CapsuleColliders": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "BoxColliders#append": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "BoxColliders#remove": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "BoxColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                },
+                                "SphereColliders#append": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "SphereColliders#remove": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "SphereColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                },
+                                "CapsuleColliders#append": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "CapsuleColliders#remove": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "CapsuleColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "BoxColliders",
+                                "CapsuleColliders",
+                                "SphereColliders"
+                              ],
+                              "title": "Colliders spec"
+                            }
+                          },
+                          "required": ["CollidersSpec", "TimbermeshSpec"],
+                          "title": "# alive"
+                        },
+                        "#Dead": {
+                          "type": "object",
+                          "properties": {
+                            "TimbermeshSpec": {
+                              "type": "object",
+                              "properties": {
+                                "Model": {
+                                  "type": "string",
+                                  "title": "Model",
+                                  "examples": [
+                                    "NaturalResources/Bushes/Blueberry/BlueberryBushSeedlingDead",
+                                    "NaturalResources/Bushes/Coffee/CoffeeBushSeedlingDead",
+                                    "NaturalResources/Bushes/Dandelion/DandelionSeedlingDead",
+                                    "NaturalResources/Crops/Canola/CanolaSeedlingDead",
+                                    "NaturalResources/Crops/Carrot/CarrotSeedlingDead",
+                                    "NaturalResources/Crops/Cassava/CassavaSeedlingDead",
+                                    "NaturalResources/Crops/Cattail/CattailSeedlingDead",
+                                    "NaturalResources/Crops/Corn/CornSeedlingDead",
+                                    "NaturalResources/Crops/Eggplant/EggplantSeedlingDead",
+                                    "NaturalResources/Crops/Kohlrabi/KohlrabiSeedlingDead",
+                                    "NaturalResources/Crops/Potato/PotatoSeedlingDead",
+                                    "NaturalResources/Crops/Soybean/SoybeanSeedlingDead",
+                                    "NaturalResources/Crops/Spadderdock/SpadderdockSeedlingDead",
+                                    "NaturalResources/Crops/Sunflower/SunflowerSeedlingDead",
+                                    "NaturalResources/Crops/Wheat/WheatSeedlingDead",
+                                    "NaturalResources/Trees/Birch/Mesh/BirchSeedlingDead",
+                                    "NaturalResources/Trees/ChestnutTree/Mesh/ChestnutTreeSeedlingDead",
+                                    "NaturalResources/Trees/Mangrove/Mesh/MangroveSeedlingDead",
+                                    "NaturalResources/Trees/Maple/Mesh/MapleSeedlingDead",
+                                    "NaturalResources/Trees/Oak/Mesh/OakSeedlingDead",
+                                    "NaturalResources/Trees/Pine/Mesh/PineSeedlingDead"
+                                  ]
+                                }
+                              },
+                              "required": ["Model"],
+                              "title": "Timbermesh spec"
+                            },
+                            "CollidersSpec": {
+                              "type": "object",
+                              "properties": {
+                                "BoxColliders": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "SphereColliders": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "CapsuleColliders": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "BoxColliders#append": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "BoxColliders#remove": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "BoxColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                },
+                                "SphereColliders#append": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "SphereColliders#remove": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "SphereColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                },
+                                "CapsuleColliders#append": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "CapsuleColliders#remove": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "CapsuleColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "BoxColliders",
+                                "CapsuleColliders",
+                                "SphereColliders"
+                              ],
+                              "title": "Colliders spec"
+                            }
+                          },
+                          "required": ["CollidersSpec", "TimbermeshSpec"],
+                          "title": "# dead"
+                        },
+                        "#Dying": {
+                          "type": "object",
+                          "properties": {
+                            "TimbermeshSpec": {
+                              "type": "object",
+                              "properties": {
+                                "Model": {
+                                  "type": "string",
+                                  "title": "Model",
+                                  "examples": [
+                                    "NaturalResources/Bushes/Blueberry/BlueberryBushSeedlingDry",
+                                    "NaturalResources/Bushes/Coffee/CoffeeBushSeedlingDry",
+                                    "NaturalResources/Bushes/Dandelion/DandelionSeedlingDry",
+                                    "NaturalResources/Crops/Canola/CanolaSeedlingDry",
+                                    "NaturalResources/Crops/Carrot/CarrotSeedlingDry",
+                                    "NaturalResources/Crops/Cassava/CassavaSeedlingDry",
+                                    "NaturalResources/Crops/Cattail/CattailSeedlingDry",
+                                    "NaturalResources/Crops/Corn/CornSeedlingDry",
+                                    "NaturalResources/Crops/Eggplant/EggplantSeedlingDry",
+                                    "NaturalResources/Crops/Kohlrabi/KohlrabiSeedlingDry",
+                                    "NaturalResources/Crops/Potato/PotatoSeedlingDry",
+                                    "NaturalResources/Crops/Soybean/SoybeanSeedlingDry",
+                                    "NaturalResources/Crops/Spadderdock/SpadderdockSeedlingDry",
+                                    "NaturalResources/Crops/Sunflower/SunflowerSeedlingDry",
+                                    "NaturalResources/Crops/Wheat/WheatSeedlingDry",
+                                    "NaturalResources/Trees/Birch/Mesh/BirchSeedlingDry",
+                                    "NaturalResources/Trees/ChestnutTree/Mesh/ChestnutTreeSeedlingDry",
+                                    "NaturalResources/Trees/Mangrove/Mesh/MangroveSeedlingDry",
+                                    "NaturalResources/Trees/Maple/Mesh/MapleSeedlingDry",
+                                    "NaturalResources/Trees/Oak/Mesh/OakSeedlingDry",
+                                    "NaturalResources/Trees/Pine/Mesh/PineSeedlingDry"
+                                  ]
+                                }
+                              },
+                              "required": ["Model"],
+                              "title": "Timbermesh spec"
+                            },
+                            "CollidersSpec": {
+                              "type": "object",
+                              "properties": {
+                                "BoxColliders": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "SphereColliders": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "CapsuleColliders": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "BoxColliders#append": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "BoxColliders#remove": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "BoxColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                },
+                                "SphereColliders#append": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "SphereColliders#remove": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "SphereColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                },
+                                "CapsuleColliders#append": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "CapsuleColliders#remove": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "CapsuleColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "BoxColliders",
+                                "CapsuleColliders",
+                                "SphereColliders"
+                              ],
+                              "title": "Colliders spec"
+                            }
+                          },
+                          "required": ["CollidersSpec", "TimbermeshSpec"],
+                          "title": "# dying"
+                        }
+                      },
+                      "required": ["#Alive", "#Dead", "#Dying"],
+                      "title": "Children"
+                    }
+                  },
+                  "required": ["Children"],
+                  "title": "Seedling"
+                },
+                "Mature": {
+                  "type": "object",
+                  "properties": {
+                    "Children": {
+                      "type": "object",
+                      "properties": {
+                        "#Alive": {
+                          "type": "object",
+                          "properties": {
+                            "TimbermeshSpec": {
+                              "type": "object",
+                              "properties": {
+                                "Model": {
+                                  "type": "string",
+                                  "title": "Model",
+                                  "examples": [
+                                    "NaturalResources/Bushes/Blueberry/BlueberryBushMature",
+                                    "NaturalResources/Bushes/Coffee/CoffeeBushMature",
+                                    "NaturalResources/Bushes/Dandelion/DandelionMature",
+                                    "NaturalResources/Crops/Canola/CanolaMature",
+                                    "NaturalResources/Crops/Carrot/CarrotMature",
+                                    "NaturalResources/Crops/Cassava/CassavaMature",
+                                    "NaturalResources/Crops/Cattail/CattailMature",
+                                    "NaturalResources/Crops/Corn/CornMature",
+                                    "NaturalResources/Crops/Eggplant/EggplantMature",
+                                    "NaturalResources/Crops/Kohlrabi/KohlrabiMature",
+                                    "NaturalResources/Crops/Potato/PotatoMature",
+                                    "NaturalResources/Crops/Soybean/SoybeanMature",
+                                    "NaturalResources/Crops/Spadderdock/SpadderdockMature",
+                                    "NaturalResources/Crops/Sunflower/SunflowerMature",
+                                    "NaturalResources/Crops/Wheat/WheatMature",
+                                    "NaturalResources/Trees/Birch/Mesh/BirchMature",
+                                    "NaturalResources/Trees/ChestnutTree/Mesh/ChestnutTreeMature",
+                                    "NaturalResources/Trees/Mangrove/Mesh/MangroveMature",
+                                    "NaturalResources/Trees/Maple/Mesh/MapleMature",
+                                    "NaturalResources/Trees/Oak/Mesh/OakMature",
+                                    "NaturalResources/Trees/Pine/Mesh/PineMature"
+                                  ]
+                                }
+                              },
+                              "required": ["Model"],
+                              "title": "Timbermesh spec"
+                            },
+                            "CollidersSpec": {
+                              "type": "object",
+                              "properties": {
+                                "BoxColliders": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "SphereColliders": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "CapsuleColliders": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "BoxColliders#append": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "BoxColliders#remove": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "BoxColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                },
+                                "SphereColliders#append": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "SphereColliders#remove": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "SphereColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                },
+                                "CapsuleColliders#append": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "CapsuleColliders#remove": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "CapsuleColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "BoxColliders",
+                                "CapsuleColliders",
+                                "SphereColliders"
+                              ],
+                              "title": "Colliders spec"
+                            }
+                          },
+                          "required": ["CollidersSpec", "TimbermeshSpec"],
+                          "title": "# alive"
+                        },
+                        "#Dying": {
+                          "type": "object",
+                          "properties": {
+                            "TimbermeshSpec": {
+                              "type": "object",
+                              "properties": {
+                                "Model": {
+                                  "type": "string",
+                                  "title": "Model",
+                                  "examples": [
+                                    "NaturalResources/Bushes/Blueberry/BlueberryBushMatureDry",
+                                    "NaturalResources/Bushes/Coffee/CoffeeBushMatureDry",
+                                    "NaturalResources/Bushes/Dandelion/DandelionMatureDry",
+                                    "NaturalResources/Crops/Canola/CanolaMatureDry",
+                                    "NaturalResources/Crops/Carrot/CarrotMatureDry",
+                                    "NaturalResources/Crops/Cassava/CassavaMatureDry",
+                                    "NaturalResources/Crops/Cattail/CattailMatureDry",
+                                    "NaturalResources/Crops/Corn/CornMatureDry",
+                                    "NaturalResources/Crops/Eggplant/EggplantMatureDry",
+                                    "NaturalResources/Crops/Kohlrabi/KohlrabiMatureDry",
+                                    "NaturalResources/Crops/Potato/PotatoMatureDry",
+                                    "NaturalResources/Crops/Soybean/SoybeanMatureDry",
+                                    "NaturalResources/Crops/Spadderdock/SpadderdockMatureDry",
+                                    "NaturalResources/Crops/Sunflower/SunflowerMatureDry",
+                                    "NaturalResources/Crops/Wheat/WheatMatureDry",
+                                    "NaturalResources/Trees/Birch/Mesh/BirchMatureDry",
+                                    "NaturalResources/Trees/ChestnutTree/Mesh/ChestnutTreeMatureDry",
+                                    "NaturalResources/Trees/Mangrove/Mesh/MangroveMatureDry",
+                                    "NaturalResources/Trees/Maple/Mesh/MapleMatureDry",
+                                    "NaturalResources/Trees/Oak/Mesh/OakMatureDry",
+                                    "NaturalResources/Trees/Pine/Mesh/PineMatureDry"
+                                  ]
+                                }
+                              },
+                              "required": ["Model"],
+                              "title": "Timbermesh spec"
+                            },
+                            "CollidersSpec": {
+                              "type": "object",
+                              "properties": {
+                                "BoxColliders": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "SphereColliders": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "CapsuleColliders": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "BoxColliders#append": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "BoxColliders#remove": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "BoxColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                },
+                                "SphereColliders#append": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "SphereColliders#remove": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "SphereColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                },
+                                "CapsuleColliders#append": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "CapsuleColliders#remove": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "CapsuleColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "BoxColliders",
+                                "CapsuleColliders",
+                                "SphereColliders"
+                              ],
+                              "title": "Colliders spec"
+                            }
+                          },
+                          "required": ["CollidersSpec", "TimbermeshSpec"],
+                          "title": "# dying"
+                        },
+                        "#Dead": {
+                          "type": "object",
+                          "properties": {
+                            "TimbermeshSpec": {
+                              "type": "object",
+                              "properties": {
+                                "Model": {
+                                  "type": "string",
+                                  "title": "Model",
+                                  "examples": [
+                                    "NaturalResources/Bushes/Blueberry/BlueberryBushMatureDead",
+                                    "NaturalResources/Bushes/Coffee/CoffeeBushMatureDead",
+                                    "NaturalResources/Bushes/Dandelion/DandelionMatureDead",
+                                    "NaturalResources/Crops/Canola/CanolaMatureDead",
+                                    "NaturalResources/Crops/Carrot/CarrotMatureDead",
+                                    "NaturalResources/Crops/Cassava/CassavaMatureDead",
+                                    "NaturalResources/Crops/Cattail/CattailMatureDead",
+                                    "NaturalResources/Crops/Corn/CornMatureDead",
+                                    "NaturalResources/Crops/Eggplant/EggplantMatureDead",
+                                    "NaturalResources/Crops/Kohlrabi/KohlrabiMatureDead",
+                                    "NaturalResources/Crops/Potato/PotatoMatureDead",
+                                    "NaturalResources/Crops/Soybean/SoybeanMatureDead",
+                                    "NaturalResources/Crops/Spadderdock/SpadderdockMatureDead",
+                                    "NaturalResources/Crops/Sunflower/SunflowerMatureDead",
+                                    "NaturalResources/Crops/Wheat/WheatMatureDead",
+                                    "NaturalResources/Trees/Birch/Mesh/BirchMatureDead",
+                                    "NaturalResources/Trees/ChestnutTree/Mesh/ChestnutTreeMatureDead",
+                                    "NaturalResources/Trees/Mangrove/Mesh/MangroveMatureDead",
+                                    "NaturalResources/Trees/Maple/Mesh/MapleMatureDead",
+                                    "NaturalResources/Trees/Oak/Mesh/OakMatureDead",
+                                    "NaturalResources/Trees/Pine/Mesh/PineMatureDead"
+                                  ]
+                                }
+                              },
+                              "required": ["Model"],
+                              "title": "Timbermesh spec"
+                            },
+                            "CollidersSpec": {
+                              "type": "object",
+                              "properties": {
+                                "BoxColliders": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "SphereColliders": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "CapsuleColliders": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "BoxColliders#append": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "BoxColliders#remove": {
+                                  "$ref": "#/$defs/BoxColliders"
+                                },
+                                "BoxColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                },
+                                "SphereColliders#append": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "SphereColliders#remove": {
+                                  "$ref": "#/$defs/SphereColliders"
+                                },
+                                "SphereColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                },
+                                "CapsuleColliders#append": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "CapsuleColliders#remove": {
+                                  "$ref": "#/$defs/CapsuleColliders"
+                                },
+                                "CapsuleColliders#delete": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "BoxColliders",
+                                "CapsuleColliders",
+                                "SphereColliders"
+                              ],
+                              "title": "Colliders spec"
+                            }
+                          },
+                          "required": ["TimbermeshSpec"],
+                          "title": "# dead"
+                        }
+                      },
+                      "required": ["#Alive", "#Dead", "#Dying"],
+                      "title": "Children"
+                    }
+                  },
+                  "required": ["Children"],
+                  "title": "Mature"
+                },
+                "#Leftover": {
+                  "type": "object",
+                  "properties": {
+                    "TimbermeshSpec": {
+                      "type": "object",
+                      "properties": {
+                        "Model": {
+                          "type": "string",
+                          "title": "Model",
+                          "examples": [
+                            "NaturalResources/Trees/Birch/Mesh/BirchMatureStump",
+                            "NaturalResources/Trees/ChestnutTree/Mesh/ChestnutTreeMatureStump",
+                            "NaturalResources/Trees/Mangrove/Mesh/MangroveMatureStump",
+                            "NaturalResources/Trees/Maple/Mesh/MapleMatureStump",
+                            "NaturalResources/Trees/Oak/Mesh/OakMatureStump",
+                            "NaturalResources/Trees/Pine/Mesh/PineMatureStump"
+                          ]
+                        }
+                      },
+                      "required": ["Model"],
+                      "title": "Timbermesh spec"
+                    },
+                    "CollidersSpec": {
+                      "type": "object",
+                      "properties": {
+                        "BoxColliders": {
+                          "$ref": "#/$defs/BoxColliders"
+                        },
+                        "SphereColliders": {
+                          "$ref": "#/$defs/SphereColliders"
+                        },
+                        "CapsuleColliders": {
+                          "$ref": "#/$defs/CapsuleColliders"
+                        },
+                        "BoxColliders#append": {
+                          "$ref": "#/$defs/BoxColliders"
+                        },
+                        "BoxColliders#remove": {
+                          "$ref": "#/$defs/BoxColliders"
+                        },
+                        "BoxColliders#delete": {
+                          "type": "object",
+                          "properties": {},
+                          "additionalProperties": false
+                        },
+                        "SphereColliders#append": {
+                          "$ref": "#/$defs/SphereColliders"
+                        },
+                        "SphereColliders#remove": {
+                          "$ref": "#/$defs/SphereColliders"
+                        },
+                        "SphereColliders#delete": {
+                          "type": "object",
+                          "properties": {},
+                          "additionalProperties": false
+                        },
+                        "CapsuleColliders#append": {
+                          "$ref": "#/$defs/CapsuleColliders"
+                        },
+                        "CapsuleColliders#remove": {
+                          "$ref": "#/$defs/CapsuleColliders"
+                        },
+                        "CapsuleColliders#delete": {
+                          "type": "object",
+                          "properties": {},
+                          "additionalProperties": false
+                        }
+                      },
+                      "required": [
+                        "BoxColliders",
+                        "CapsuleColliders",
+                        "SphereColliders"
+                      ],
+                      "title": "Colliders spec"
+                    }
+                  },
+                  "required": ["CollidersSpec", "TimbermeshSpec"],
+                  "title": "# leftover"
+                }
+              },
+              "required": ["Mature", "Seedling"],
+              "title": "Children"
+            }
+          },
+          "required": ["Children"],
+          "title": "# models"
+        }
+      },
+      "required": ["#Models"],
+      "title": "Children"
+    },
+    "CropSpec": {
+      "type": "object",
+      "title": "Crop spec"
+    },
+    "CuttableSpec": {
+      "type": "object",
+      "properties": {
+        "RemoveOnCut": {
+          "type": "boolean",
+          "title": "Remove on cut",
+          "examples": [true, false],
+          "default": true
+        },
+        "LeftoverModelName": {
+          "type": "string",
+          "title": "Leftover model name",
+          "examples": ["", "#Leftover"],
+          "default": ""
+        },
+        "YielderSpec": {
+          "type": "object",
+          "properties": {
+            "YielderComponentName": {
+              "type": "string",
+              "title": "Yielder component name",
+              "examples": ["Cuttable"],
+              "default": "Cuttable"
+            },
+            "Yield": {
+              "type": "object",
+              "properties": {
+                "Id": {
+                  "type": "string",
+                  "title": "Id",
+                  "examples": [
+                    "Log",
+                    "CanolaSeeds",
+                    "Carrot",
+                    "Cassava",
+                    "CattailRoot",
+                    "Corn",
+                    "Eggplant",
+                    "Kohlrabi",
+                    "Potato",
+                    "Soybean",
+                    "Spadderdock",
+                    "SunflowerSeeds",
+                    "Wheat"
+                  ],
+                  "default": "Log"
+                },
+                "Amount": {
+                  "type": "integer",
+                  "title": "Amount"
+                }
+              },
+              "required": ["Amount", "Id"],
+              "title": "Yield"
+            },
+            "RemovalTimeInHours": {
+              "type": "number",
+              "title": "Removal time in hours",
+              "examples": [1.2, 2.0, 1.8, 1.0, 1.5],
+              "default": 1.2
+            },
+            "ResourceGroup": {
+              "type": "string",
+              "title": "Resource group",
+              "examples": ["Farmhouse", "Cuttable", "AquaticFarmhouse"],
+              "default": "Farmhouse"
+            }
+          },
+          "required": [
+            "RemovalTimeInHours",
+            "ResourceGroup",
+            "Yield",
+            "YielderComponentName"
+          ],
+          "title": "Yielder spec"
+        }
+      },
+      "required": ["LeftoverModelName", "RemoveOnCut", "YielderSpec"],
+      "title": "Cuttable spec"
+    },
+    "CuttableYieldGoodIdProviderSpec": {
+      "type": "object",
+      "title": "Cuttable yield good id provider spec"
+    },
+    "TreeComponentSpec": {
+      "type": "object",
+      "title": "Tree component spec"
+    },
+    "TreeCuttingRadiusSpec": {
+      "type": "object",
+      "properties": {
+        "Radius": {
+          "type": "number",
+          "title": "Radius",
+          "examples": [0.05, 0.145, 0.039, 0.098, 0.2, 0.095]
+        }
+      },
+      "required": ["Radius"],
+      "title": "Tree cutting radius spec"
+    }
+  },
+  "$defs": {
+    "BoxColliders": {
+      "type": "array",
+      "title": "Box colliders"
+    },
+    "SphereColliders": {
+      "type": "array",
+      "title": "Sphere colliders"
+    },
+    "CapsuleColliders": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Center": {
+            "type": "object",
+            "properties": {
+              "X": {
+                "type": "number",
+                "title": "X"
+              },
+              "Y": {
+                "type": "number",
+                "title": "Y"
+              },
+              "Z": {
+                "type": "number",
+                "title": "Z"
+              }
+            },
+            "required": ["X", "Y", "Z"],
+            "title": "Center"
+          },
+          "Radius": {
+            "type": "number",
+            "title": "Radius"
+          },
+          "Height": {
+            "type": "number",
+            "title": "Height"
+          },
+          "Axis": {
+            "type": "string",
+            "title": "Axis"
+          }
+        },
+        "required": ["Axis", "Center", "Height", "Radius"]
+      },
+      "title": "Capsule colliders"
+    },
+    "BackwardCompatibleTemplateNames": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": ["Maple", "ChestnutTree"]
+      },
+      "title": "Backward compatible template names"
+    },
+    "BlockSpecs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "MatterBelow": {
+            "type": "string",
+            "title": "Matter below"
+          },
+          "Occupations": {
+            "type": "string",
+            "title": "Occupations"
+          },
+          "Stackable": {
+            "type": "string",
+            "title": "Stackable"
+          },
+          "OccupyAllBelow": {
+            "type": "boolean",
+            "title": "Occupy all below"
+          },
+          "Underground": {
+            "type": "boolean",
+            "title": "Underground"
+          }
+        },
+        "required": [
+          "MatterBelow",
+          "Occupations",
+          "OccupyAllBelow",
+          "Stackable",
+          "Underground"
+        ]
+      },
+      "title": "Block specs"
+    }
+  }
+}
