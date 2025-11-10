@@ -7,216 +7,411 @@
   "properties": {
     "NeedSpec": {
       "type": "object",
-      "description": "Need specification",
       "properties": {
         "Id": {
           "type": "string",
-          "description": "ID of the need to be modified",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
+          "title": "Id",
+          "examples": [
+            "Injury",
+            "Scratcher",
+            "FermentedCassava",
+            "Clock",
+            "Sleep",
+            "Agora",
+            "ContemplationSpot",
+            "CornRation",
+            "EarthRepopulator",
+            "Lido",
+            "WindTunnel",
+            "Campfire",
+            "EggplantRation",
+            "TributeToIngenuity",
+            "BrazierOfBonding",
+            "BadwaterContamination",
+            "RooftopTerrace",
+            "GrilledChestnuts",
+            "Antidote",
+            "Hunger",
+            "Roof",
+            "Shelter",
+            "BeaverStatue",
+            "FarmerMonument",
+            "FountainOfJoy",
+            "FermentedSoybean",
+            "BeaverBust",
+            "Shrub",
+            "PunchCard",
+            "Detailer",
+            "MudPit",
+            "FlameOfUnity",
+            "CattailCracker",
+            "Lantern",
+            "DanceHall",
+            "BulletinPole",
+            "Grease",
+            "GrilledPotatoes",
+            "Kohlrabi",
+            "Thirst",
+            "Books",
+            "SunflowerSeeds",
+            "BeeSting",
+            "ControlTower",
+            "Catalyst",
+            "Energy",
+            "LaborerMonument",
+            "FermentedMushroom",
+            "MaplePastry",
+            "WetFur",
+            "MangroveFruit",
+            "GrilledSpadderdock",
+            "Coffee",
+            "Carousel",
+            "Scarecrow",
+            "BrokenTeeth",
+            "MudBath",
+            "SwimmingPool",
+            "ExercisePlaza",
+            "AlgaeRation",
+            "Brazier",
+            "Carrots",
+            "EarthRecultivator",
+            "Biofuel",
+            "Motivatorium",
+            "Bread"
+          ]
         },
         "BackwardCompatibleIds": {
-          "type": "array",
-          "description": "Old need IDs",
-          "items": {
-            "type": "string",
-            "description": "Need ID",
-            "minLength": 1,
-            "pattern": "^[a-zA-Z0-9_-]+$"
-          }
-        },
-        "BackwardCompatibleIds#append": {
-          "type": "array",
-          "description": "Append old need IDs",
-          "items": {
-            "type": "string",
-            "description": "Need ID",
-            "minLength": 1,
-            "pattern": "^[a-zA-Z0-9_-]+$"
-          }
-        },
-        "BackwardCompatibleIds#remove": {
-          "type": "array",
-          "description": "Remove old need IDs",
-          "items": {
-            "type": "string",
-            "description": "Need ID",
-            "minLength": 1,
-            "pattern": "^[a-zA-Z0-9_-]+$"
-          }
+          "$ref": "#/$defs/BackwardCompatibleIds"
         },
         "Order": {
-          "type": "number",
-          "description": "Order in the needs menu"
+          "type": "integer",
+          "title": "Order"
         },
         "NeedGroupId": {
           "type": "string",
-          "description": "Need group ID",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
+          "title": "Need group id",
+          "examples": [
+            "Nutrition",
+            "BasicNeeds",
+            "Fun",
+            "Aesthetics",
+            "Awe",
+            "SocialLife",
+            "Boosts",
+            "Knowledge"
+          ],
+          "default": "Nutrition"
         },
         "CharacterType": {
           "type": "string",
-          "description": "Character type",
+          "title": "Character type",
           "examples": ["Beaver", "Bot"],
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
-        },
-        "DisplayNameLocKey": {
-          "type": "string",
-          "description": "Display name lockey",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
+          "default": "Beaver"
         },
         "StartingValue": {
           "type": "number",
-          "description": "Starting value"
+          "title": "Starting value",
+          "examples": [0.0, 1.0, 0.5, 0.8],
+          "default": 0.0
         },
         "MinimumValue": {
           "type": "number",
-          "description": "Minimum value"
+          "title": "Minimum value",
+          "examples": [0.0, -1.0, -0.2, -3.0],
+          "default": 0.0
         },
         "MaximumValue": {
           "type": "number",
-          "description": "Maximum value"
+          "title": "Maximum value",
+          "examples": [1.0, 0.0, 0.8],
+          "default": 1.0
         },
         "DailyDelta": {
           "type": "number",
-          "description": "Daily subtraction"
+          "title": "Daily delta",
+          "examples": [
+            -0.05, -0.3, -0.2, -0.1, -0.4, -0.01, 0.0, -0.58, 0.1, -0.6, -1.0,
+            -0.8, -0.7, 0.75, -72.0
+          ],
+          "default": -0.05
         },
         "ImportanceMultiplier": {
           "type": "number",
-          "description": "Importance multiplier"
-        },
-        "CriticalNeedType": {
-          "type": "object",
-          "description": "Critical need type",
-          "properties": {
-            "Value": {
-              "type": "string",
-              "description": "Value",
-              "default": "None",
-              "examples": ["None", "State"],
-              "minLength": 1
-            }
-          },
-          "required": ["Value"]
-        },
-        "CriticalSpriteName": {
-          "type": "string",
-          "description": "Critical sprite name",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\/[a-zA-Z0-9_-]+)*$"
-        },
-        "CriticalDescriptionLocKey": {
-          "type": "string",
-          "description": "Critical description lockey",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
-        },
-        "Penalties": {
-          "type": "array",
-          "description": "Penalties",
-          "uniqueItems": true,
-          "minItems": 1,
-          "items": {
-            "required": ["Id", "MultiplierDelta"],
-            "properties": {
-              "Id": {
-                "type": "string",
-                "description": "Penalty ID",
-                "minLength": 1,
-                "pattern": "^[a-zA-Z0-9_-]+$"
-              },
-              "MultiplierDelta": {
-                "type": "number",
-                "description": "Multiplier delta"
-              }
-            }
-          }
-        },
-        "Penalties#append": {
-          "type": "array",
-          "description": "Append penalties",
-          "uniqueItems": true,
-          "minItems": 1,
-          "items": {
-            "required": ["Id", "MultiplierDelta"],
-            "properties": {
-              "Id": {
-                "type": "string",
-                "description": "Penalty ID",
-                "minLength": 1,
-                "pattern": "^[a-zA-Z0-9_-]+$"
-              },
-              "MultiplierDelta": {
-                "type": "number",
-                "description": "Multiplier delta"
-              }
-            }
-          }
-        },
-        "Penalties#remove": {
-          "type": "array",
-          "description": "Remove penalties",
-          "uniqueItems": true,
-          "minItems": 1,
-          "items": {
-            "required": ["Id", "MultiplierDelta"],
-            "properties": {
-              "Id": {
-                "type": "string",
-                "description": "Penalty ID",
-                "minLength": 1,
-                "pattern": "^[a-zA-Z0-9_-]+$"
-              },
-              "MultiplierDelta": {
-                "type": "number",
-                "description": "Multiplier delta"
-              }
-            }
-          }
+          "title": "Importance multiplier",
+          "examples": [1.0, 3.0, 1.25, 3.5],
+          "default": 1.0
         },
         "Effectiveness": {
           "type": "number",
-          "description": "Effectiveness"
+          "title": "Effectiveness",
+          "examples": [1.0],
+          "default": 1.0
         },
         "Wastable": {
           "type": "boolean",
-          "description": "Wastable"
+          "title": "Wastable",
+          "examples": [true, false],
+          "default": true
+        },
+        "HoursWarningThreshold": {
+          "type": "number",
+          "title": "Hours warning threshold",
+          "examples": [0.0, 4.5, 3.5],
+          "default": 0.0
+        },
+        "DisplayNameLocKey": {
+          "type": "string",
+          "title": "Display name loc key",
+          "examples": [
+            "Need.Injury.DisplayName",
+            "Building.Scratcher.DisplayName",
+            "Good.FermentedCassava.PluralDisplayName",
+            "Building.Clock.DisplayName",
+            "Need.Sleep.DisplayName",
+            "Building.Agora.DisplayName",
+            "Building.ContemplationSpot.DisplayName",
+            "Good.CornRation.PluralDisplayName",
+            "Building.EarthRepopulator.IronTeeth.DisplayName",
+            "Building.Lido.DisplayName",
+            "Building.WindTunnel.DisplayName",
+            "Building.Campfire.DisplayName",
+            "Good.EggplantRation.PluralDisplayName",
+            "Building.TributeToIngenuity.DisplayName",
+            "Building.BrazierOfBonding.DisplayName",
+            "Need.BadwaterContamination.DisplayName",
+            "Building.RooftopTerrace.DisplayName",
+            "Good.GrilledChestnut.PluralDisplayName",
+            "Good.Antidote.PluralDisplayName",
+            "Need.Hunger.DisplayName",
+            "Need.Roof.DisplayName",
+            "Need.Shelter.DisplayName",
+            "Building.BeaverStatue.DisplayName",
+            "Building.FarmerMonument.DisplayName",
+            "Building.FountainOfJoy.DisplayName",
+            "Good.FermentedSoybean.PluralDisplayName",
+            "Building.BeaverBust.DisplayName",
+            "Building.Shrub.DisplayName",
+            "Good.PunchCard.PluralDisplayName",
+            "Building.Detailer.DisplayName",
+            "Building.MudPit.DisplayName",
+            "Building.FlameOfUnity.DisplayName",
+            "Good.CattailCracker.PluralDisplayName",
+            "Building.Lantern.DisplayName",
+            "Building.DanceHall.DisplayName",
+            "Building.BulletinPole.DisplayName",
+            "Good.Grease.PluralDisplayName",
+            "Good.GrilledPotato.PluralDisplayName",
+            "Good.Kohlrabi.PluralDisplayName",
+            "Need.Thirst.DisplayName",
+            "Good.Book.PluralDisplayName",
+            "Good.SunflowerSeeds.PluralDisplayName",
+            "Need.BeeSting.DisplayName",
+            "Building.ControlTower.DisplayName",
+            "Good.Catalyst.PluralDisplayName",
+            "Need.Energy.DisplayName",
+            "Building.LaborerMonument.DisplayName",
+            "Good.FermentedMushroom.PluralDisplayName",
+            "Good.MaplePastry.PluralDisplayName",
+            "Need.WetFur.DisplayName",
+            "Good.MangroveFruit.PluralDisplayName",
+            "Good.GrilledSpadderdock.PluralDisplayName",
+            "Good.Coffee.PluralDisplayName",
+            "Building.Carousel.DisplayName",
+            "Building.Scarecrow.DisplayName",
+            "Need.BrokenTeeth.DisplayName",
+            "Building.MudBath.DisplayName",
+            "Building.SwimmingPool.DisplayName",
+            "Building.ExercisePlaza.DisplayName",
+            "Good.AlgaeRation.PluralDisplayName",
+            "Building.Brazier.DisplayName",
+            "Good.Carrot.PluralDisplayName",
+            "Building.EarthRecultivator.Folktails.DisplayName",
+            "Good.Biofuel.PluralDisplayName",
+            "Building.Motivatorium.DisplayName",
+            "Good.Bread.PluralDisplayName"
+          ]
         },
         "FavorableWellbeing": {
-          "type": "number",
-          "description": "Favorable wellbeing"
+          "type": "integer",
+          "title": "Favorable wellbeing"
         },
         "UnfavorableWellbeing": {
-          "type": "number",
-          "description": "Unfavorable wellbeing"
+          "type": "integer",
+          "title": "Unfavorable wellbeing"
+        },
+        "BackwardCompatibleIds#append": {
+          "$ref": "#/$defs/BackwardCompatibleIds"
+        },
+        "BackwardCompatibleIds#remove": {
+          "$ref": "#/$defs/BackwardCompatibleIds"
+        },
+        "BackwardCompatibleIds#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
         }
       },
-      "required": ["Id"],
-      "minItems": 2
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Need specification"
+    },
+    "NeedPreventingWorkSpec": {
+      "type": "object",
+      "properties": {
+        "WorkRefusalWarningLocKey": {
+          "type": "string",
+          "title": "Work refusal warning loc key",
+          "examples": ["Work.WorkRefusalWarning"],
+          "default": "Work.WorkRefusalWarning"
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Need preventing work specification"
+    },
+    "CriticalNeedSpec": {
+      "type": "object",
+      "properties": {
+        "CriticalNeedType": {
+          "type": "string",
+          "title": "Critical need type",
+          "examples": ["StateWithAlert", "State", "Action", "Alert"]
+        },
+        "SpriteName": {
+          "type": "string",
+          "title": "Sprite name",
+          "examples": [
+            "Injury",
+            "Exhaustion",
+            "BadwaterContamination",
+            "Hunger",
+            "Thirst",
+            "OutOfEnergy",
+            "BrokenTeeth",
+            "OutOfFuel"
+          ]
+        },
+        "DescriptionLocKey": {
+          "type": "string",
+          "title": "Description loc key",
+          "examples": [
+            "Status.Need.Injury",
+            "Status.Need.Sleep",
+            "Status.Need.BadwaterContamination",
+            "Status.Need.Hunger",
+            "Status.Need.Thirst",
+            "Status.Need.Energy",
+            "Status.Need.BrokenTeeth",
+            "Status.Need.Biofuel"
+          ]
+        },
+        "DescriptionShortLocKey": {
+          "type": "string",
+          "title": "Description short loc key",
+          "examples": [
+            "",
+            "Status.Need.Injury.Short",
+            "Status.Need.BadwaterContamination.Short",
+            "Status.Need.Energy.Short",
+            "Status.Need.BrokenTeeth.Short",
+            "Status.Need.Biofuel.Short"
+          ],
+          "default": ""
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Critical need specification"
+    },
+    "InactiveHiddenNeedSpec": {
+      "type": "object",
+      "title": "Inactive hidden need specification"
+    },
+    "InjurableNeedSpec": {
+      "type": "object",
+      "title": "Injurable need specification"
+    },
+    "PunitiveNeedSpec": {
+      "type": "object",
+      "properties": {
+        "Penalties": {
+          "$ref": "#/$defs/Penalties"
+        },
+        "Penalties#append": {
+          "$ref": "#/$defs/Penalties"
+        },
+        "Penalties#remove": {
+          "$ref": "#/$defs/Penalties"
+        },
+        "Penalties#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Punitive need specification"
     },
     "LethalNeedSpec": {
       "type": "object",
-      "description": "Lethal need specification",
       "properties": {
         "DeathWarningLocKey": {
           "type": "string",
-          "description": "Death warning lockey",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
+          "title": "Death warning loc key",
+          "examples": ["Needs.Beaver.DeathWarning"],
+          "default": "Needs.Beaver.DeathWarning"
         },
         "DeathMessageLocKey": {
           "type": "string",
-          "description": "Death message lockey",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
+          "title": "Death message loc key",
+          "examples": ["Need.Hunger.DeathMessage", "Need.Thirst.DeathMessage"]
         }
       },
-      "minItems": 1
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Lethal need specification"
+    },
+    "NeedAffectedBySoakednessSpec": {
+      "type": "object",
+      "properties": {
+        "PointsPerHour": {
+          "type": "number",
+          "title": "Points per hour",
+          "examples": [0.5],
+          "default": 0.5
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Need affected by soakedness specification"
     }
   },
-  "required": ["NeedSpec"],
-  "minItems": 1
+  "minProperties": 1,
+  "additionalProperties": false,
+  "$defs": {
+    "Penalties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "MultiplierDelta": {
+            "type": "number",
+            "title": "Multiplier delta"
+          }
+        },
+        "minProperties": 1,
+        "additionalProperties": false
+      },
+      "title": "Penalties"
+    },
+    "BackwardCompatibleIds": {
+      "type": "array",
+      "title": "Backward compatible ids"
+    }
+  }
 }

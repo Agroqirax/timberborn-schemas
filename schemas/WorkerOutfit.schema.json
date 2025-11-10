@@ -1,74 +1,89 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/WorkerOutfit.schema.json",
-  "title": "Workeroutfit specification",
-  "description": "Add or modify a worker outfit",
+  "title": "",
+  "description": "",
   "type": "object",
   "properties": {
     "WorkerOutfitSpec": {
       "type": "object",
-      "description": "Workeroutfit specification",
       "properties": {
         "Id": {
           "type": "string",
-          "description": "ID of the workeroutfit to be modified",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
+          "title": "Id",
+          "examples": ["Farmer", "Builder", "Hauler", "Pilot"]
         },
         "FactionId": {
           "type": "string",
-          "description": "Faction ID",
-          "examples": ["Folktails", "IronTeeth"],
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
+          "title": "Faction id",
+          "examples": ["IronTeeth", "Folktails"],
+          "default": "IronTeeth"
         },
         "WorkerType": {
           "type": "string",
-          "description": "Worker type",
+          "title": "Worker type",
           "examples": ["Beaver", "Bot"],
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
+          "default": "Beaver"
         },
         "DiffuseTexture": {
           "type": "string",
-          "description": "Diffuse texture",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\/[a-zA-Z0-9_-]+)*$"
+          "title": "Diffuse texture",
+          "examples": [
+            "",
+            "Materials/Beavers/Common/WorkerOutfits/HaulerBackpackStrings_D",
+            "Materials/Beavers/Common/WorkerOutfits/WorkerHammerStrings_D"
+          ],
+          "default": ""
         },
         "NormalTexture": {
           "type": "string",
-          "description": "Normal texture",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\/[a-zA-Z0-9_-]+)*$"
+          "title": "Normal texture",
+          "examples": [
+            "",
+            "Materials/Beavers/Common/WorkerOutfits/HaulerBackpackStrings_N",
+            "Materials/Beavers/Common/WorkerOutfits/WorkerHammerStrings_N"
+          ],
+          "default": ""
         },
         "Attachments": {
-          "type": "array",
-          "description": "Attachments",
-          "items": {
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
-          }
+          "$ref": "#/$defs/Attachments"
         },
         "Attachments#append": {
-          "type": "array",
-          "description": "Append attachments",
-          "items": {
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
-          }
+          "$ref": "#/$defs/Attachments"
         },
         "Attachments#remove": {
-          "type": "array",
-          "description": "Remove attachments",
-          "items": {
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
-          }
+          "$ref": "#/$defs/Attachments"
+        },
+        "Attachments#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
         }
       },
-      "required": ["Id"],
-      "minItems": 2
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Worker outfit specification"
     }
   },
-  "required": ["WorkerOutfitSpec"]
+  "minProperties": 1,
+  "additionalProperties": false,
+  "$defs": {
+    "Attachments": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": [
+          "HammerBack.Bot",
+          "HammerBack.Beaver",
+          "FarmerHat.Bot.IronTeeth",
+          "FarmerHat.Bot.Folktails",
+          "PilotHelmet.Beaver.IronTeeth",
+          "FarmerHat.Beaver.IronTeeth",
+          "PilotHelmet.Bot.IronTeeth",
+          "FarmerHat.Beaver.Folktails"
+        ]
+      },
+      "title": "Attachments"
+    }
+  }
 }

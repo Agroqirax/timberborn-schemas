@@ -7,89 +7,124 @@
   "properties": {
     "CustomCursorSpec": {
       "type": "object",
-      "description": "Custom cursor specification",
       "properties": {
         "Id": {
           "type": "string",
-          "description": "ID of the cursor to be modified",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
+          "title": "Id",
+          "examples": [
+            "PlantingCursor",
+            "DemolishResourcesCursor",
+            "PriorityCursor",
+            "BeaverAvatarCursor",
+            "CutTreeCursor",
+            "DeleteBuildingCursor",
+            "DefaultCursor",
+            "CancelCursor",
+            "DuplicateSettingsCursor",
+            "PickConnectionCursor",
+            "PickDestinationCursor",
+            "GrabbingCursor"
+          ]
         },
-        "SmallCursor": {
+        "WindowsCursor": {
           "type": "string",
-          "description": "Path for small cursor",
-          "examples": ["UI/Cursors/BeaverAvatarCursorSmall"],
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\/[a-zA-Z0-9_-]+)*$"
+          "title": "Windows cursor",
+          "examples": [
+            "UI/Cursors/PlantingCursorLarge",
+            "UI/Cursors/DemolishResourcesCursorLarge",
+            "UI/Cursors/PriorityCursorLarge",
+            "UI/Cursors/BeaverAvatarCursorLarge",
+            "UI/Cursors/CutTreeCursorLarge",
+            "UI/Cursors/DeleteBuildingCursorLarge",
+            "",
+            "UI/Cursors/CancelCursorLarge",
+            "UI/Cursors/DuplicateSettingsCursorLarge",
+            "UI/Cursors/PickConnectionCursorLarge",
+            "UI/Cursors/PickDestinationCursorLarge",
+            "UI/Cursors/GrabbingCursorLarge"
+          ]
         },
-        "LargeCursor": {
+        "MacOsCursor": {
           "type": "string",
-          "description": "Path for large cursor",
-          "examples": ["UI/Cursors/BeaverAvatarCursorSmall"],
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\/[a-zA-Z0-9_-]+)*$"
+          "title": "Mac os cursor",
+          "examples": [
+            "UI/Cursors/PlantingCursorSmall",
+            "UI/Cursors/DemolishResourcesCursorSmall",
+            "UI/Cursors/PriorityCursorSmall",
+            "UI/Cursors/BeaverAvatarCursorSmall",
+            "UI/Cursors/CutTreeCursorSmall",
+            "UI/Cursors/DeleteBuildingCursorSmall",
+            "",
+            "UI/Cursors/CancelCursorSmall",
+            "UI/Cursors/DuplicateSettingsCursorSmall",
+            "UI/Cursors/PickConnectionCursorSmall",
+            "UI/Cursors/PickDestinationCursorSmall",
+            "UI/Cursors/GrabbingCursorSmall"
+          ]
         },
         "Hotspot": {
           "type": "object",
-          "description": "Cursor hotspot",
           "properties": {
             "X": {
               "type": "number",
-              "description": "X Coordinate",
-              "default": 0
+              "title": "X",
+              "examples": [0.0, 0.5],
+              "default": 0.0
             },
             "Y": {
               "type": "number",
-              "description": "Y Coordinate",
-              "default": 0
+              "title": "Y",
+              "examples": [0.0, 0.5],
+              "default": 0.0
             }
           },
-          "required": ["X", "Y"]
+          "required": ["X", "Y"],
+          "title": "Hotspot"
         },
-        "SmallCursorOffset": {
+        "WindowsCursorOffset": {
           "type": "object",
-          "description": "Small cursor offset",
           "properties": {
             "X": {
               "type": "number",
-              "description": "X Coordinate",
-              "default": 10
+              "title": "X",
+              "examples": [10.0, 12.0],
+              "default": 10.0
             },
             "Y": {
               "type": "number",
-              "description": "Y Coordinate",
-              "default": 30
+              "title": "Y",
+              "examples": [30.0, 18.0],
+              "default": 30.0
             }
           },
-          "required": ["X", "Y"]
+          "required": ["X", "Y"],
+          "title": "Windows cursor offset"
         },
-        "LargeCursorOffset": {
+        "MacOsCursorOffset": {
           "type": "object",
-          "description": "Lare cursor offset",
           "properties": {
             "X": {
               "type": "number",
-              "description": "X Coordinate",
-              "default": 10
+              "title": "X",
+              "examples": [15.0, 12.0],
+              "default": 15.0
             },
             "Y": {
               "type": "number",
-              "description": "Y Coordinate",
-              "default": 30
+              "title": "Y",
+              "examples": [45.0, 18.0],
+              "default": 45.0
             }
           },
-          "required": ["X", "Y"]
+          "required": ["X", "Y"],
+          "title": "Mac os cursor offset"
         }
       },
-      "required": [
-        "Id",
-        "SmallCursor",
-        "LargeCursor",
-        "Hotspot",
-        "SmallCursorOffset",
-        "LargeCursorOffset"
-      ]
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Custom cursor specification"
     }
   },
-  "required": ["CustomCursorSpec"]
+  "minProperties": 1,
+  "additionalProperties": false
 }

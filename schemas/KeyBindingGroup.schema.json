@@ -1,34 +1,57 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/KeyBindingGroup.schema.json",
-  "title": "KeyBindingGroup specification",
-  "description": "Add or modify a keybindinggroup",
+  "title": "Key binding group specification",
+  "description": "Add or modify a key binding group",
   "type": "object",
   "properties": {
     "KeyBindingGroupSpec": {
       "type": "object",
-      "description": "KeyBindingGroup specification",
       "properties": {
         "Id": {
           "type": "string",
-          "description": "ID of the keybindinggroup to be modified",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
+          "title": "Id",
+          "examples": [
+            "Camera",
+            "Time",
+            "Objects",
+            "UI",
+            "SettlementPanel",
+            "Internal",
+            "Buildings",
+            "MapEditor",
+            "Dev"
+          ]
         },
         "Order": {
-          "type": "number",
-          "description": "Order in the settings menu"
+          "type": "integer",
+          "title": "Order"
         },
         "LocKey": {
           "type": "string",
-          "description": "Display name lockey",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
+          "title": "Loc key",
+          "examples": [
+            "",
+            "KeyBindingGroup.Camera",
+            "KeyBindingGroup.Time",
+            "KeyBindingGroup.Objects",
+            "KeyBindingGroup.UI",
+            "KeyBindingGroup.SettlementPanel",
+            "KeyBindingGroup.Buildings",
+            "KeyBindingGroup.MapEditor"
+          ],
+          "default": ""
         }
       },
-      "required": ["Id"],
-      "minItems": 2
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Key binding group specification"
+    },
+    "HiddenKeyBindingGroupSpec": {
+      "type": "object",
+      "title": "Hidden key binding group specification"
     }
   },
-  "required": ["KeyBindingGroupSpec"]
+  "minProperties": 1,
+  "additionalProperties": false
 }

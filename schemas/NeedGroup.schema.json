@@ -1,34 +1,53 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/NeedGroup.schema.json",
-  "title": "Needgroup specification",
-  "description": "Add or modify a needgroup",
+  "title": "Need group specification",
+  "description": "Add or modify a need group",
   "type": "object",
   "properties": {
     "NeedGroupSpec": {
       "type": "object",
-      "description": "Needgroup specification",
       "properties": {
         "Id": {
           "type": "string",
-          "description": "ID of the needgroup to be modified",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
+          "title": "Id",
+          "examples": [
+            "Other",
+            "BasicNeeds",
+            "Nutrition",
+            "Awe",
+            "Fun",
+            "Boosts",
+            "Knowledge",
+            "Aesthetics",
+            "SocialLife"
+          ]
         },
         "Order": {
-          "type": "number",
-          "description": "Order in the needs menu"
+          "type": "integer",
+          "title": "Order"
         },
         "DisplayNameLocKey": {
           "type": "string",
-          "description": "Display name lockey",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
+          "title": "Display name loc key",
+          "examples": [
+            "ToolGroups.Other",
+            "NeedGroup.BasicNeeds.DisplayName",
+            "NeedGroup.Nutrition.DisplayName",
+            "NeedGroup.Awe.DisplayName",
+            "NeedGroup.Fun.DisplayName",
+            "NeedGroup.Boosts.DisplayName",
+            "NeedGroup.Knowledge.DisplayName",
+            "NeedGroup.Aesthetics.DisplayName",
+            "NeedGroup.SocialLife.DisplayName"
+          ]
         }
       },
-      "required": ["Id"],
-      "minItems": 2
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Need group specification"
     }
   },
-  "required": ["NeedGroupSpec"]
+  "minProperties": 1,
+  "additionalProperties": false
 }

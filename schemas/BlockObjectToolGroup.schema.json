@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/BlockObjectToolGroup.schema.json",
+  "title": "Block object tool group",
+  "description": "Add or modify a block object tool group",
+  "type": "object",
+  "properties": {
+    "BlockObjectToolGroupSpec": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string",
+          "title": "Id",
+          "examples": [
+            "Landscaping",
+            "Monuments",
+            "Decoration",
+            "MapEditorResources",
+            "Ruins",
+            "MapEditorObjects",
+            "Wood",
+            "Paths",
+            "DistrictManagement",
+            "MapEditor",
+            "Housing",
+            "Food",
+            "Wellbeing",
+            "Science",
+            "Power",
+            "Other",
+            "Water",
+            "MapEditorWater",
+            "Storage",
+            "Metal"
+          ]
+        },
+        "Order": {
+          "type": "integer",
+          "title": "Order"
+        },
+        "NameLocKey": {
+          "type": "string",
+          "title": "Name loc key",
+          "examples": [
+            "ToolGroups.Landscaping",
+            "ToolGroups.Monuments",
+            "ToolGroups.Decoration",
+            "ToolGroups.MapEditorResources",
+            "ToolGroups.Ruins",
+            "ToolGroups.MapEditorObjects",
+            "ToolGroups.Wood",
+            "ToolGroups.Paths",
+            "ToolGroups.DistrictManagement",
+            "ToolGroups.MapEditor",
+            "ToolGroups.Housing",
+            "ToolGroups.Food",
+            "Wellbeing.DisplayName",
+            "ToolGroups.Science",
+            "ToolGroups.Power",
+            "ToolGroups.Other",
+            "ToolGroups.Water",
+            "ToolGroups.MapEditorWater",
+            "ToolGroups.Storage",
+            "ToolGroups.Metal"
+          ]
+        },
+        "Icon": {
+          "type": "string",
+          "title": "Icon",
+          "examples": [
+            "Sprites/BottomBar/BuildingGroups/Other",
+            "Sprites/BottomBar/BuildingGroups/Water",
+            "Sprites/BottomBar/BuildingGroups/Landscaping",
+            "Sprites/BottomBar/BuildingGroups/Monuments",
+            "Sprites/BottomBar/BuildingGroups/Decoration",
+            "Sprites/BottomBar/BuildingGroups/Resources",
+            "Sprites/BottomBar/BuildingGroups/Ruins",
+            "Sprites/BottomBar/BuildingGroups/Objects",
+            "Sprites/BottomBar/BuildingGroups/Wood",
+            "Sprites/BottomBar/BuildingGroups/Paths",
+            "Sprites/BottomBar/BuildingGroups/DistrictManagement",
+            "Sprites/BottomBar/BuildingGroups/Housing",
+            "Sprites/BottomBar/BuildingGroups/Food",
+            "Sprites/BottomBar/BuildingGroups/Wellbeing",
+            "Sprites/BottomBar/BuildingGroups/Science",
+            "Sprites/BottomBar/BuildingGroups/Power",
+            "Sprites/BottomBar/BuildingGroups/Storage",
+            "Sprites/BottomBar/BuildingGroups/Metal"
+          ]
+        },
+        "FallbackGroup": {
+          "type": "boolean",
+          "title": "Fallback group",
+          "examples": [false, true],
+          "default": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Block object tool group specification"
+    }
+  },
+  "minProperties": 1,
+  "additionalProperties": false
+}

@@ -1,46 +1,68 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/ToolGroup.schema.json",
-  "title": "Toolgroup specification",
-  "description": "Add or modify a toolgroup",
+  "title": "Tool group specification",
+  "description": "Add or modify a tool group",
   "type": "object",
   "properties": {
     "ToolGroupSpec": {
       "type": "object",
-      "description": "Toolgroup specification",
       "properties": {
         "Id": {
           "type": "string",
-          "description": "ID of the toolgroup to be modified",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
+          "title": "Id",
+          "examples": [
+            "Fields",
+            "Forestry",
+            "TreeCutting",
+            "BuilderPriority",
+            "Demolishing"
+          ]
         },
-        "Order": {
+        "DisplayNameLocKey": {
           "type": "string",
-          "description": "Order",
-          "minLength": 1
-        },
-        "NameLocKey": {
-          "type": "string",
-          "description": "Name lockey",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
+          "title": "Display name loc key",
+          "examples": [
+            "ToolGroups.FieldsPlanting",
+            "ToolGroups.ForestryPlanting",
+            "ToolGroups.TreeCutting",
+            "ToolGroups.Priority",
+            "ToolGroups.Demolishing"
+          ]
         },
         "Icon": {
           "type": "string",
-          "description": "Icon path",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\/[a-zA-Z0-9_-]+)*$"
-        },
-        "FallbackGroup": {
-          "type": "boolean",
-          "description": "Fallback group",
-          "default": false
+          "title": "Icon",
+          "examples": [
+            "Sprites/BottomBar/FieldsPlantingToolGroupIcon",
+            "Sprites/BottomBar/ForestryPlantingToolGroupIcon",
+            "Sprites/BottomBar/TreeToolGroupIcon",
+            "Sprites/BottomBar/PriorityToolGroupIcon",
+            "Sprites/BottomBar/DeleteGroupIcon"
+          ]
         }
       },
-      "required": ["Id"],
-      "minItems": 2
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Tool group specification"
+    },
+    "PlantingToolGroupSpec": {
+      "type": "object",
+      "title": "Planting tool group specification"
+    },
+    "TreeCuttingToolGroupSpec": {
+      "type": "object",
+      "title": "Tree cutting tool group specification"
+    },
+    "ConstructionModeToolGroupSpec": {
+      "type": "object",
+      "title": "Construction mode tool group specification"
+    },
+    "BuilderPriorityToolGroupSpec": {
+      "type": "object",
+      "title": "Builder priority tool group specification"
     }
   },
-  "required": ["ToolGroupSpec"]
+  "minProperties": 1,
+  "additionalProperties": false
 }

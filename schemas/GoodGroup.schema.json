@@ -2,58 +2,55 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/GoodGroup.schema.json",
   "title": "Good group specification",
-  "description": "Add or modify agood group",
+  "description": "Add or modify a good group",
   "type": "object",
   "properties": {
     "GoodGroupSpec": {
       "type": "object",
-      "description": "Good group specification",
       "properties": {
         "Id": {
           "type": "string",
-          "description": "ID of the good group to be modified",
-          "examples": ["Food", "Ingredients", "Log", "Materials", "Water"],
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
+          "title": "Id",
+          "examples": ["Materials", "Food", "Badwater", "Ingredients", "Water"]
         },
         "Order": {
-          "type": "number",
-          "description": "Order in the top bar"
-        },
-        "DisplayNameLocKey": {
-          "type": "string",
-          "description": "Display name lockey",
-          "examples": [
-            "TopBar.Food",
-            "TopBar.Ingredients",
-            "TopBar.Log",
-            "TopBar.Materials",
-            "TopBar.Water"
-          ],
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
+          "type": "integer",
+          "title": "Order"
         },
         "Icon": {
           "type": "string",
-          "description": "Good group icon",
+          "title": "Icon",
           "examples": [
-            "Sprites/TopBar/Food",
-            "Sprites/TopBar/Ingredients",
-            "Sprites/TopBar/Log",
             "Sprites/TopBar/Materials",
+            "Sprites/TopBar/Food",
+            "Sprites/TopBar/Badwater",
+            "Sprites/TopBar/Ingredients",
             "Sprites/TopBar/Water"
-          ],
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\/[a-zA-Z0-9_-]+)*$"
+          ]
         },
         "SingleResourceGroup": {
           "type": "boolean",
-          "description": "Group with single resource"
+          "title": "Single resource group",
+          "examples": [false, true],
+          "default": false
+        },
+        "DisplayNameLocKey": {
+          "type": "string",
+          "title": "Display name loc key",
+          "examples": [
+            "TopBar.Materials",
+            "TopBar.Food",
+            "TopBar.Badwater",
+            "TopBar.Ingredients",
+            "TopBar.Water"
+          ]
         }
       },
-      "required": ["Id"],
-      "minItems": 2
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Good group specification"
     }
   },
-  "required": ["GoodGroupSpec"]
+  "minProperties": 1,
+  "additionalProperties": false
 }

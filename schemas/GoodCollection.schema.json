@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/GoodCollection.schema.json",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "GoodCollectionSpec": {
+      "type": "object",
+      "properties": {
+        "CollectionId": {
+          "type": "string",
+          "title": "Collection id",
+          "examples": ["Common", "Folktails", "IronTeeth"]
+        },
+        "Goods": {
+          "$ref": "#/$defs/Goods"
+        },
+        "Goods#append": {
+          "$ref": "#/$defs/Goods"
+        },
+        "Goods#remove": {
+          "$ref": "#/$defs/Goods"
+        },
+        "Goods#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Good collection specification"
+    }
+  },
+  "minProperties": 1,
+  "additionalProperties": false,
+  "$defs": {
+    "Goods": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": [
+          "Water",
+          "BotChassis",
+          "BotHead",
+          "BotLimb",
+          "TreatedPlank",
+          "Badwater",
+          "Berries",
+          "Dirt",
+          "Explosives",
+          "Extract",
+          "Gear",
+          "Log",
+          "MetalBlock",
+          "PineResin",
+          "Plank",
+          "ScrapMetal",
+          "Antidote",
+          "Biofuel",
+          "Book",
+          "Bread",
+          "Carrot",
+          "Catalyst",
+          "CattailCracker",
+          "CattailFlour",
+          "CattailRoot",
+          "Chestnut",
+          "Dandelion",
+          "GrilledChestnut",
+          "GrilledPotato",
+          "GrilledSpadderdock",
+          "MaplePastry",
+          "MapleSyrup",
+          "Paper",
+          "Potato",
+          "PunchCard",
+          "Spadderdock",
+          "SunflowerSeeds",
+          "Wheat",
+          "WheatFlour",
+          "Algae",
+          "AlgaeRation",
+          "CanolaOil",
+          "CanolaSeeds",
+          "Cassava",
+          "Coffee",
+          "CoffeeBean",
+          "Corn",
+          "CornRation",
+          "Eggplant",
+          "EggplantRation",
+          "FermentedCassava",
+          "FermentedMushroom",
+          "FermentedSoybean",
+          "Grease",
+          "Kohlrabi",
+          "MangroveFruit",
+          "Mushroom",
+          "Soybean"
+        ]
+      },
+      "title": "Goods"
+    }
+  }
+}

@@ -1,57 +1,61 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/RemoveYieldStrategy.schema.json",
-  "title": "Removeyieldstrategy specification",
-  "description": "Add or modify a removeyieldstrategy",
+  "title": "Remove yield strategies",
+  "description": "Add or modify a remove yield strategy",
   "type": "object",
   "properties": {
     "RemoveYieldStrategySpec": {
       "type": "object",
-      "description": "Removeyieldstrategy specification",
       "properties": {
         "Id": {
           "type": "string",
-          "description": "ID of the removeyieldstrategy to be modified",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
+          "title": "Id",
+          "examples": ["Cuttable", "Uncuttable", "Ruins"]
         },
         "CompatibleResourceGroups": {
-          "type": "array",
-          "description": "Compatible resource groups",
-          "examples": [],
-          "items": {
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9_-]+$"
-          }
-        },
-        "CompatibleResourceGroups#append": {
-          "type": "array",
-          "description": "Append compatible resource groups",
-          "examples": [],
-          "items": {
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9_-]+$"
-          }
-        },
-        "CompatibleResourceGroups#remove": {
-          "type": "array",
-          "description": "Remove compatible resource groups",
-          "examples": [],
-          "items": {
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9_-]+$"
-          }
+          "$ref": "#/$defs/CompatibleResourceGroups"
         },
         "Animation": {
           "type": "string",
-          "description": "Animation",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
+          "title": "Animation",
+          "examples": ["Working", "Cutting"],
+          "default": "Working"
+        },
+        "CompatibleResourceGroups#append": {
+          "$ref": "#/$defs/CompatibleResourceGroups"
+        },
+        "CompatibleResourceGroups#remove": {
+          "$ref": "#/$defs/CompatibleResourceGroups"
+        },
+        "CompatibleResourceGroups#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
         }
       },
-      "required": ["Id"],
-      "minItems": 2
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Remove yield strategy specification"
     }
   },
-  "required": ["RemoveYieldStrategySpec"]
+  "minProperties": 1,
+  "additionalProperties": false,
+  "$defs": {
+    "CompatibleResourceGroups": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": [
+          "Cuttable",
+          "Farmhouse",
+          "AquaticFarmhouse",
+          "Gatherable",
+          "Tappable",
+          "Ruin"
+        ]
+      },
+      "title": "Compatible resource groups"
+    }
+  }
 }

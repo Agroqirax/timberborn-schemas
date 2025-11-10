@@ -1,64 +1,120 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/GoodVisualization.schema.json",
-  "title": "GoodVisualization specification",
-  "description": "Add or modify a goodvisualization",
+  "title": "Good visualization specification",
+  "description": "Add or modify a good visualization",
   "type": "object",
   "properties": {
     "GoodVisualizationSpec": {
       "type": "object",
-      "description": "Goodvisualization specification",
       "properties": {
         "Id": {
           "type": "string",
-          "description": "ID of the goodvisualization to be modified",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
+          "title": "Id",
+          "examples": [
+            "Dirt",
+            "Liquid",
+            "Box",
+            "Plank",
+            "ScrapMetal",
+            "TreatedPlank",
+            "Log",
+            "MetalBlock"
+          ]
         },
         "Variant": {
           "type": "string",
-          "description": "Variant",
-          "minLength": 1
+          "title": "Variant",
+          "examples": ["", "2x2", "1x1", "3x3", "4H", "8H"],
+          "default": ""
         },
         "Offset": {
           "type": "object",
-          "description": "Offset",
           "properties": {
             "X": {
               "type": "number",
-              "description": "X Offset"
+              "title": "X",
+              "examples": [0.0, 0.2, 0.26, 0.1732],
+              "default": 0.0
             },
             "Y": {
               "type": "number",
-              "description": "Y Offset"
+              "title": "Y",
+              "examples": [0.0, 0.26],
+              "default": 0.0
             },
             "Z": {
               "type": "number",
-              "description": "Z Offset"
+              "title": "Z",
+              "examples": [0.17, 0.0, 0.232, -0.82, -0.7, -0.9517],
+              "default": 0.17
             }
           },
-          "required": ["X", "Y", "Z"]
+          "minProperties": 1,
+          "additionalProperties": false,
+          "title": "Offset"
         },
         "LimitingAmount": {
           "type": "number",
-          "description": "Limiting amount"
+          "title": "Limiting amount",
+          "examples": [4.0, 0.0, 0.78, 0.7, 8.0],
+          "default": 4.0
         },
         "PrimaryMesh": {
           "type": "string",
-          "description": "Primary mesh",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\/[a-zA-Z0-9_-]+)*$"
+          "title": "Primary mesh",
+          "examples": [
+            "StockpileGoodModels/9BoxColumn",
+            "StockpileGoodModels/MediumDirtPile",
+            "StockpileGoodModels/SmallLiquidPlane",
+            "StockpileGoodModels/SmallDirtPile",
+            "StockpileGoodModels/DirtPile",
+            "StockpileGoodModels/MediumLiquidPlane",
+            "StockpileGoodModels/1Plank",
+            "StockpileGoodModels/1ScrapMetal",
+            "StockpileGoodModels/1TreatedPlank",
+            "StockpileGoodModels/1Log",
+            "StockpileGoodModels/1MetalBlock",
+            "StockpileGoodModels/LargeLiquidPlane"
+          ],
+          "default": "StockpileGoodModels/9BoxColumn"
+        },
+        "SecondaryMesh": {
+          "type": "string",
+          "title": "Secondary mesh",
+          "examples": [
+            "",
+            "StockpileGoodModels/4Planks",
+            "StockpileGoodModels/4ScrapMetals",
+            "StockpileGoodModels/4TreatedPlanks",
+            "StockpileGoodModels/4Logs",
+            "StockpileGoodModels/4MetalBlocks"
+          ],
+          "default": ""
         },
         "Material": {
           "type": "string",
-          "description": "Material",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\/[a-zA-Z0-9_-]+)*$"
+          "title": "Material",
+          "examples": [
+            "Materials/Goods/BeaverCarryingModels/BeaverCarryingModels",
+            "Materials/Goods/DirtPile",
+            "",
+            "Materials/Goods/Box"
+          ],
+          "default": "Materials/Goods/BeaverCarryingModels/BeaverCarryingModels"
+        },
+        "NonLinearity": {
+          "type": "number",
+          "title": "Non linearity",
+          "examples": [0.0, -0.2, -0.5, -0.1],
+          "default": 0.0
         }
       },
-      "required": ["Id"],
-      "minItems": 2
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Good visualization specification"
     }
   },
-  "required": ["GoodVisualizationSpec"]
+  "minProperties": 1,
+  "additionalProperties": false
 }

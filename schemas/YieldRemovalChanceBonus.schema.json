@@ -1,31 +1,31 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/YieldRemovalChanceBonus.schema.json",
-  "title": "Yieldremovalchancebonus specification",
-  "description": "Add or modify a yieldremovalchancebonus",
+  "title": "Yield removal chance bonus specification",
+  "description": "Add or modify a yield removal chance bonus",
   "type": "object",
   "properties": {
     "YieldRemovalChanceBonusSpec": {
       "type": "object",
-      "description": "Yieldremovalchancebonus specification",
       "properties": {
         "BonusId": {
           "type": "string",
-          "description": "ID of the yieldremovalchancebonus to be modified",
+          "title": "Bonus id",
           "examples": ["CuttingSuccessChance"],
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
+          "default": "CuttingSuccessChance"
         },
         "GoodId": {
           "type": "string",
-          "description": "Good ID",
+          "title": "Good id",
           "examples": ["Log"],
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
+          "default": "Log"
         }
       },
-      "required": ["BonusId", "GoodId"]
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Yield removal chance bonus specification"
     }
   },
-  "required": ["YieldRemovalChanceBonusSpec"]
+  "minProperties": 1,
+  "additionalProperties": false
 }

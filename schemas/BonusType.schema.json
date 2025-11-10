@@ -1,60 +1,66 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/BonusType.schema.json",
-  "title": "Bonus type specification",
-  "description": "Add or modify a bonus type",
+  "title": "",
+  "description": "",
   "type": "object",
   "properties": {
     "BonusTypeSpec": {
       "type": "object",
-      "description": "Bonus type specification",
       "properties": {
         "Id": {
           "type": "string",
-          "description": "Bonus to modify",
+          "title": "Id",
           "examples": [
-            "CarryingCapacity",
-            "CuttingSuccessChance",
-            "GrowthSpeed",
-            "LifeExpectancy",
+            "WorkingSpeed",
             "MovementSpeed",
-            "WorkingSpeed"
-          ],
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
-        },
-        "LocKey": {
-          "type": "string",
-          "description": "Bonus type name lockey",
-          "examples": [
-            "Bonus.CarryingCapacity",
-            "Bonus.CuttingSuccessChance",
-            "Bonus.GrowthSpeed",
-            "Bonus.LifeExpectancy",
-            "Bonus.MovementSpeed",
-            "Bonus.WorkingSpeed"
-          ],
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
+            "GrowthSpeed",
+            "CuttingSuccessChance",
+            "LifeExpectancy",
+            "CarryingCapacity"
+          ]
         },
         "MinimumValue": {
           "type": "number",
-          "description": "Lowest possible value"
+          "title": "Minimum value",
+          "examples": [0.1, 0.05, 0.25, 0.01],
+          "default": 0.1
         },
         "MaximumValue": {
           "type": "number",
-          "description": "Highest possible value"
+          "title": "Maximum value",
+          "examples": [1000.0, 2.0, 1.0, 10.0]
         },
         "Icon": {
           "type": "string",
-          "description": "Bonus icon",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\/[a-zA-Z0-9_-]+)*$"
+          "title": "Icon",
+          "examples": [
+            "",
+            "Sprites/Bonuses/WorkingSpeed",
+            "Sprites/Bonuses/MovementSpeed",
+            "Sprites/Bonuses/GrowthSpeed",
+            "Sprites/Bonuses/LifeExpectancy"
+          ],
+          "default": ""
+        },
+        "LocKey": {
+          "type": "string",
+          "title": "Loc key",
+          "examples": [
+            "Bonus.WorkingSpeed",
+            "Bonus.MovementSpeed",
+            "Bonus.GrowthSpeed",
+            "Bonus.CuttingSuccessChance",
+            "Bonus.LifeExpectancy",
+            "Bonus.CarryingCapacity"
+          ]
         }
       },
-      "required": ["Id"],
-      "minItems": 2
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Bonus type specification"
     }
   },
-  "required": ["BonusTypeSpec"]
+  "minProperties": 1,
+  "additionalProperties": false
 }

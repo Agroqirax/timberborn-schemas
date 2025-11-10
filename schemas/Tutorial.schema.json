@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Tutorial.schema.json",
+  "title": "Tutorial specification",
+  "description": "Add or modify a tutorial",
+  "type": "object",
+  "properties": {
+    "TutorialSpec": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string",
+          "title": "Id"
+        },
+        "NameLocKey": {
+          "type": "string",
+          "title": "Name loc key"
+        },
+        "RequiredTutorialId": {
+          "type": "string",
+          "title": "Required tutorial id"
+        },
+        "Stages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "examples": [
+            "PlaceLumberjacks",
+            "FinishLumberjacks",
+            "ConnectLumberjacks",
+            "MarkTrees",
+            "BuildWaterPump",
+            "BuildGatherer",
+            "BuildFarmhouse",
+            "MarkCarrots",
+            "BuildBasicStorage",
+            "ExpandStorage",
+            "BuildInventor",
+            "BuildLodges",
+            "BuildWaterWheel",
+            "BuildLumberMill",
+            "BuildForester",
+            "MarkBirchesForPlanting",
+            "KeepPlaying"
+          ],
+          "title": "Stages"
+        }
+      },
+      "title": "Tutorial specification",
+      "minProperties": 1,
+      "additionalProperties": false
+    }
+  },
+  "minProperties": 1,
+  "additionalProperties": false
+}

@@ -20,7 +20,7 @@
     },
     "Id": {
       "type": "string",
-      "description": "Mod ID\nUSERNAME.MODNAME is often used (e.g. Tobbert.ChooChoo)",
+      "description": "Mod ID\nUsername.modname is often used (e.g. Tobbert.ChooChoo)",
       "minLength": 1,
       "examples": [
         "Timberborn.ModExamples.ShantySpeaker",

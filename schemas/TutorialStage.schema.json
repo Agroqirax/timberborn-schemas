@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/TutorialStage.schema.json",
+  "title": "Tutorial stage specification",
+  "description": "Add or modify a tutorial stage",
+  "type": "object",
+  "properties": {
+    "TutorialStageSpec": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string",
+          "title": "Id",
+          "examples": [
+            "BuildBasicStorage",
+            "ExpandStorage",
+            "BuildForester",
+            "MarkBirchesForPlanting",
+            "MarkCarrots",
+            "BuildWaterWheel",
+            "FinishLumberjacks",
+            "BuildGatherer",
+            "BuildFarmhouse",
+            "PlaceLumberjacks",
+            "ConnectLumberjacks",
+            "BuildInventor",
+            "BuildLodges",
+            "BuildLumberMill",
+            "BuildWaterPump",
+            "KeepPlaying",
+            "MarkTrees"
+          ]
+        },
+        "IntroLocKey": {
+          "type": "string",
+          "title": "Intro loc key",
+          "examples": [
+            "Tutorial.Stage.BasicStorage",
+            "Tutorial.Stage.ExpandStorage",
+            "Tutorial.Stage.Forester",
+            "Tutorial.Stage.MarkBirchesForPlanting",
+            "Tutorial.Stage.MarkCarrots",
+            "Tutorial.Stage.WaterWheel",
+            "Tutorial.Stage.FinishLumberjacks",
+            "Tutorial.Stage.Gatherer",
+            "Tutorial.Stage.Farmhouse",
+            "Tutorial.Stage.PlaceLumberjacks",
+            "Tutorial.Stage.ConnectLumberjacks",
+            "Tutorial.Stage.Inventor",
+            "Tutorial.Stage.Lodges",
+            "Tutorial.Stage.LumberMill",
+            "Tutorial.Stage.WaterPump",
+            "Tutorial.Stage.KeepPlaying",
+            "Tutorial.Stage.MarkTrees"
+          ]
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Tutorial stage specification"
+    },
+    "Children": {
+      "type": "object",
+      "patternProperties": {
+        "^Step\\d+$": {
+          "type": "object",
+          "properties": {
+            "BuildingTutorialStepSpec": {
+              "type": "object",
+              "properties": {
+                "TemplateNames": {
+                  "$ref": "#/$defs/TemplateNames"
+                },
+                "OnlyFinishedBuildings": {
+                  "type": "boolean",
+                  "title": "Only finished buildings",
+                  "examples": [true, false],
+                  "default": true
+                },
+                "RequiredAmount": {
+                  "type": "integer",
+                  "title": "Required amount"
+                },
+                "TemplateNames#append": {
+                  "$ref": "#/$defs/TemplateNames"
+                },
+                "TemplateNames#remove": {
+                  "$ref": "#/$defs/TemplateNames"
+                },
+                "TemplateNames#delete": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": false
+                }
+              },
+              "minProperties": 1,
+              "additionalProperties": false,
+              "title": "Building tutorial step specification"
+            },
+            "MarkPlantablesTutorialStepSpec": {
+              "type": "object",
+              "properties": {
+                "TemplateName": {
+                  "type": "string",
+                  "title": "Template name",
+                  "examples": ["Birch", "Carrot"]
+                },
+                "RequiredAmount": {
+                  "type": "integer",
+                  "title": "Required amount"
+                }
+              },
+              "minProperties": 1,
+              "additionalProperties": false,
+              "title": "Mark plantables tutorial step specification"
+            },
+            "ConnectBuildingsTutorialStepSpec": {
+              "type": "object",
+              "properties": {
+                "TemplateName": {
+                  "type": "string",
+                  "title": "Template name",
+                  "examples": ["LumberjackFlag.Folktails"],
+                  "default": "LumberjackFlag.Folktails"
+                },
+                "RequiredAmount": {
+                  "type": "integer",
+                  "title": "Required amount"
+                }
+              },
+              "minProperties": 1,
+              "additionalProperties": false,
+              "title": "Connect buildings tutorial step specification"
+            },
+            "MarkTreesTutorialStepSpec": {
+              "type": "object",
+              "title": "Mark trees tutorial step specification"
+            },
+            "SelectStockpileGoodTutorialStepSpec": {
+              "type": "object",
+              "properties": {
+                "TemplateName": {
+                  "type": "string",
+                  "title": "Template name",
+                  "examples": [
+                    "LargePile.Folktails",
+                    "MediumWarehouse.Folktails",
+                    "SmallTank.Folktails"
+                  ]
+                },
+                "RequiredAmount": {
+                  "type": "integer",
+                  "title": "Required amount"
+                },
+                "GoodId": {
+                  "type": "string",
+                  "title": "Good id",
+                  "examples": ["Log", "Carrot", "Berries", "Water"]
+                }
+              },
+              "minProperties": 1,
+              "additionalProperties": false,
+              "title": "Select stockpile good tutorial step specification"
+            },
+            "PowerBuildingsTutorialStepSpec": {
+              "type": "object",
+              "properties": {
+                "TemplateName": {
+                  "type": "string",
+                  "title": "Template name",
+                  "examples": ["LumberMill.Folktails"],
+                  "default": "LumberMill.Folktails"
+                },
+                "RequiredAmount": {
+                  "type": "integer",
+                  "title": "Required amount"
+                }
+              },
+              "minProperties": 1,
+              "additionalProperties": false,
+              "title": "Power buildings tutorial step specification"
+            }
+          },
+          "title": "Step"
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Children"
+    }
+  },
+  "minProperties": 1,
+  "additionalProperties": false,
+  "$defs": {
+    "TemplateNames": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": ["SmallTank.Folktails"],
+        "default": "SmallTank.Folktails"
+      },
+      "title": "Template names"
+    }
+  }
+}

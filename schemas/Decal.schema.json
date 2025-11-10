@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Decal.schema.json",
+  "title": "Decal specification",
+  "description": "Add or modify a decal",
+  "type": "object",
+  "properties": {
+    "DecalSpec": {
+      "type": "object",
+      "properties": {
+        "FactionId": {
+          "type": "string",
+          "title": "Faction id",
+          "examples": ["Folktails", "IronTeeth"]
+        },
+        "Category": {
+          "type": "string",
+          "title": "Category",
+          "enum": ["Banners", "Tails"],
+          "examples": ["Banners", "Tails"]
+        },
+        "Texture": {
+          "type": "string",
+          "title": "Texture",
+          "examples": [
+            "Materials/Banners/Folktails/Banner4.Folktails",
+            "Materials/Banners/Folktails/Banner1.Folktails",
+            "Materials/Beavers/Folktails/Tails/Tail4.Folktails",
+            "Materials/Beavers/IronTeeth/Tails/Tail1.IronTeeth",
+            "Materials/Banners/Folktails/Banner2.Folktails",
+            "Materials/Beavers/IronTeeth/Tails/Tail2.IronTeeth",
+            "Materials/Banners/IronTeeth/Banner2.IronTeeth",
+            "Materials/Banners/IronTeeth/Banner4.IronTeeth",
+            "Materials/Beavers/IronTeeth/Tails/Tail4.IronTeeth",
+            "Materials/Banners/IronTeeth/Banner1.IronTeeth",
+            "Materials/Banners/IronTeeth/Banner3.IronTeeth",
+            "Materials/Banners/Folktails/Banner3.Folktails",
+            "Materials/Beavers/Folktails/Tails/Tail2.Folktails",
+            "Materials/Beavers/Folktails/Tails/Tail3.Folktails",
+            "Materials/Beavers/IronTeeth/Tails/Tail3.IronTeeth",
+            "Materials/Beavers/Folktails/Tails/Tail1.Folktails"
+          ]
+        }
+      },
+      "title": "Decal specification"
+    }
+  },
+  "minProperties": 1,
+  "additionalProperties": false
+}

@@ -1,49 +1,59 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/WorkerType.schema.json",
-  "title": "Workertype specification",
-  "description": "Add or modify a workertype",
+  "title": "Worker type specification",
+  "description": "Add or modify a worker type",
   "type": "object",
   "properties": {
     "WorkerTypeSpec": {
       "type": "object",
-      "description": "Workertype specification",
       "properties": {
         "Id": {
           "type": "string",
-          "description": "ID of the workertype to be modified",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
+          "title": "Id",
+          "examples": ["Beaver", "Bot"]
         },
         "BackwardCompatibleIds": {
-          "type": "array",
-          "description": "Backwardcompatible IDs",
-          "items": {
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9_-]+$"
-          }
-        },
-        "DisplayNameLocKey": {
-          "type": "string",
-          "description": "Display name lockey",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
-        },
-        "WorkerOnlyTextLocKey": {
-          "type": "string",
-          "description": "Worker only text lockey",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*$"
+          "$ref": "#/$defs/BackwardCompatibleIds"
         },
         "IgnoresWorkingHours": {
           "type": "boolean",
-          "description": "Ignores working hours",
-          "default": false
+          "title": "Ignores working hours",
+          "examples": [false, true]
+        },
+        "DisplayNameLocKey": {
+          "type": "string",
+          "title": "Display name loc key",
+          "examples": ["Beaver.PluralDisplayName", "Bot.PluralDisplayName"]
+        },
+        "WorkerOnlyTextLocKey": {
+          "type": "string",
+          "title": "Worker only text loc key",
+          "examples": ["Work.BeaverOnly", "Work.BotOnly"]
+        },
+        "BackwardCompatibleIds#append": {
+          "$ref": "#/$defs/BackwardCompatibleIds"
+        },
+        "BackwardCompatibleIds#remove": {
+          "$ref": "#/$defs/BackwardCompatibleIds"
+        },
+        "BackwardCompatibleIds#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
         }
       },
-      "required": ["Id"],
-      "minItems": 2
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Worker type specification"
     }
   },
-  "required": ["WorkerTypeSpec"]
+  "minProperties": 1,
+  "additionalProperties": false,
+  "$defs": {
+    "BackwardCompatibleIds": {
+      "type": "array",
+      "title": "Backward compatible ids"
+    }
+  }
 }

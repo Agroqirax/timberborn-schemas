@@ -1,95 +1,80 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/WellbeingTier.schema.json",
-  "title": "Wellbeingtier specification",
+  "title": "Wellbeing tier specification",
   "description": "Add or modify a wellbeing tier",
   "type": "object",
   "properties": {
     "WellbeingTierSpec": {
       "type": "object",
-      "description": "Wellbeing tier specification",
       "properties": {
         "CharacterType": {
           "type": "string",
-          "description": "Charactert type",
-          "examples": ["BeaverAdult", "bot", "BeaverChild"],
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
+          "title": "Character type",
+          "examples": ["BeaverAdult", "BeaverChild", "Bot"]
         },
         "BonusId": {
           "type": "string",
-          "description": "Bonus ID",
-          "minLength": 1,
-          "pattern": "^[a-zA-Z0-9_-]+$"
+          "title": "Bonus id",
+          "examples": [
+            "MovementSpeed",
+            "WorkingSpeed",
+            "LifeExpectancy",
+            "GrowthSpeed"
+          ],
+          "default": "MovementSpeed"
         },
         "Bonuses": {
-          "type": "array",
-          "description": "Bonuses",
-          "uniqueItems": true,
-          "minItems": 1,
-          "items": {
-            "properties": {
-              "Wellbeing": {
-                "type": "number",
-                "description": "Wellbeing"
-              },
-              "Multiplier": {
-                "type": "number",
-                "default": "Multiplier"
-              }
-            },
-            "required": ["Wellbeing", "Multiplier"]
-          }
-        },
-        "Bonuses#append": {
-          "type": "array",
-          "description": "Append bonuses",
-          "uniqueItems": true,
-          "minItems": 1,
-          "items": {
-            "properties": {
-              "Wellbeing": {
-                "type": "number",
-                "description": "Wellbeing"
-              },
-              "Multiplier": {
-                "type": "number",
-                "default": "Multiplier"
-              }
-            },
-            "required": ["Wellbeing", "Multiplier"]
-          }
-        },
-        "Bonuses#remove": {
-          "type": "array",
-          "description": "Remove bonuses",
-          "uniqueItems": true,
-          "minItems": 1,
-          "items": {
-            "properties": {
-              "Wellbeing": {
-                "type": "number",
-                "description": "Wellbeing"
-              },
-              "Multiplier": {
-                "type": "number",
-                "default": "Multiplier"
-              }
-            },
-            "required": ["Wellbeing", "Multiplier"]
-          }
+          "$ref": "#/$defs/Bonuses"
         },
         "WellbeingThreshold": {
-          "type": "number",
-          "description": "Wellbeing threshold"
+          "type": "integer",
+          "title": "Wellbeing threshold"
         },
         "MultiplierIncrement": {
           "type": "number",
-          "default": "Multiplier increment"
+          "title": "Multiplier increment",
+          "examples": [0.1, 0.2, 0.05],
+          "default": 0.1
+        },
+        "Bonuses#append": {
+          "$ref": "#/$defs/Bonuses"
+        },
+        "Bonuses#remove": {
+          "$ref": "#/$defs/Bonuses"
+        },
+        "Bonuses#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
         }
       },
-      "minItems": 1
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Wellbeing tier specification"
     }
   },
-  "required": ["WellbeingTierSpec"]
+  "minProperties": 1,
+  "additionalProperties": false,
+  "$defs": {
+    "Bonuses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Wellbeing": {
+            "type": "integer",
+            "title": "Wellbeing"
+          },
+          "Multiplier": {
+            "type": "number",
+            "title": "Multiplier"
+          }
+        },
+        "minProperties": 1,
+        "additionalProperties": false
+      },
+      "title": "Bonuses"
+    }
+  }
 }

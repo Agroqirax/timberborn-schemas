@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/NaturalResources.schema.json",
-  "title": "",
-  "description": "",
+  "title": "Natural resource specification",
+  "description": "Add or modify a netural resource",
   "type": "object",
   "properties": {
     "BlockObjectSpec": {
@@ -27,7 +27,8 @@
                   "title": "Z"
                 }
               },
-              "required": ["X", "Y", "Z"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Size"
             },
             "BlockSpecs": {
@@ -45,7 +46,8 @@
               "additionalProperties": false
             }
           },
-          "required": ["BlockSpecs", "Size"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Blocks specification"
         },
         "Entrance": {
@@ -73,11 +75,13 @@
                   "title": "Z"
                 }
               },
-              "required": ["X", "Y", "Z"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Coordinates"
             }
           },
-          "required": ["Coordinates", "HasEntrance"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Entrance"
         },
         "BaseZ": {
@@ -97,13 +101,8 @@
           "default": false
         }
       },
-      "required": [
-        "BaseZ",
-        "BlocksSpec",
-        "Entrance",
-        "Flippable",
-        "Overridable"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Block object specification"
     },
     "TemplateSpec": {
@@ -163,12 +162,8 @@
           "additionalProperties": false
         }
       },
-      "required": [
-        "BackwardCompatibleTemplateNames",
-        "DisablingFeatureToggle",
-        "RequiredFeatureToggle",
-        "TemplateName"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Template specification"
     },
     "NaturalResourceSpec": {
@@ -179,7 +174,8 @@
           "title": "Order"
         }
       },
-      "required": ["Order"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Natural resource specification"
     },
     "BushSpec": {
@@ -198,7 +194,8 @@
           "default": 12.0
         }
       },
-      "required": ["GrowthTimeInDays"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Growable specification"
     },
     "BasicSelectionSoundSpec": {
@@ -217,7 +214,8 @@
           "default": ""
         }
       },
-      "required": ["AlternativeSoundName", "SoundName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Basic selection sound specification"
     },
     "DemolishableSpec": {
@@ -236,7 +234,8 @@
           "default": false
         }
       },
-      "required": ["DemolishTimeInHours", "ShowDemolishButtonInEntityPanel"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Demolishable specification"
     },
     "GatherableSpec": {
@@ -277,7 +276,8 @@
                   "title": "Amount"
                 }
               },
-              "required": ["Amount", "Id"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Yield"
             },
             "RemovalTimeInHours": {
@@ -292,16 +292,13 @@
               "default": "Gatherable"
             }
           },
-          "required": [
-            "RemovalTimeInHours",
-            "ResourceGroup",
-            "Yield",
-            "YielderComponentName"
-          ],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Yielder specification"
         }
       },
-      "required": ["YieldGrowthTimeInDays", "YielderSpec"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Gatherable specification"
     },
     "PlantableSpec": {
@@ -320,7 +317,8 @@
           "default": 0.2
         }
       },
-      "required": ["PlantTimeInHours", "ResourceGroup"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Plantable specification"
     },
     "PlantablePreviewModelSpec": {
@@ -354,7 +352,8 @@
           ]
         }
       },
-      "required": ["Model"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Plantable preview model specification"
     },
     "ReproducibleSpec": {
@@ -367,7 +366,8 @@
           "default": 0.03
         }
       },
-      "required": ["ReproductionChance"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Reproducible specification"
     },
     "WateredNaturalResourceSpec": {
@@ -382,7 +382,8 @@
           ]
         }
       },
-      "required": ["DaysToDieDry"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Watered natural resource specification"
     },
     "LabeledEntitySpec": {
@@ -476,12 +477,8 @@
           ]
         }
       },
-      "required": [
-        "DescriptionLocKey",
-        "DisplayNameLocKey",
-        "FlavorDescriptionLocKey",
-        "Icon"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Labeled entity specification"
     },
     "FloodableNaturalResourceSpec": {
@@ -504,7 +501,8 @@
           "default": 1.0
         }
       },
-      "required": ["DaysToDie", "MaxWaterHeight", "MinWaterHeight"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Floodable natural resource specification"
     },
     "NaturalResourceModelRandomizerSpec": {
@@ -559,16 +557,8 @@
           "default": 360.0
         }
       },
-      "required": [
-        "ConstrainProportion",
-        "MaxHeightScaleFactor",
-        "MaxRotation",
-        "MaxWidthScaleFactor",
-        "MinHeightScaleFactor",
-        "MinRotation",
-        "MinWidthScaleFactor",
-        "RandomizedRotation"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Natural resource model randomizer specification"
     },
     "ContaminatedNaturalResourceSpec": {
@@ -601,12 +591,8 @@
           "title": "Underground model depth"
         }
       },
-      "required": [
-        "FullModelName",
-        "UncoveredModelName",
-        "UndergroundModelDepth",
-        "UndergroundModelName"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Block object model specification"
     },
     "Children": {
@@ -658,7 +644,8 @@
                                   ]
                                 }
                               },
-                              "required": ["Model"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Timbermesh specification"
                             },
                             "CollidersSpec": {
@@ -707,15 +694,13 @@
                                   "additionalProperties": false
                                 }
                               },
-                              "required": [
-                                "BoxColliders",
-                                "CapsuleColliders",
-                                "SphereColliders"
-                              ],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Colliders specification"
                             }
                           },
-                          "required": ["CollidersSpec", "TimbermeshSpec"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "# alive"
                         },
                         "#Dead": {
@@ -752,7 +737,8 @@
                                   ]
                                 }
                               },
-                              "required": ["Model"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Timbermesh specification"
                             },
                             "CollidersSpec": {
@@ -801,15 +787,13 @@
                                   "additionalProperties": false
                                 }
                               },
-                              "required": [
-                                "BoxColliders",
-                                "CapsuleColliders",
-                                "SphereColliders"
-                              ],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Colliders specification"
                             }
                           },
-                          "required": ["CollidersSpec", "TimbermeshSpec"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "# dead"
                         },
                         "#Dying": {
@@ -846,7 +830,8 @@
                                   ]
                                 }
                               },
-                              "required": ["Model"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Timbermesh specification"
                             },
                             "CollidersSpec": {
@@ -895,23 +880,23 @@
                                   "additionalProperties": false
                                 }
                               },
-                              "required": [
-                                "BoxColliders",
-                                "CapsuleColliders",
-                                "SphereColliders"
-                              ],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Colliders specification"
                             }
                           },
-                          "required": ["CollidersSpec", "TimbermeshSpec"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "# dying"
                         }
                       },
-                      "required": ["#Alive", "#Dead", "#Dying"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Children"
                     }
                   },
-                  "required": ["Children"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Seedling"
                 },
                 "Mature": {
@@ -954,7 +939,8 @@
                                   ]
                                 }
                               },
-                              "required": ["Model"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Timbermesh specification"
                             },
                             "CollidersSpec": {
@@ -1003,15 +989,13 @@
                                   "additionalProperties": false
                                 }
                               },
-                              "required": [
-                                "BoxColliders",
-                                "CapsuleColliders",
-                                "SphereColliders"
-                              ],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Colliders specification"
                             }
                           },
-                          "required": ["CollidersSpec", "TimbermeshSpec"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "# alive"
                         },
                         "#Dying": {
@@ -1048,7 +1032,8 @@
                                   ]
                                 }
                               },
-                              "required": ["Model"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Timbermesh specification"
                             },
                             "CollidersSpec": {
@@ -1097,15 +1082,13 @@
                                   "additionalProperties": false
                                 }
                               },
-                              "required": [
-                                "BoxColliders",
-                                "CapsuleColliders",
-                                "SphereColliders"
-                              ],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Colliders specification"
                             }
                           },
-                          "required": ["CollidersSpec", "TimbermeshSpec"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "# dying"
                         },
                         "#Dead": {
@@ -1142,7 +1125,8 @@
                                   ]
                                 }
                               },
-                              "required": ["Model"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Timbermesh specification"
                             },
                             "CollidersSpec": {
@@ -1191,23 +1175,23 @@
                                   "additionalProperties": false
                                 }
                               },
-                              "required": [
-                                "BoxColliders",
-                                "CapsuleColliders",
-                                "SphereColliders"
-                              ],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Colliders specification"
                             }
                           },
-                          "required": ["TimbermeshSpec"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "# dead"
                         }
                       },
-                      "required": ["#Alive", "#Dead", "#Dying"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Children"
                     }
                   },
-                  "required": ["Children"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Mature"
                 },
                 "#Leftover": {
@@ -1229,7 +1213,8 @@
                           ]
                         }
                       },
-                      "required": ["Model"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Timbermesh specification"
                     },
                     "CollidersSpec": {
@@ -1278,27 +1263,28 @@
                           "additionalProperties": false
                         }
                       },
-                      "required": [
-                        "BoxColliders",
-                        "CapsuleColliders",
-                        "SphereColliders"
-                      ],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Colliders specification"
                     }
                   },
-                  "required": ["CollidersSpec", "TimbermeshSpec"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "# leftover"
                 }
               },
-              "required": ["Mature", "Seedling"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Children"
             }
           },
-          "required": ["Children"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "# models"
         }
       },
-      "required": ["#Models"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Children"
     },
     "CropSpec": {
@@ -1357,7 +1343,8 @@
                   "title": "Amount"
                 }
               },
-              "required": ["Amount", "Id"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Yield"
             },
             "RemovalTimeInHours": {
@@ -1373,16 +1360,13 @@
               "default": "Farmhouse"
             }
           },
-          "required": [
-            "RemovalTimeInHours",
-            "ResourceGroup",
-            "Yield",
-            "YielderComponentName"
-          ],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Yielder specification"
         }
       },
-      "required": ["LeftoverModelName", "RemoveOnCut", "YielderSpec"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Cuttable specification"
     },
     "CuttableYieldGoodIdProviderSpec": {
@@ -1402,7 +1386,8 @@
           "examples": [0.05, 0.145, 0.039, 0.098, 0.2, 0.095]
         }
       },
-      "required": ["Radius"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Tree cutting radius specification"
     }
   },
@@ -1436,7 +1421,8 @@
                 "title": "Z"
               }
             },
-            "required": ["X", "Y", "Z"],
+            "minProperties": 1,
+            "additionalProperties": false,
             "title": "Center"
           },
           "Radius": {
@@ -1452,7 +1438,8 @@
             "title": "Axis"
           }
         },
-        "required": ["Axis", "Center", "Height", "Radius"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Capsule colliders"
     },
@@ -1490,13 +1477,8 @@
             "title": "Underground"
           }
         },
-        "required": [
-          "MatterBelow",
-          "Occupations",
-          "OccupyAllBelow",
-          "Stackable",
-          "Underground"
-        ]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Block specs"
     }
