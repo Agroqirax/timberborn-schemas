@@ -13,7 +13,8 @@
           "title": "Max automatic migration"
         }
       },
-      "required": ["MaxAutomaticMigration"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Migration coordinator specification"
     },
     "EdgePanningCameraTargetPickerSpec": {
@@ -38,7 +39,8 @@
           "default": 45.0
         }
       },
-      "required": ["FastMovementSpeedBonus", "MaxBaseSpeed", "MinBaseSpeed"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Edge panning camera target picker specification"
     },
     "TickTimeSpec": {
@@ -51,7 +53,8 @@
           "default": 0.6
         }
       },
-      "required": ["TickIntervalInSeconds"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Tick time specification"
     },
     "LifeServiceSpec": {
@@ -66,7 +69,8 @@
           "title": "Days of childhood"
         }
       },
-      "required": ["AverageLifespan", "DaysOfChildhood"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Life service specification"
     },
     "NaturalResourceBrushSpec": {
@@ -100,7 +104,8 @@
               "default": 0.7
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Removal tile color"
         },
         "SpawnTileColor": {
@@ -131,7 +136,8 @@
               "default": 0.8
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Spawn tile color"
         },
         "DefaultNaturalResourceId": {
@@ -141,11 +147,8 @@
           "default": "Birch"
         }
       },
-      "required": [
-        "DefaultNaturalResourceId",
-        "RemovalTileColor",
-        "SpawnTileColor"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Natural resource brush specification"
     },
     "AutosaverSpec": {
@@ -162,7 +165,8 @@
           "default": 10.0
         }
       },
-      "required": ["AutosavesPerSettlement", "FrequencyInMinutes"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Autosaver specification"
     },
     "DrivewayModelInstantiatorSpec": {
@@ -205,14 +209,8 @@
           "default": "Buildings/Paths/Path/DirtDrivewayStraightPath"
         }
       },
-      "required": [
-        "LongCenterDrivewayPrefab",
-        "NarrowCenterDrivewayPrefab",
-        "NarrowLeftDrivewayPrefab",
-        "NarrowRightDrivewayPrefab",
-        "StraightPathDrivewayPrefab",
-        "WideCenterDrivewayPrefab"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Driveway model instantiator specification"
     },
     "GameUISoundSpec": {
@@ -261,15 +259,8 @@
           "default": "UI.Buildings.Wonder.Congratulations"
         }
       },
-      "required": [
-        "BadtideStartedSoundKey",
-        "BlinkingSoundKey",
-        "DroughtStartedSoundKey",
-        "FieldPlaced",
-        "TemperateWeatherStartedSoundKey",
-        "WellbeingHighscore",
-        "WonderCongratulationSoundKey"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Game u i sound specification"
     },
     "MarkerDrawerFactorySpec": {
@@ -348,20 +339,8 @@
           "default": "Markers/BlueArrowMarker"
         }
       },
-      "required": [
-        "ArrowMaterial",
-        "ArrowMesh",
-        "EntranceMarkerMaterial",
-        "EntranceMesh",
-        "LargeBlockMesh",
-        "MechanicalInputMesh",
-        "MechanicalMarkerMaterial",
-        "MechanicalOutputMesh",
-        "PrioritizedTileMaterial",
-        "SmallBlockMesh",
-        "TileMaterial",
-        "TileMesh"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Marker drawer factory specification"
     },
     "MouseCameraControllerSpec": {
@@ -380,7 +359,8 @@
           "default": 12.0
         }
       },
-      "required": ["RmbRotationMinDistance", "RmbRotationSpeed"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Mouse camera controller specification"
     },
     "MechanicalNodeHighlighterSpec": {
@@ -414,11 +394,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Highlight color"
         }
       },
-      "required": ["HighlightColor"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Mechanical node highlighter specification"
     },
     "ZiplineCableNavMeshSpec": {
@@ -431,7 +413,8 @@
           "default": 0.4
         }
       },
-      "required": ["CableUnitCost"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Zipline cable nav mesh specification"
     },
     "BuilderPriorityToolSpec": {
@@ -465,7 +448,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Priority highlight color"
         },
         "PriorityActionColor": {
@@ -496,7 +480,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Priority action color"
         },
         "PriorityTileColor": {
@@ -527,7 +512,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Priority tile color"
         },
         "PrioritySideColor": {
@@ -558,16 +544,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Priority side color"
         }
       },
-      "required": [
-        "PriorityActionColor",
-        "PriorityHighlightColor",
-        "PrioritySideColor",
-        "PriorityTileColor"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Builder priority tool specification"
     },
     "SkyboxPositionerSpec": {
@@ -604,13 +587,8 @@
           "default": 0.8
         }
       },
-      "required": [
-        "DayProgressDay",
-        "DayProgressNight",
-        "DayProgressSunrise",
-        "DayProgressSunset",
-        "Skybox"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Skybox positioner specification"
     },
     "ExplosionVisualizerSpec": {
@@ -644,7 +622,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Object highlight color"
         },
         "TerrainHighlightColor": {
@@ -675,11 +654,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Terrain highlight color"
         }
       },
-      "required": ["ObjectHighlightColor", "TerrainHighlightColor"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Explosion visualizer specification"
     },
     "GameSpeedThrottlerSpec": {
@@ -706,12 +687,8 @@
           "default": 1.0
         }
       },
-      "required": [
-        "MaxGameSpeedScale",
-        "MaxPopulation",
-        "MinGameSpeedScale",
-        "MinPopulation"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Game speed throttler specification"
     },
     "SoilMoistureMapSpec": {
@@ -728,7 +705,8 @@
           "title": "Desert moisture threshold"
         }
       },
-      "required": ["DesertMoistureThreshold", "MaxDesertIntensity"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Soil moisture map specification"
     },
     "WaterMeshSpec": {
@@ -753,7 +731,8 @@
           "default": "Environment/Water/Materials/PhysicalWater_Transparent"
         }
       },
-      "required": ["OpaqueMaterial", "TransparentMaterial", "WaterTile"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Water mesh specification"
     },
     "TileDrawerFactorySpec": {
@@ -794,13 +773,8 @@
           "default": "UI/Markers/ConstructionGuidelines/FootprintGridTileMarker"
         }
       },
-      "required": [
-        "FootprintTilesMaterialResourcePath",
-        "MeshResourcePath",
-        "TilesAboveMaterialResourcePath",
-        "TilesBelowMaterialResourcePath",
-        "TilesOnSameLevelMaterialResourcePath"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Tile drawer factory specification"
     },
     "RecoveredGoodStackCoordinatesFinderSpec": {
@@ -815,7 +789,8 @@
           "title": "Max upper search"
         }
       },
-      "required": ["MaxUpperSearch", "NeighboursRange"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Recovered good stack coordinates finder specification"
     },
     "HazardousWeatherUISpec": {
@@ -838,11 +813,8 @@
           "default": 6.0
         }
       },
-      "required": [
-        "ApproachingNotificationDays",
-        "MaxDayProgressLeftToNotify",
-        "NotificationDuration"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Hazardous weather u i specification"
     },
     "DemolishableMarkerServiceSpec": {
@@ -861,7 +833,8 @@
           "default": "Markers/StatusMarkers/DemolishingStatusIcon"
         }
       },
-      "required": ["Material", "Mesh"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Demolishable marker service specification"
     },
     "DayNightCycleSpec": {
@@ -884,12 +857,8 @@
           "title": "Configured nighttime length in units"
         }
       },
-      "required": [
-        "ConfiguredDayLengthInSeconds",
-        "ConfiguredDaytimeLengthInUnits",
-        "ConfiguredNighttimeLengthInUnits",
-        "HoursPassedOnNewGame"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Day night cycle specification"
     },
     "AmbientSpec": {
@@ -914,7 +883,8 @@
           "default": "Environment.Ambient.Water"
         }
       },
-      "required": ["DayAmbient", "NightAmbient", "WaterAmbient"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Ambient specification"
     },
     "NeedSpecFormatterSpec": {
@@ -948,7 +918,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Positive highlight color"
         },
         "NegativeHighlightColor": {
@@ -979,11 +950,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Negative highlight color"
         }
       },
-      "required": ["NegativeHighlightColor", "PositiveHighlightColor"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Need spec formatter specification"
     },
     "MechanicalConnectorFactorySpec": {
@@ -996,7 +969,8 @@
           "default": "Models/MechanicalConnector/MechanicalConnector"
         }
       },
-      "required": ["MechanicalConnectorPrefabPath"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Mechanical connector factory specification"
     },
     "ZiplineConnectionServiceSpec": {
@@ -1007,7 +981,8 @@
           "title": "Max cable inclination"
         }
       },
-      "required": ["MaxCableInclination"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Zipline connection service specification"
     },
     "ProbabilityGroupsSpec": {
@@ -1028,7 +1003,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["Groups"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Probability groups specification"
     },
     "TreeCuttingColorsSpec": {
@@ -1062,7 +1038,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Tool action tile"
         },
         "ToolNoActionTile": {
@@ -1093,7 +1070,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Tool no action tile"
         },
         "CuttingAreaTile": {
@@ -1124,7 +1102,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Cutting area tile"
         },
         "CuttingAreaHighlight": {
@@ -1155,16 +1134,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Cutting area highlight"
         }
       },
-      "required": [
-        "CuttingAreaHighlight",
-        "CuttingAreaTile",
-        "ToolActionTile",
-        "ToolNoActionTile"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Tree cutting colors specification"
     },
     "ZiplineSystemColorsSpec": {
@@ -1198,7 +1174,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Origin color"
         },
         "ConnectableColor": {
@@ -1229,7 +1206,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Connectable color"
         },
         "NotConnectableColor": {
@@ -1260,11 +1238,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Not connectable color"
         }
       },
-      "required": ["ConnectableColor", "NotConnectableColor", "OriginColor"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Zipline system colors specification"
     },
     "WaterStrengthSpec": {
@@ -1289,11 +1269,8 @@
           "default": 0.15
         }
       },
-      "required": [
-        "MaxWaterSourceChangePerSecond",
-        "MaxWaterSourceStrength",
-        "MinWaterSourceChangeScaler"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Water strength specification"
     },
     "KeyboardCameraControllerSpec": {
@@ -1314,11 +1291,8 @@
           "default": 3.0
         }
       },
-      "required": [
-        "BaseZoomSpeed",
-        "JumpRotationAngle",
-        "JumpRotationSpeedInAnglePerUpdate"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Keyboard camera controller specification"
     },
     "RangedEffectBuildingColorsSpec": {
@@ -1352,7 +1326,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Building range tile"
         },
         "BuildingRangeObject": {
@@ -1383,11 +1358,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Building range object"
         }
       },
-      "required": ["BuildingRangeObject", "BuildingRangeTile"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Ranged effect building colors specification"
     },
     "BotColorsSpec": {
@@ -1406,7 +1383,8 @@
           "default": 2.0
         }
       },
-      "required": ["BotLightHueOffset", "BotWorkplaceLightingStrength"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Bot colors specification"
     },
     "PreviewShowerSpec": {
@@ -1440,7 +1418,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Buildable preview"
         },
         "UnbuildablePreview": {
@@ -1471,7 +1450,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Unbuildable preview"
         },
         "WarningPreview": {
@@ -1502,11 +1482,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Warning preview"
         }
       },
-      "required": ["BuildablePreview", "UnbuildablePreview", "WarningPreview"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Preview shower specification"
     },
     "WaterOutputParticleColorsSpec": {
@@ -1527,7 +1509,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["WaterContaminationParticleGradient"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Water output particle colors specification"
     },
     "AreaPickersSpec": {
@@ -1542,7 +1525,8 @@
           "title": "Sculpting max blocks"
         }
       },
-      "required": ["AreaMaxBlocks", "SculptingMaxBlocks"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Area pickers specification"
     },
     "DeconstructionParticleFactorySpec": {
@@ -1581,14 +1565,8 @@
           "default": 26.0
         }
       },
-      "required": [
-        "MaxNeighboursCount",
-        "MaxParticleSpawnThreshold",
-        "MaxParticlesForThreshold",
-        "MinParticleSpawnThreshold",
-        "MinParticlesForThreshold",
-        "ParticlePrefabPath"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Deconstruction particle factory specification"
     },
     "BlockObjectDeletionToolSpec": {
@@ -1622,7 +1600,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Deleted object highlight color"
         },
         "DeletedAreaTileColor": {
@@ -1653,7 +1632,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Deleted area tile color"
         },
         "DeletedAreaSideColor": {
@@ -1684,7 +1664,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Deleted area side color"
         },
         "DeletedTerrainHighlightColor": {
@@ -1715,16 +1696,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Deleted terrain highlight color"
         }
       },
-      "required": [
-        "DeletedAreaSideColor",
-        "DeletedAreaTileColor",
-        "DeletedObjectHighlightColor",
-        "DeletedTerrainHighlightColor"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Block object deletion tool specification"
     },
     "QuickNotificationSpec": {
@@ -1743,7 +1721,8 @@
           "default": 10.0
         }
       },
-      "required": ["Duration", "ExtendedDuration"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Quick notification specification"
     },
     "TerrainMeshManagerSpec": {
@@ -1762,7 +1741,8 @@
           "default": "Environment/Land/LayerToolTerrainTopPrefab"
         }
       },
-      "required": ["LayerToolTopMeshPrefab", "TerrainTilePrefab"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Terrain mesh manager specification"
     },
     "DayStageCycleSpec": {
@@ -1781,7 +1761,8 @@
           "default": 1.0
         }
       },
-      "required": ["SunriseSunsetLengthInHours", "TransitionLengthInHours"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Day stage cycle specification"
     },
     "DuplicationSystemColorsSpec": {
@@ -1815,7 +1796,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Source color"
         },
         "TargetColor": {
@@ -1846,11 +1828,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Target color"
         }
       },
-      "required": ["SourceColor", "TargetColor"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Duplication system colors specification"
     },
     "DraggingCameraTargetPickerSpec": {
@@ -1863,7 +1847,8 @@
           "default": 75.0
         }
       },
-      "required": ["MovementSpeed"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Dragging camera target picker specification"
     },
     "PathMeshDrawerFactorySpec": {
@@ -1904,7 +1889,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["Material", "RegularModelVariants", "StairsModelVariants"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Path mesh drawer factory specification"
     },
     "ConstructionGuidelinesSpec": {
@@ -1915,7 +1901,8 @@
           "title": "Radius"
         }
       },
-      "required": ["Radius"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Construction guidelines specification"
     },
     "DemolishingColorsSpec": {
@@ -1949,7 +1936,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Deleted object highlight color"
         },
         "DeletedAreaTileColor": {
@@ -1980,7 +1968,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Deleted area tile color"
         },
         "DeletedAreaSideColor": {
@@ -2011,15 +2000,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Deleted area side color"
         }
       },
-      "required": [
-        "DeletedAreaSideColor",
-        "DeletedAreaTileColor",
-        "DeletedObjectHighlightColor"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Demolishing colors specification"
     },
     "BrushesSpec": {
@@ -2030,7 +2017,8 @@
           "title": "Max brush size"
         }
       },
-      "required": ["MaxBrushSize"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Brushes specification"
     },
     "BoundsNavRangeDrawerSpec": {
@@ -2057,7 +2045,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["Material", "TileMeshes"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Bounds nav range drawer specification"
     },
     "WindServiceSpec": {
@@ -2088,12 +2077,8 @@
           "default": 1.0
         }
       },
-      "required": [
-        "MaxWindStrength",
-        "MaxWindTimeInHours",
-        "MinWindStrength",
-        "MinWindTimeInHours"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Wind service specification"
     },
     "PriorityColorsSpec": {
@@ -2127,7 +2112,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Highlight very low"
         },
         "HighlightLow": {
@@ -2158,7 +2144,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Highlight low"
         },
         "HighlightNormal": {
@@ -2189,7 +2176,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Highlight normal"
         },
         "HighlightHigh": {
@@ -2220,7 +2208,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Highlight high"
         },
         "HighlightVeryHigh": {
@@ -2251,7 +2240,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Highlight very high"
         },
         "ButtonVeryLow": {
@@ -2282,7 +2272,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Button very low"
         },
         "ButtonLow": {
@@ -2313,7 +2304,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Button low"
         },
         "ButtonNormal": {
@@ -2344,7 +2336,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Button normal"
         },
         "ButtonHigh": {
@@ -2375,7 +2368,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Button high"
         },
         "ButtonVeryHigh": {
@@ -2406,22 +2400,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Button very high"
         }
       },
-      "required": [
-        "ButtonHigh",
-        "ButtonLow",
-        "ButtonNormal",
-        "ButtonVeryHigh",
-        "ButtonVeryLow",
-        "HighlightHigh",
-        "HighlightLow",
-        "HighlightNormal",
-        "HighlightVeryHigh",
-        "HighlightVeryLow"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Priority colors specification"
     },
     "DistrictConnectionLineRendererSpec": {
@@ -2450,12 +2435,8 @@
           "default": 0.4
         }
       },
-      "required": [
-        "ArcAngle",
-        "CurvePoints",
-        "LineCutoff",
-        "LineRendererPrefab"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "District connection line renderer specification"
     },
     "TutorialColorsSpec": {
@@ -2489,11 +2470,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Tutorial building highlight"
         }
       },
-      "required": ["TutorialBuildingHighlight"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Tutorial colors specification"
     },
     "MusicSpec": {
@@ -2530,13 +2513,8 @@
           "default": 15.0
         }
       },
-      "required": [
-        "DroughtTrack",
-        "MaxDelay",
-        "MinDelay",
-        "StandardPhrase",
-        "StandardTrack"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Music specification"
     },
     "BonusDescriberColorsSpec": {
@@ -2570,7 +2548,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Positive bonus highlight"
         },
         "NegativeBonusHighlight": {
@@ -2601,11 +2580,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Negative bonus highlight"
         }
       },
-      "required": ["NegativeBonusHighlight", "PositiveBonusHighlight"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Bonus describer colors specification"
     },
     "CoreSoundSpec": {
@@ -2658,16 +2639,8 @@
           "default": -0.2
         }
       },
-      "required": [
-        "MaxAmbientFade",
-        "MaxBuildingFadeDistance",
-        "MaxVerticalListenerPositionAboveGround",
-        "MaxWindFade",
-        "MinAmbientFade",
-        "MinBuildingFadeDistance",
-        "MinWindFade",
-        "WindAmbientKey"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Core sound specification"
     },
     "CameraServiceSpec": {
@@ -2701,7 +2674,8 @@
               "default": 89.99
             }
           },
-          "required": ["Max", "Min"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Vertical angle limits"
         },
         "ZoomLevel": {
@@ -2744,7 +2718,8 @@
               "default": 4.0
             }
           },
-          "required": ["Max", "Min"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Default zoom limits"
         },
         "MapEditorZoomLimits": {
@@ -2763,7 +2738,8 @@
               "default": 8.0
             }
           },
-          "required": ["Max", "Min"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Map editor zoom limits"
         },
         "FreeModeZoomLimits": {
@@ -2782,7 +2758,8 @@
               "default": 100.0
             }
           },
-          "required": ["Max", "Min"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Free mode zoom limits"
         },
         "MapMargin": {
@@ -2798,20 +2775,8 @@
           "default": 100.0
         }
       },
-      "required": [
-        "BaseDistance",
-        "DefaultZoomLimits",
-        "FreeModeMapMargin",
-        "FreeModeZoomLimits",
-        "HorizontalAngle",
-        "MapEditorZoomLimits",
-        "MapMargin",
-        "VerticalAngle",
-        "VerticalAngleLimits",
-        "ZoomBase",
-        "ZoomLevel",
-        "ZoomSpeed"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Camera service specification"
     },
     "WaterSimulatorSpec": {
@@ -2908,23 +2873,8 @@
           "default": 1.0
         }
       },
-      "required": [
-        "DiffusionDepthLimit",
-        "DiffusionOutflowLimit",
-        "DiffusionRate",
-        "FastEvaporationDepthThreshold",
-        "FastEvaporationSpeed",
-        "FlowChangeLimit",
-        "HardDamOffset",
-        "MaxHardDamDecrease",
-        "MaxWaterContamination",
-        "NormalEvaporationSpeed",
-        "OutflowBalancingScaler",
-        "OverflowPressureFactor",
-        "SoftDamOffset",
-        "WaterFlowFactor",
-        "WaterSpillThreshold"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Water simulator specification"
     },
     "SoilContaminationSimulatorSpec": {
@@ -2977,16 +2927,8 @@
           "default": 0.001
         }
       },
-      "required": [
-        "ContaminationDecayRate",
-        "ContaminationNegativeEqualizationRate",
-        "ContaminationPositiveEqualizationRate",
-        "ContaminationSpreadingRate",
-        "ContaminationThreshold",
-        "MaxRangeFromSource",
-        "MinimumWaterContamination",
-        "VerticalSpreadCostMultiplier"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Soil contamination simulator specification"
     },
     "SoilMoistureSimulatorSpec": {
@@ -3047,18 +2989,8 @@
           "title": "Max evaporation saturation"
         }
       },
-      "required": [
-        "ConstantQuadraticCoefficient",
-        "LinearQuadraticCoefficient",
-        "MaxClusterSaturation",
-        "MaxEvaporationSaturation",
-        "MaximumWaterContamination",
-        "MinimumWaterContamination",
-        "MoistureDecayRate",
-        "MoistureSpreadingRate",
-        "QuadraticEvaporationCoefficient",
-        "VerticalSpreadCostMultiplier"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Soil moisture simulator specification"
     },
     "DistrictConnectionDrawingServiceSpec": {
@@ -3092,11 +3024,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Connection highlight"
         }
       },
-      "required": ["ConnectionHighlight"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "District connection drawing service specification"
     },
     "BlockObjectBoundsDrawerFactorySpec": {
@@ -3139,14 +3073,8 @@
           "default": "Markers/HalfBlockSide/HalfBlockSide"
         }
       },
-      "required": [
-        "BlockSideMesh0010",
-        "BlockSideMesh0011",
-        "BlockSideMesh0111",
-        "BlockSideMesh1010",
-        "BlockSideMesh1111",
-        "Material"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Block object bounds drawer factory specification"
     },
     "AutoAtlaserSpec": {
@@ -3167,7 +3095,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["AutoAtlasSpecs"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Auto atlaser specification"
     },
     "AreaTileDrawerFactorySpec": {
@@ -3186,7 +3115,8 @@
           "default": "Markers/TileMarkerSmall"
         }
       },
-      "required": ["TileMaterial", "TileMesh"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Area tile drawer factory specification"
     },
     "MapSizeSpec": {
@@ -3204,7 +3134,8 @@
               "title": "Y"
             }
           },
-          "required": ["X", "Y"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Default map size"
         },
         "MinMapSize": {
@@ -3228,14 +3159,8 @@
           "title": "Max height above terrain"
         }
       },
-      "required": [
-        "DefaultMapSize",
-        "MaxGameTerrainHeight",
-        "MaxHeightAboveTerrain",
-        "MaxMapEditorTerrainHeight",
-        "MaxMapSize",
-        "MinMapSize"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Map size specification"
     },
     "SoilContaminationMapSpec": {
@@ -3254,7 +3179,8 @@
           "default": 0.2
         }
       },
-      "required": ["ContaminationThreshold", "MaxMapContamination"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Soil contamination map specification"
     },
     "BrushColorSpec": {
@@ -3288,7 +3214,8 @@
               "default": 0.5
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Neutral"
         },
         "Positive": {
@@ -3319,7 +3246,8 @@
               "default": 0.7
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Positive"
         },
         "Negative": {
@@ -3350,7 +3278,8 @@
               "default": 0.7
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Negative"
         },
         "Objects": {
@@ -3381,11 +3310,13 @@
               "default": 0.9
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Objects"
         }
       },
-      "required": ["Negative", "Neutral", "Objects", "Positive"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Brush color specification"
     },
     "PlantingSelectionServiceSpec": {
@@ -3419,7 +3350,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Planting tool tile"
         },
         "ToolActionTile": {
@@ -3450,7 +3382,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Tool action tile"
         },
         "ToolNoActionTile": {
@@ -3481,11 +3414,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Tool no action tile"
         }
       },
-      "required": ["PlantingToolTile", "ToolActionTile", "ToolNoActionTile"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Planting selection service specification"
     },
     "WeatherPanelSpec": {
@@ -3502,7 +3437,8 @@
           "default": 0.44
         }
       },
-      "required": ["NumberOfBlinks", "SecondsBetweenBlinks"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Weather panel specification"
     },
     "RangeEnterableHighlighterSpec": {
@@ -3536,11 +3472,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Building in range"
         }
       },
-      "required": ["BuildingInRange"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Range enterable highlighter specification"
     },
     "WalkerDebuggerSpec": {
@@ -3571,12 +3509,8 @@
           "default": "Markers/WalkerDebugger/PathCornerMarker"
         }
       },
-      "required": [
-        "CornerMarkerPath",
-        "DestinationMarkerPath",
-        "WalkerGameObjectMarkerPath",
-        "WalkerModelMarkerPath"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Walker debugger specification"
     },
     "RectangleBoundsDrawerFactorySpec": {
@@ -3631,16 +3565,8 @@
           "default": "Markers/TileMarker"
         }
       },
-      "required": [
-        "BlockBottomMaterial",
-        "BlockBottomMesh",
-        "BlockSideMaterial",
-        "BlockSideMesh0010",
-        "BlockSideMesh0011",
-        "BlockSideMesh0111",
-        "BlockSideMesh1010",
-        "BlockSideMesh1111"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Rectangle bounds drawer factory specification"
     },
     "WaterHeightBrushSpec": {
@@ -3674,7 +3600,8 @@
               "default": 0.7
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Adding tile color"
         },
         "RemovingTileColor": {
@@ -3705,7 +3632,8 @@
               "default": 0.7
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Removing tile color"
         },
         "ContaminatedTileColor": {
@@ -3736,15 +3664,13 @@
               "default": 0.9
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Contaminated tile color"
         }
       },
-      "required": [
-        "AddingTileColor",
-        "ContaminatedTileColor",
-        "RemovingTileColor"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Water height brush specification"
     },
     "SunSpec": {
@@ -3787,7 +3713,8 @@
                   "default": 0.0
                 }
               },
-              "required": ["a", "b", "g", "r"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Sun color"
             },
             "SunIntensity": {
@@ -3836,7 +3763,8 @@
                   "default": 0.0
                 }
               },
-              "required": ["a", "b", "g", "r"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Ambient sky color"
             },
             "AmbientEquatorColor": {
@@ -3867,7 +3795,8 @@
                   "default": 0.0
                 }
               },
-              "required": ["a", "b", "g", "r"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Ambient equator color"
             },
             "AmbientGroundColor": {
@@ -3898,7 +3827,8 @@
                   "default": 0.0
                 }
               },
-              "required": ["a", "b", "g", "r"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Ambient ground color"
             },
             "ReflectionsIntensity": {
@@ -3938,7 +3868,8 @@
                       "default": 1.0
                     }
                   },
-                  "required": ["a", "b", "g", "r"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Fog color"
                 },
                 "FogDensity": {
@@ -3948,7 +3879,8 @@
                   "default": 0.003
                 }
               },
-              "required": ["FogColor", "FogDensity"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Temperate weather fog"
             },
             "HazardousWeatherFogs": {
@@ -3966,18 +3898,8 @@
               "additionalProperties": false
             }
           },
-          "required": [
-            "AmbientEquatorColor",
-            "AmbientGroundColor",
-            "AmbientSkyColor",
-            "HazardousWeatherFogs",
-            "ReflectionsIntensity",
-            "ShadowStrength",
-            "SunColor",
-            "SunIntensity",
-            "SunXAngle",
-            "TemperateWeatherFog"
-          ],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Sunrise colors"
         },
         "DayColors": {
@@ -4011,7 +3933,8 @@
                   "default": 0.0
                 }
               },
-              "required": ["a", "b", "g", "r"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Sun color"
             },
             "SunIntensity": {
@@ -4060,7 +3983,8 @@
                   "default": 0.0
                 }
               },
-              "required": ["a", "b", "g", "r"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Ambient sky color"
             },
             "AmbientEquatorColor": {
@@ -4091,7 +4015,8 @@
                   "default": 0.0
                 }
               },
-              "required": ["a", "b", "g", "r"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Ambient equator color"
             },
             "AmbientGroundColor": {
@@ -4122,7 +4047,8 @@
                   "default": 0.0
                 }
               },
-              "required": ["a", "b", "g", "r"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Ambient ground color"
             },
             "ReflectionsIntensity": {
@@ -4162,7 +4088,8 @@
                       "default": 1.0
                     }
                   },
-                  "required": ["a", "b", "g", "r"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Fog color"
                 },
                 "FogDensity": {
@@ -4172,7 +4099,8 @@
                   "default": 0.003
                 }
               },
-              "required": ["FogColor", "FogDensity"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Temperate weather fog"
             },
             "HazardousWeatherFogs": {
@@ -4190,18 +4118,8 @@
               "additionalProperties": false
             }
           },
-          "required": [
-            "AmbientEquatorColor",
-            "AmbientGroundColor",
-            "AmbientSkyColor",
-            "HazardousWeatherFogs",
-            "ReflectionsIntensity",
-            "ShadowStrength",
-            "SunColor",
-            "SunIntensity",
-            "SunXAngle",
-            "TemperateWeatherFog"
-          ],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Day colors"
         },
         "SunsetColors": {
@@ -4235,7 +4153,8 @@
                   "default": 0.0
                 }
               },
-              "required": ["a", "b", "g", "r"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Sun color"
             },
             "SunIntensity": {
@@ -4284,7 +4203,8 @@
                   "default": 0.0
                 }
               },
-              "required": ["a", "b", "g", "r"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Ambient sky color"
             },
             "AmbientEquatorColor": {
@@ -4315,7 +4235,8 @@
                   "default": 0.0
                 }
               },
-              "required": ["a", "b", "g", "r"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Ambient equator color"
             },
             "AmbientGroundColor": {
@@ -4346,7 +4267,8 @@
                   "default": 0.0
                 }
               },
-              "required": ["a", "b", "g", "r"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Ambient ground color"
             },
             "ReflectionsIntensity": {
@@ -4386,7 +4308,8 @@
                       "default": 1.0
                     }
                   },
-                  "required": ["a", "b", "g", "r"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Fog color"
                 },
                 "FogDensity": {
@@ -4396,7 +4319,8 @@
                   "default": 0.003
                 }
               },
-              "required": ["FogColor", "FogDensity"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Temperate weather fog"
             },
             "HazardousWeatherFogs": {
@@ -4414,18 +4338,8 @@
               "additionalProperties": false
             }
           },
-          "required": [
-            "AmbientEquatorColor",
-            "AmbientGroundColor",
-            "AmbientSkyColor",
-            "HazardousWeatherFogs",
-            "ReflectionsIntensity",
-            "ShadowStrength",
-            "SunColor",
-            "SunIntensity",
-            "SunXAngle",
-            "TemperateWeatherFog"
-          ],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Sunset colors"
         },
         "NightColors": {
@@ -4459,7 +4373,8 @@
                   "default": 0.0
                 }
               },
-              "required": ["a", "b", "g", "r"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Sun color"
             },
             "SunIntensity": {
@@ -4508,7 +4423,8 @@
                   "default": 0.0
                 }
               },
-              "required": ["a", "b", "g", "r"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Ambient sky color"
             },
             "AmbientEquatorColor": {
@@ -4539,7 +4455,8 @@
                   "default": 0.0
                 }
               },
-              "required": ["a", "b", "g", "r"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Ambient equator color"
             },
             "AmbientGroundColor": {
@@ -4570,7 +4487,8 @@
                   "default": 0.0
                 }
               },
-              "required": ["a", "b", "g", "r"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Ambient ground color"
             },
             "ReflectionsIntensity": {
@@ -4610,7 +4528,8 @@
                       "default": 1.0
                     }
                   },
-                  "required": ["a", "b", "g", "r"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Fog color"
                 },
                 "FogDensity": {
@@ -4620,7 +4539,8 @@
                   "default": 0.003
                 }
               },
-              "required": ["FogColor", "FogDensity"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Temperate weather fog"
             },
             "HazardousWeatherFogs": {
@@ -4638,18 +4558,8 @@
               "additionalProperties": false
             }
           },
-          "required": [
-            "AmbientEquatorColor",
-            "AmbientGroundColor",
-            "AmbientSkyColor",
-            "HazardousWeatherFogs",
-            "ReflectionsIntensity",
-            "ShadowStrength",
-            "SunColor",
-            "SunIntensity",
-            "SunXAngle",
-            "TemperateWeatherFog"
-          ],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Night colors"
         },
         "RotateWithCameraOffset": {
@@ -4659,14 +4569,8 @@
           "default": 40.0
         }
       },
-      "required": [
-        "DayColors",
-        "NightColors",
-        "RotateWithCameraOffset",
-        "SunPrefab",
-        "SunriseColors",
-        "SunsetColors"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Sun specification"
     },
     "NewGameModesSpec": {
@@ -4695,7 +4599,8 @@
                   "default": 0.7
                 }
               },
-              "required": ["Max", "Min"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Adult age progress"
             },
             "StartingChildren": {
@@ -4718,7 +4623,8 @@
                   "default": 0.8
                 }
               },
-              "required": ["Max", "Min"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Child age progress"
             },
             "FoodConsumption": {
@@ -4753,7 +4659,8 @@
                   "title": "Max"
                 }
               },
-              "required": ["Max", "Min"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Temperate weather duration"
             },
             "DroughtDuration": {
@@ -4768,7 +4675,8 @@
                   "title": "Max"
                 }
               },
-              "required": ["Max", "Min"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Drought duration"
             },
             "DroughtDurationHandicapMultiplier": {
@@ -4803,7 +4711,8 @@
                   "title": "Max"
                 }
               },
-              "required": ["Max", "Min"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Badtide duration"
             },
             "BadtideDurationHandicapMultiplier": {
@@ -4829,27 +4738,8 @@
               "default": 0.9
             }
           },
-          "required": [
-            "AdultAgeProgress",
-            "BadtideDuration",
-            "BadtideDurationHandicapCycles",
-            "BadtideDurationHandicapMultiplier",
-            "ChanceForBadtide",
-            "ChildAgeProgress",
-            "CyclesBeforeRandomizingBadtide",
-            "DemolishableRecoveryRate",
-            "DroughtDuration",
-            "DroughtDurationHandicapCycles",
-            "DroughtDurationHandicapMultiplier",
-            "FoodConsumption",
-            "InjuryChance",
-            "StartingAdults",
-            "StartingChildren",
-            "StartingFood",
-            "StartingWater",
-            "TemperateWeatherDuration",
-            "WaterConsumption"
-          ],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Easy"
         },
         "Normal": {
@@ -4875,7 +4765,8 @@
                   "default": 0.7
                 }
               },
-              "required": ["Max", "Min"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Adult age progress"
             },
             "StartingChildren": {
@@ -4898,7 +4789,8 @@
                   "default": 0.8
                 }
               },
-              "required": ["Max", "Min"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Child age progress"
             },
             "FoodConsumption": {
@@ -4933,7 +4825,8 @@
                   "title": "Max"
                 }
               },
-              "required": ["Max", "Min"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Temperate weather duration"
             },
             "DroughtDuration": {
@@ -4948,7 +4841,8 @@
                   "title": "Max"
                 }
               },
-              "required": ["Max", "Min"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Drought duration"
             },
             "DroughtDurationHandicapMultiplier": {
@@ -4983,7 +4877,8 @@
                   "title": "Max"
                 }
               },
-              "required": ["Max", "Min"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Badtide duration"
             },
             "BadtideDurationHandicapMultiplier": {
@@ -5009,27 +4904,8 @@
               "default": 0.75
             }
           },
-          "required": [
-            "AdultAgeProgress",
-            "BadtideDuration",
-            "BadtideDurationHandicapCycles",
-            "BadtideDurationHandicapMultiplier",
-            "ChanceForBadtide",
-            "ChildAgeProgress",
-            "CyclesBeforeRandomizingBadtide",
-            "DemolishableRecoveryRate",
-            "DroughtDuration",
-            "DroughtDurationHandicapCycles",
-            "DroughtDurationHandicapMultiplier",
-            "FoodConsumption",
-            "InjuryChance",
-            "StartingAdults",
-            "StartingChildren",
-            "StartingFood",
-            "StartingWater",
-            "TemperateWeatherDuration",
-            "WaterConsumption"
-          ],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Normal"
         },
         "Hard": {
@@ -5055,7 +4931,8 @@
                   "default": 0.7
                 }
               },
-              "required": ["Max", "Min"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Adult age progress"
             },
             "StartingChildren": {
@@ -5078,7 +4955,8 @@
                   "default": 0.8
                 }
               },
-              "required": ["Max", "Min"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Child age progress"
             },
             "FoodConsumption": {
@@ -5113,7 +4991,8 @@
                   "title": "Max"
                 }
               },
-              "required": ["Max", "Min"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Temperate weather duration"
             },
             "DroughtDuration": {
@@ -5128,7 +5007,8 @@
                   "title": "Max"
                 }
               },
-              "required": ["Max", "Min"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Drought duration"
             },
             "DroughtDurationHandicapMultiplier": {
@@ -5163,7 +5043,8 @@
                   "title": "Max"
                 }
               },
-              "required": ["Max", "Min"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Badtide duration"
             },
             "BadtideDurationHandicapMultiplier": {
@@ -5189,31 +5070,13 @@
               "default": 0.75
             }
           },
-          "required": [
-            "AdultAgeProgress",
-            "BadtideDuration",
-            "BadtideDurationHandicapCycles",
-            "BadtideDurationHandicapMultiplier",
-            "ChanceForBadtide",
-            "ChildAgeProgress",
-            "CyclesBeforeRandomizingBadtide",
-            "DemolishableRecoveryRate",
-            "DroughtDuration",
-            "DroughtDurationHandicapCycles",
-            "DroughtDurationHandicapMultiplier",
-            "FoodConsumption",
-            "InjuryChance",
-            "StartingAdults",
-            "StartingChildren",
-            "StartingFood",
-            "StartingWater",
-            "TemperateWeatherDuration",
-            "WaterConsumption"
-          ],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Hard"
         }
       },
-      "required": ["Easy", "Hard", "Normal"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "New game modes specification"
     },
     "AudioMixerGroupRetrieverSpec": {
@@ -5226,7 +5089,8 @@
           "default": "Sounds/AudioMixer"
         }
       },
-      "required": ["AudioMixer"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Audio mixer group retriever specification"
     },
     "RuinModelFactorySpec": {
@@ -5259,7 +5123,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["IvyDryModel", "IvyWetModel", "RuinModelVariants"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Ruin model factory specification"
     },
     "DistanceToColorConverterSpec": {
@@ -5280,7 +5145,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["DistanceGradient"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Distance to color converter specification"
     },
     "TerrainMaterialMapSpec": {
@@ -5363,20 +5229,8 @@
           "default": 0.1
         }
       },
-      "required": [
-        "AltitudeCeiling",
-        "AltitudeMultiplier",
-        "BlendingMargin",
-        "BlendingNoise",
-        "BlendingNoiseMultiplier",
-        "BlendingNoiseScale",
-        "BlendingSoftness",
-        "CutoutMargin",
-        "DesertAltitudeMultiplier",
-        "DesertTexture",
-        "DryFieldTexture",
-        "WetFieldTexture"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Terrain material map specification"
     },
     "SelectionColorsSpec": {
@@ -5410,7 +5264,8 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Entity selection"
         },
         "SelectionToolHighlight": {
@@ -5441,11 +5296,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Selection tool highlight"
         }
       },
-      "required": ["EntitySelection", "SelectionToolHighlight"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Selection colors specification"
     },
     "RelationHighlighterSpec": {
@@ -5479,11 +5336,13 @@
               "default": 1.0
             }
           },
-          "required": ["a", "b", "g", "r"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Relation selection"
         }
       },
-      "required": ["RelationSelection"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Relation highlighter specification"
     }
   },
@@ -5513,7 +5372,8 @@
                 "title": "A"
               }
             },
-            "required": ["a", "b", "g", "r"],
+            "minProperties": 1,
+            "additionalProperties": false,
             "title": "Color"
           },
           "Time": {
@@ -5521,7 +5381,8 @@
             "title": "Time"
           }
         },
-        "required": ["Color", "Time"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Distance gradient"
     },
@@ -5539,7 +5400,8 @@
             "title": "Model"
           }
         },
-        "required": ["Id", "Model"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Ruin model variants"
     },
@@ -5575,7 +5437,8 @@
                     "title": "A"
                   }
                 },
-                "required": ["a", "b", "g", "r"],
+                "minProperties": 1,
+                "additionalProperties": false,
                 "title": "Fog color"
               },
               "FogDensity": {
@@ -5583,11 +5446,13 @@
                 "title": "Fog density"
               }
             },
-            "required": ["FogColor", "FogDensity"],
+            "minProperties": 1,
+            "additionalProperties": false,
             "title": "Fog settings"
           }
         },
-        "required": ["FogSettings", "HazardousWeatherId"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Hazardous weather fogs"
     },
@@ -5612,7 +5477,8 @@
             "title": "Fragments"
           }
         },
-        "required": ["Fragments", "IsUnique", "Name"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Auto atlas specs"
     },
@@ -5777,7 +5643,8 @@
                 "title": "A"
               }
             },
-            "required": ["a", "b", "g", "r"],
+            "minProperties": 1,
+            "additionalProperties": false,
             "title": "Color"
           },
           "Time": {
@@ -5785,7 +5652,8 @@
             "title": "Time"
           }
         },
-        "required": ["Color", "Time"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Water contamination particle gradient"
     },
@@ -5811,7 +5679,8 @@
             "title": "High"
           }
         },
-        "required": ["High", "Id", "Low", "Medium"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Groups"
     }

@@ -166,15 +166,8 @@
           "additionalProperties": false
         }
       },
-      "required": [
-        "BuildingCost",
-        "DrawRangeBoundsOnIt",
-        "FinishableWithBeaversOnSite",
-        "LoopingSoundName",
-        "PlaceFinished",
-        "ScienceCost",
-        "SelectionSoundName"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Building specification"
     },
     "TemplateSpec": {
@@ -472,12 +465,8 @@
           "additionalProperties": false
         }
       },
-      "required": [
-        "BackwardCompatibleTemplateNames",
-        "DisablingFeatureToggle",
-        "RequiredFeatureToggle",
-        "TemplateName"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Template specification"
     },
     "BuildingModelSpec": {
@@ -518,14 +507,8 @@
           "title": "Underground model depth"
         }
       },
-      "required": [
-        "ConstructionModeModel",
-        "FinishedModelName",
-        "FinishedUncoveredModelName",
-        "UndergroundModelDepth",
-        "UndergroundModelName",
-        "UnfinishedModelName"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Building model specification"
     },
     "BlockObjectSpec": {
@@ -550,7 +533,8 @@
                   "title": "Z"
                 }
               },
-              "required": ["X", "Y", "Z"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Size"
             },
             "BlockSpecs": {
@@ -568,7 +552,8 @@
               "additionalProperties": false
             }
           },
-          "required": ["BlockSpecs", "Size"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Blocks specification"
         },
         "Entrance": {
@@ -596,11 +581,13 @@
                   "title": "Z"
                 }
               },
-              "required": ["X", "Y", "Z"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Coordinates"
             }
           },
-          "required": ["Coordinates", "HasEntrance"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Entrance"
         },
         "BaseZ": {
@@ -620,13 +607,8 @@
           "default": false
         }
       },
-      "required": [
-        "BaseZ",
-        "BlocksSpec",
-        "Entrance",
-        "Flippable",
-        "Overridable"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Block object specification"
     },
     "PlaceableBlockObjectSpec": {
@@ -700,11 +682,13 @@
                   "default": 0.0
                 }
               },
-              "required": ["X", "Y", "Z"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Coordinates"
             }
           },
-          "required": ["Coordinates", "HasCustomPivot"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Custom pivot"
         },
         "CanBeAttachedToTerrainSide": {
@@ -720,15 +704,8 @@
           "default": false
         }
       },
-      "required": [
-        "CanBeAttachedToTerrainSide",
-        "CustomPivot",
-        "DevModeTool",
-        "Layout",
-        "ToolGroupId",
-        "ToolOrder",
-        "ToolShape"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Placeable block object specification"
     },
     "LabeledEntitySpec": {
@@ -1412,12 +1389,8 @@
           ]
         }
       },
-      "required": [
-        "DescriptionLocKey",
-        "DisplayNameLocKey",
-        "FlavorDescriptionLocKey",
-        "Icon"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Labeled entity specification"
     },
     "RangedEffectBuildingSpec": {
@@ -1428,7 +1401,8 @@
           "title": "Effect radius"
         }
       },
-      "required": ["EffectRadius"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Ranged effect building specification"
     },
     "ContinuousEffectBuildingSpec": {
@@ -1449,7 +1423,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["Effects"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Continuous effect building specification"
     },
     "ConstructionSiteProgressVisualizerSpec": {
@@ -1470,7 +1445,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["ProgressThresholds"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Construction site progress visualizer specification"
     },
     "Children": {
@@ -1731,7 +1707,8 @@
                   "default": "Buildings/Landscaping/TerrainBlock/TerrainBlock.Finished.Model"
                 }
               },
-              "required": ["Model"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Timbermesh specification"
             },
             "CollidersSpec": {
@@ -1780,11 +1757,8 @@
                   "additionalProperties": false
                 }
               },
-              "required": [
-                "BoxColliders",
-                "CapsuleColliders",
-                "SphereColliders"
-              ],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Colliders specification"
             },
             "Children": {
@@ -1824,7 +1798,8 @@
                                       "default": 0.0
                                     }
                                   },
-                                  "required": ["X", "Y", "Z"],
+                                  "minProperties": 1,
+                                  "additionalProperties": false,
                                   "title": "Position"
                                 },
                                 "Rotation": {
@@ -1849,7 +1824,8 @@
                                       "default": 331.04
                                     }
                                   },
-                                  "required": ["X", "Y", "Z"],
+                                  "minProperties": 1,
+                                  "additionalProperties": false,
                                   "title": "Rotation"
                                 },
                                 "Scale": {
@@ -1874,11 +1850,13 @@
                                       "default": 1.0
                                     }
                                   },
-                                  "required": ["X", "Y", "Z"],
+                                  "minProperties": 1,
+                                  "additionalProperties": false,
                                   "title": "Scale"
                                 }
                               },
-                              "required": ["Position", "Rotation", "Scale"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Transform specification"
                             },
                             "CollidersSpec": {
@@ -1927,15 +1905,13 @@
                                   "additionalProperties": false
                                 }
                               },
-                              "required": [
-                                "BoxColliders",
-                                "CapsuleColliders",
-                                "SphereColliders"
-                              ],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Colliders specification"
                             }
                           },
-                          "required": ["CollidersSpec", "TransformSpec"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "Right one"
                         },
                         "LeftOne": {
@@ -1966,7 +1942,8 @@
                                       "default": 0.0
                                     }
                                   },
-                                  "required": ["X", "Y", "Z"],
+                                  "minProperties": 1,
+                                  "additionalProperties": false,
                                   "title": "Position"
                                 },
                                 "Rotation": {
@@ -1991,7 +1968,8 @@
                                       "default": 28.9600029
                                     }
                                   },
-                                  "required": ["X", "Y", "Z"],
+                                  "minProperties": 1,
+                                  "additionalProperties": false,
                                   "title": "Rotation"
                                 },
                                 "Scale": {
@@ -2016,11 +1994,13 @@
                                       "default": 1.0
                                     }
                                   },
-                                  "required": ["X", "Y", "Z"],
+                                  "minProperties": 1,
+                                  "additionalProperties": false,
                                   "title": "Scale"
                                 }
                               },
-                              "required": ["Position", "Rotation", "Scale"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Transform specification"
                             },
                             "CollidersSpec": {
@@ -2069,15 +2049,13 @@
                                   "additionalProperties": false
                                 }
                               },
-                              "required": [
-                                "BoxColliders",
-                                "CapsuleColliders",
-                                "SphereColliders"
-                              ],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Colliders specification"
                             }
                           },
-                          "required": ["CollidersSpec", "TransformSpec"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "Left one"
                         },
                         "RightTwo": {
@@ -2108,7 +2086,8 @@
                                       "default": 0.0
                                     }
                                   },
-                                  "required": ["X", "Y", "Z"],
+                                  "minProperties": 1,
+                                  "additionalProperties": false,
                                   "title": "Position"
                                 },
                                 "Rotation": {
@@ -2133,7 +2112,8 @@
                                       "default": 298.91
                                     }
                                   },
-                                  "required": ["X", "Y", "Z"],
+                                  "minProperties": 1,
+                                  "additionalProperties": false,
                                   "title": "Rotation"
                                 },
                                 "Scale": {
@@ -2158,11 +2138,13 @@
                                       "default": 1.0
                                     }
                                   },
-                                  "required": ["X", "Y", "Z"],
+                                  "minProperties": 1,
+                                  "additionalProperties": false,
                                   "title": "Scale"
                                 }
                               },
-                              "required": ["Position", "Rotation", "Scale"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Transform specification"
                             },
                             "CollidersSpec": {
@@ -2211,15 +2193,13 @@
                                   "additionalProperties": false
                                 }
                               },
-                              "required": [
-                                "BoxColliders",
-                                "CapsuleColliders",
-                                "SphereColliders"
-                              ],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Colliders specification"
                             }
                           },
-                          "required": ["CollidersSpec", "TransformSpec"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "Right two"
                         },
                         "LeftTwo": {
@@ -2250,7 +2230,8 @@
                                       "default": 0.0
                                     }
                                   },
-                                  "required": ["X", "Y", "Z"],
+                                  "minProperties": 1,
+                                  "additionalProperties": false,
                                   "title": "Position"
                                 },
                                 "Rotation": {
@@ -2275,7 +2256,8 @@
                                       "default": 61.0899925
                                     }
                                   },
-                                  "required": ["X", "Y", "Z"],
+                                  "minProperties": 1,
+                                  "additionalProperties": false,
                                   "title": "Rotation"
                                 },
                                 "Scale": {
@@ -2300,11 +2282,13 @@
                                       "default": 1.0
                                     }
                                   },
-                                  "required": ["X", "Y", "Z"],
+                                  "minProperties": 1,
+                                  "additionalProperties": false,
                                   "title": "Scale"
                                 }
                               },
-                              "required": ["Position", "Rotation", "Scale"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Transform specification"
                             },
                             "CollidersSpec": {
@@ -2353,28 +2337,23 @@
                                   "additionalProperties": false
                                 }
                               },
-                              "required": [
-                                "BoxColliders",
-                                "CapsuleColliders",
-                                "SphereColliders"
-                              ],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Colliders specification"
                             }
                           },
-                          "required": ["CollidersSpec", "TransformSpec"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "Left two"
                         }
                       },
-                      "required": [
-                        "LeftOne",
-                        "LeftTwo",
-                        "RightOne",
-                        "RightTwo"
-                      ],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Children"
                     }
                   },
-                  "required": ["Children"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Rotated colliders"
                 },
                 "#Cover": {
@@ -2405,7 +2384,8 @@
                               "default": 0.5
                             }
                           },
-                          "required": ["X", "Y", "Z"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "Position"
                         },
                         "Rotation": {
@@ -2430,7 +2410,8 @@
                               "default": 0.0
                             }
                           },
-                          "required": ["X", "Y", "Z"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "Rotation"
                         },
                         "Scale": {
@@ -2455,11 +2436,13 @@
                               "default": 1.0
                             }
                           },
-                          "required": ["X", "Y", "Z"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "Scale"
                         }
                       },
-                      "required": ["Position", "Rotation", "Scale"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Transform specification"
                     },
                     "TimbermeshSpec": {
@@ -2474,7 +2457,8 @@
                           ]
                         }
                       },
-                      "required": ["Model"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Timbermesh specification"
                     },
                     "CollidersSpec": {
@@ -2523,19 +2507,13 @@
                           "additionalProperties": false
                         }
                       },
-                      "required": [
-                        "BoxColliders",
-                        "CapsuleColliders",
-                        "SphereColliders"
-                      ],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Colliders specification"
                     }
                   },
-                  "required": [
-                    "CollidersSpec",
-                    "TimbermeshSpec",
-                    "TransformSpec"
-                  ],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "# cover"
                 }
               },
@@ -2550,7 +2528,8 @@
                         "title": "Model"
                       }
                     },
-                    "required": ["Model"],
+                    "minProperties": 1,
+                    "additionalProperties": false,
                     "title": "Timbermesh specification"
                   },
                   "CollidersSpec": {
@@ -2599,15 +2578,13 @@
                         "additionalProperties": false
                       }
                     },
-                    "required": [
-                      "BoxColliders",
-                      "CapsuleColliders",
-                      "SphereColliders"
-                    ],
+                    "minProperties": 1,
+                    "additionalProperties": false,
                     "title": "Colliders specification"
                   }
                 },
-                "required": ["CollidersSpec", "TimbermeshSpec"]
+                "minProperties": 1,
+                "additionalProperties": false
               },
               "title": "Children"
             }
@@ -2659,7 +2636,8 @@
                                   "default": 1.0
                                 }
                               },
-                              "required": ["X", "Y", "Z"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Position"
                             },
                             "Rotation": {
@@ -2684,7 +2662,8 @@
                                   "default": 0.0
                                 }
                               },
-                              "required": ["X", "Y", "Z"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Rotation"
                             },
                             "Scale": {
@@ -2709,19 +2688,23 @@
                                   "default": 1.0
                                 }
                               },
-                              "required": ["X", "Y", "Z"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Scale"
                             }
                           },
-                          "required": ["Position", "Rotation", "Scale"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "Transform specification"
                         }
                       },
-                      "required": ["TransformSpec"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Modification"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base1x1#nested"
                 },
                 "ConstructionStage0": {
@@ -2987,7 +2970,8 @@
                           "default": "Buildings/Landscaping/TerrainBlock/TerrainBlock.Progress.ConstructionStage0.Model"
                         }
                       },
-                      "required": ["Model"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Timbermesh specification"
                     },
                     "CollidersSpec": {
@@ -3036,11 +3020,8 @@
                           "additionalProperties": false
                         }
                       },
-                      "required": [
-                        "BoxColliders",
-                        "CapsuleColliders",
-                        "SphereColliders"
-                      ],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Colliders specification"
                     },
                     "Children": {
@@ -3061,7 +3042,8 @@
                                   "default": "Buildings/Landscaping/Tunnel/Tunnel.Full.ConstructionStage0.Model"
                                 }
                               },
-                              "required": ["Model"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Timbermesh specification"
                             },
                             "CollidersSpec": {
@@ -3110,15 +3092,13 @@
                                   "additionalProperties": false
                                 }
                               },
-                              "required": [
-                                "BoxColliders",
-                                "CapsuleColliders",
-                                "SphereColliders"
-                              ],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Colliders specification"
                             }
                           },
-                          "required": ["CollidersSpec", "TimbermeshSpec"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "# full"
                         },
                         "#Uncovered": {
@@ -3136,7 +3116,8 @@
                                   "default": "Buildings/Landscaping/Tunnel/Tunnel.Uncovered.ConstructionStage0.Model"
                                 }
                               },
-                              "required": ["Model"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Timbermesh specification"
                             },
                             "CollidersSpec": {
@@ -3185,19 +3166,18 @@
                                   "additionalProperties": false
                                 }
                               },
-                              "required": [
-                                "BoxColliders",
-                                "CapsuleColliders",
-                                "SphereColliders"
-                              ],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Colliders specification"
                             }
                           },
-                          "required": ["CollidersSpec", "TimbermeshSpec"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "# uncovered"
                         }
                       },
-                      "required": ["#Full", "#Uncovered"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Children"
                     },
                     "TransformSpec": {
@@ -3225,7 +3205,8 @@
                               "default": 1.0
                             }
                           },
-                          "required": ["X", "Y", "Z"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "Position"
                         },
                         "Rotation": {
@@ -3250,7 +3231,8 @@
                               "default": 0.0
                             }
                           },
-                          "required": ["X", "Y", "Z"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "Rotation"
                         },
                         "Scale": {
@@ -3275,11 +3257,13 @@
                               "default": 1.0
                             }
                           },
-                          "required": ["X", "Y", "Z"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "Scale"
                         }
                       },
-                      "required": ["Position", "Rotation", "Scale"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Transform specification"
                     }
                   },
@@ -3324,7 +3308,8 @@
                                   "default": 2.0
                                 }
                               },
-                              "required": ["X", "Y", "Z"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Position"
                             },
                             "Rotation": {
@@ -3349,7 +3334,8 @@
                                   "default": 0.0
                                 }
                               },
-                              "required": ["X", "Y", "Z"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Rotation"
                             },
                             "Scale": {
@@ -3374,19 +3360,23 @@
                                   "default": 1.0
                                 }
                               },
-                              "required": ["X", "Y", "Z"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Scale"
                             }
                           },
-                          "required": ["Position", "Rotation", "Scale"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "Transform specification"
                         }
                       },
-                      "required": ["TransformSpec"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Modification"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base1x2#nested"
                 },
                 "ConstructionBase3x2#nested": {
@@ -3401,7 +3391,8 @@
                       "default": "ConstructionBases/ConstructionBase3x2/ConstructionBase3x2.blueprint"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base3x2#nested"
                 },
                 "ConstructionBase2x3#nested": {
@@ -3416,7 +3407,8 @@
                       "default": "ConstructionBases/ConstructionBase2x3/ConstructionBase2x3.blueprint"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base2x3#nested"
                 },
                 "ConstructionStage0#nested": {
@@ -3445,15 +3437,18 @@
                               "default": "Buildings/Decoration/WoodFence/WoodFence.IronTeeth.ConstructionStage0.Model"
                             }
                           },
-                          "required": ["Model"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "Timbermesh specification"
                         }
                       },
-                      "required": ["TimbermeshSpec"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Modification"
                     }
                   },
-                  "required": ["BlueprintPath", "Modification"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction stage0#nested"
                 },
                 "ConstructionBase2x2#nested": {
@@ -3468,7 +3463,8 @@
                       "default": "ConstructionBases/ConstructionBase2x2/ConstructionBase2x2.blueprint"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base2x2#nested"
                 },
                 "ConstructionBase3x3#nested": {
@@ -3510,7 +3506,8 @@
                                   "default": 1.0
                                 }
                               },
-                              "required": ["X", "Y", "Z"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Position"
                             },
                             "Rotation": {
@@ -3535,7 +3532,8 @@
                                   "default": 0.0
                                 }
                               },
-                              "required": ["X", "Y", "Z"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Rotation"
                             },
                             "Scale": {
@@ -3560,19 +3558,23 @@
                                   "default": 1.0
                                 }
                               },
-                              "required": ["X", "Y", "Z"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Scale"
                             }
                           },
-                          "required": ["Position", "Rotation", "Scale"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "Transform specification"
                         }
                       },
-                      "required": ["TransformSpec"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Modification"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base3x3#nested"
                 },
                 "ConstructionBase3x1#nested": {
@@ -3614,7 +3616,8 @@
                                   "default": 1.0
                                 }
                               },
-                              "required": ["X", "Y", "Z"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Position"
                             },
                             "Rotation": {
@@ -3639,7 +3642,8 @@
                                   "default": 0.0
                                 }
                               },
-                              "required": ["X", "Y", "Z"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Rotation"
                             },
                             "Scale": {
@@ -3664,19 +3668,23 @@
                                   "default": 1.0
                                 }
                               },
-                              "required": ["X", "Y", "Z"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Scale"
                             }
                           },
-                          "required": ["Position", "Rotation", "Scale"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "Transform specification"
                         }
                       },
-                      "required": ["TransformSpec"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Modification"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base3x1#nested"
                 },
                 "ConstructionBase5x1#nested": {
@@ -3691,7 +3699,8 @@
                       "default": "ConstructionBases/ConstructionBase5x1/ConstructionBase5x1.blueprint"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base5x1#nested"
                 },
                 "ConstructionBase1x1Dynamite#nested": {
@@ -3720,15 +3729,18 @@
                               ]
                             }
                           },
-                          "required": ["Model"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "Timbermesh specification"
                         }
                       },
-                      "required": ["TimbermeshSpec"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Modification"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base1x1 dynamite#nested"
                 },
                 "ConstructionBase1x1ImpermeableFloor#nested": {
@@ -3743,7 +3755,8 @@
                       "default": "ConstructionBases/ConstructionBase1x1ImpermeableFloor/ConstructionBase1x1ImpermeableFloor.blueprint"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base1x1 impermeable floor#nested"
                 },
                 "ConstructionBase2x4#nested": {
@@ -3758,7 +3771,8 @@
                       "default": "ConstructionBases/ConstructionBase2x4/ConstructionBase2x4.blueprint"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base2x4#nested"
                 },
                 "ConstructionBase": {
@@ -3782,7 +3796,8 @@
                                   "default": "Buildings/Landscaping/Tunnel/Tunnel.Full.ConstructionBase.Model"
                                 }
                               },
-                              "required": ["Model"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Timbermesh specification"
                             },
                             "CollidersSpec": {
@@ -3831,15 +3846,13 @@
                                   "additionalProperties": false
                                 }
                               },
-                              "required": [
-                                "BoxColliders",
-                                "CapsuleColliders",
-                                "SphereColliders"
-                              ],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Colliders specification"
                             }
                           },
-                          "required": ["CollidersSpec", "TimbermeshSpec"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "# full"
                         },
                         "#Uncovered": {
@@ -3857,7 +3870,8 @@
                                   "default": "Buildings/Landscaping/Tunnel/Tunnel.Uncovered.ConstructionBase.Model"
                                 }
                               },
-                              "required": ["Model"],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Timbermesh specification"
                             },
                             "CollidersSpec": {
@@ -3906,19 +3920,18 @@
                                   "additionalProperties": false
                                 }
                               },
-                              "required": [
-                                "BoxColliders",
-                                "CapsuleColliders",
-                                "SphereColliders"
-                              ],
+                              "minProperties": 1,
+                              "additionalProperties": false,
                               "title": "Colliders specification"
                             }
                           },
-                          "required": ["CollidersSpec", "TimbermeshSpec"],
+                          "minProperties": 1,
+                          "additionalProperties": false,
                           "title": "# uncovered"
                         }
                       },
-                      "required": ["#Full", "#Uncovered"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Children"
                     },
                     "TimbermeshSpec": {
@@ -3933,7 +3946,8 @@
                           "default": "Buildings/Landscaping/TerrainBlock/TerrainBlock.Unfinished.Model"
                         }
                       },
-                      "required": ["Model"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Timbermesh specification"
                     },
                     "CollidersSpec": {
@@ -3982,11 +3996,8 @@
                           "additionalProperties": false
                         }
                       },
-                      "required": [
-                        "BoxColliders",
-                        "CapsuleColliders",
-                        "SphereColliders"
-                      ],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Colliders specification"
                     }
                   },
@@ -4013,7 +4024,8 @@
                           ]
                         }
                       },
-                      "required": ["Model"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Timbermesh specification"
                     },
                     "CollidersSpec": {
@@ -4062,15 +4074,13 @@
                           "additionalProperties": false
                         }
                       },
-                      "required": [
-                        "BoxColliders",
-                        "CapsuleColliders",
-                        "SphereColliders"
-                      ],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Colliders specification"
                     }
                   },
-                  "required": ["CollidersSpec", "TimbermeshSpec"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction stage1"
                 },
                 "ConstructionStage2": {
@@ -4088,7 +4098,8 @@
                           ]
                         }
                       },
-                      "required": ["Model"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Timbermesh specification"
                     },
                     "CollidersSpec": {
@@ -4137,15 +4148,13 @@
                           "additionalProperties": false
                         }
                       },
-                      "required": [
-                        "BoxColliders",
-                        "CapsuleColliders",
-                        "SphereColliders"
-                      ],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Colliders specification"
                     }
                   },
-                  "required": ["CollidersSpec", "TimbermeshSpec"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction stage2"
                 },
                 "ConstructionStage3": {
@@ -4163,7 +4172,8 @@
                           ]
                         }
                       },
-                      "required": ["Model"],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Timbermesh specification"
                     },
                     "CollidersSpec": {
@@ -4212,15 +4222,13 @@
                           "additionalProperties": false
                         }
                       },
-                      "required": [
-                        "BoxColliders",
-                        "CapsuleColliders",
-                        "SphereColliders"
-                      ],
+                      "minProperties": 1,
+                      "additionalProperties": false,
                       "title": "Colliders specification"
                     }
                   },
-                  "required": ["CollidersSpec", "TimbermeshSpec"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction stage3"
                 },
                 "ConstructionBase1x1Top#nested": {
@@ -4235,7 +4243,8 @@
                       "default": "ConstructionBases/ConstructionBase1x1Top/ConstructionBase1x1Top.blueprint"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base1x1 top#nested"
                 },
                 "ConstructionBase5x5#nested": {
@@ -4250,7 +4259,8 @@
                       "default": "ConstructionBases/ConstructionBase5x5/ConstructionBase5x5.blueprint"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base5x5#nested"
                 },
                 "ConstructionBase4x1+Water4x2#nested": {
@@ -4265,7 +4275,8 @@
                       "default": "ConstructionBases/ConstructionBase4x1+Water4x2/ConstructionBase4x1+Water4x2.blueprint"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base4x1+ water4x2#nested"
                 },
                 "ConstructionBase3x1+Water3x3#nested": {
@@ -4280,7 +4291,8 @@
                       "default": "ConstructionBases/ConstructionBase3x1+Water3x3/ConstructionBase3x1+Water3x3.blueprint"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base3x1+ water3x3#nested"
                 },
                 "WaterWheelConstructionBase3x2#nested": {
@@ -4295,7 +4307,8 @@
                       "default": "ConstructionBases/ConstructionBase3x2WaterWheel/ConstructionBase3x2WaterWheel.blueprint"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Water wheel construction base3x2#nested"
                 },
                 "ConstructionBase3x3EdgesOnly#nested": {
@@ -4310,7 +4323,8 @@
                       "default": "ConstructionBases/ConstructionBase3x3EdgesOnly/ConstructionBase3x3EdgesOnly.blueprint"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base3x3 edges only#nested"
                 },
                 "PrintingPressConstructionBase#nested": {
@@ -4325,7 +4339,8 @@
                       "default": "ConstructionBases/ConstructionBase2x4/ConstructionBase2x4.blueprint"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Printing press construction base#nested"
                 },
                 "ConstructionBase3x2Half#nested": {
@@ -4340,7 +4355,8 @@
                       "default": "ConstructionBases/ConstructionBase3x2Half/ConstructionBase3x2Half.blueprint"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base3x2 half#nested"
                 },
                 "ConstructionBase3x3EdgesOnlyWithoutCorners#nested": {
@@ -4355,7 +4371,8 @@
                       "default": "ConstructionBases/ConstructionBase3x3EdgesOnlyWithoutCorners/ConstructionBase3x3EdgesOnlyWithoutCorners.blueprint"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base3x3 edges only without corners#nested"
                 },
                 "ConstructionBase4x4WithoutCorners#nested": {
@@ -4370,7 +4387,8 @@
                       "default": "ConstructionBases/ConstructionBase4x4WithoutCorners/ConstructionBase4x4WithoutCorners.blueprint"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base4x4 without corners#nested"
                 },
                 "ConstructionBase5x5EdgesOnly#nested": {
@@ -4385,7 +4403,8 @@
                       "default": "ConstructionBases/ConstructionBase5x5EdgesOnly/ConstructionBase5x5EdgesOnly.blueprint"
                     }
                   },
-                  "required": ["BlueprintPath"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Construction base5x5 edges only#nested"
                 }
               },
@@ -4437,15 +4456,13 @@
                   "additionalProperties": false
                 }
               },
-              "required": [
-                "BoxColliders",
-                "CapsuleColliders",
-                "SphereColliders"
-              ],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Colliders specification"
             }
           },
-          "required": ["Children"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "# unfinished"
         },
         "#Underground": {
@@ -4478,11 +4495,13 @@
                   ]
                 }
               },
-              "required": ["Model"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Timbermesh specification"
             }
           },
-          "required": ["TimbermeshSpec"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "# underground"
         },
         "#FinishedUncovered": {
@@ -4513,7 +4532,8 @@
                   ]
                 }
               },
-              "required": ["Model"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Timbermesh specification"
             },
             "CollidersSpec": {
@@ -4562,11 +4582,8 @@
                   "additionalProperties": false
                 }
               },
-              "required": [
-                "BoxColliders",
-                "CapsuleColliders",
-                "SphereColliders"
-              ],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Colliders specification"
             },
             "TransformSpec": {
@@ -4594,7 +4611,8 @@
                       "default": 1.0
                     }
                   },
-                  "required": ["X", "Y", "Z"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Position"
                 },
                 "Rotation": {
@@ -4619,7 +4637,8 @@
                       "default": 0.0
                     }
                   },
-                  "required": ["X", "Y", "Z"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Rotation"
                 },
                 "Scale": {
@@ -4644,15 +4663,18 @@
                       "default": 1.0
                     }
                   },
-                  "required": ["X", "Y", "Z"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Scale"
                 }
               },
-              "required": ["Position", "Rotation", "Scale"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Transform specification"
             }
           },
-          "required": ["CollidersSpec", "TimbermeshSpec"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "# finished uncovered"
         },
         "Model": {
@@ -4670,11 +4692,13 @@
                   "default": "Buildings/Monuments/EarthRepopulator/EarthRepopulator.IronTeeth.Plane.Model"
                 }
               },
-              "required": ["Model"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Timbermesh specification"
             }
           },
-          "required": ["TimbermeshSpec"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Model"
         },
         "#Model": {
@@ -4690,7 +4714,8 @@
                   "default": "MapEditor/Water/WaterSource/WaterSource.Model"
                 }
               },
-              "required": ["Model"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Timbermesh specification"
             },
             "CollidersSpec": {
@@ -4739,15 +4764,13 @@
                   "additionalProperties": false
                 }
               },
-              "required": [
-                "BoxColliders",
-                "CapsuleColliders",
-                "SphereColliders"
-              ],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Colliders specification"
             }
           },
-          "required": ["CollidersSpec", "TimbermeshSpec"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "# model"
         }
       },
@@ -4769,7 +4792,8 @@
           "default": "WoodFence"
         }
       },
-      "required": ["ModelNamePrefix"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Mergeable object model specification"
     },
     "TransputProviderSpec": {
@@ -4796,7 +4820,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["IgnoreRotation", "TransputSpecs"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Transput provider specification"
     },
     "MechanicalConnectorReceiverSpec": {
@@ -4847,12 +4872,8 @@
           "additionalProperties": false
         }
       },
-      "required": [
-        "EdgeGroups",
-        "GenerateFloorsOnStackable",
-        "NoAutoWalls",
-        "UnblockedCoordinates"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Block object nav mesh settings specification"
     },
     "BlockableBuildingLightingSpec": {
@@ -4875,7 +4896,8 @@
           "default": "#HandIT"
         }
       },
-      "required": ["AngleOffset", "HandName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Clock hand animator specification"
     },
     "DecalSupplierSpec": {
@@ -4888,7 +4910,8 @@
           "default": "Banners"
         }
       },
-      "required": ["Category"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Decal supplier specification"
     },
     "DecalSupplierBuildingIconSpec": {
@@ -4907,7 +4930,8 @@
           ]
         }
       },
-      "required": ["IconRendererName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Decal supplier building icon specification"
     },
     "WorkingHoursBellSpec": {
@@ -4928,7 +4952,8 @@
           "default": "Fire"
         }
       },
-      "required": ["AttachmentId"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Fire specification"
     },
     "WaterObjectSpec": {
@@ -4950,11 +4975,13 @@
               "title": "Z"
             }
           },
-          "required": ["X", "Y", "Z"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Water coordinates"
         }
       },
-      "required": ["WaterCoordinates"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Water object specification"
     },
     "FloodableBuildingSpec": {
@@ -4979,7 +5006,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["Attachments"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Template attachments specification"
     },
     "TransformSlotInitializerSpec": {
@@ -5000,7 +5028,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["Slots"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Transform slot initializer specification"
     },
     "EnterableSpec": {
@@ -5033,13 +5062,8 @@
           "title": "Capacity unfinished"
         }
       },
-      "required": [
-        "CapacityFinished",
-        "CapacityUnfinished",
-        "LimitedCapacityFinished",
-        "LimitedCapacityUnfinished",
-        "OperatingState"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Enterable specification"
     },
     "FixedSlotManagerSpec": {
@@ -5089,7 +5113,8 @@
               "default": 0.2
             }
           },
-          "required": ["X", "Y", "Z"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Local access"
         },
         "ForceOneFinalAccess": {
@@ -5099,7 +5124,8 @@
           "default": false
         }
       },
-      "required": ["ForceOneFinalAccess", "LocalAccess"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Building accessible specification"
     },
     "DrivewayModelSpec": {
@@ -5139,7 +5165,8 @@
               "title": "Z"
             }
           },
-          "required": ["X", "Y", "Z"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Custom coordinates"
         },
         "CustomDirection": {
@@ -5155,13 +5182,8 @@
           "default": "Unidirectional"
         }
       },
-      "required": [
-        "CustomCoordinates",
-        "CustomDirection",
-        "Driveway",
-        "DrivewayMode",
-        "HasCustomCoordinates"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Driveway model specification"
     },
     "EnterableAnimationControllerSpec": {
@@ -5174,7 +5196,8 @@
           "default": false
         }
       },
-      "required": ["ResetAnimationUponExit"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Enterable animation controller specification"
     },
     "WindGaugeSpec": {
@@ -5217,7 +5240,8 @@
                   "default": 0.0
                 }
               },
-              "required": ["X", "Y", "Z"],
+              "minProperties": 1,
+              "additionalProperties": false,
               "title": "Rotation axis"
             },
             "RotationSpeed": {
@@ -5226,7 +5250,8 @@
               "examples": [200.0, 75.0, 80.0]
             }
           },
-          "required": ["RotationAxis", "RotationSpeed", "TransformName"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Tower"
         },
         "WindRotators#append": {
@@ -5241,7 +5266,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["Tower", "WindRotators"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Wind rotation animator specification"
     },
     "BlockableFloodableObjectSpec": {
@@ -5280,12 +5306,8 @@
           "title": "Plants per pollination"
         }
       },
-      "required": [
-        "GrowthTimeReduction",
-        "HoursBetweenPollinations",
-        "PlantsPerPollination",
-        "PollinationRadius"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Hive specification"
     },
     "AreaNeedApplierSpec": {
@@ -5310,7 +5332,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["ApplicationRadius", "Effects"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Area need applier specification"
     },
     "BlockableObjectParticleControllerSpec": {
@@ -5331,7 +5354,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["AttachmentIds"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Blockable object particle controller specification"
     },
     "WorkplaceSpec": {
@@ -5372,13 +5396,8 @@
           "additionalProperties": false
         }
       },
-      "required": [
-        "DefaultWorkerType",
-        "DefaultWorkers",
-        "DisallowOtherWorkerTypes",
-        "MaxWorkers",
-        "WorkerTypeUnlockCosts"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Workplace specification"
     },
     "ManufactorySpec": {
@@ -5399,7 +5418,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["ProductionRecipeIds"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Manufactory specification"
     },
     "WorkshopSpec": {
@@ -5432,7 +5452,8 @@
           "default": false
         }
       },
-      "required": ["IsShaft", "PowerInput", "PowerOutput"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Mechanical node specification"
     },
     "WorkplaceLightingSpec": {
@@ -5465,7 +5486,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["AttachmentIds"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Workshop particle controller specification"
     },
     "WorkshopWorkerHiderSpec": {
@@ -5490,7 +5512,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["AttachmentIds"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Wind particle controller specification"
     },
     "GathererFlagSpec": {
@@ -5517,7 +5540,8 @@
           "default": false
         }
       },
-      "required": ["Capacity", "DisableAfterEmptying", "IgnorableCapacity"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Simple output inventory specification"
     },
     "YieldRemovingBuildingSpec": {
@@ -5536,7 +5560,8 @@
           ]
         }
       },
-      "required": ["ResourceGroup"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Yield removing building specification"
     },
     "FarmHouseSpec": {
@@ -5552,7 +5577,8 @@
           "examples": ["Farmhouse", "Forester", "AquaticFarmhouse"]
         }
       },
-      "required": ["PlantableResourceGroup"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Planter building specification"
     },
     "WorkplaceWorkerOutfitSpec": {
@@ -5564,7 +5590,8 @@
           "examples": ["Builder", "Hauler", "Farmer", "Pilot"]
         }
       },
-      "required": ["WorkerOutfit"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Workplace worker outfit specification"
     },
     "ManufactoryProgressVisualizerSpec": {
@@ -5585,7 +5612,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["ProgressSteps"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Manufactory progress visualizer specification"
     },
     "ManufactoryRecipeVisualizerSpec": {
@@ -5612,7 +5640,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["InitialModelName", "RecipeModels"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Manufactory recipe visualizer specification"
     },
     "ProductionResetterSpec": {
@@ -5643,12 +5672,8 @@
           "default": "CultivationHalted"
         }
       },
-      "required": [
-        "AlertLocKey",
-        "HoursToResetProgress",
-        "StatusIcon",
-        "StatusLocKey"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Production resetter specification"
     },
     "DrillScrewBuilderSpec": {
@@ -5682,7 +5707,8 @@
               "default": 3.5
             }
           },
-          "required": ["X", "Y", "Z"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Anchor position"
         },
         "DrillRadius": {
@@ -5708,13 +5734,8 @@
           ]
         }
       },
-      "required": [
-        "AnchorPosition",
-        "DrillRadius",
-        "ParentName",
-        "ScrewAxisPrefabPath",
-        "ScrewHeadPrefabPath"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Drill screw builder specification"
     },
     "DrillSpec": {
@@ -5743,7 +5764,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["DrillableCoordinates", "RemovalEffectPath"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Drill specification"
     },
     "DrillHeadVisualizerSpec": {
@@ -5761,7 +5783,8 @@
           "default": 0.75
         }
       },
-      "required": ["HeadOffset", "HeadTransformName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Drill head visualizer specification"
     },
     "DrillScrewRotatorSpec": {
@@ -5778,7 +5801,8 @@
           "examples": [12.0, 10.0]
         }
       },
-      "required": ["MinimumRotationSpeed", "RotationSpeedPerWorker"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Drill screw rotator specification"
     },
     "WorkshopRandomNeedApplierSpec": {
@@ -5799,7 +5823,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["Effects"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Workshop random need applier specification"
     },
     "DynamiteSpec": {
@@ -5819,7 +5844,8 @@
           ]
         }
       },
-      "required": ["Depth", "ExplosionPrefabPath"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Dynamite specification"
     },
     "SoilBarrierSpec": {
@@ -5844,11 +5870,8 @@
           "default": false
         }
       },
-      "required": [
-        "BlockAboveMoisture",
-        "BlockContamination",
-        "BlockFullMoisture"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Soil barrier specification"
     },
     "FinishableHorizontalWaterObstacleSpec": {
@@ -5869,7 +5892,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["Obstacles"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Finishable horizontal water obstacle specification"
     },
     "ImpermeableFloorSpec": {
@@ -5886,7 +5910,8 @@
           "default": "Roof"
         }
       },
-      "required": ["PathModelType"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Path model type enforcer specification"
     },
     "WaterObstacleSpec": {
@@ -5907,7 +5932,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["Coordinates"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Water obstacle specification"
     },
     "FinishableWaterObstacleSpec": {
@@ -5920,7 +5946,8 @@
           "default": 1.0
         }
       },
-      "required": ["Height"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Finishable water obstacle specification"
     },
     "SluiceSpec": {
@@ -5935,7 +5962,8 @@
           "title": "Max height"
         }
       },
-      "required": ["MaxHeight"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Floodgate specification"
     },
     "FloodgateAnimationControllerSpec": {
@@ -5954,7 +5982,8 @@
           ]
         }
       },
-      "required": ["GateName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Floodgate animation controller specification"
     },
     "TunnelSpec": {
@@ -5972,7 +6001,8 @@
           "examples": ["Platform.Folktails", "Platform.IronTeeth"]
         }
       },
-      "required": ["ExplosionPrefabPath", "TunnelSupportTemplateName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Tunnel specification"
     },
     "UncoveredModelSwitcherSpec": {
@@ -5991,7 +6021,8 @@
           "default": "#Uncovered"
         }
       },
-      "required": ["FullModelName", "UncoveredModelName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Uncovered model switcher specification"
     },
     "GroundRaiserSpec": {
@@ -6012,7 +6043,8 @@
           "default": 15000.0
         }
       },
-      "required": ["ConstructionTimeInHours"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Construction site build time specification"
     },
     "ConstructionSiteSlotManagerSpec": {
@@ -6041,7 +6073,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["RequiredGoods"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Wonder inventory specification"
     },
     "WonderParticleControllerSpec": {
@@ -6062,7 +6095,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["AttachmentIds"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Wonder particle controller specification"
     },
     "ConstructionSiteBuildersLimiterSpec": {
@@ -6073,7 +6107,8 @@
           "title": "Max allowed builders"
         }
       },
-      "required": ["MaxAllowedBuilders"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Construction site builders limiter specification"
     },
     "BuildingModelGroundCutoffSpec": {
@@ -6100,7 +6135,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["Offset", "Targets"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Building model ground cutoff specification"
     },
     "WonderEffectControllerSpec": {
@@ -6121,7 +6157,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["Effects"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Wonder effect controller specification"
     },
     "WonderDeactivationTimerSpec": {
@@ -6134,7 +6171,8 @@
           "default": 1.0
         }
       },
-      "required": ["TimerDelayInHours"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Wonder deactivation timer specification"
     },
     "UnfinishedStateSlotDisablerSpec": {
@@ -6147,7 +6185,8 @@
           "default": "Entrance"
         }
       },
-      "required": ["SlotKeyword"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Unfinished state slot disabler specification"
     },
     "UnfinishedEffectReceivingBuildingSpec": {
@@ -6173,11 +6212,13 @@
               "title": "Z"
             }
           },
-          "required": ["X", "Y", "Z"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Main path coordinates"
         }
       },
-      "required": ["MainPathCoordinates"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Path specification"
     },
     "DoorstepSpawnDisablerSpec": {
@@ -6221,11 +6262,13 @@
               "additionalProperties": false
             }
           },
-          "required": ["Keys", "PostWrapMode", "PreWrapMode"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Speed curve"
         }
       },
-      "required": ["SpeedCurve"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Plane catapult specification"
     },
     "PlaneSpawnerSpec": {
@@ -6238,7 +6281,8 @@
           "default": "#Plane_spawn"
         }
       },
-      "required": ["SpawnPointName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Plane spawner specification"
     },
     "PlaneLauncherSpec": {
@@ -6290,15 +6334,13 @@
               "additionalProperties": false
             }
           },
-          "required": ["Keys", "PostWrapMode", "PreWrapMode"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Rotation curve"
         }
       },
-      "required": [
-        "FullRotationDuration",
-        "RotatedElementName",
-        "RotationCurve"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Plane launcher rotator specification"
     },
     "PlaneSpec": {
@@ -6317,7 +6359,8 @@
           "default": 30.0
         }
       },
-      "required": ["PilotSeatName", "RotationSpeed"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Plane specification"
     },
     "TickableWaterBuildingSpec": {
@@ -6339,7 +6382,8 @@
               "title": "Z"
             }
           },
-          "required": ["X", "Y", "Z"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Water coordinates"
         },
         "MinWaterHeight": {
@@ -6355,7 +6399,8 @@
           "default": 0.05
         }
       },
-      "required": ["ChangeRange", "MinWaterHeight", "WaterCoordinates"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Tickable water building specification"
     },
     "BlockableObjectVisualizerSpec": {
@@ -6368,7 +6413,8 @@
           "default": "#WaterMISC"
         }
       },
-      "required": ["HideableObjectName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Blockable object visualizer specification"
     },
     "MechanicalNodeAnimatorSpec": {
@@ -6381,7 +6427,8 @@
           "default": 0.0
         }
       },
-      "required": ["MinSpeedMultiplier"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Mechanical node animator specification"
     },
     "DynamicPathModelSpec": {
@@ -6400,7 +6447,8 @@
           "default": "RoofPath"
         }
       },
-      "required": ["GroundModelPrefix", "RoofModelPrefix"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Dynamic path model specification"
     },
     "BlockObjectWithPathRangeSpec": {
@@ -6421,7 +6469,8 @@
           "default": "Variant_"
         }
       },
-      "required": ["ModelPrefix"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Tube model specification"
     },
     "TubeSpec": {
@@ -6436,7 +6485,8 @@
           "title": "Boost percentage"
         }
       },
-      "required": ["BoostPercentage"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Movement speed boosting building specification"
     },
     "ZiplineTowerSpec": {
@@ -6463,7 +6513,8 @@
               "examples": [0.5, 2.5, 1.5]
             }
           },
-          "required": ["X", "Y", "Z"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Cable anchor point"
         },
         "MaxConnections": {
@@ -6489,12 +6540,8 @@
           "additionalProperties": false
         }
       },
-      "required": [
-        "CableAnchorPoint",
-        "MaxConnections",
-        "MaxDistance",
-        "UnobstructedCoordinates"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Zipline tower specification"
     },
     "BlockObjectAccessesSpec": {
@@ -6529,7 +6576,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["AllowedCoordinates", "BlockingCoordinates"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Block object accesses specification"
     },
     "StraightStairsSpec": {
@@ -6546,7 +6594,8 @@
           "default": "#Platform"
         }
       },
-      "required": ["PlatformModelName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Tube platform specification"
     },
     "TubeStationSpec": {
@@ -6587,7 +6636,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["Effects"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Attraction specification"
     },
     "EnterableLightingSpec": {
@@ -6616,7 +6666,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["ConsumedGoods", "FullInventoryWorkHours"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Good consuming building specification"
     },
     "PoweredGoodConsumingBuildingSpec": {
@@ -6650,7 +6701,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["AttachmentIds", "SurfaceName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Good consuming attraction surface controller specification"
     },
     "EnterableParticleControllerSpec": {
@@ -6671,7 +6723,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["AttachmentIds"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Enterable particle controller specification"
     },
     "WaterNeederSpec": {
@@ -6697,7 +6750,8 @@
               "title": "Z"
             }
           },
-          "required": ["X", "Y", "Z"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Water input coordinates"
         },
         "MaxDepth": {
@@ -6726,12 +6780,8 @@
           "default": "#Finished"
         }
       },
-      "required": [
-        "MaxDepth",
-        "PipeParentName",
-        "PipeSegmentPrefabPath",
-        "WaterInputCoordinates"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Water input specification"
     },
     "EntererNeedSuspendingBuildingSpec": {
@@ -6755,11 +6805,13 @@
               "additionalProperties": false
             }
           },
-          "required": ["SuspendableNeedIds"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Need suspender"
         }
       },
-      "required": ["NeedSuspender"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Enterer need suspending building specification"
     },
     "StatusHidingEnterableSpec": {
@@ -6784,7 +6836,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["AttachmentIds"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Building light objects specification"
     },
     "BuildingTerrainCutoutSpec": {
@@ -6805,7 +6858,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["CutoutTiles"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Building terrain cutout specification"
     },
     "AttractionFireSpec": {
@@ -6818,7 +6872,8 @@
           "default": ""
         }
       },
-      "required": ["WoodstackName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Attraction fire specification"
     },
     "OrderedSlotRetrieverSpec": {
@@ -6834,7 +6889,8 @@
           "examples": [0.2, 0.25]
         }
       },
-      "required": ["MaxTimeOffset"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Slot animation synchronizer specification"
     },
     "EntererBoundsScalerSpec": {
@@ -6847,7 +6903,8 @@
           "default": 2.0
         }
       },
-      "required": ["Scale"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Enterer bounds scaler specification"
     },
     "MechanicalNodeTransformHeightSpec": {
@@ -6872,7 +6929,8 @@
           "default": 7.0
         }
       },
-      "required": ["ChangeSpeed", "Range", "TransformName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Mechanical node transform height specification"
     },
     "MechanicalNodeParticlesControllerSpec": {
@@ -6899,7 +6957,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["AttachmentIds", "MinEfficiency"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Mechanical node particles controller specification"
     },
     "PatrollingSlotInitializerSpec": {
@@ -6920,7 +6979,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["PatrollingSlots"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Patrolling slot initializer specification"
     },
     "PrioritySlotRetrieverSpec": {
@@ -6941,7 +7001,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["PrioritySlotNames"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Priority slot retriever specification"
     },
     "EnterableTailDecalApplierSpec": {
@@ -6974,7 +7035,8 @@
               "default": 0.0
             }
           },
-          "required": ["X", "Y"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Expected water direction"
         },
         "MinRequiredOutflow": {
@@ -6995,7 +7057,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["Blocks", "ExpectedWaterDirection", "MinRequiredOutflow"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Water powered generator specification"
     },
     "WaterWheelSpec": {
@@ -7012,7 +7075,8 @@
           "default": "Mechanical.PowerSymbolPerFlow"
         }
       },
-      "required": ["AlternativePowerUnitLocKey"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Mechanical node description specification"
     },
     "WindPoweredGeneratorSpec": {
@@ -7024,7 +7088,8 @@
           "examples": [0.3, 0.2]
         }
       },
-      "required": ["MinRequiredWindStrength"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Wind powered generator specification"
     },
     "WindPoweredGeneratorAnimatorSpec": {
@@ -7057,7 +7122,8 @@
           "default": "#Cover"
         }
       },
-      "required": ["CoverModelName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Modular shaft cover specification"
     },
     "AdjustableStrengthPowerGeneratorSpec": {
@@ -7086,7 +7152,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["AttachmentIds"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Power generator particle controller specification"
     },
     "GoodPoweredGeneratorAnimatorSpec": {
@@ -7116,7 +7183,8 @@
               "title": "Y"
             }
           },
-          "required": ["X", "Y"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Layer size"
         },
         "AnchorPosition": {
@@ -7141,7 +7209,8 @@
               "default": 0.5
             }
           },
-          "required": ["X", "Y", "Z"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Anchor position"
         },
         "BlockCreationOffset": {
@@ -7149,7 +7218,8 @@
           "title": "Block creation offset"
         }
       },
-      "required": ["AnchorPosition", "BlockCreationOffset", "LayerSize"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Layered block obstacle specification"
     },
     "GravityBatterySpec": {
@@ -7160,7 +7230,8 @@
           "title": "Capacity per tile"
         }
       },
-      "required": ["CapacityPerTile"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Gravity battery specification"
     },
     "LayeredBlockObstacleVisualizerSpec": {
@@ -7177,7 +7248,8 @@
           "examples": ["#Rope.FolktailsMisc", "#Rope.IronTeethMisc"]
         }
       },
-      "required": ["PositionTransformName", "ScaleTransformName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Layered block obstacle visualizer specification"
     },
     "BoxColliderAdderSpec": {
@@ -7214,7 +7286,8 @@
               "default": 0.0
             }
           },
-          "required": ["X", "Y", "Z"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Center"
         },
         "Size": {
@@ -7239,11 +7312,13 @@
               "default": 0.7401
             }
           },
-          "required": ["X", "Y", "Z"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Size"
         }
       },
-      "required": ["Center", "Size", "TargetName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Box collider adder specification"
     },
     "BottomMatchingTemplateSpec": {
@@ -7261,7 +7336,8 @@
           "default": "BadwaterSource"
         }
       },
-      "required": ["RequiredTemplateAtBottomName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Bottom matching template specification"
     },
     "InfinitePowerGeneratorSpec": {
@@ -7428,27 +7504,8 @@
           ]
         }
       },
-      "required": [
-        "AxleHorizontal",
-        "AxleInnerLong",
-        "AxleVertical",
-        "GearBottomBase",
-        "GearBottomLarge",
-        "GearBottomSmall",
-        "GearInner",
-        "GearInnerLong",
-        "GearInnerOpposite",
-        "GearInnerThrough",
-        "GearLarge",
-        "GearMedium",
-        "GearSmall",
-        "GearTopLarge",
-        "GearTopSmall",
-        "ShaftBase",
-        "ShaftFrame",
-        "ShaftLowerFrame",
-        "ShaftSupport"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Modular shaft parts specification"
     },
     "StockpileSpec": {
@@ -7464,7 +7521,8 @@
           "examples": ["Box", "Liquid", "Pileable"]
         }
       },
-      "required": ["MaxCapacity", "WhitelistedGoodType"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Stockpile specification"
     },
     "StockpileGoodColumnVisualizerSpec": {
@@ -7492,7 +7550,8 @@
               "default": 0.04
             }
           },
-          "required": ["X", "Y", "Z"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Center offset"
         },
         "GoodVisualizationId": {
@@ -7508,11 +7567,8 @@
           "default": "4H"
         }
       },
-      "required": [
-        "CenterOffset",
-        "GoodVisualizationId",
-        "GoodVisualizationVariant"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Stockpile good column visualizer specification"
     },
     "StockpilePlaneVisualizerSpec": {
@@ -7533,7 +7589,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["StockpilePlaneVisualizations"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Stockpile plane visualizer specification"
     },
     "StockpileLightingSpec": {
@@ -7565,7 +7622,8 @@
               "default": 0.09
             }
           },
-          "required": ["X", "Y", "Z"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Center offset"
         },
         "GoodPileVisualizations": {
@@ -7583,7 +7641,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["CenterOffset", "GoodPileVisualizations"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Stockpile good pile visualizer specification"
     },
     "MapBottomGroundCutoffSpec": {
@@ -7604,7 +7663,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["Targets"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Map bottom ground cutoff specification"
     },
     "UndergroundDepthDescriberSpec": {
@@ -7615,7 +7675,8 @@
           "title": "Depth"
         }
       },
-      "required": ["Depth"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Underground depth describer specification"
     },
     "ForesterSpec": {
@@ -7654,7 +7715,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["Effects", "MinimumAttemptsThreshold", "YieldGoodId"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Yield remover workplace effects specification"
     },
     "BuilderHubSpec": {
@@ -7683,7 +7745,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["WorkerBonuses"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Workplace bonuses specification"
     },
     "DistrictCenterSpec": {
@@ -7715,11 +7778,13 @@
               "default": 1.5
             }
           },
-          "required": ["X", "Y", "Z"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Position"
         }
       },
-      "required": ["Position"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Connection anchor point specification"
     },
     "DistrictObstacleSpec": {
@@ -7741,11 +7806,13 @@
               "title": "Z"
             }
           },
-          "required": ["X", "Y", "Z"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Coordinate offset"
         }
       },
-      "required": ["CoordinateOffset"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "District obstacle specification"
     },
     "DistrictCrossingSpec": {
@@ -7782,7 +7849,8 @@
           "default": 0.25
         }
       },
-      "required": ["WaterPerSecond"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Water mover specification"
     },
     "WaterMoverParticleControllerSpec": {
@@ -7803,7 +7871,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["AttachmentIds"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Water mover particle controller specification"
     },
     "WaterOutputSpec": {
@@ -7825,11 +7894,13 @@
               "title": "Z"
             }
           },
-          "required": ["X", "Y", "Z"],
+          "minProperties": 1,
+          "additionalProperties": false,
           "title": "Water coordinates"
         }
       },
-      "required": ["WaterCoordinates"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Water output specification"
     },
     "WaterOutputParticleSpec": {
@@ -7842,7 +7913,8 @@
           "default": "Water"
         }
       },
-      "required": ["AttachmentId"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Water output particle specification"
     },
     "WaterSourceDischargerSpec": {
@@ -7867,7 +7939,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["RegulatorTransforms"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Water source regulator animation controller specification"
     },
     "WaterSourceRegulatorSpec": {
@@ -7896,7 +7969,8 @@
           "default": "Building.FluidDump.ToggleLabel"
         }
       },
-      "required": ["LabelLocKey"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Manufactory togglable recipes specification"
     },
     "WaterSourceSpec": {
@@ -7923,7 +7997,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["Coordinates", "DefaultStrength"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Water source specification"
     },
     "BasicSelectionSoundSpec": {
@@ -7942,7 +8017,8 @@
           "default": ""
         }
       },
-      "required": ["AlternativeSoundName", "SoundName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Basic selection sound specification"
     },
     "WaterSourceContaminationSpec": {
@@ -7955,7 +8031,8 @@
           "default": 0.0
         }
       },
-      "required": ["DefaultContamination"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Water source contamination specification"
     },
     "BadtideWaterSourceContaminationControllerSpec": {
@@ -7992,12 +8069,8 @@
           "title": "Underground model depth"
         }
       },
-      "required": [
-        "FullModelName",
-        "UncoveredModelName",
-        "UndergroundModelDepth",
-        "UndergroundModelName"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Block object model specification"
     },
     "StreamGaugeSpec": {
@@ -8010,7 +8083,8 @@
           "default": 3.0
         }
       },
-      "required": ["MaxWaterLevel"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Stream gauge specification"
     },
     "StreamGaugeAnimationControllerSpec": {
@@ -8028,7 +8102,8 @@
           "default": 2.8
         }
       },
-      "required": ["MarkerName", "MaxHeight"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Stream gauge animation controller specification"
     },
     "RegulatedWaterSourceBlockerSpec": {
@@ -8061,7 +8136,8 @@
           "additionalProperties": false
         }
       },
-      "required": ["MaxBeavers", "SleepEffects"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Dwelling specification"
     },
     "BreedingPodSpec": {
@@ -8107,14 +8183,8 @@
           "additionalProperties": false
         }
       },
-      "required": [
-        "CycleLengthInDays",
-        "CyclesCapacity",
-        "CyclesUntilFullyGrown",
-        "EmbryoName",
-        "NutrientsPerCycle",
-        "SpawnAdults"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Breeding pod specification"
     },
     "BlockableObjectAnimationControllerSpec": {
@@ -8171,14 +8241,8 @@
           "additionalProperties": false
         }
       },
-      "required": [
-        "AssemblyDuration",
-        "AttachmentIds",
-        "DrillName",
-        "DrillRotationSpeed",
-        "RingName",
-        "RingRotationSpeed"
-      ],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Bot manufactory animation controller specification"
     },
     "ObservatoryAnimatorSpec": {
@@ -8197,7 +8261,8 @@
           "default": "#ObservatoryTelescopeMisc"
         }
       },
-      "required": ["DomeName", "TelescopeName"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Observatory animator specification"
     },
     "BotBuildingLightingSpec": {
@@ -8212,7 +8277,8 @@
           "title": "Science used per hour"
         }
       },
-      "required": ["ScienceUsedPerHour"],
+      "minProperties": 1,
+      "additionalProperties": false,
       "title": "Science needing building specification"
     },
     "ProductionIncreaserSpec": {
@@ -8224,6 +8290,8 @@
       "title": "Scavenger specification"
     }
   },
+  "minProperties": 1,
+  "additionalProperties": false,
   "$defs": {
     "AttachmentIds": {
       "type": "array",
@@ -8247,7 +8315,8 @@
             "title": "Amount"
           }
         },
-        "required": ["Amount", "Id"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Nutrients per cycle"
     },
@@ -8269,7 +8338,8 @@
             "title": "Satisfy to max value"
           }
         },
-        "required": ["NeedId", "PointsPerHour", "SatisfyToMaxValue"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Sleep effects"
     },
@@ -8287,7 +8357,8 @@
             "title": "Y"
           }
         },
-        "required": ["X", "Y"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Coordinates"
     },
@@ -8316,7 +8387,8 @@
                 "title": "Z"
               }
             },
-            "required": ["X", "Y", "Z"],
+            "minProperties": 1,
+            "additionalProperties": false,
             "title": "Target offset"
           },
           "TargetRotation": {
@@ -8335,11 +8407,13 @@
                 "title": "Z"
               }
             },
-            "required": ["X", "Y", "Z"],
+            "minProperties": 1,
+            "additionalProperties": false,
             "title": "Target rotation"
           }
         },
-        "required": ["TargetOffset", "TargetRotation", "TransformName"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Regulator transforms"
     },
@@ -8357,7 +8431,8 @@
             "title": "Multiplier delta"
           }
         },
-        "required": ["Id", "MultiplierDelta"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Worker bonuses"
     },
@@ -8379,7 +8454,8 @@
             "title": "Probability"
           }
         },
-        "required": ["NeedId", "Points", "Probability"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Effects"
     },
@@ -8421,7 +8497,8 @@
                 "title": "Z"
               }
             },
-            "required": ["X", "Y", "Z"],
+            "minProperties": 1,
+            "additionalProperties": false,
             "title": "Center offset"
           },
           "MovementRange": {
@@ -8436,7 +8513,8 @@
                 "title": "Y"
               }
             },
-            "required": ["X", "Y"],
+            "minProperties": 1,
+            "additionalProperties": false,
             "title": "Movement range"
           },
           "GoodVisualizationId": {
@@ -8448,12 +8526,8 @@
             "title": "Good visualization variant"
           }
         },
-        "required": [
-          "CenterOffset",
-          "GoodVisualizationId",
-          "GoodVisualizationVariant",
-          "MovementRange"
-        ]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Stockpile plane visualizations"
     },
@@ -8471,7 +8545,8 @@
             "title": "Y"
           }
         },
-        "required": ["X", "Y"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Blocks"
     },
@@ -8510,13 +8585,8 @@
             "title": "Water slot"
           }
         },
-        "required": [
-          "Animation",
-          "BaseMovementSpeed",
-          "MaxRandomDeviationOfMovementSpeed",
-          "SlotKeyword",
-          "WaterSlot"
-        ]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Patrolling slots"
     },
@@ -8538,7 +8608,8 @@
             "title": "Z"
           }
         },
-        "required": ["X", "Y", "Z"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Cutout tiles"
     },
@@ -8564,7 +8635,8 @@
             "title": "Good per hour"
           }
         },
-        "required": ["GoodId", "GoodPerHour"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Consumed goods"
     },
@@ -8586,7 +8658,8 @@
             "title": "Z"
           }
         },
-        "required": ["X", "Y", "Z"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Blocking coordinates"
     },
@@ -8608,7 +8681,8 @@
             "title": "Z"
           }
         },
-        "required": ["X", "Y", "Z"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Allowed coordinates"
     },
@@ -8630,7 +8704,8 @@
             "title": "Z"
           }
         },
-        "required": ["X", "Y", "Z"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Unobstructed coordinates"
     },
@@ -8668,15 +8743,8 @@
             "title": "Out weight"
           }
         },
-        "required": [
-          "InTangent",
-          "InWeight",
-          "OutTangent",
-          "OutWeight",
-          "Time",
-          "Value",
-          "WeightedMode"
-        ]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Keys"
     },
@@ -8694,7 +8762,8 @@
             "title": "Amount"
           }
         },
-        "required": ["Amount", "Id"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Required goods"
     },
@@ -8716,7 +8785,8 @@
             "title": "Z"
           }
         },
-        "required": ["X", "Y", "Z"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Obstacles"
     },
@@ -8738,7 +8808,8 @@
             "title": "Z"
           }
         },
-        "required": ["X", "Y", "Z"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Drillable coordinates"
     },
@@ -8756,7 +8827,8 @@
             "title": "Model name"
           }
         },
-        "required": ["ModelName", "RecipeId"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Recipe models"
     },
@@ -8777,7 +8849,8 @@
             "title": "Model names"
           }
         },
-        "required": ["ModelNames", "Threshold"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Progress steps"
     },
@@ -8857,7 +8930,8 @@
             "title": "Science cost"
           }
         },
-        "required": ["ScienceCost", "WorkerType"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Worker type unlock costs"
     },
@@ -8886,7 +8960,8 @@
                 "title": "Z"
               }
             },
-            "required": ["X", "Y", "Z"],
+            "minProperties": 1,
+            "additionalProperties": false,
             "title": "Rotation axis"
           },
           "RotationSpeed": {
@@ -8894,7 +8969,8 @@
             "title": "Rotation speed"
           }
         },
-        "required": ["RotationAxis", "RotationSpeed", "TransformName"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Wind rotators"
     },
@@ -8924,13 +9000,8 @@
             "title": "Water slot"
           }
         },
-        "required": [
-          "Animation",
-          "Inanimate",
-          "RandomizeYRotation",
-          "SlotKeyword",
-          "WaterSlot"
-        ]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Slots"
     },
@@ -8967,7 +9038,8 @@
                 "title": "Z"
               }
             },
-            "required": ["X", "Y", "Z"],
+            "minProperties": 1,
+            "additionalProperties": false,
             "title": "Position"
           },
           "Rotation": {
@@ -8986,7 +9058,8 @@
                 "title": "Z"
               }
             },
-            "required": ["X", "Y", "Z"],
+            "minProperties": 1,
+            "additionalProperties": false,
             "title": "Rotation"
           },
           "Scale": {
@@ -9005,7 +9078,8 @@
                 "title": "Z"
               }
             },
-            "required": ["X", "Y", "Z"],
+            "minProperties": 1,
+            "additionalProperties": false,
             "title": "Scale"
           },
           "CreateInstantly": {
@@ -9013,15 +9087,8 @@
             "title": "Create instantly"
           }
         },
-        "required": [
-          "AttachmentId",
-          "CreateInstantly",
-          "Parent",
-          "Position",
-          "Prefab",
-          "Rotation",
-          "Scale"
-        ]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Attachments"
     },
@@ -9046,7 +9113,8 @@
                 "title": "Group name"
               }
             },
-            "required": ["GroupName", "UseGroup"],
+            "minProperties": 1,
+            "additionalProperties": false,
             "title": "Group"
           },
           "IsPath": {
@@ -9074,7 +9142,8 @@
                       "title": "Z"
                     }
                   },
-                  "required": ["X", "Y", "Z"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "Start"
                 },
                 "End": {
@@ -9093,7 +9162,8 @@
                       "title": "Z"
                     }
                   },
-                  "required": ["X", "Y", "Z"],
+                  "minProperties": 1,
+                  "additionalProperties": false,
                   "title": "End"
                 },
                 "IsTwoWay": {
@@ -9101,12 +9171,14 @@
                   "title": "Is two way"
                 }
               },
-              "required": ["End", "IsTwoWay", "Start"]
+              "minProperties": 1,
+              "additionalProperties": false
             },
             "title": "Added edges"
           }
         },
-        "required": ["AddedEdges", "Cost", "Group", "IsPath"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Edge groups"
     },
@@ -9135,11 +9207,13 @@
                 "title": "Z"
               }
             },
-            "required": ["X", "Y", "Z"],
+            "minProperties": 1,
+            "additionalProperties": false,
             "title": "Coordinates"
           }
         },
-        "required": ["Coordinates", "Group"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Unblocked coordinates"
     },
@@ -9164,7 +9238,8 @@
                 "title": "Z"
               }
             },
-            "required": ["X", "Y", "Z"],
+            "minProperties": 1,
+            "additionalProperties": false,
             "title": "Coordinates"
           },
           "Directions": {
@@ -9176,7 +9251,8 @@
             "title": "Reverse rotation"
           }
         },
-        "required": ["Coordinates", "Directions", "ReverseRotation"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Transput specs"
     },
@@ -9201,7 +9277,8 @@
                 "title": "Z"
               }
             },
-            "required": ["X", "Y", "Z"],
+            "minProperties": 1,
+            "additionalProperties": false,
             "title": "Center"
           },
           "Size": {
@@ -9220,11 +9297,13 @@
                 "title": "Z"
               }
             },
-            "required": ["X", "Y", "Z"],
+            "minProperties": 1,
+            "additionalProperties": false,
             "title": "Size"
           }
         },
-        "required": ["Center", "Size"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Box colliders"
     },
@@ -9271,13 +9350,8 @@
             "title": "Underground"
           }
         },
-        "required": [
-          "MatterBelow",
-          "Occupations",
-          "OccupyAllBelow",
-          "Stackable",
-          "Underground"
-        ]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Block specs"
     },
@@ -9317,7 +9391,8 @@
             "title": "Amount"
           }
         },
-        "required": ["Amount", "Id"]
+        "minProperties": 1,
+        "additionalProperties": false
       },
       "title": "Building cost"
     }

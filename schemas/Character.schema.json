@@ -1,0 +1,1057 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Character.schema.json",
+  "title": "Character specification",
+  "description": "Add or modify a character",
+  "type": "object",
+  "properties": {
+    "BotSpec": {
+      "type": "object",
+      "title": "Bot specification"
+    },
+    "CharacterModelSpec": {
+      "type": "object",
+      "properties": {
+        "ModelName": {
+          "type": "string",
+          "title": "Model name",
+          "examples": ["Model_Preserved"],
+          "default": "Model_Preserved"
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Character model specification"
+    },
+    "MovementAnimatorSpec": {
+      "type": "object",
+      "properties": {
+        "AnimationSpeedScale": {
+          "type": "number",
+          "title": "Animation speed scale",
+          "examples": [1.0, 0.8],
+          "default": 1.0
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Movement animator specification"
+    },
+    "WorkerSpec": {
+      "type": "object",
+      "properties": {
+        "WorkerType": {
+          "type": "string",
+          "title": "Worker type",
+          "examples": ["Bot", "Beaver"],
+          "default": "Bot"
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Worker specification"
+    },
+    "TemplateSpec": {
+      "type": "object",
+      "properties": {
+        "TemplateName": {
+          "type": "string",
+          "title": "Template name",
+          "examples": [
+            "Bot.IronTeeth",
+            "Bot.Folktails",
+            "BeaverChild",
+            "BeaverAdult"
+          ]
+        },
+        "BackwardCompatibleTemplateNames": {
+          "$ref": "#/$defs/BackwardCompatibleTemplateNames"
+        },
+        "RequiredFeatureToggle": {
+          "type": "string",
+          "title": "Required feature toggle",
+          "examples": [""],
+          "default": ""
+        },
+        "DisablingFeatureToggle": {
+          "type": "string",
+          "title": "Disabling feature toggle",
+          "examples": [""],
+          "default": ""
+        },
+        "BackwardCompatibleTemplateNames#append": {
+          "$ref": "#/$defs/BackwardCompatibleTemplateNames"
+        },
+        "BackwardCompatibleTemplateNames#remove": {
+          "$ref": "#/$defs/BackwardCompatibleTemplateNames"
+        },
+        "BackwardCompatibleTemplateNames#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Template specification"
+    },
+    "GoodCarrierSpec": {
+      "type": "object",
+      "properties": {
+        "BaseLiftingCapacity": {
+          "type": "integer",
+          "title": "Base lifting capacity"
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Good carrier specification"
+    },
+    "GoodCarrierModelSpec": {
+      "type": "object",
+      "properties": {
+        "CarriedInHandsAttachmentName": {
+          "type": "string",
+          "title": "Carried in hands attachment name",
+          "examples": ["CarriedInHands"],
+          "default": "CarriedInHands"
+        },
+        "BackpackAttachmentName": {
+          "type": "string",
+          "title": "Backpack attachment name",
+          "examples": ["Backpack"],
+          "default": "Backpack"
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Good carrier model specification"
+    },
+    "WalkerSpeedManagerSpec": {
+      "type": "object",
+      "properties": {
+        "BaseWalkingSpeed": {
+          "type": "number",
+          "title": "Base walking speed",
+          "examples": [2.7, 1.35],
+          "default": 2.7
+        },
+        "BaseSlowedSpeed": {
+          "type": "number",
+          "title": "Base slowed speed",
+          "examples": [1.35, 0.65],
+          "default": 1.35
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Walker speed manager specification"
+    },
+    "MortalSpec": {
+      "type": "object",
+      "title": "Mortal specification"
+    },
+    "DeadStatusSpec": {
+      "type": "object",
+      "properties": {
+        "DeadStatusLocKey": {
+          "type": "string",
+          "title": "Dead status loc key",
+          "examples": ["Status.Bot.Dead", "Status.Beaver.Dead"]
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Dead status specification"
+    },
+    "RunningStateUpdaterSpec": {
+      "type": "object",
+      "properties": {
+        "ShortWalkingDistanceThreshold": {
+          "type": "number",
+          "title": "Short walking distance threshold",
+          "examples": [10.0, 5.0],
+          "default": 10.0
+        },
+        "WalkingSpeedThreshold": {
+          "type": "number",
+          "title": "Walking speed threshold",
+          "examples": [0.75],
+          "default": 0.75
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Running state updater specification"
+    },
+    "WellbeingTrackerSpec": {
+      "type": "object",
+      "properties": {
+        "CountsToPopulationWellbeing": {
+          "type": "boolean",
+          "title": "Counts to population wellbeing",
+          "examples": [false, true]
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Wellbeing tracker specification"
+    },
+    "SimpleLabeledEntitySpec": {
+      "type": "object",
+      "properties": {
+        "EntityNameLocKey": {
+          "type": "string",
+          "title": "Entity name loc key",
+          "examples": [
+            "Bot.TemplateName",
+            "Beaver.Child.TemplateName",
+            "Beaver.Adult.TemplateName"
+          ],
+          "default": "Bot.TemplateName"
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Simple labeled entity specification"
+    },
+    "BotFactionNameSpec": {
+      "type": "object",
+      "properties": {
+        "NameLocKey": {
+          "type": "string",
+          "title": "Name loc key",
+          "examples": ["Bot.DisplayName.IronTeeth", "Bot.DisplayName.Folktails"]
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Bot faction name specification"
+    },
+    "DeteriorableSpec": {
+      "type": "object",
+      "properties": {
+        "DeteriorationInDays": {
+          "type": "integer",
+          "title": "Deterioration in days"
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Deteriorable specification"
+    },
+    "SwimmingAnimatorSpec": {
+      "type": "object",
+      "properties": {
+        "LowerSwimmingDepthThreshold": {
+          "type": "number",
+          "title": "Lower swimming depth threshold",
+          "examples": [0.22, 0.15],
+          "default": 0.22
+        },
+        "UpperSwimmingDepthThreshold": {
+          "type": "number",
+          "title": "Upper swimming depth threshold",
+          "examples": [0.27, 0.2],
+          "default": 0.27
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Swimming animator specification"
+    },
+    "CriticalNeedStateAnimationSpec": {
+      "type": "object",
+      "properties": {
+        "NeedId": {
+          "type": "string",
+          "title": "Need id",
+          "examples": ["Energy", "Biofuel"]
+        },
+        "Animation": {
+          "type": "string",
+          "title": "Animation",
+          "examples": ["NoEnergy", "NoFuel"]
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Critical need state animation specification"
+    },
+    "BotSelectionSoundSpec": {
+      "type": "object",
+      "properties": {
+        "SoundNameKey": {
+          "type": "string",
+          "title": "Sound name key",
+          "examples": ["Ironbot", "Timberbot"]
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Bot selection sound specification"
+    },
+    "OverburdenableSpec": {
+      "type": "object",
+      "properties": {
+        "OverburdenedBonuses": {
+          "$ref": "#/$defs/OverburdenedBonuses"
+        },
+        "OverburdenedBonuses#append": {
+          "$ref": "#/$defs/OverburdenedBonuses"
+        },
+        "OverburdenedBonuses#remove": {
+          "$ref": "#/$defs/OverburdenedBonuses"
+        },
+        "OverburdenedBonuses#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Overburdenable specification"
+    },
+    "WellbeingBonusesReceiverSpec": {
+      "type": "object",
+      "properties": {
+        "Bonuses": {
+          "$ref": "#/$defs/Bonuses"
+        },
+        "Bonuses#append": {
+          "$ref": "#/$defs/Bonuses"
+        },
+        "Bonuses#remove": {
+          "$ref": "#/$defs/Bonuses"
+        },
+        "Bonuses#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Wellbeing bonuses receiver specification"
+    },
+    "TreeCutterParticleControllerSpec": {
+      "type": "object",
+      "properties": {
+        "ParticlesAttachmentId": {
+          "type": "string",
+          "title": "Particles attachment id",
+          "examples": [
+            "Shavings.CuttingAnimation.Bot",
+            "Shavings.CuttingAnimation.Beaver"
+          ],
+          "default": "Shavings.CuttingAnimation.Bot"
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Tree cutter particle controller specification"
+    },
+    "PlantingParticleControllerSpec": {
+      "type": "object",
+      "properties": {
+        "ParticlesAttachmentId": {
+          "type": "string",
+          "title": "Particles attachment id",
+          "examples": [
+            "Dirt.PlantingAnimation.Bot",
+            "Dirt.PlantingAnimation.Beaver"
+          ],
+          "default": "Dirt.PlantingAnimation.Bot"
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Planting particle controller specification"
+    },
+    "WorkerOutfitAnimationAttachmentVisibilitySpec": {
+      "type": "object",
+      "properties": {
+        "WorkerOutfitAnimationAttachments": {
+          "$ref": "#/$defs/WorkerOutfitAnimationAttachments"
+        },
+        "WorkerOutfitAnimationAttachments#append": {
+          "$ref": "#/$defs/WorkerOutfitAnimationAttachments"
+        },
+        "WorkerOutfitAnimationAttachments#remove": {
+          "$ref": "#/$defs/WorkerOutfitAnimationAttachments"
+        },
+        "WorkerOutfitAnimationAttachments#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Worker outfit animation attachment visibility specification"
+    },
+    "AnimationParticlesTriggerSpec": {
+      "type": "object",
+      "properties": {
+        "AnimationParticles": {
+          "$ref": "#/$defs/AnimationParticles"
+        },
+        "AnimationParticles#append": {
+          "$ref": "#/$defs/AnimationParticles"
+        },
+        "AnimationParticles#remove": {
+          "$ref": "#/$defs/AnimationParticles"
+        },
+        "AnimationParticles#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Animation particles trigger specification"
+    },
+    "CharacterObjectNamerSpec": {
+      "type": "object",
+      "properties": {
+        "Prefix": {
+          "type": "string",
+          "title": "Prefix",
+          "examples": ["Bot", "BeaverChild", "BeaverAdult"],
+          "default": "Bot"
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Character object namer specification"
+    },
+    "TimbermeshAnimatorControllerSpec": {
+      "type": "object",
+      "properties": {
+        "BoolParameters": {
+          "$ref": "#/$defs/BoolParameters"
+        },
+        "FloatParameters": {
+          "$ref": "#/$defs/FloatParameters"
+        },
+        "AnimatorStates": {
+          "$ref": "#/$defs/AnimatorStates"
+        },
+        "BoolParameters#append": {
+          "$ref": "#/$defs/BoolParameters"
+        },
+        "BoolParameters#remove": {
+          "$ref": "#/$defs/BoolParameters"
+        },
+        "BoolParameters#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        },
+        "FloatParameters#append": {
+          "$ref": "#/$defs/FloatParameters"
+        },
+        "FloatParameters#remove": {
+          "$ref": "#/$defs/FloatParameters"
+        },
+        "FloatParameters#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        },
+        "AnimatorStates#append": {
+          "$ref": "#/$defs/AnimatorStates"
+        },
+        "AnimatorStates#remove": {
+          "$ref": "#/$defs/AnimatorStates"
+        },
+        "AnimatorStates#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Timbermesh animator controller specification"
+    },
+    "TemplateAttachmentsSpec": {
+      "type": "object",
+      "properties": {
+        "Attachments": {
+          "$ref": "#/$defs/Attachments"
+        },
+        "Attachments#append": {
+          "$ref": "#/$defs/Attachments"
+        },
+        "Attachments#remove": {
+          "$ref": "#/$defs/Attachments"
+        },
+        "Attachments#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Template attachments specification"
+    },
+    "Children": {
+      "type": "object",
+      "properties": {
+        "Model_Preserved": {
+          "type": "object",
+          "properties": {
+            "TimbermeshSpec": {
+              "type": "object",
+              "properties": {
+                "Model": {
+                  "type": "string",
+                  "title": "Model",
+                  "examples": [
+                    "Characters/Bot/Bot.IronTeeth.Model",
+                    "Characters/Bot/Bot.Folktails.Model",
+                    "Characters/Beaver/BeaverChild.Model",
+                    "Characters/Beaver/BeaverAdult.Model"
+                  ]
+                }
+              },
+              "minProperties": 1,
+              "additionalProperties": false,
+              "title": "Timbermesh specification"
+            }
+          },
+          "minProperties": 1,
+          "additionalProperties": false,
+          "title": "Model_ preserved"
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Children"
+    },
+    "ZiplineHarnessModelSpec": {
+      "type": "object",
+      "properties": {
+        "AttachmentId": {
+          "type": "string",
+          "title": "Attachment id",
+          "examples": [
+            "ZiplineHarness.Bot",
+            "ZiplineHarness.BeaverChild",
+            "ZiplineHarness.BeaverAdult"
+          ]
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Zipline harness model specification"
+    },
+    "BeaverSpec": {
+      "type": "object",
+      "title": "Beaver specification"
+    },
+    "ChildSpec": {
+      "type": "object",
+      "title": "Child specification"
+    },
+    "SleeperSpec": {
+      "type": "object",
+      "properties": {
+        "SleepOutsideEffects": {
+          "$ref": "#/$defs/SleepOutsideEffects"
+        },
+        "MaxOffsetInHours": {
+          "type": "number",
+          "title": "Max offset in hours",
+          "examples": [0.25],
+          "default": 0.25
+        },
+        "SleepOutsideEffects#append": {
+          "$ref": "#/$defs/SleepOutsideEffects"
+        },
+        "SleepOutsideEffects#remove": {
+          "$ref": "#/$defs/SleepOutsideEffects"
+        },
+        "SleepOutsideEffects#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Sleeper specification"
+    },
+    "BeaverInjuryTextureSetterSpec": {
+      "type": "object",
+      "properties": {
+        "InjuryTextureSets": {
+          "$ref": "#/$defs/InjuryTextureSets"
+        },
+        "InjuryTextureSets#append": {
+          "$ref": "#/$defs/InjuryTextureSets"
+        },
+        "InjuryTextureSets#remove": {
+          "$ref": "#/$defs/InjuryTextureSets"
+        },
+        "InjuryTextureSets#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Beaver injury texture setter specification"
+    },
+    "BeaverNeedShaderPropertySetterSpec": {
+      "type": "object",
+      "properties": {
+        "PropertySets": {
+          "$ref": "#/$defs/PropertySets"
+        },
+        "PropertySets#append": {
+          "$ref": "#/$defs/PropertySets"
+        },
+        "PropertySets#remove": {
+          "$ref": "#/$defs/PropertySets"
+        },
+        "PropertySets#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Beaver need shader property setter specification"
+    },
+    "VariedIdleAnimationSpec": {
+      "type": "object",
+      "properties": {
+        "Variants": {
+          "$ref": "#/$defs/Variants"
+        },
+        "Variants#append": {
+          "$ref": "#/$defs/Variants"
+        },
+        "Variants#remove": {
+          "$ref": "#/$defs/Variants"
+        },
+        "Variants#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Varied idle animation specification"
+    },
+    "AdultSpec": {
+      "type": "object",
+      "title": "Adult specification"
+    },
+    "TemporalSpec": {
+      "type": "object",
+      "title": "Temporal specification"
+    },
+    "YieldRemoverNeedApplierSpec": {
+      "type": "object",
+      "title": "Yield remover need applier specification"
+    },
+    "DemolisherNeedApplierSpec": {
+      "type": "object",
+      "title": "Demolisher need applier specification"
+    }
+  },
+  "minProperties": 1,
+  "additionalProperties": false,
+  "$defs": {
+    "Variants": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": [
+          "BeaverChild_idle_clapping",
+          "BeaverChild_idle_waiting",
+          "BeaverChild_idle_watching",
+          "BeaverAdult_idle_tapping_tail",
+          "BeaverAdult_idle_watching"
+        ]
+      },
+      "title": "Variants"
+    },
+    "PropertySets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "NeedId": {
+            "type": "string",
+            "title": "Need id"
+          },
+          "PropertyName": {
+            "type": "string",
+            "title": "Property name"
+          }
+        },
+        "minProperties": 1,
+        "additionalProperties": false
+      },
+      "title": "Property sets"
+    },
+    "InjuryTextureSets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "DiffusePath": {
+            "type": "string",
+            "title": "Diffuse path"
+          },
+          "NormalMapPath": {
+            "type": "string",
+            "title": "Normal map path"
+          },
+          "DisplacementPath": {
+            "type": "string",
+            "title": "Displacement path"
+          }
+        },
+        "minProperties": 1,
+        "additionalProperties": false
+      },
+      "title": "Injury texture sets"
+    },
+    "SleepOutsideEffects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "NeedId": {
+            "type": "string",
+            "title": "Need id"
+          },
+          "PointsPerHour": {
+            "type": "number",
+            "title": "Points per hour"
+          },
+          "SatisfyToMaxValue": {
+            "type": "boolean",
+            "title": "Satisfy to max value"
+          }
+        },
+        "minProperties": 1,
+        "additionalProperties": false
+      },
+      "title": "Sleep outside effects"
+    },
+    "Attachments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "AttachmentId": {
+            "type": "string",
+            "title": "Attachment id"
+          },
+          "Prefab": {
+            "type": "string",
+            "title": "Prefab"
+          },
+          "Parent": {
+            "type": "string",
+            "title": "Parent"
+          },
+          "Position": {
+            "type": "object",
+            "properties": {
+              "X": {
+                "type": "number",
+                "title": "X"
+              },
+              "Y": {
+                "type": "number",
+                "title": "Y"
+              },
+              "Z": {
+                "type": "number",
+                "title": "Z"
+              }
+            },
+            "minProperties": 1,
+            "additionalProperties": false,
+            "title": "Position"
+          },
+          "Rotation": {
+            "type": "object",
+            "properties": {
+              "X": {
+                "type": "number",
+                "title": "X"
+              },
+              "Y": {
+                "type": "number",
+                "title": "Y"
+              },
+              "Z": {
+                "type": "number",
+                "title": "Z"
+              }
+            },
+            "minProperties": 1,
+            "additionalProperties": false,
+            "title": "Rotation"
+          },
+          "Scale": {
+            "type": "object",
+            "properties": {
+              "X": {
+                "type": "number",
+                "title": "X"
+              },
+              "Y": {
+                "type": "number",
+                "title": "Y"
+              },
+              "Z": {
+                "type": "number",
+                "title": "Z"
+              }
+            },
+            "minProperties": 1,
+            "additionalProperties": false,
+            "title": "Scale"
+          },
+          "CreateInstantly": {
+            "type": "boolean",
+            "title": "Create instantly"
+          }
+        },
+        "minProperties": 1,
+        "additionalProperties": false
+      },
+      "title": "Attachments"
+    },
+    "BoolParameters": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": [
+          "Walking",
+          "Working",
+          "Sleeping",
+          "Sitting",
+          "Dead",
+          "DeadNoAnimation",
+          "ForcedIdle",
+          "Swimming",
+          "RunningProhibited",
+          "MovingUp",
+          "MovingDown",
+          "Stranded",
+          "ForcedSwimming",
+          "Floating",
+          "CharacterControl",
+          "CarryInHands",
+          "CarryOnArm",
+          "Building",
+          "ForcedWalking",
+          "Cutting",
+          "Planting",
+          "Zipline",
+          "ZiplineUp",
+          "ZiplineDown",
+          "ForcedAPose",
+          "Piloting",
+          "Swinging",
+          "Flying",
+          "Scratching",
+          "Exercising",
+          "FloatingSleeping",
+          "Contaminated",
+          "Dancing",
+          "Detailing",
+          "Showering",
+          "Massaging",
+          "NoEnergy",
+          "Charging",
+          "NoFuel",
+          "BeaverChild_idle_clapping",
+          "BeaverChild_idle_waiting",
+          "BeaverChild_idle_watching",
+          "TeethSharpening",
+          "CuttingFlipped",
+          "WalkingWork",
+          "PushingWork",
+          "BeaverAdult_idle_tapping_tail",
+          "BeaverAdult_idle_watching"
+        ]
+      },
+      "title": "Bool parameters"
+    },
+    "FloatParameters": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": ["WalkingSpeed", "WorkingSpeed", "WorkshopSpeed"],
+        "default": "WalkingSpeed"
+      },
+      "title": "Float parameters"
+    },
+    "AnimatorStates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "StateName": {
+            "type": "string",
+            "title": "State name"
+          },
+          "AnimationName": {
+            "type": "string",
+            "title": "Animation name"
+          },
+          "Speed": {
+            "type": "number",
+            "title": "Speed"
+          },
+          "SpeedModifier": {
+            "type": "string",
+            "title": "Speed modifier"
+          },
+          "Looped": {
+            "type": "boolean",
+            "title": "Looped"
+          },
+          "Conditions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ParameterName": {
+                  "type": "string",
+                  "title": "Parameter name"
+                },
+                "MustBeTrue": {
+                  "type": "boolean",
+                  "title": "Must be true"
+                }
+              },
+              "minProperties": 1,
+              "additionalProperties": false
+            },
+            "title": "Conditions"
+          }
+        },
+        "minProperties": 1,
+        "additionalProperties": false
+      },
+      "title": "Animator states"
+    },
+    "AnimationParticles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "AnimationName": {
+            "type": "string",
+            "title": "Animation name"
+          },
+          "ParticlesAttachmentId": {
+            "type": "string",
+            "title": "Particles attachment id"
+          },
+          "TriggerTimes": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "title": "Trigger times"
+          }
+        },
+        "minProperties": 1,
+        "additionalProperties": false
+      },
+      "title": "Animation particles"
+    },
+    "WorkerOutfitAnimationAttachments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "WorkerOutfit": {
+            "type": "string",
+            "title": "Worker outfit"
+          },
+          "AnimationNames": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Animation names"
+          },
+          "ShowWhenActive": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Show when active"
+          },
+          "HideWhenActive": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Hide when active"
+          }
+        },
+        "minProperties": 1,
+        "additionalProperties": false
+      },
+      "title": "Worker outfit animation attachments"
+    },
+    "Bonuses": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": [
+          "MovementSpeed",
+          "WorkingSpeed",
+          "LifeExpectancy",
+          "GrowthSpeed"
+        ],
+        "default": "MovementSpeed"
+      },
+      "title": "Bonuses"
+    },
+    "OverburdenedBonuses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "MultiplierDelta": {
+            "type": "number",
+            "title": "Multiplier delta"
+          }
+        },
+        "minProperties": 1,
+        "additionalProperties": false
+      },
+      "title": "Overburdened bonuses"
+    },
+    "BackwardCompatibleTemplateNames": {
+      "type": "array",
+      "title": "Backward compatible template names"
+    }
+  }
+}

@@ -5,7 +5,7 @@
     {
       "name": "Asset meta specification",
       "description": "Specify how an asset should be loaded by the game",
-      "fileMatch": ["/**/*.meta.json"],
+      "fileMatch": ["/*.meta.json"],
       "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/asset.schema.json"
     },
     {
@@ -25,6 +25,15 @@
         "/Data/Buildings/*/*/*.*.blueprint.json"
       ],
       "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Building.schema.json"
+    },
+    {
+      "name": "Character specification",
+      "description": "Add or modify a character",
+      "fileMatch": [
+        "/Characters/*/*.blueprint.json",
+        "/Data/Characters/*/*.blueprint.json"
+      ],
+      "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Character.schema.json"
     },
     {
       "name": "Configuration specification",

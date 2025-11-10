@@ -15,9 +15,9 @@
       "label": "Generate schema",
       "type": "shell",
       "windows": {
-        "command": ".\\.venv\\Scripts\\activate && python scripts/generate-schemas.py ${input:jsonsPath} ${input:schemaPath} && python scripts/write-titles.py ${input:schemaPath} && python scripts/write-defaults.py ${input:schemaPath} ${input:jsonsPath} && python scripts/write-arrays.py ${input:schemaPath}"
+        "command": ".\\.venv\\Scripts\\activate && python scripts/generate-schemas.py ${input:jsonsPath} ${input:schemaPath} && python scripts/write-titles.py ${input:schemaPath} && python scripts/write-defaults.py ${input:schemaPath} ${input:jsonsPath} && python scripts/write-arrays.py ${input:schemaPath} && python scripts/write-replace.py ${input:schemaPath}"
       },
-      "command": "source ./.venv/bin/activate && python scripts/generate-schemas.py ${input:jsonsPath} ${input:schemaPath} && python scripts/write-titles.py ${input:schemaPath} && python scripts/write-defaults.py ${input:schemaPath} ${input:jsonsPath} && python scripts/write-arrays.py ${input:schemaPath}",
+      "command": "source ./.venv/bin/activate && python scripts/generate-schemas.py ${input:jsonsPath} ${input:schemaPath} && python scripts/write-titles.py ${input:schemaPath} && python scripts/write-defaults.py ${input:schemaPath} ${input:jsonsPath} && python scripts/write-arrays.py ${input:schemaPath} && python scripts/write-replace.py ${input:schemaPath}",
       "icon": {
         "id": "json"
       }
@@ -44,7 +44,7 @@
     {
       "id": "jsonsPath",
       "type": "promptString",
-      "description": "Path to folder with json files",
+      "description": "Path to folder with json example files",
       "default": "exports/blueprints/something"
     }
   ]

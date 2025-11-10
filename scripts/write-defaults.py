@@ -2,7 +2,7 @@
 
 # Write default and example values to schema based on folder of example json files
 # 
-# Usage: python scripts/write-defaults.py path/to/file.schema.json path/to/folder
+# Usage: python scripts/write-defaults.py /path/to/file.schema.json /path/to/folder
 
 import sys
 import json
@@ -10,7 +10,7 @@ import os
 from collections import Counter
 
 if len(sys.argv) != 3:
-    print("[\033[31m✗\033[0m] Usage: python scripts/write-defaults.py path/to/file.schema.json path/to/folder")
+    print("[\033[31m✗\033[0m] Usage: python scripts/write-defaults.py path/to/file.schema.json /path/to/folder")
     sys.exit(1)
 
 schema_path = sys.argv[1]

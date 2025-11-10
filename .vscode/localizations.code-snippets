@@ -1,0 +1,9 @@
+{
+  "loc": {
+    "body": "ID,Text,Comment\n${1:Building.ShantySpeaker.DisplayName},${2:Shanty Speaker},${3:Name of a building}",
+    "description": "Localization format",
+    "isFileTemplate": true,
+    "prefix": "loc",
+    "scope": "csv,plaintext"
+  }
+}

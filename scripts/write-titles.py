@@ -2,14 +2,14 @@
 
 # Write titles to json schema based on key name
 # 
-# Usage: python scripts/write-titles.py path/to/file.schema.json
+# Usage: python scripts/write-titles.py /path/to/file.schema.json
 
 import json
 import sys
 import re
 
 if len(sys.argv) != 2:
-    print(f"[\033[31m✗\033[0m] Usage: python scripts/write-titles.py path/to/file.schema.json")
+    print(f"[\033[31m✗\033[0m] Usage: python scripts/write-titles.py /path/to/file.schema.json")
     sys.exit(1)
 
 schema_path = sys.argv[1]
