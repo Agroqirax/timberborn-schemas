@@ -9,8 +9,7 @@
 # Built Visual Studio Code Extensions
 *.vsix
 
-examples/
-exports/
+Blueprints/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

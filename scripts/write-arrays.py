@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
 # Add #append, #remove & #delete postfix to all arrays
-# 
+#
 # Usage: python scripts/write-arrays.py /path/to/file.schema.json
 
 import sys
-import json
+import json5
 import copy
 
 if len(sys.argv) != 2:
@@ -14,9 +14,10 @@ if len(sys.argv) != 2:
 
 schema_path = sys.argv[1]
 with open(schema_path, "r", encoding="utf-8") as f:
-    schema = json.load(f)
+    schema = json5.load(f)
 
-if "$defs" not in schema: schema["$defs"] = {}
+if "$defs" not in schema:
+    schema["$defs"] = {}
 
 stack = [(schema, "root")]
 
@@ -36,7 +37,8 @@ while stack:
                 props[f"{key}#append"] = {"$ref": f"#/$defs/{key}"}
                 props[f"{key}#remove"] = {"$ref": f"#/$defs/{key}"}
 
-                props[f"{key}#delete"] = {"type": "object","properties": {},"additionalProperties": False}
+                props[f"{key}#delete"] = {"type": "object",
+                                          "properties": {}, "additionalProperties": False}
 
             else:
                 stack.append((val, f"{path}.properties.{key}"))
@@ -52,6 +54,7 @@ while stack:
                         stack.append((item, f"{path}.{kw}[{i}]"))
 
 with open(schema_path, "w", encoding="utf-8") as f:
-    json.dump(schema, f, indent=2)
+    json5.dump(schema, f, indent=2, quote_keys=True, trailing_commas=False)
 
-print(f"[\033[32m✓\033[0m] Updated schema written to {schema_path}")
+print(
+    f"[\033[32m✓\033[0m] (write-arrays) Updated schema written to {schema_path}")

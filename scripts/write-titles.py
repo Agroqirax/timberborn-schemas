@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
 # Write titles to json schema based on key name
-# 
+#
 # Usage: python scripts/write-titles.py /path/to/file.schema.json
 
-import json
+import json5
 import sys
 import re
 
@@ -15,7 +15,7 @@ if len(sys.argv) != 2:
 schema_path = sys.argv[1]
 
 with open(schema_path, "r", encoding="utf-8") as f:
-    schema = json.load(f)
+    schema = json5.load(f)
 
 stack = [schema]
 
@@ -38,6 +38,7 @@ while stack:
                 stack.append(value)
 
 with open(schema_path, "w", encoding="utf-8") as f:
-    json.dump(schema, f, indent=2)
+    json5.dump(schema, f, indent=2, quote_keys=True, trailing_commas=False)
 
-print(f"[\033[32m✓\033[0m] Updated schema written to {schema_path}")
+print(
+    f"[\033[32m✓\033[0m] (write-titles) Updated schema written to {schema_path}")

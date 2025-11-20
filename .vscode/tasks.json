@@ -26,11 +26,22 @@
       "label": "Validate jsons against schema",
       "type": "shell",
       "windows": {
-        "command": ".\\.venv\\Scripts\\activate && python scripts/validate-jsons.py ${input:schemaPath} ${input:jsonsPath} "
+        "command": ".\\.venv\\Scripts\\activate && python scripts/validate-jsons.py ${input:schemaPath} ${input:jsonsPath}"
       },
       "command": "source ./.venv/bin/activate && python scripts/validate-jsons.py ${input:schemaPath} ${input:jsonsPath}",
       "icon": {
         "id": "check"
+      }
+    },
+    {
+      "label": "Validate all jsons",
+      "type": "shell",
+      "windows": {
+        "command": ".\\.venv\\Scripts\\activate && python scripts/validate-all.py ${input:jsonsPath}"
+      },
+      "command": "source ./.venv/bin/activate && python scripts/validate-all.py ${input:jsonsPath}",
+      "icon": {
+        "id": "verified"
       }
     }
   ],

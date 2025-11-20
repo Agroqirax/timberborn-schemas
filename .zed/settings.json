@@ -12,92 +12,91 @@
             },
             {
               "fileMatch": [
-                "/Blueprints/BonusTypes/BonusType.*.blueprint.json",
-                "/Data/Blueprints/BonusTypes/BonusType.*.blueprint.json"
+                "/Blueprints/BlockObjectToolGroups/BlockObjectToolGroup.*.blueprint.json"
+              ],
+              "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/BlockObjectToolGroup.schema.json"
+            },
+            {
+              "fileMatch": [
+                "/Blueprints/BonusTypes/BonusType.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/BonusType.schema.json"
             },
             {
               "fileMatch": [
-                "/Buildings/*/*/*.*.blueprint.json",
-                "/Data/Buildings/*/*/*.*.blueprint.json"
+                "/Buildings/*/*/*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Building.schema.json"
             },
             {
               "fileMatch": [
-                "/Characters/*/*.blueprint.json",
-                "/Data/Characters/*/*.blueprint.json"
+                "/Characters/*/*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Character.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/Configurations/*.blueprint.json",
-                "/Data/Blueprints/Configurations/*.blueprint.json"
+                "/Blueprints/Configurations/*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Configuration.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/CustomCursors/CustomCursor.*.blueprint.json",
-                "/Data/Blueprints/CustomCursors/CustomCursor.*.blueprint.json"
+                "/Blueprints/CustomCursors/CustomCursor.*.blueprint.json"
               ],
-              "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/CustomCursors.schema.json"
+              "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/CustomCursor.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/Decals/Decal.*.*.blueprint.json",
-                "/Data/Blueprints/Decals/Decal.*.*.blueprint.json"
+                "/Blueprints/Decals/Decal.*.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Decal.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/Factions/Faction.*.blueprint.json",
-                "/Data/Blueprints/Factions/Faction.*.blueprint.json"
+                "/Blueprints/Factions/Faction.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Faction.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/Goods/Good.*.blueprint.json",
-                "/Data/Blueprints/Goods/Good.*.blueprint.json"
+                "/Blueprints/NewGameModes/GameMode.*.blueprint.json"
+              ],
+              "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/GameMode.schema.json"
+            },
+            {
+              "fileMatch": [
+                "/Blueprints/Goods/Good.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Good.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/GoodCollections/GoodCollection.*.blueprint.json",
-                "/Data/Blueprints/GoodCollections/GoodCollection.*.blueprint.json"
+                "/Blueprints/GoodCollections/GoodCollection.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/GoodCollection.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/GoodGroups/GoodGroup.*.blueprint.json",
-                "/Data/Blueprints/GoodGroups/GoodGroup.*.blueprint.json"
+                "/Blueprints/GoodGroups/GoodGroup.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/GoodGroup.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/GoodVisualization/GoodVisualization.*.blueprint.json",
-                "/Data/Blueprints/GoodVisualization/GoodVisualization.*.blueprint.json"
+                "/Blueprints/GoodVisualization/GoodVisualization.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/GoodVisualization.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/KeyBindings/*/KeyBinding.*.blueprint.json",
-                "/Data/Blueprints/KeyBindings/*/KeyBinding.*.blueprint.json"
+                "/Blueprints/KeyBindings/*/KeyBinding.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/KeyBinding.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/KeyBindingGroups/KeyBindingGroup.*.blueprint.json",
-                "/Data/Blueprints/KeyBindingGroups/KeyBindingGroup.*.blueprint.json"
+                "/Blueprints/KeyBindingGroups/KeyBindingGroup.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/KeyBindingGroup.schema.json"
             },
@@ -109,113 +108,97 @@
             },
             {
               "fileMatch": [
-                "/Blueprints/MaterialCollections/MaterialCollection.*.blueprint.json",
-                "/Data/Blueprints/MaterialCollections/MaterialCollection.*.blueprint.json"
+                "/Blueprints/MaterialCollections/MaterialCollection.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/MaterialCollection.schema.json"
             },
             {
               "fileMatch": [
-                "/NaturalResources/*/*/*.blueprint.json",
-                "/Data/NaturalResources/*/*/*.blueprint.json"
+                "/NaturalResources/*/*/*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/NaturalResource.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/Needs/Need.*.*.blueprint.json",
-                "/Data/Blueprints/Needs/Need.*.*.blueprint.json"
+                "/Blueprints/Needs/Need.*.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Need.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/NeedCollections/NeedCollection.*.blueprint.json",
-                "/Data/Blueprints/NeedCollections/NeedCollection.*.blueprint.json"
+                "/Blueprints/NeedCollections/NeedCollection.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/NeedCollection.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/NeedGroups/NeedGroup.*.blueprint.json",
-                "/Data/Blueprints/NeedGroups/NeedGroup.*.blueprint.json"
+                "/Blueprints/NeedGroups/NeedGroup.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/NeedGroup.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/Recipes/Recipe.*.blueprint.json",
-                "/Data/Blueprints/Recipes/Recipe.*.blueprint.json"
+                "/Blueprints/Recipes/Recipe.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Recipe.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/RemoveYieldStrategies/RemoveYieldStrategy.*.blueprint.json",
-                "/Data/Blueprints/RemoveYieldStrategies/RemoveYieldStrategy.*.blueprint.json"
+                "/Blueprints/RemoveYieldStrategies/RemoveYieldStrategy.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/RemoveYieldStrategy.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/TemplateCollections/TemplateCollection.*.*.blueprint.json",
-                "/Data/Blueprints/TemplateCollections/TemplateCollection.*.*.blueprint.json"
+                "/Blueprints/TemplateCollections/TemplateCollection.*.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/TemplateCollection.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/ToolGroups/ToolGroup.*.blueprint.json",
-                "/Data/Blueprints/ToolGroups/ToolGroup.*.blueprint.json"
+                "/Blueprints/ToolGroups/ToolGroups.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/ToolGroup.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/Tutorials/Tutorials.*.blueprint.json",
-                "/Data/Blueprints/Tutorials/Tutorials.*.blueprint.json"
+                "/Blueprints/Tutorials/Tutorials.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Tutorial.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/Tutorials/Stages/*.blueprint.json",
-                "/Data/Blueprints/Tutorials/Stages/*.blueprint.json"
+                "/Blueprints/Tutorials/Stages/*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/TutorialStage.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/WellbeingTiers/WellbeingTier.*.blueprint.json",
-                "/Data/Blueprints/WellbeingTiers/WellbeingTier.*.blueprint.json"
+                "/Blueprints/WellbeingTiers/WellbeingTier.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/WellbeingTier.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/WorkerOutfits/WorkerOutfit.*.*.*.blueprint.json",
-                "/Data/Blueprints/WorkerOutfits/WorkerOutfit.*.*.*.blueprint.json"
+                "/Blueprints/WorkerOutfits/WorkerOutfit.*.*.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/WorkerOutfit.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/WorkerTypes/WorkerType.*.blueprint.json",
-                "/Data/Blueprints/WorkerTypes/WorkerType.*.blueprint.json"
+                "/Blueprints/WorkerTypes/WorkerType.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/WorkerType.schema.json"
             },
             {
               "fileMatch": [
-                "/workshop_data.json",
-                "/Data/workshop_data.json"
+                "/workshop_data.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/workshop_data.schema.json"
             },
             {
               "fileMatch": [
-                "/Blueprints/YieldRemovalChanceBonuses/YieldRemovalChanceBonus.*.blueprint.json",
-                "/Data/Blueprints/YieldRemovalChanceBonuses/YieldRemovalChanceBonus.*.blueprint.json"
+                "/Blueprints/YieldRemovalChanceBonuses/YieldRemovalChanceBonus.*.blueprint.json"
               ],
               "url": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/YieldRemovalChanceBonus.schema.json"
             }

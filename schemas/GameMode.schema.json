@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/GameMode.schema.json",
+  "title": "Game mode specification",
+  "description": "Add or modify a game mode",
+  "type": "object",
+  "properties": {
+    "GameModeSpec": {
+      "type": "object",
+      "properties": {
+        "Order": {
+          "type": "integer",
+          "title": "Order",
+          "default": 20
+        },
+        "IsDefault": {
+          "type": "boolean",
+          "title": "Is default",
+          "examples": [false, true],
+          "default": false
+        },
+        "DisplayNameLocKey": {
+          "type": "string",
+          "title": "Display name loc key",
+          "examples": [
+            "NewGameConfigurationPanel.Easy",
+            "NewGameConfigurationPanel.Hard",
+            "NewGameConfigurationPanel.Normal"
+          ]
+        },
+        "DescriptionLocKey": {
+          "type": "string",
+          "title": "Description loc key",
+          "examples": [
+            "NewGameConfigurationPanel.EasyModeDescription",
+            "NewGameConfigurationPanel.HardModeDescription",
+            "NewGameConfigurationPanel.NormalModeDescription"
+          ]
+        },
+        "StartingAdults": {
+          "type": "integer",
+          "title": "Starting adults",
+          "default": 8
+        },
+        "AdultAgeProgress": {
+          "type": "object",
+          "properties": {
+            "Min": {
+              "type": "number",
+              "title": "Min",
+              "examples": [0.1],
+              "default": 0.1
+            },
+            "Max": {
+              "type": "number",
+              "title": "Max",
+              "examples": [0.7],
+              "default": 0.7
+            }
+          },
+          "minProperties": 1,
+          "additionalProperties": false,
+          "title": "Adult age progress"
+        },
+        "StartingChildren": {
+          "type": "integer",
+          "title": "Starting children",
+          "default": 4
+        },
+        "ChildAgeProgress": {
+          "type": "object",
+          "properties": {
+            "Min": {
+              "type": "number",
+              "title": "Min",
+              "examples": [0.1],
+              "default": 0.1
+            },
+            "Max": {
+              "type": "number",
+              "title": "Max",
+              "examples": [0.8],
+              "default": 0.8
+            }
+          },
+          "minProperties": 1,
+          "additionalProperties": false,
+          "title": "Child age progress"
+        },
+        "FoodConsumption": {
+          "type": "number",
+          "title": "Food consumption",
+          "examples": [1.0, 0.4],
+          "default": 1.0
+        },
+        "WaterConsumption": {
+          "type": "number",
+          "title": "Water consumption",
+          "examples": [1.0, 0.4],
+          "default": 1.0
+        },
+        "StartingFood": {
+          "type": "integer",
+          "title": "Starting food",
+          "default": 130
+        },
+        "StartingWater": {
+          "type": "integer",
+          "title": "Starting water",
+          "default": 0
+        },
+        "TemperateWeatherDuration": {
+          "type": "object",
+          "properties": {
+            "Min": {
+              "type": "integer",
+              "title": "Min",
+              "default": 13
+            },
+            "Max": {
+              "type": "integer",
+              "title": "Max",
+              "default": 17
+            }
+          },
+          "minProperties": 1,
+          "additionalProperties": false,
+          "title": "Temperate weather duration"
+        },
+        "DroughtDuration": {
+          "type": "object",
+          "properties": {
+            "Min": {
+              "type": "integer",
+              "title": "Min",
+              "default": 5
+            },
+            "Max": {
+              "type": "integer",
+              "title": "Max",
+              "default": 9
+            }
+          },
+          "minProperties": 1,
+          "additionalProperties": false,
+          "title": "Drought duration"
+        },
+        "DroughtDurationHandicapMultiplier": {
+          "type": "number",
+          "title": "Drought duration handicap multiplier",
+          "examples": [0.25, 0.2, 0.38],
+          "default": 0.38
+        },
+        "DroughtDurationHandicapCycles": {
+          "type": "integer",
+          "title": "Drought duration handicap cycles",
+          "default": 5
+        },
+        "CyclesBeforeRandomizingBadtide": {
+          "type": "integer",
+          "title": "Cycles before randomizing badtide",
+          "default": 4
+        },
+        "ChanceForBadtide": {
+          "type": "number",
+          "title": "Chance for badtide",
+          "examples": [0.4],
+          "default": 0.4
+        },
+        "BadtideDuration": {
+          "type": "object",
+          "properties": {
+            "Min": {
+              "type": "integer",
+              "title": "Min",
+              "default": 4
+            },
+            "Max": {
+              "type": "integer",
+              "title": "Max",
+              "default": 8
+            }
+          },
+          "minProperties": 1,
+          "additionalProperties": false,
+          "title": "Badtide duration"
+        },
+        "BadtideDurationHandicapMultiplier": {
+          "type": "number",
+          "title": "Badtide duration handicap multiplier",
+          "examples": [0.3, 0.4, 0.15]
+        },
+        "BadtideDurationHandicapCycles": {
+          "type": "integer",
+          "title": "Badtide duration handicap cycles",
+          "default": 5
+        },
+        "InjuryChance": {
+          "type": "number",
+          "title": "Injury chance",
+          "examples": [1.0, 0.3],
+          "default": 1.0
+        },
+        "DemolishableRecoveryRate": {
+          "type": "number",
+          "title": "Demolishable recovery rate",
+          "examples": [0.75, 0.9],
+          "default": 0.75
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Game mode specification"
+    }
+  },
+  "minProperties": 1,
+  "additionalProperties": false
+}

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
 # Write default and example values to schema based on folder of example json files
-# 
+#
 # Usage: python scripts/write-defaults.py /path/to/file.schema.json /path/to/folder
 
 import sys
-import json
+import json5
 import os
 from collections import Counter
 
@@ -17,7 +17,7 @@ schema_path = sys.argv[1]
 folder = sys.argv[2]
 
 with open(schema_path, "r", encoding="utf-8") as f:
-    schema = json.load(f)
+    schema = json5.load(f)
 
 props = []
 
@@ -42,6 +42,7 @@ for root, _, files in os.walk(folder):
         if file.lower().endswith(".json"):
             json_files.append(os.path.join(root, file))
 
+
 def get_value(data, path):
     try:
         for step in path:
@@ -58,6 +59,7 @@ def get_value(data, path):
     except:
         return []
 
+
 values_map = {}
 for (_, path, _) in props:
     values_map[tuple(path)] = []
@@ -65,7 +67,7 @@ for (_, path, _) in props:
 for jf in json_files:
     try:
         with open(jf, "r", encoding="utf-8") as f:
-            data = json.load(f)
+            data = json5.load(f)
     except:
         continue
 
@@ -90,6 +92,7 @@ for (root_schema, path, node) in props:
         node["default"] = most_common[0][0]
 
 with open(schema_path, "w", encoding="utf-8") as f:
-    json.dump(schema, f, indent=2, ensure_ascii=False)
+    json5.dump(schema, f, indent=2, quote_keys=True, trailing_commas=False)
 
-print(f"[\033[32m✓\033[0m] Updated schema written to {schema_path}")
+print(
+    f"[\033[32m✓\033[0m] (write-defaults) Updated schema written to {schema_path}")

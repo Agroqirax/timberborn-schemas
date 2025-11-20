@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 
-# Validate all json files in a folder against json schema & print results
-# 
+# Validate all json files in a folder against a json schema & print results
+#
 # Usage: python scripts/validate-jsons.py /path/to/file.schema.json /path/to/folder
-# 
+#
 # Use an environment:
 # python -m venv .venv
-# 
+#
 # Linux/macos: source ./.venv/bin/activate
 # Windows: .\.venv\Scripts\activate
-# 
+#
 # pip install -r requirements.txt
 
 import os
 import sys
-import json
+import json5
 from jsonschema import validators
 
 if len(sys.argv) != 3:
@@ -24,7 +24,7 @@ if len(sys.argv) != 3:
 schema_path, json_folder = sys.argv[1], sys.argv[2]
 
 with open(schema_path, 'r', encoding='utf-8') as f:
-    schema = json.load(f)
+    schema = json5.load(f)
 
 
 ValidatorClass = validators.validator_for(schema)
@@ -38,10 +38,11 @@ for root, dirs, files in os.walk(json_folder):
             json_files.append(os.path.join(root, filename))
 
 passed = 0
+failed = 0
 total = len(json_files)
 for json_file in json_files:
     with open(json_file, 'r', encoding='utf-8') as f:
-        data = json.load(f)
+        data = json5.load(f)
 
     errors = sorted(validator.iter_errors(data), key=lambda e: e.path)
 
@@ -54,4 +55,7 @@ for json_file in json_files:
             location = ".".join(map(str, err.path)) if err.path else "(root)"
             print(f"   \033[34m->\033[0m {location} {err.message}")
 
-print(f"\n[\033[34m🛈\033[0m] Passed: {passed}/{total} ({round(passed/total*100, 1)}%)")
+print(
+    f"\n[\033[34m🛈\033[0m] Passed: {passed}/{total} ({round(passed/total*100, 1)}%)")
+print(
+    f"[\033[31m✗\033[0m] Failed: {failed}/{total} ({round((failed/total) * 100, 1)}%)")

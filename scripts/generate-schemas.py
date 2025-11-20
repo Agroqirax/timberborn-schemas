@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 
 # Generate json schema from folder of example jsons
-# 
+#
 # Usage: python scripts/generate-schema.py /input/folder /output/file.schema.json
-# 
+#
 # Use an environment:
 # python -m venv .venv
-# 
+#
 # Linux/macos: source ./.venv/bin/activate
 # Windows: .\.venv\Scripts\activate
-# 
+#
 # pip install -r requirements.txt
 
 import os
 import sys
-import json
+import json5
 from genson import SchemaBuilder
 
 if len(sys.argv) != 3:
@@ -25,7 +25,8 @@ input_folder = sys.argv[1]
 output_file = sys.argv[2]
 
 if not os.path.isdir(input_folder):
-    print(f"[\033[31m✗\033[0m] Error: '{input_folder}' is not a valid directory.")
+    print(
+        f"[\033[31m✗\033[0m] Error: '{input_folder}' is not a valid directory.")
     sys.exit(1)
 
 output_filename = os.path.basename(output_file)
@@ -39,7 +40,7 @@ for root, _, files in os.walk(input_folder):
             path = os.path.join(root, filename)
             try:
                 with open(path, "r", encoding="utf-8") as f:
-                    data = json.load(f)
+                    data = json5.load(f)
                     file_builder = SchemaBuilder()
                     file_builder.add_schema({"type": "object"})
                     file_builder.add_object(data)
@@ -62,5 +63,6 @@ template = {
 template.update(body_schema)
 
 with open(output_file, "w", encoding="utf-8") as f:
-    json.dump(template, f, indent=2)
-    print(f"\n[\033[32m✓\033[0m] Merged schema saved to: {output_file}")
+    json5.dump(template, f, indent=2, quote_keys=True, trailing_commas=False)
+
+print(f"\n[\033[32m✓\033[0m] Merged schema saved to: {output_file}")

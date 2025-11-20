@@ -17,7 +17,7 @@ The most common schemas and their uri's are listed below, a complete list can be
 
 ## Schema list
 
-- Asset meta specification (`/*.meta.json`)
+- Asset meta specification (`/*.meta.json`) [wiki](https://github.com/mechanistry/timberborn-modding/wiki/Assets#images)
   ```
   https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/asset.schema.json
   ```

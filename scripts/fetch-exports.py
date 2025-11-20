@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 
 # Extract blueprints from assetripper export .asset files & save them as json files while preserving the directory structure
-# 
+# Obsolete. Use Timberborn_Data/StreamingAssets/Modding/Blueprints.zip from the timberborn install location
+#
 # Usage: python scripts/fetch-exports.py /path/to/export /path/to/output
-# 
+#
 # Use an environment:
 # python -m venv .venv
-# 
+#
 # Linux/macos: source ./.venv/bin/activate
 # Windows: .\.venv\Scripts\activate
-# 
+#
 # pip install -r requirements.txt
 
 import os
@@ -17,15 +18,19 @@ import sys
 import yaml
 import json
 
+
 class UnityYAMLLoader(yaml.SafeLoader):
     pass
+
 
 def unknown_constructor(loader, tag_suffix, node):
     if isinstance(node, yaml.MappingNode):
         return loader.construct_mapping(node)
     return None
 
-UnityYAMLLoader.add_multi_constructor('tag:unity3d.com,2011:', unknown_constructor)
+
+UnityYAMLLoader.add_multi_constructor(
+    'tag:unity3d.com,2011:', unknown_constructor)
 
 if len(sys.argv) != 3:
     print("[\033[31m✗\033[0m] Usage: python scripts/fetch-exports.py /path/to/export /path/to/output")
