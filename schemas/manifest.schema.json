@@ -47,7 +47,6 @@
       "type": "array",
       "description": "Required mods",
       "uniqueItems": true,
-      "minItems": 1,
       "items": {
         "description": "Mod",
         "properties": {
@@ -73,7 +72,6 @@
       "type": "array",
       "description": "Optional mods, get loaded first if installed",
       "uniqueItems": true,
-      "minItems": 1,
       "items": {
         "description": "Mod",
         "properties": {

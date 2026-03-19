@@ -28,7 +28,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/BlockObjectToolGroups/BlockObjectToolGroup.*.blueprint.json"/>
+                    <option name="path" value="BlockObjectToolGroups/BlockObjectToolGroup.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -44,7 +44,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/BonusTypes/BonusType.*.blueprint.json"/>
+                    <option name="path" value="BonusTypes/BonusType.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -92,7 +92,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/Configurations/*.blueprint.json"/>
+                    <option name="path" value="Configurations/*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -108,7 +108,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/CustomCursors/CustomCursor.*.blueprint.json"/>
+                    <option name="path" value="CustomCursors/CustomCursor.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -124,7 +124,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/Decals/Decal.*.*.blueprint.json"/>
+                    <option name="path" value="Decals/Decal.*.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -140,7 +140,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/Factions/Faction.*.blueprint.json"/>
+                    <option name="path" value="Factions/Faction.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -156,7 +156,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/NewGameModes/GameMode.*.blueprint.json"/>
+                    <option name="path" value="NewGameModes/GameMode.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -172,7 +172,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/Goods/Good.*.blueprint.json"/>
+                    <option name="path" value="Goods/Good.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -188,7 +188,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/GoodCollections/GoodCollection.*.blueprint.json"/>
+                    <option name="path" value="GoodCollections/GoodCollection.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -204,7 +204,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/GoodGroups/GoodGroup.*.blueprint.json"/>
+                    <option name="path" value="GoodGroups/GoodGroup.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -220,7 +220,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/GoodVisualization/GoodVisualization.*.blueprint.json"/>
+                    <option name="path" value="GoodVisualization/GoodVisualization.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -236,7 +236,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/KeyBindings/*/KeyBinding.*.blueprint.json"/>
+                    <option name="path" value="KeyBindings/*/KeyBinding.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -252,7 +252,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/KeyBindingGroups/KeyBindingGroup.*.blueprint.json"/>
+                    <option name="path" value="KeyBindingGroups/KeyBindingGroup.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -284,7 +284,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/MaterialCollections/MaterialCollection.*.blueprint.json"/>
+                    <option name="path" value="MaterialCollections/MaterialCollection.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -316,7 +316,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/Needs/Need.*.*.blueprint.json"/>
+                    <option name="path" value="Needs/Need.*.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -332,7 +332,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/NeedCollections/NeedCollection.*.blueprint.json"/>
+                    <option name="path" value="NeedCollections/NeedCollection.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -348,7 +348,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/NeedGroups/NeedGroup.*.blueprint.json"/>
+                    <option name="path" value="NeedGroups/NeedGroup.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -364,7 +364,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/Recipes/Recipe.*.blueprint.json"/>
+                    <option name="path" value="Recipes/Recipe.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -380,7 +380,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/RemoveYieldStrategies/RemoveYieldStrategy.*.blueprint.json"/>
+                    <option name="path" value="RemoveYieldStrategies/RemoveYieldStrategy.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -396,7 +396,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/TemplateCollections/TemplateCollection.*.*.blueprint.json"/>
+                    <option name="path" value="TemplateCollections/TemplateCollection.*.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -412,7 +412,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/ToolGroups/ToolGroups.*.blueprint.json"/>
+                    <option name="path" value="ToolGroups/ToolGroups.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -428,7 +428,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/Tutorials/Tutorials.*.blueprint.json"/>
+                    <option name="path" value="Tutorials/Tutorials.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -444,7 +444,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/Tutorials/Stages/*.blueprint.json"/>
+                    <option name="path" value="Tutorials/Stages/*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -460,7 +460,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/WellbeingTiers/WellbeingTier.*.blueprint.json"/>
+                    <option name="path" value="WellbeingTiers/WellbeingTier.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -476,7 +476,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/WorkerOutfits/WorkerOutfit.*.*.*.blueprint.json"/>
+                    <option name="path" value="WorkerOutfits/WorkerOutfit.*.*.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -492,7 +492,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/WorkerTypes/WorkerType.*.blueprint.json"/>
+                    <option name="path" value="WorkerTypes/WorkerType.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>
@@ -524,7 +524,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="/Blueprints/YieldRemovalChanceBonuses/YieldRemovalChanceBonus.*.blueprint.json"/>
+                    <option name="path" value="YieldRemovalChanceBonuses/YieldRemovalChanceBonus.*.blueprint.json"/>
                   </Item>
                 </list>
               </option>

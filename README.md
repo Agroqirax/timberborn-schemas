@@ -25,17 +25,17 @@ The most common schemas and their uri's are listed below, a complete list can be
   ```
   https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Building.schema.json
   ```
-- Decal specification (`/Blueprints/Decals/Decal.*.*.blueprint.json`)
+- Decal specification (`/Decals/Decal.*.*.blueprint.json`)
 
   ```
   https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Decal.schema.json
   ```
 
-- Faction specification (`/Blueprints/Factions/Faction.*.blueprint.json`)
+- Faction specification (`/Factions/Faction.*.blueprint.json`)
   ```
   https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Faction.schema.json
   ```
-- Good specification (`/Blueprints/Goods/Good.*.blueprint.json`)
+- Good specification (`/Goods/Good.*.blueprint.json`)
   ```
   https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Good.schema.json
   ```
@@ -43,11 +43,11 @@ The most common schemas and their uri's are listed below, a complete list can be
   ```
   https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/manifest.schema.json
   ```
-- Need specification (`/Blueprints/Needs/Need.*.*.blueprint.json`)
+- Need specification (`/Needs/Need.*.*.blueprint.json`)
   ```
   https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Need.schema.json
   ```
-- Recipe specification (`/Blueprints/Recipes/Recipe.*.blueprint.json`)
+- Recipe specification (`/Recipes/Recipe.*.blueprint.json`)
   ```
   https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Recipe.schema.json
   ```

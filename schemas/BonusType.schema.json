@@ -12,34 +12,34 @@
           "type": "string",
           "title": "Id",
           "examples": [
-            "WorkingSpeed",
-            "MovementSpeed",
-            "GrowthSpeed",
+            "CarryingCapacity",
             "CuttingSuccessChance",
+            "GrowthSpeed",
             "LifeExpectancy",
-            "CarryingCapacity"
+            "MovementSpeed",
+            "WorkingSpeed"
           ]
         },
         "MinimumValue": {
           "type": "number",
           "title": "Minimum value",
-          "examples": [0.1, 0.05, 0.25, 0.01],
+          "examples": [0.1, 0.01, 0.25, 0.05],
           "default": 0.1
         },
         "MaximumValue": {
           "type": "number",
           "title": "Maximum value",
-          "examples": [1000.0, 2.0, 1.0, 10.0]
+          "examples": [2.0, 1000.0, 10.0, 1.0]
         },
         "Icon": {
           "type": "string",
           "title": "Icon",
           "examples": [
             "",
-            "Sprites/Bonuses/WorkingSpeed",
-            "Sprites/Bonuses/MovementSpeed",
             "Sprites/Bonuses/GrowthSpeed",
-            "Sprites/Bonuses/LifeExpectancy"
+            "Sprites/Bonuses/LifeExpectancy",
+            "Sprites/Bonuses/MovementSpeed",
+            "Sprites/Bonuses/WorkingSpeed"
           ],
           "default": ""
         },
@@ -47,12 +47,12 @@
           "type": "string",
           "title": "Loc key",
           "examples": [
-            "Bonus.WorkingSpeed",
-            "Bonus.MovementSpeed",
-            "Bonus.GrowthSpeed",
+            "Bonus.CarryingCapacity",
             "Bonus.CuttingSuccessChance",
+            "Bonus.GrowthSpeed",
             "Bonus.LifeExpectancy",
-            "Bonus.CarryingCapacity"
+            "Bonus.MovementSpeed",
+            "Bonus.WorkingSpeed"
           ]
         }
       },
@@ -62,5 +62,6 @@
     }
   },
   "minProperties": 1,
-  "additionalProperties": false
+  "additionalProperties": false,
+  "$defs": {}
 }

@@ -1,13 +1,17 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Character.schema.json",
-  "title": "Character specification",
-  "description": "Add or modify a character",
+  "title": "",
+  "description": "",
   "type": "object",
   "properties": {
-    "BotSpec": {
+    "BeaverSpec": {
       "type": "object",
-      "title": "Bot specification"
+      "title": "Beaver specification"
+    },
+    "AdultSpec": {
+      "type": "object",
+      "title": "Adult specification"
     },
     "CharacterModelSpec": {
       "type": "object",
@@ -22,6 +26,23 @@
       "minProperties": 1,
       "additionalProperties": false,
       "title": "Character model specification"
+    },
+    "MortalSpec": {
+      "type": "object",
+      "title": "Mortal specification"
+    },
+    "DeadStatusSpec": {
+      "type": "object",
+      "properties": {
+        "DeadStatusLocKey": {
+          "type": "string",
+          "title": "Dead status loc key",
+          "examples": ["Status.Beaver.Dead", "Status.Bot.Dead"]
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Dead status specification"
     },
     "MovementAnimatorSpec": {
       "type": "object",
@@ -58,10 +79,10 @@
           "type": "string",
           "title": "Template name",
           "examples": [
-            "Bot.IronTeeth",
-            "Bot.Folktails",
+            "BeaverAdult",
             "BeaverChild",
-            "BeaverAdult"
+            "Bot.Folktails",
+            "Bot.IronTeeth"
           ]
         },
         "BackwardCompatibleTemplateNames": {
@@ -147,22 +168,50 @@
       "additionalProperties": false,
       "title": "Walker speed manager specification"
     },
-    "MortalSpec": {
+    "TemporalSpec": {
       "type": "object",
-      "title": "Mortal specification"
+      "title": "Temporal specification"
     },
-    "DeadStatusSpec": {
+    "WellbeingTrackerSpec": {
       "type": "object",
       "properties": {
-        "DeadStatusLocKey": {
-          "type": "string",
-          "title": "Dead status loc key",
-          "examples": ["Status.Bot.Dead", "Status.Beaver.Dead"]
+        "CountsToPopulationWellbeing": {
+          "type": "boolean",
+          "title": "Counts to population wellbeing",
+          "examples": [true, false]
         }
       },
       "minProperties": 1,
       "additionalProperties": false,
-      "title": "Dead status specification"
+      "title": "Wellbeing tracker specification"
+    },
+    "SleeperSpec": {
+      "type": "object",
+      "properties": {
+        "SleepOutsideEffects": {
+          "$ref": "#/$defs/SleepOutsideEffects"
+        },
+        "MaxOffsetInHours": {
+          "type": "number",
+          "title": "Max offset in hours",
+          "examples": [0.25],
+          "default": 0.25
+        },
+        "SleepOutsideEffects#append": {
+          "$ref": "#/$defs/SleepOutsideEffects"
+        },
+        "SleepOutsideEffects#remove": {
+          "$ref": "#/$defs/SleepOutsideEffects"
+        },
+        "SleepOutsideEffects#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Sleeper specification"
     },
     "RunningStateUpdaterSpec": {
       "type": "object",
@@ -184,62 +233,6 @@
       "additionalProperties": false,
       "title": "Running state updater specification"
     },
-    "WellbeingTrackerSpec": {
-      "type": "object",
-      "properties": {
-        "CountsToPopulationWellbeing": {
-          "type": "boolean",
-          "title": "Counts to population wellbeing",
-          "examples": [false, true]
-        }
-      },
-      "minProperties": 1,
-      "additionalProperties": false,
-      "title": "Wellbeing tracker specification"
-    },
-    "SimpleLabeledEntitySpec": {
-      "type": "object",
-      "properties": {
-        "EntityNameLocKey": {
-          "type": "string",
-          "title": "Entity name loc key",
-          "examples": [
-            "Bot.TemplateName",
-            "Beaver.Child.TemplateName",
-            "Beaver.Adult.TemplateName"
-          ],
-          "default": "Bot.TemplateName"
-        }
-      },
-      "minProperties": 1,
-      "additionalProperties": false,
-      "title": "Simple labeled entity specification"
-    },
-    "BotFactionNameSpec": {
-      "type": "object",
-      "properties": {
-        "NameLocKey": {
-          "type": "string",
-          "title": "Name loc key",
-          "examples": ["Bot.DisplayName.IronTeeth", "Bot.DisplayName.Folktails"]
-        }
-      },
-      "minProperties": 1,
-      "additionalProperties": false,
-      "title": "Bot faction name specification"
-    },
-    "DeteriorableSpec": {
-      "type": "object",
-      "properties": {
-        "DeteriorationInDays": {
-          "type": "integer",
-          "title": "Deterioration in days"
-        }
-      },
-      "minProperties": 1,
-      "additionalProperties": false,
-      "title": "Deteriorable specification"
-    },
     "SwimmingAnimatorSpec": {
       "type": "object",
       "properties": {
@@ -260,36 +253,27 @@
       "additionalProperties": false,
       "title": "Swimming animator specification"
     },
-    "CriticalNeedStateAnimationSpec": {
+    "SimpleLabeledEntitySpec": {
       "type": "object",
       "properties": {
-        "NeedId": {
+        "EntityNameLocKey": {
           "type": "string",
-          "title": "Need id",
-          "examples": ["Energy", "Biofuel"]
-        },
-        "Animation": {
-          "type": "string",
-          "title": "Animation",
-          "examples": ["NoEnergy", "NoFuel"]
+          "title": "Entity name loc key",
+          "examples": [
+            "Bot.TemplateName",
+            "Beaver.Adult.TemplateName",
+            "Beaver.Child.TemplateName"
+          ],
+          "default": "Bot.TemplateName"
         }
       },
       "minProperties": 1,
       "additionalProperties": false,
-      "title": "Critical need state animation specification"
+      "title": "Simple labeled entity specification"
     },
-    "BotSelectionSoundSpec": {
+    "YieldRemoverNeedApplierSpec": {
       "type": "object",
-      "properties": {
-        "SoundNameKey": {
-          "type": "string",
-          "title": "Sound name key",
-          "examples": ["Ironbot", "Timberbot"]
-        }
-      },
-      "minProperties": 1,
-      "additionalProperties": false,
-      "title": "Bot selection sound specification"
+      "title": "Yield remover need applier specification"
     },
     "OverburdenableSpec": {
       "type": "object",
@@ -312,6 +296,50 @@
       "minProperties": 1,
       "additionalProperties": false,
       "title": "Overburdenable specification"
+    },
+    "BeaverInjuryTextureSetterSpec": {
+      "type": "object",
+      "properties": {
+        "InjuryTextureSets": {
+          "$ref": "#/$defs/InjuryTextureSets"
+        },
+        "InjuryTextureSets#append": {
+          "$ref": "#/$defs/InjuryTextureSets"
+        },
+        "InjuryTextureSets#remove": {
+          "$ref": "#/$defs/InjuryTextureSets"
+        },
+        "InjuryTextureSets#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Beaver injury texture setter specification"
+    },
+    "BeaverNeedShaderPropertySetterSpec": {
+      "type": "object",
+      "properties": {
+        "PropertySets": {
+          "$ref": "#/$defs/PropertySets"
+        },
+        "PropertySets#append": {
+          "$ref": "#/$defs/PropertySets"
+        },
+        "PropertySets#remove": {
+          "$ref": "#/$defs/PropertySets"
+        },
+        "PropertySets#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Beaver need shader property setter specification"
     },
     "WellbeingBonusesReceiverSpec": {
       "type": "object",
@@ -369,6 +397,28 @@
       "additionalProperties": false,
       "title": "Planting particle controller specification"
     },
+    "DemolishableParticleControllerSpec": {
+      "type": "object",
+      "properties": {
+        "DemolishableParticles": {
+          "$ref": "#/$defs/DemolishableParticles"
+        },
+        "DemolishableParticles#append": {
+          "$ref": "#/$defs/DemolishableParticles"
+        },
+        "DemolishableParticles#remove": {
+          "$ref": "#/$defs/DemolishableParticles"
+        },
+        "DemolishableParticles#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Demolishable particle controller specification"
+    },
     "WorkerOutfitAnimationAttachmentVisibilitySpec": {
       "type": "object",
       "properties": {
@@ -419,13 +469,52 @@
         "Prefix": {
           "type": "string",
           "title": "Prefix",
-          "examples": ["Bot", "BeaverChild", "BeaverAdult"],
+          "examples": ["Bot", "BeaverAdult", "BeaverChild"],
           "default": "Bot"
         }
       },
       "minProperties": 1,
       "additionalProperties": false,
       "title": "Character object namer specification"
+    },
+    "ZiplineHarnessModelSpec": {
+      "type": "object",
+      "properties": {
+        "AttachmentId": {
+          "type": "string",
+          "title": "Attachment id",
+          "examples": [
+            "ZiplineHarness.BeaverAdult",
+            "ZiplineHarness.BeaverChild",
+            "ZiplineHarness.Bot"
+          ]
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Zipline harness model specification"
+    },
+    "VariedIdleAnimationSpec": {
+      "type": "object",
+      "properties": {
+        "Variants": {
+          "$ref": "#/$defs/Variants"
+        },
+        "Variants#append": {
+          "$ref": "#/$defs/Variants"
+        },
+        "Variants#remove": {
+          "$ref": "#/$defs/Variants"
+        },
+        "Variants#delete": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false,
+      "title": "Varied idle animation specification"
     },
     "TimbermeshAnimatorControllerSpec": {
       "type": "object",
@@ -477,6 +566,10 @@
       "additionalProperties": false,
       "title": "Timbermesh animator controller specification"
     },
+    "DemolisherNeedApplierSpec": {
+      "type": "object",
+      "title": "Demolisher need applier specification"
+    },
     "TemplateAttachmentsSpec": {
       "type": "object",
       "properties": {
@@ -512,10 +605,10 @@
                   "type": "string",
                   "title": "Model",
                   "examples": [
-                    "Characters/Bot/Bot.IronTeeth.Model",
-                    "Characters/Bot/Bot.Folktails.Model",
+                    "Characters/Beaver/BeaverAdult.Model",
                     "Characters/Beaver/BeaverChild.Model",
-                    "Characters/Beaver/BeaverAdult.Model"
+                    "Characters/Bot/Bot.Folktails.Model",
+                    "Characters/Bot/Bot.IronTeeth.Model"
                   ]
                 }
               },
@@ -533,224 +626,74 @@
       "additionalProperties": false,
       "title": "Children"
     },
-    "ZiplineHarnessModelSpec": {
-      "type": "object",
-      "properties": {
-        "AttachmentId": {
-          "type": "string",
-          "title": "Attachment id",
-          "examples": [
-            "ZiplineHarness.Bot",
-            "ZiplineHarness.BeaverChild",
-            "ZiplineHarness.BeaverAdult"
-          ]
-        }
-      },
-      "minProperties": 1,
-      "additionalProperties": false,
-      "title": "Zipline harness model specification"
-    },
-    "BeaverSpec": {
-      "type": "object",
-      "title": "Beaver specification"
-    },
     "ChildSpec": {
       "type": "object",
       "title": "Child specification"
     },
-    "SleeperSpec": {
+    "BotSpec": {
+      "type": "object",
+      "title": "Bot specification"
+    },
+    "DeteriorableSpec": {
       "type": "object",
       "properties": {
-        "SleepOutsideEffects": {
-          "$ref": "#/$defs/SleepOutsideEffects"
-        },
-        "MaxOffsetInHours": {
-          "type": "number",
-          "title": "Max offset in hours",
-          "examples": [0.25],
-          "default": 0.25
-        },
-        "SleepOutsideEffects#append": {
-          "$ref": "#/$defs/SleepOutsideEffects"
-        },
-        "SleepOutsideEffects#remove": {
-          "$ref": "#/$defs/SleepOutsideEffects"
-        },
-        "SleepOutsideEffects#delete": {
-          "type": "object",
-          "properties": {},
-          "additionalProperties": false
+        "DeteriorationInDays": {
+          "type": "integer",
+          "title": "Deterioration in days"
         }
       },
       "minProperties": 1,
       "additionalProperties": false,
-      "title": "Sleeper specification"
+      "title": "Deteriorable specification"
     },
-    "BeaverInjuryTextureSetterSpec": {
+    "BotFactionNameSpec": {
       "type": "object",
       "properties": {
-        "InjuryTextureSets": {
-          "$ref": "#/$defs/InjuryTextureSets"
-        },
-        "InjuryTextureSets#append": {
-          "$ref": "#/$defs/InjuryTextureSets"
-        },
-        "InjuryTextureSets#remove": {
-          "$ref": "#/$defs/InjuryTextureSets"
-        },
-        "InjuryTextureSets#delete": {
-          "type": "object",
-          "properties": {},
-          "additionalProperties": false
+        "NameLocKey": {
+          "type": "string",
+          "title": "Name loc key",
+          "examples": ["Bot.DisplayName.Folktails", "Bot.DisplayName.IronTeeth"]
         }
       },
       "minProperties": 1,
       "additionalProperties": false,
-      "title": "Beaver injury texture setter specification"
+      "title": "Bot faction name specification"
     },
-    "BeaverNeedShaderPropertySetterSpec": {
+    "CriticalNeedStateAnimationSpec": {
       "type": "object",
       "properties": {
-        "PropertySets": {
-          "$ref": "#/$defs/PropertySets"
+        "NeedId": {
+          "type": "string",
+          "title": "Need id",
+          "examples": ["Biofuel", "Energy"]
         },
-        "PropertySets#append": {
-          "$ref": "#/$defs/PropertySets"
-        },
-        "PropertySets#remove": {
-          "$ref": "#/$defs/PropertySets"
-        },
-        "PropertySets#delete": {
-          "type": "object",
-          "properties": {},
-          "additionalProperties": false
+        "Animation": {
+          "type": "string",
+          "title": "Animation",
+          "examples": ["NoFuel", "NoEnergy"]
         }
       },
       "minProperties": 1,
       "additionalProperties": false,
-      "title": "Beaver need shader property setter specification"
+      "title": "Critical need state animation specification"
     },
-    "VariedIdleAnimationSpec": {
+    "BotSelectionSoundSpec": {
       "type": "object",
       "properties": {
-        "Variants": {
-          "$ref": "#/$defs/Variants"
-        },
-        "Variants#append": {
-          "$ref": "#/$defs/Variants"
-        },
-        "Variants#remove": {
-          "$ref": "#/$defs/Variants"
-        },
-        "Variants#delete": {
-          "type": "object",
-          "properties": {},
-          "additionalProperties": false
+        "SoundNameKey": {
+          "type": "string",
+          "title": "Sound name key",
+          "examples": ["Timberbot", "Ironbot"]
         }
       },
       "minProperties": 1,
       "additionalProperties": false,
-      "title": "Varied idle animation specification"
-    },
-    "AdultSpec": {
-      "type": "object",
-      "title": "Adult specification"
-    },
-    "TemporalSpec": {
-      "type": "object",
-      "title": "Temporal specification"
-    },
-    "YieldRemoverNeedApplierSpec": {
-      "type": "object",
-      "title": "Yield remover need applier specification"
-    },
-    "DemolisherNeedApplierSpec": {
-      "type": "object",
-      "title": "Demolisher need applier specification"
+      "title": "Bot selection sound specification"
     }
   },
   "minProperties": 1,
   "additionalProperties": false,
   "$defs": {
-    "Variants": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "examples": [
-          "BeaverChild_idle_clapping",
-          "BeaverChild_idle_waiting",
-          "BeaverChild_idle_watching",
-          "BeaverAdult_idle_tapping_tail",
-          "BeaverAdult_idle_watching"
-        ]
-      },
-      "title": "Variants"
-    },
-    "PropertySets": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "NeedId": {
-            "type": "string",
-            "title": "Need id"
-          },
-          "PropertyName": {
-            "type": "string",
-            "title": "Property name"
-          }
-        },
-        "minProperties": 1,
-        "additionalProperties": false
-      },
-      "title": "Property sets"
-    },
-    "InjuryTextureSets": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "DiffusePath": {
-            "type": "string",
-            "title": "Diffuse path"
-          },
-          "NormalMapPath": {
-            "type": "string",
-            "title": "Normal map path"
-          },
-          "DisplacementPath": {
-            "type": "string",
-            "title": "Displacement path"
-          }
-        },
-        "minProperties": 1,
-        "additionalProperties": false
-      },
-      "title": "Injury texture sets"
-    },
-    "SleepOutsideEffects": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "NeedId": {
-            "type": "string",
-            "title": "Need id"
-          },
-          "PointsPerHour": {
-            "type": "number",
-            "title": "Points per hour"
-          },
-          "SatisfyToMaxValue": {
-            "type": "boolean",
-            "title": "Satisfy to max value"
-          }
-        },
-        "minProperties": 1,
-        "additionalProperties": false
-      },
-      "title": "Sleep outside effects"
-    },
     "Attachments": {
       "type": "array",
       "items": {
@@ -848,7 +791,6 @@
           "Sleeping",
           "Sitting",
           "Dead",
-          "DeadNoAnimation",
           "ForcedIdle",
           "Swimming",
           "RunningProhibited",
@@ -858,6 +800,7 @@
           "ForcedSwimming",
           "Floating",
           "CharacterControl",
+          "DeadNoAnimation",
           "CarryInHands",
           "CarryOnArm",
           "Building",
@@ -867,30 +810,30 @@
           "Zipline",
           "ZiplineUp",
           "ZiplineDown",
-          "ForcedAPose",
-          "Piloting",
           "Swinging",
           "Flying",
           "Scratching",
           "Exercising",
           "FloatingSleeping",
-          "Contaminated",
           "Dancing",
+          "Contaminated",
           "Detailing",
+          "Piloting",
           "Showering",
           "Massaging",
-          "NoEnergy",
-          "Charging",
-          "NoFuel",
-          "BeaverChild_idle_clapping",
-          "BeaverChild_idle_waiting",
-          "BeaverChild_idle_watching",
+          "ForcedAPose",
           "TeethSharpening",
           "CuttingFlipped",
           "WalkingWork",
           "PushingWork",
           "BeaverAdult_idle_tapping_tail",
-          "BeaverAdult_idle_watching"
+          "BeaverAdult_idle_watching",
+          "BeaverChild_idle_clapping",
+          "BeaverChild_idle_waiting",
+          "BeaverChild_idle_watching",
+          "NoFuel",
+          "NoEnergy",
+          "Charging"
         ]
       },
       "title": "Bool parameters"
@@ -954,6 +897,20 @@
       },
       "title": "Animator states"
     },
+    "Variants": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": [
+          "BeaverAdult_idle_tapping_tail",
+          "BeaverAdult_idle_watching",
+          "BeaverChild_idle_clapping",
+          "BeaverChild_idle_waiting",
+          "BeaverChild_idle_watching"
+        ]
+      },
+      "title": "Variants"
+    },
     "AnimationParticles": {
       "type": "array",
       "items": {
@@ -1016,6 +973,28 @@
       },
       "title": "Worker outfit animation attachments"
     },
+    "DemolishableParticles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "AttachmentId": {
+            "type": "string",
+            "title": "Attachment id"
+          },
+          "TemplateNames": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Template names"
+          }
+        },
+        "minProperties": 1,
+        "additionalProperties": false
+      },
+      "title": "Demolishable particles"
+    },
     "Bonuses": {
       "type": "array",
       "items": {
@@ -1029,6 +1008,48 @@
         "default": "MovementSpeed"
       },
       "title": "Bonuses"
+    },
+    "PropertySets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "NeedId": {
+            "type": "string",
+            "title": "Need id"
+          },
+          "PropertyName": {
+            "type": "string",
+            "title": "Property name"
+          }
+        },
+        "minProperties": 1,
+        "additionalProperties": false
+      },
+      "title": "Property sets"
+    },
+    "InjuryTextureSets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "DiffusePath": {
+            "type": "string",
+            "title": "Diffuse path"
+          },
+          "NormalMapPath": {
+            "type": "string",
+            "title": "Normal map path"
+          },
+          "DisplacementPath": {
+            "type": "string",
+            "title": "Displacement path"
+          }
+        },
+        "minProperties": 1,
+        "additionalProperties": false
+      },
+      "title": "Injury texture sets"
     },
     "OverburdenedBonuses": {
       "type": "array",
@@ -1048,6 +1069,29 @@
         "additionalProperties": false
       },
       "title": "Overburdened bonuses"
+    },
+    "SleepOutsideEffects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "NeedId": {
+            "type": "string",
+            "title": "Need id"
+          },
+          "PointsPerHour": {
+            "type": "number",
+            "title": "Points per hour"
+          },
+          "SatisfyToMaxValue": {
+            "type": "boolean",
+            "title": "Satisfy to max value"
+          }
+        },
+        "minProperties": 1,
+        "additionalProperties": false
+      },
+      "title": "Sleep outside effects"
     },
     "BackwardCompatibleTemplateNames": {
       "type": "array",
