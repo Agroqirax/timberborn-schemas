@@ -8,10 +8,8 @@
     "ItemId": {
       "type": "string",
       "description": "Steam workshop ID",
-      "minLength": 10,
-      "maxLength": 10,
       "examples": ["3275060459"],
-      "pattern": "^[0-9]+$"
+      "pattern": "^[0-9]{10}$"
     },
     "Name": {
       "type": "string",
@@ -39,6 +37,40 @@
       "type": "boolean",
       "description": "Update thumbnail when updating mod",
       "default": true
+    },
+    "UpdateTags": {
+      "type": "boolean",
+      "description": "Update tags when updating mod",
+      "default": true
+    },
+    "Tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "description": "List of tags",
+      "items": {
+        "type": "string",
+        "description": "Tag",
+        "examples": [
+          "Update 1.0",
+          "Update 0.7",
+          "Update 0.6",
+          "New content",
+          "Quality of life",
+          "Balance",
+          "Cheats",
+          "Visuals",
+          "Modding tools",
+          "Other",
+          "Buildings",
+          "Plants",
+          "Goods",
+          "Factions",
+          "Outfits",
+          "Decals",
+          "Translations",
+          "Miscellaneous"
+        ]
+      }
     }
   },
   "required": [
@@ -47,6 +79,9 @@
     "Visibility",
     "UpdateDescription",
     "UpdateVisibility",
-    "UpdatePreview"
-  ]
+    "UpdatePreview",
+    "UpdateTags",
+    "Tags"
+  ],
+  "additionalProperties": false
 }
