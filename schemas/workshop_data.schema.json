@@ -21,6 +21,12 @@
       "type": "string",
       "description": "Steam workshop visibility level",
       "enum": ["Public", "Friends-only", "Private", "Unlisted"],
+      "enumDescriptions": [
+        "Anyone browsing the Workshop can subscribe to it",
+        "Only your Steam friends can subscribe to it",
+        "Only you can subscribe to it",
+        "Anyone with the link can subscribe to it, but it won't appear in searches or while browsing"
+      ],
       "default": "Public"
     },
     "UpdateDescription": {
