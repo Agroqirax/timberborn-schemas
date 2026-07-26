@@ -26,11 +26,9 @@ The most common schemas and their uri's are listed below, a complete list can be
   https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Building.schema.json
   ```
 - Decal specification (`/Decals/Decal.*.*.blueprint.json`)
-
   ```
   https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Decal.schema.json
   ```
-
 - Faction specification (`/Factions/Faction.*.blueprint.json`)
   ```
   https://raw.githubusercontent.com/agroqirax/timberborn-schemas/main/schemas/Faction.schema.json
