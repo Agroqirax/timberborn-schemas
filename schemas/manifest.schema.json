@@ -48,7 +48,18 @@
       "description": "Required mods",
       "uniqueItems": true,
       "items": {
+        "type": "object",
         "description": "Mod",
+        "examples": [
+          {
+            "Id": "Harmony",
+            "MinimumVersion": "2.4.1"
+          },
+          {
+            "Id": "eMka.ModSettings",
+            "MinimumVersion": "1.1.1.0"
+          }
+        ],
         "properties": {
           "Id": {
             "type": "string",
@@ -65,7 +76,8 @@
             "pattern": "^[0-9]+(\\.[0-9]+)*$"
           }
         },
-        "required": ["Id"]
+        "required": ["Id"],
+        "additionalProperties": false
       }
     },
     "OptionalMods": {
@@ -73,6 +85,7 @@
       "description": "Optional mods, get loaded first if installed",
       "uniqueItems": true,
       "items": {
+        "type": "object",
         "description": "Mod",
         "properties": {
           "Id": {
@@ -90,7 +103,8 @@
             "pattern": "^[0-9]+(\\.[0-9]+)*$"
           }
         },
-        "required": ["Id"]
+        "required": ["Id"],
+        "additionalProperties": false
       }
     }
   },
